@@ -1,102 +1,130 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+# Milestone Project 4 : Far East Car Care Ltd, an online shopping site proposal for car-care products.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+### By: Brian Smyth
 
-## Gitpod Reminders
+## Why should this website exist?
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Car care is a strongly growing business at present with a large pool of car enthusiasts as the primary customers, along with a smaller pool of car-care professionals who use products daily. This aspect of the business is strongly both visual and kinesthetic. To elaborate on this, car enthusiasts love beautiful looking cars, it appeals to their visual senses and emotions. Most also enjoy working on their own cars, putting great efforts into mechanical maintenance and care/appearance maintenance. The result is appreciated far more than the personal effort. 
 
-`python3 -m http.server`
+While there are a lot of brands and products available, the most advanced ranges come from the Far East. There is a greater access to industrial grade chemicals from a broader field of innovation, which is pipelined into the automotive product sector. Their products are easier to use, more durable and look better than most European or American brands. The greatest obstacle to the car enthusiast based in Europe or USA is that they can't speak nor read Japanese, so the translation of product labels provides a huge barrier to purchasing. 
 
-A blue button should appear to click: _Make Public_,
+Too make it easier for the average enthusiast, this website will provide easy access to a range of Japanese car products which are of high quality and easily understood in their purpose. The website will be mainly a business-to-consumer website with an easy to follow categorisation of products. Users will be easily able to browse and select products by adding them to a shopping cart where they can then make a credit-card purchase through a secure online-purchase resource. The products will then be dispatched within 24 hours. 
 
-Another blue button should appear to click: _Open Browser_.
+Ancillary objectives for the site owners will be to offer an email subscription service with tips and tricks for product use, special offers and a feature for new/coming-soon product developments. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Strategic approach for the site's User Experience: 
 
-A blue button should appear to click: _Make Public_,
+The site will entice the users by showing video and images of cars which have had the products used on them. First and foremost, there must be visual appeal set apart from the actual product images in the store, which are attractive but are not particularly appealing due to the language differences in the labelling.
 
-Another blue button should appear to click: _Open Browser_.
+Upon landing on the index page, a small background video will play of a glossy prestige car. The Call-To-Action will be an eye-catching button to go straight to the store if desired. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Adjuvant site pages will be the About page, the Frequently Asked Questions, and the Subscription/Contact page.
 
-To log into the Heroku toolbelt CLI:
+Site Navigation will be through a side-sliding menu on the left. The Icon actuator will be clearly at the top right of the page for the user to click on.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+On mobile view, the icon will be at the top right for thumb-actuation since most people are right handed in holding their devices. The menu will again slide from the left for link-selection with left hand. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Who are the target Users?
 
-------
+ - The natural funneling within the true hands-on car-enthusiast groupage is probably more than 90% male (from experience, with no official data recorded that can be found). 
+ - The target age-group for customers of the website is 18 to 70 years old as car lovers always enjoy working on their cars, regardless.
+ - Car Wax Enthusiasts, who are actually a subset of car enthusiasts with large collections of car care products in their garages.
+ - Detailing & Car Care Hobbyists - those who spend their weekends cleaning and polishing their family's and friend's cars for extra income. 
+ - Average Car Owners, the owners who prefer to wash and wax their own cars without necessarily being enthusiastic about the engine or performance. 
+ - Car Detailing & Valeting Professionals who use quality products on their clients' cars. 
+ - Motorcycle Enthusiasts, as they also like to keep their bikes pristine.
+ - Truck Enthusiasts.
+ - Spouses and Relatives of Car Enthusiasts. 
+ 
+## Research 
 
-## Release History
+- There are a handful of small business who sell a broad range of car care products online.
+- There are also larger Bulk chemical companies who specialise in car trade product sales, for dealers and car-wash centres, etc.
+- There is a very small supply of Japanese products and some of these are low quality. 
+- Most car owners are ignorant of car care products, the quality of them and what they are actually designed to do. 
+- Most products are bought in general because of the marketing and merchandising on chain-store shelves. 
+- Most products are bought because they are cheap.
+- Car enthusiasts are more likely to discuss and compare products at social gatherings, car club meets, car shows. 
+- Enthusiasts will share photos of their cars and product purchases on Social Media.
+- Ease-of-use and the finish delivered by the product are more important than competitive pricing. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Important Site Features for the users
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- User Accounts : Create Unique login and password for returning clients
+- Securely stored customer data : Address and billing information
+- Ability to edit data such as name, address, telephone, email in the account.
+- Secure Financial Transactions 
+- Ability to browse products and Read pertinent data
+- A shopping cart to Update with planned purchases
+- Company information Page
+- Frequently Asked Questions
+- A resource to submit queries
+- A Subscription for regular updates and offers
+- The ability to update 
+- A Product rating system
+- Real-time confirmation of actions such as "Added to Cart", "Item Deleted", etc
+- On non-store pages, a Call-To-Action link as an eye-catching animated button.
+- The ability access products by pre-selected category (Exterior, Interior, Accessory products, etc)
+- The ability to select or filter products by price. 
+- A convenient Search utility.
+- The ability to select product by bottle or package size/volume
+- Social Media links
+- Play/Pause buttons for Videos.
+- Shopping Cart button link
+- The ability to subscribe to the newsletter without having an account
+- Buttons to keep shopping after adding to cart or viewing the cart
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Business Goals for the site
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- The site owner purchases in bulk and sells individual items at a profit
+- The site and products will be marketed on Social Media
+- The service will be more attractive than local competitors through ease of access, after-sales support, pre-sales advice. 
+- Products will be dispatched efficiently, attractively and safely wrapped and securely boxed with invoice and address paperwork attached to the exterior.
+- The business will strive for positive feedback, both for products and service.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## User Story Aspirations
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- As a first time visitor, I want an attractive landing page that shows how good the products are so that I can be enticed to create an account and make a purchase.
+- I would like to subscribe to the e-mail special offers so that later I can create an account and make a later discounted purchase. 
+- The website should be viewable on my phone since that is what I have when I am working on my car.
+- I want to intuitively and easily navigate the site.
+- I want to contact the company with questions so that I can receive personal support.
+- I want to access the store front easily
+- The products should be easily understood in their application
+- I want to quickly create an account and make a secure purchase on my phone, tablet or computer. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- As a returning account-holder, I want to be able to quickly log in to my account. 
+- I want to see previous purchases so that I know what to buy again.
+- Access my personal details and update them when required. 
+- To filter products more suited to my needs
+- To know if the products are rated well.
+- I want to search the store for products or features within products so I can make more educated choices.
+- Add items to my cart without having to open the item's page.
+- I want to view all items in my cart and view the subtotals and grand total.
+- I want to increase or decrease the quantity of each item easily.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- As a Site Administrator, I want to have full edit rights over creating, removing or updating the product range.
+- I want to see how many products are available in total
+- Create or modify shipping rates
+- See how many accounts are registered with the site.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
+## Scope of Attributes of the website
 
-**Why have you added this script?**
+- Fully controlled user accounts with Username and Password access only.
+- Credit Card payment system facilitated by Stripe.
+- Presentation of products in a structured fashion with facility to grow the range easily.
+- Client feedback and rating system
+- Client-specific profile pages with history or transactions.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
