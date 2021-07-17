@@ -47,6 +47,23 @@ Chapter 3
     -  <meta http-equivalent="X_UA-Compatible" content="ie=edge">
     - put {% load static %} at the top to load static files.
     - Commit work thus far
+    - Create block/endblock jinja for core css and js in base.html
+    - Also create blocks for page_header, content, postloadjs
+    - Create if messages/endif in base.html
+    - Commit work thus far
+    - Create HOME app using python3 manage.py startapp home 
+    - Create templates directory inside home with new index.html file
+    - add extends 'base.html' and load static
+    - Create tester h1 to check bootstrap, etc is working. 
+    - In views.py define index view to render index template.
+    - create a new urls.py in the home app and copy in all from the project urls.py 
+    - in home urls.py use *urlpatterns = [path('', views.index, name='home') ]*
+    - in project urls.py include the *path('', include('home.urls'))*
+    - add home to installed apps in Settings. 
+    - In Template Dirs setting, add home app and templates directory. 
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth')
+    - Commit work thus far. 
 
 
 
