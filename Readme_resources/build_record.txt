@@ -1,0 +1,33 @@
+The Build record is to keep a track of the steps followed in the creation of this project. This happens for two reasons :
+-1. To support version control and track the progress and/or current status of the project.
+-2. For future record to keep a log of the events involved in creating the site. 
+
+
+Chapter 1
+    - create git repository using code institute template
+    - create initial mock-up wireframes on Balsamiq as guidelines
+    - Select color scheme and font choices for project
+    - Create style.html and colors.css to display color chart and fonts. 
+    - Begin Readme file
+    - Initial Commit
+    - pip3 install Django
+    - django-admin startproject far_east_cc .
+    - touch .gitignore to safely hold *.sqlite and *.pyc and __pycache__  
+    - python3 manage.py runserver to view the server opening on port 8000
+    - python3 manage.py migrate to run the initial migrations
+    - python3 manage.py createsuperuser to create an Admin log-in and password.
+    - Commit work thus far. 
+
+Chapter 2
+    - Django Allauth for creating user authentication, registration and account management.
+    - pip3 install django-allauth
+    - update settings.py with allauth requirements in INSTALLED_APPS
+    - under authentication backends, add : SITE_ID = 1 
+    - add : "import path, include" & path('accounts', include ('allauth'.urls)) to urlpatterns in urls.py 
+    - 
+
+
+
+
+
+
