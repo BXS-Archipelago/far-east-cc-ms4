@@ -65,6 +65,18 @@ Chapter 3
             os.path.join(BASE_DIR, 'templates', 'allauth')
     - Commit work thus far. 
 
+Chapter 4
+    - create static/css/base.css 
+    - Move css color palette and fonts to main css file. 
+    - create templates/home/index.html 
+    - Begin Sliding nav-bar 
+    - attach Font Awesome CDN in style links
+    - Add global site styles to Headings, Paragraphs, Body etc for responsiveness. 
+    - Commit work thus far. 
+    - Base.html : Create Header bar to contain site tools such as search, shopping cart, login
+    - Base.Html : Create Side-Sliding navbar separately for links.  
+    
+
 
 
 
