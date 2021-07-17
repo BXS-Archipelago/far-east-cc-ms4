@@ -24,7 +24,30 @@ Chapter 2
     - update settings.py with allauth requirements in INSTALLED_APPS
     - under authentication backends, add : SITE_ID = 1 
     - add : "import path, include" & path('accounts', include ('allauth'.urls)) to urlpatterns in urls.py 
-    - 
+    - runserver
+    - Navigate to admin (ignoring the first error message)
+    - Under Sites change name to fecc.example.Com
+    - Change Display name to FarEast CarCare for social media referencing
+    - settings.py ... set EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'   (to temporarily log emails to console)
+    - add email authentication for usernames & emails, mandatory email registration, minimum username length etc.
+    - login redirect to "/success"
+    - runserver, navigate to /accounts/login and try log in. Email Verification Message should be present. 
+    - Return to admin login to enter and select email verified. 
+    - navigate to /accounts/login and repeat. You will  get 404 but path sill be success in url
+    - LOGIN_REDIRECT_URL = '/'  (remove success from url)
+    - pip3 freeze > requirements.txt 
+    - create templates/ allauth directories
+    - Commit work thus far. 
+
+Chapter 3
+    - cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth 
+    - with the Allauth templates installed, remove tests and openid folders.
+    -in the Templates folder, create base.html
+    - include bootstrap starter template and the following meta in the head :
+    -  <meta http-equivalent="X_UA-Compatible" content="ie=edge">
+    - put {% load static %} at the top to load static files.
+    - Commit work thus far
+
 
 
 
