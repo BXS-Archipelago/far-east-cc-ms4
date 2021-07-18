@@ -80,7 +80,7 @@ Chapter 4
     - Use logout, signup, login jinja on base.html to adopt Allauth URLs in the url.py file at project level.
     - Create shopping Cart icon with IF Grand Total jinja sequences to check for shopping activity. 
     -runserver shows all text and links, but no css yet.
-*See bugs.txt for fix.
+*See bugs.txt #1 for fix.
     - fixed CSS and JS bug. 
     - updated base.html with less Bootstrap dependencies.
     - Commit work thus far
@@ -91,6 +91,15 @@ Chapter 5
 - fixed slider Nav bar with JS
 - Corrected urls.py to show content of MEDIA folder
 - Update base.html
+*See bugs.txt #2 for the fix details.
+- Uploaded video for Landing page.
+- Creating JS to display video with On/Off Switch
+- Commit Work thus far
+- Invoke responsiveness for headers and fonts and buttons on index page.
+- Adjust colors away from Bootstrap Default.
+- Upload background video
+- Wire up On/Off Switch to JS and adjust Z-Index.
+- Commit Work thus far
 
 
 

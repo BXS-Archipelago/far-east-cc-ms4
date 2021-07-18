@@ -171,8 +171,8 @@ p {
 
 .sidebar-toggle {
     position: fixed;
-    top: 2rem;
-    right: 3rem;
+    top: 1rem;
+    right: 1.5rem;
     font-size: 2rem;
     background: transparent;
     border-color: transparent;
@@ -278,14 +278,54 @@ p {
   .show-sidebar {
     transform: translate(0);
   }
+
   
-  @media screen and (min-width: 676px) {
+.fecc {
+  font-family: var(--ff-fecc-logo);
+  color: var(--fecc-primary-6);
+  font-size: 2rem;
+  padding: 40px 20px;
+  margin: 20px auto; 
+  }
+
+  .fa-lg {
+    color: var(--fecc-grey-9);
+    padding-top: 15px;
+  }
+
+  .account-text {
+    color: var(--fecc-primary-10)
+  }
+  
+  @media screen and (max-width: 993px) {
     .sidebar {
       width: 400px;
     }
+    
+.sidebar-toggle {  
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.1rem;
+  
+}
+.top-center {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.fecc {
+font-family: var(--ff-fecc-logo);
+color: var(--fecc-primary-6);
+font-size: 1.5rem;
+padding: 40px 20px;
+margin: 20px auto; 
+}
   }
   
-
   /*  End Side Bar section */
 
   /* TOP bar with logo, search, Account info */
@@ -294,23 +334,7 @@ p {
 
 
   
-.fecc {
-  font-family: var(--ff-fecc-logo);
-  color: var(--fecc-primary-6);
-  font-size: 2rem;
-  padding: 20px;
-}
   
-@media screen and (min-width: 800px) {
-  .top-center {
-    max-width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-}
 
 
 /* ****************BUTTON FOR NEON SHOP SIGN **** */
@@ -386,3 +410,147 @@ p {
   place-items: center;
 }
 
+
+/* 
+
+=============== Video
+
+*/ 
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--clr-white);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: var(--transition);
+}
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
+
+header {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.vid-text {
+  color: var(--fecc-primary-10);
+  text-transform: uppercase;
+  text-shadow: -1px 0 #14143d, 0 2px #14143d, 2px 0 #14143d, 0 -1px #14143d;
+  z-index: -1;
+}
+
+.vid-text-p {
+  text-transform: uppercase;
+  color: var(--fecc-primary-6);
+  font-size: 1rem;
+  z-index: -1;
+}
+/* switch button for Video on/off */
+
+.switch-btn {
+  position: absolute;
+  bottom: 7%;
+  right: 7%;
+  width: 7rem;
+  height: 2rem;
+  display: flex;
+  border-radius: var(--radius);
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  transition: var(--transition);
+}
+.switch-btn span {
+  display: inline-block;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: var(--fecc-primary-5);
+}
+.switch {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--fecc-primary-5);
+  border-radius: var(--radius);
+  margin: 0;
+  display: block;
+  transition: var(--transition);
+}
+.slide .switch {
+  left: 50%;
+}
+/* ******* header after */
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -2;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+  .fecc {
+    font-family: var(--ff-fecc-logo);
+    color: var(--fecc-primary-6);
+    font-size: 1.2rem;
+    padding: 60px 20px;
+    margin: 20px auto; 
+    }
+
+    .btn-neon {
+      text-transform: uppercase;
+      background: var(--fecc-grey-1);
+    
+      padding: 0.2rem .6rem ;
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
+     
+    }
+
+    .switch-btn {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 5rem;
+      height: 1.5rem;      
+    }
+
+    .switch-btn span {
+      font-size: .6rem;
+    }
+    
+.vid-text-p {
+  
+  font-size: .8rem;
+  z-index: -1;
+}
+}
