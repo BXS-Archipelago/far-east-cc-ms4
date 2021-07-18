@@ -75,7 +75,15 @@ Chapter 4
     - Commit work thus far. 
     - Base.html : Create Header bar to contain site tools such as search, shopping cart, login
     - Base.Html : Create Side-Sliding navbar separately for links.  
-    
+    - Retaining some Bootstrap for now, create Search form on header bar. 
+    - Font Awesome User icon, create My Account link as bootstrap dropdown
+    - Use logout, signup, login jinja on base.html to adopt Allauth URLs in the url.py file at project level.
+    - Create shopping Cart icon with IF Grand Total jinja sequences to check for shopping activity. 
+    -runserver shows all text and links, but no css yet.
+*See bugs.txt for fix.
+    - fixed CSS and JS bug. 
+    - updated base.html with less Bootstrap dependencies.
+    - Commit work thus far
 
 
 

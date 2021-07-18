@@ -1,0 +1,28 @@
+## This document will record bugs and how they were fixed. 
+
+1. Getting to the point where I need to use custom CSS and JS, I am getting an error message in the borwser console :
+Failed to load resource: the server responded with a status of 404 ()
+net::ERR_ABORTED 404
+
+The Terminal gave this message:
+[18/Jul/2021 14:15:39] "GET /static/js/base.js HTTP/1.1" 404 1789
+[18/Jul/2021 14:15:42] "GET /static/css/base.css HTTP/1.1" 404 1795 
+
+In not being able to connect with the JS and CSS files, I checked the paths were correct in the project. Checking in Slack, previous students had either not had the correct file paths, or there was a problem with STATIC_URL. However, these were all correct in the FECC project. 
+
+After re-tracing the tutorials, everything was matching the Boutique Ado process with installations and layout. I couldn't find a suitable answer on Stackoverflow as the suggestions were all the same and I couldn't pin down the actual source of the issue. I eventually searched online using "STATIC_URL problems" paired up with the error messages and found the solution.
+
+Time spent on this bug: 1 day.
+Solution source: https://learndjango.com/tutorials/django-static-files 
+Article Credit: Will Vincent
+
+Solution Snippet: 
+# settings.py
+"STATIC_URL = '/static/'
+This means that static files will be stored in the location http://127.0.0.1:8000/static/ or http://localhost:8000/static/. In order to notify Django of our new top-level static folder, we must add a configuration for STATICFILES_DIRS telling Django to also look within a static folder.
+
+# settings.py
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),) # new "
+
+Adding the final line fixed the bug after a long search. 
