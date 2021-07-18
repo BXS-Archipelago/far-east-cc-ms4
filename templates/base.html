@@ -16,7 +16,7 @@
     {% endblock %}
 
     {% block corecss %}
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -25,7 +25,7 @@
     {% endblock %}
 
     {% block corejs %}
-    <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/83c7fcefb5.js" crossorigin="anonymous"></script>
     {% endblock %}
 
 
@@ -36,12 +36,17 @@
     <title>FECC Project {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
+  <header class="container-fluid fixed-top ">
+    <div class="row">
+    <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
     <button class="sidebar-toggle">
         <i class="fas fa-bars"></i>
       </button>
+    </div>
+  </div>
       <aside class="sidebar">
         <div class="sidebar-header">
-          <img src="fecc.png" class="logo" alt="" />
+          <img src="./media/FECC.png" id="img-logo" alt="" />
           <button class="close-btn"><i class="fas fa-times"></i></button>
         </div>
         <!-- links -->
@@ -53,10 +58,10 @@
             <a href="about.html">about</a>
           </li>
           <li>
-            <a href="projects.html">projects</a>
+            <a href="projects.html">contact</a>
           </li>
           <li>
-            <a href="contact.html">contact</a>
+            <a href="contact.html">store</a>
           </li>
         </ul>
         <!-- social media -->
@@ -88,45 +93,76 @@
           </li>
         </ul>
       </aside>
-    <header>
-        <!--3 parts, logo & search form & shopping bag links ; use ul and li tags-->
-        <a href="{% url 'home' }" class="logo-">Far East Car Care</a>
+    
 
-        <!-- search -->
-        <form action="input"><p class="texters">search bar here</p></form>
-
-        <!-- Account info & Font Awesome -->
-
-        <div>
-            {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <a href="">dropdown Product Management</a>
-                {% endif %}
-                <a href="">dropdown my profile</a>
-                <a href="{% url 'account_logout' %}">dropdown logout</a>
-            {% else %}
-            
-                <a href="{% url 'account_signup' %}">dropdown Register</a>
-                <a href="{% url 'account_login' %}">dropdown Login</a>
-            {% endif %}
-        </div>
- 
-        <a class="{% if grand_total %} font-bold {% else %} text-normal {% endif %}" href=""></a>
-        <div class="fas fa-shopping-bag">
-            <p>
-                {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
-                {% else %}
-                €0.00
-                {% endif %}
-            </p>
+      
+        <div class="row ">
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
+              <a href="{% url 'home' }" class=" fecc-link"><h1 class="fecc fecc-link">Far East Car Care</h1>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
-
-
-    {% if messages %}
-    <div class="message-container"></div>
-    {% endif %}
+    <div class="container main-container">
+     
+     <p class="vid-text-p">The best store for Japanese Car Wax</p>
+    <div class="button ">
+      <a href="#" class="btn-neon">shop now</a>     
+    </div>
+    
+  </div>
 
     {% block page_header %}
     {% endblock %}

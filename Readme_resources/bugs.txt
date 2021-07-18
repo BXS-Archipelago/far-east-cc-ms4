@@ -26,3 +26,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),) # new "
 
 Adding the final line fixed the bug after a long search. 
+
+2. As per previous bug, the Media folder was not presenting images properly. 
+Found the answer on Slack. The urls.py file needed updating with :
+- from django.conf import settings
+- from django.conf.urls.static import static
+
+and adding to the end: 
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

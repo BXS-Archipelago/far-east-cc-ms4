@@ -86,7 +86,11 @@ Chapter 4
     - Commit work thus far
 
 
-
+Chapter 5
+- added CSS for index page.
+- fixed slider Nav bar with JS
+- Corrected urls.py to show content of MEDIA folder
+- Update base.html
 
 
 

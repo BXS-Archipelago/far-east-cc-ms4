@@ -57,8 +57,7 @@
 
 body {
   font-family: var(--ff-secondary);
-  /* background: var(--fecc-grey-10); */
-  background: var(--fecc-red-dark);
+  background: var(--fecc-grey-10);
   color: var(--fecc-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -72,15 +71,19 @@ ul {
 a {
   text-decoration: none;
 }
-
+ 
 img:not(.logo) {
   width: 100%;
-}
+} 
 
 img {
   display: block;
 }
-
+#img-logo {
+ 
+  height: 45px;
+  width: auto;
+}
 h1,
 h2,
 h3,
@@ -218,9 +221,10 @@ p {
     transform: rotate(360deg);
   }
   
-  .logo {
+  img .logo {
     justify-self: center;
     height: 40px;
+    width: 100%;
   }
   
   .links a {
@@ -284,6 +288,101 @@ p {
 
   /*  End Side Bar section */
 
-  .logo {
-    background: url('/media/FECC.png');
+  /* TOP bar with logo, search, Account info */
+
+
+
+
+  
+.fecc {
+  font-family: var(--ff-fecc-logo);
+  color: var(--fecc-primary-6);
+  font-size: 2rem;
+  padding: 20px;
+}
+  
+@media screen and (min-width: 800px) {
+  .top-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
   }
+}
+
+
+/* ****************BUTTON FOR NEON SHOP SIGN **** */
+
+.btn-neon {
+  text-transform: uppercase;
+  background: transparent;
+  text-shadow: -2px 4px 4px #091243, 0 0 10px #00d0ff, inset 1px 1px 1px white;
+  color: var(--fecc-primary-6);
+  padding: 0.5rem 1.25rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 1.2rem;
+  border: 2px solid var(--fecc-black);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 2px 1px 4px rgba(0, 0, 0, 0.3),
+    2px 4px 3px rgba(3, 0, 128, 0.3), 0 0 7px 2px rgba(0, 208, 255, 0.6),
+    inset 0 1px 2px rgba(0, 0, 0, 0.6), inset 2px 1px 4px rgba(0, 0, 0, 0.3),
+    inset 2px 4px 3px rgba(3, 0, 128, 0.3),
+    inset 0 0 7px 2px rgba(0, 208, 255, 0.6);
+  animation: flickering 5s infinite;
+  border: 2px solid;
+  border-radius: var(--radius);
+}
+
+@keyframes flickering {
+  0% {
+    border-color: transparent;
+    opacity: 0.2;
+  }
+
+  2% {
+    border-color: var(--fecc-neon-1);
+    opacity: 1;
+  }
+
+  4% {
+    border-color: transparent;
+    opacity: 0.2;
+  }
+
+  8% {
+    border-color: var(--fecc-neon-1);
+    opacity: 1;
+  }
+
+  28% {
+    border-color: var(--fecc-neon-1);
+    opacity: 1;
+  }
+
+  30% {
+    border-color: transparent;
+    opacity: 0.2;
+  }
+
+  36% {
+    border-color: var(--fecc-neon-1);
+    opacity: 1;
+  }
+
+  100% {
+    border-color: var(--fecc-neon-1);
+    opacity: 1;
+  }
+}
+
+/* End NEON Sign */
+.main-container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
