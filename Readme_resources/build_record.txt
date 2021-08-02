@@ -101,6 +101,9 @@ Chapter 5
 - Wire up On/Off Switch to JS and adjust Z-Index.
 - Commit Work thus far
 
-
+Chapter 6
+- Adjust Burger-Icon for sidebar-toggle on mobile small screen.
+- Replace video file with compressed version.
+- Commit Work thus far.
 
 
