@@ -105,5 +105,7 @@ Chapter 6
 - Adjust Burger-Icon for sidebar-toggle on mobile small screen.
 - Replace video file with compressed version.
 - Commit Work thus far.
-
+- * Design Contention Point - Drop Down menu for categories doesn't suit.
+- Redesigning Drop-down menu for better UX, delete CSS and JS code.
+- Commit Work thus far. 
 
