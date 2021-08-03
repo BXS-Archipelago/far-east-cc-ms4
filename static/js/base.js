@@ -32,7 +32,5 @@ btn.addEventListener('click', function(){
         btn.classList.remove("slide");
         video.play();
     }
-    console.log("hello")
+    
 })
-
-// dropdown menu

@@ -83,6 +83,7 @@ img {
   height: 45px;
   width: auto;
   align-self: center;
+  border-radius: 5px;
 }
 h1,
 h2,
@@ -315,41 +316,57 @@ p {
   
   /*  End Side Bar section */
 
-  /* TOP bar with drop-down menus */
-.drop-nav {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+  /* TOP bar including drop-down menus */
 
-.drop-ul {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
 
-.drop-link {
-  display: inline-block;
-  
-}
-
-.drop-link:hover >.sub-drop-ul {
-  display: block;
-}
-
-.sub-drop-ul {
+.dropdown-menu {
   position: absolute;
-  top: 100%;
+  width: 100%;
   left: 0;
-  display: none;
+  right: 0;
+  padding: 15px; 
+  margin-top: 15px;  
 }
-  
 
+#narrow-dropdown-menu {
+  width: auto;
+}
 
+.dropdown {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.dropdown-item{
+    padding: 5px 0;
+}
+
+/* Add fade effect to drop-down : 
+Credit: https://stackoverflow.com/a/47986695/1821637 */
+
+.dropdown-menu.fade {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show > .dropdown-menu.fade {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.list-style {
+  padding: 20px 10px 20px 30px;
+}
 
 /* ****************BUTTON FOR NEON SHOP SIGN **** */
 

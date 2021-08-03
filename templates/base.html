@@ -2,308 +2,261 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    {% block meta%}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block meta%}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% endblock %}
+  {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+  {% block extra_meta %}
+  {% endblock %}
 
-    {% block corecss %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
-
-    
-    {% block extra_css %}
-    {% endblock %}
-
-    {% block corejs %}
-    <script src="https://kit.fontawesome.com/83c7fcefb5.js" crossorigin="anonymous"></script>
-    {% endblock %}
+  {% block corecss %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
 
 
-    {% block extra_js %}
-    {% endblock %}
+  {% block extra_css %}
+  {% endblock %}
+
+  {% block corejs %}
+  <script src="https://kit.fontawesome.com/83c7fcefb5.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  {% endblock %}
 
 
-    <title>FECC Project {% block extra_title %}{% endblock %}</title>
+  {% block extra_js %}
+  {% endblock %}
+
+
+  <title>FECC Project {% block extra_title %}{% endblock %}</title>
 </head>
+
 <body>
-  
+
 
   <section class="container-fluid fixed-top ">
 
-    
-      <aside class="sidebar">
-        <div class="sidebar-header">
-          <img src="./media/FECC.png" id="img-logo" alt="" />
-          <button class="close-btn"><i class="fas fa-times"></i></button>
-        </div>
-        <!-- links -->
-        <ul class="links">
-          <li>
-            <a href="index.html">home</a>
-          </li>
-          <li>
-            <a href="about.html">about</a>
-          </li>
-          <li>
-            <a href="projects.html">contact</a>
-          </li>
-          <li>
-            <a href="contact.html">store</a>
-          </li>
-          <!-- SEARCH BAR IN SIDEBAR -->
-          <li>
-              <div class="col-8 col-lg-8 my-auto py-1 py-lg-0">
-              <form method="GET" action="">
-                  <div class="input-group w-100">
-                      <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                      <div class="input-group-append">
-                          <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                              <span class="icon">
-                                  <i class="fas fa-search"></i>
-                              </span>
-                          </button>
-                      </div>
-                  </div>
-              </form>
-          </div>
-          </li>
-        </ul>
-        <!-- social media -->
-        <ul class="social-icons">
-          <li>
-            <a href="https://www.twitter.com">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com">
-              <i class="fab fa-behance"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com">
-              <i class="fab fa-sketch"></i>
-            </a>
-          </li>
-        </ul>
-      </aside>
-    
 
-      
-        <div class="row ">
-          
-            <div class="col-8 col-lg-3 my-auto py-1 py-lg-0 logo-container">
-              <img src="./media/FECC.png" id="img-logo" alt="" />
-            </div>
-            <div class="col-8 col-lg- my-auto py-1 py-lg-0 drop-nav">
-            
-              <ul class="drop-ul">
-                <button class=" button-dropdown">
-                <li class="drop-link">
-                  <a href="#">All Products</a>
-                </button>
-                    <ul class="sub-drop-ul">                                              
-                          <li class="sub-drop-link"><a href="" class="dropdown-item">By Price</a></li>
-                          <li class="sub-drop-link"><a href="" class="dropdown-item ">By Rating</a></li>
-                          <li class="sub-drop-link"><a href="" class="dropdown-item ">By Category</a></li>
-                          <li class="sub-drop-link"><a href="" class="dropdown-item">All Products</a></li>   
-                                                 
-                    </ul>
-                   
-                </li>
-                <button class=" button-dropdown">
-                <li class="drop-link">
-                  <a href="#">Interior</a>
-                </button>
-                  <ul class="sub-drop-ul">                                              
-                    <li class="sub-drop-link"><a href="" class="dropdown-item">By Price</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item ">By Rating</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item ">By Category</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item">All Products</a></li>                      
-              </ul>
-                </li>
-
-                <button class=" button-dropdown">
-                <li class="drop-link">
-                  <a href="#">Exterior</a> </button>
-                  <ul class="sub-drop-ul">                                            <li class="sub-drop-link"><a href="" class="dropdown-item">By Price</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item ">By Rating</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item ">By Category</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item">All Products</a></li>                      
-              </ul>
-                </li>
-
-                <button class=" button-dropdown">
-                <li class="drop-link">
-                  <a href="#">Accessories</a></button>
-                  <ul class="sub-drop-ul">                                            <li class="sub-drop-link"><a href="" class="dropdown-item">By Price</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item ">By Rating</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item ">By Category</a></li>
-                    <li class="sub-drop-link"><a href="" class="dropdown-item">All Products</a></li>                      
-              </ul>
-                </li>
-
-
-              </ul>
-            
-        </div>
-            <!-- <div class="col-8 col-lg-4 my-auto py-1 py-lg-0" >
-            <div class="collapse" id="main-nav">
-              <ul class="navbar-nav w-auto mx-auto">
-                  <li class="nav-item dropdown">
-                      <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          All Products
-                      </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                          <a href="" class="dropdown-item">By Price</a>
-                          <a href="" class="dropdown-item ">By Rating</a>
-                          <a href="" class="dropdown-item ">By Category</a>
-                          <a href="" class="dropdown-item">All Products</a>
-                      </div>
-                  </li>
-          
-                  <li class="nav-item dropdown">
-                      <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="exterior-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Exterior 
-                      </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                          <a href="" class="dropdown-item">Wax &amp; Sealant</a>
-                          <a href="" class="dropdown-item">Polishes</a>
-                          <a href="" class="dropdown-item">Prep</a>               
-                          <a href="" class="dropdown-item">All Exterior</a>
-                      </div>
-                  </li>
-          
-                  <li class="nav-item dropdown">
-                      <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Interior
-                      </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                          <a href="" class="dropdown-item">Leather & Vinyl</a>
-                          <a href="" class="dropdown-item">Fabric</a>
-                          <a href="" class="dropdown-item">All Interior</a>
-                      </div>
-                  </li>
-          
-                  <li class="nav-item dropdown">
-                      <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Accessories
-                      </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                          <a href="" class="dropdown-item">Brushes</a>
-                          <a href="" class="dropdown-item">Microfibre</a>
-                          <a href="" class="dropdown-item">Tools</a>
-                          <a href="" class="dropdown-item">All Accessories</a>
-                      </div>
-                  </li>
-              </ul>
-          </div>
-        </div> -->
-            <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-3 ">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0 account-text">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0 account-text">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="row">
-              <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-              <button class="sidebar-toggle">
-                  <i class="fas fa-bars"></i>
-                </button>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="./media/FECC.png" id="img-logo" alt="" />
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+      <!-- links -->
+      <ul class="links">
+        <li>
+          <a href="index.html">home</a>
+        </li>
+        <li>
+          <a href="about.html">about</a>
+        </li>
+        <li>
+          <a href="projects.html">contact</a>
+        </li>
+        <li>
+          <a href="contact.html">store</a>
+        </li>
+        <!-- SEARCH BAR IN SIDEBAR -->
+        <li>
+          <div class="col-8 col-lg-8 my-auto py-1 py-lg-0">
+            <form method="GET" action="">
+              <div class="input-group w-100">
+                <input class="form-control border border-black rounded-0" type="text" name="q"
+                  placeholder="Search our site">
+                <div class="input-group-append">
+                  <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </button>
+                </div>
               </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+      <!-- social media -->
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-behance"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-sketch"></i>
+          </a>
+        </li>
+      </ul>
+    </aside>
+  
+
+
+    <div class="row ">
+
+          <div class="col-8 col-lg-3 my-auto py-1 py-lg-0 logo-container">
+            <img src="./media/FECC.png" id="img-logo" alt="" />
+          </div>
+
+          <!-- Button for Collection Drop Menu -->
+      <div class="dropdown col-8 col-lg-7 my-auto py-1 py-lg-0">
+       
+        <button class="btn btn-secondary dropdown-toggle m-1" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Collection
+        </button>
+ <!-- Collapsible Responsive Full-Width Menu  -->
+        <div class="dropdown-menu fade"  aria-labelledby="dropdownMenuButton">
+          <div class="row dropdown-width">
+           
+            <div class="col-sm-6 col-lg-4 list-style">
+              <h5>All Products</h5>
+              <ul >
+                <li><a class="dropdown-item text-sm" href="#">By Price</a></li>
+                <li><a class="dropdown-item" href="#">By Rating</a></li>
+                <li><a class="dropdown-item" href="#">By Category</a></li>
+                <li><a class="dropdown-item" href="#">All Products</a></li>
+              </ul>
             </div>
+
+            <div class="col-sm-6 col-lg-4 list-style">
+              <h5>Exterior</h5>
+              <ul>
+                <li><a class="dropdown-item" href="#">Seal &amp; Wax</a></li>
+                <li><a class="dropdown-item" href="#">Polishes</a></li>
+                <li><a class="dropdown-item" href="#">Prep Chemicals</a></li>
+                <li><a class="dropdown-item" href="#">Accessories</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-lg-4 list-style">
+              <h5>Interior</h5>
+              <ul>
+                <li><a class="dropdown-item" href="#">Leather Care</a></li>
+                <li><a class="dropdown-item" href="#">Cleaners</a></li>
+                <li><a class="dropdown-item" href="#">Dress &amp; Protect</a></li>
+                <li><a class="dropdown-item" href="#">Accessories</a></li>
+              </ul>
+            </div>
+            
+          </div>
         </div>
-        
-      </section>
      
-   <header>
+            <li class="list-inline-item dropdown" >
+              <button class="btn btn-secondary dropdown-toggle m-1" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          My Account
+        </button>              
+              <div class="dropdown-menu border-0 " id="narrow-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <a href="" class="dropdown-item">Product Management</a>
+                {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                <div class="text-center">
+                  <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                  <p class="my-0 account-text">
+                    {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                    {% else %}
+                    $0.00
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
+            </li>
+         
+          </div>
+      
+
+
+        
+          <div class="col-12 col-lg-2 my-auto py-1 py-lg-0">
+            <button class="sidebar-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+       
+      
+
+  </section>
+
+  <header>
 
     <div class="container main-container">
       <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center ">
         <h1 class="fecc ">Far East Car Care</h1>
-         
+
       </div>
       <p class="vid-text-p">The Best Gloss Finish from Japan!</p>
-     <div class="button ">
-       <a href="#" class="btn-neon">shop now</a>     
-     </div>
+      <div class="button ">
+        <a href="#" class="btn-neon">shop now</a>
+      </div>
       <!-- Video Switch Here -->
-   <button class="switch-btn">
-     <span>play</span>
-     <span>pause</span>
-     <span class="switch"></span>
-   </button>
-   </div>
-   
-   <video class="video-container" muted autoplay loop>
-     <source src="./media/i82.mp4" type="video/mp4" />
-   </video>
- 
-  
-   </header>
+      <button class="switch-btn">
+        <span>play</span>
+        <span>pause</span>
+        <span class="switch"></span>
+      </button>
+    </div>
 
-    {% block page_header %}
-    {% endblock %}
+    <video class="video-container" muted autoplay loop>
+      <source src="./media/i82.mp4" type="video/mp4" />
+    </video>
 
 
-    {% block content %}
-    {% endblock %}
+  </header>
 
-    {% block postloadjs %}
-  
-    {% endblock %}
-    <script src="{% static 'js/base.js' %}"></script>
+  {% block page_header %}
+  {% endblock %}
+
+
+  {% block content %}
+  {% endblock %}
+
+  {% block postloadjs %}
+
+  {% endblock %}
+  <script src="{% static 'js/base.js' %}"></script>
 </body>
+
 </html>
