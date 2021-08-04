@@ -50,7 +50,7 @@
 <body>
 
 
-  <section class="container-fluid fixed-top ">
+  <section class="container-fluid fixed-top top-area">
 
 
     <aside class="sidebar">
@@ -120,29 +120,29 @@
         </li>
       </ul>
     </aside>
-  
 
 
-    <div class="row ">
 
-          <div class="col-12 col-lg-3  my-auto py-1 py-lg-0 logo-container">
-            <img src="./media/FECC.png" id="img-logo" alt="" />
-          </div>
+    <div class="row">
 
-          <!-- Button for Collection Drop Menu -->
-      <div class="dropdown col-12 col-lg-7 my-auto py-1 py-lg-0">
-       
-        <button class="btn btn-sm btn-secondary dropdown-toggle m-1 no-gutters" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+      <div class="col-12 col-lg-3  my-auto py-1 py-lg-0 logo-container">
+        <img src="./media/FECC.png" id="img-logo" alt="" />
+      </div>
+
+      <!-- Button for Collection Drop Menu -->
+      <div class="dropdown col-12 col-lg-7 my-auto py-lg-0">
+
+        <button class="btn btn-sm btn-secondary dropdown-toggle m-1 " type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Collection
         </button>
- <!-- Collapsible Responsive Full-Width Menu  -->
+        <!-- Collapsible Responsive Full-Width Menu  -->
         <div class="dropdown-menu fade no-gutters" id="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="row dropdown-area">
-           
+
             <div class="col-sm-6 col-lg-4 col-md-4 list-style">
               <h4>All Products</h4>
-              <ul >
+              <ul>
                 <li><a class="dropdown-item" href="#">By Price</a></li>
                 <li><a class="dropdown-item" href="#">By Rating</a></li>
                 <li><a class="dropdown-item" href="#">By Category</a></li>
@@ -168,83 +168,100 @@
                 <li><a class="dropdown-item" href="#">Accessories</a></li>
               </ul>
             </div>
-            
+
           </div>
         </div>
-     
-            <li class="list-inline-item dropdown" >
-              <button class="btn btn-sm btn-secondary dropdown-toggle m-1" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          My Account
-        </button>              
-              <div class="dropdown-menu border-0 " id="narrow-dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <a href="" class="dropdown-item">Product Management</a>
-                {% endif %}
-                <a href="" class="dropdown-item">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+
+        <li class="list-inline-item dropdown">
+          <button class="btn btn-sm btn-secondary dropdown-toggle m-1" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Account
+          </button>
+          <div class="dropdown-menu border-0 " id="narrow-dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <a href="" class="dropdown-item">Product Management</a>
+            {% endif %}
+            <a href="" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
+          </div>
+        </li>
+        <li class="list-inline-item">
+          <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} " href="">
+            <div class="text-center">
+              <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+              <p class="my-0 account-text">
+                {% if grand_total %}
+                ${{ grand_total|floatformat:2 }}
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                $0.00
                 {% endif %}
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                <div class="text-center">
-                  <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-                  <p class="my-0 account-text">
-                    {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
-                    {% else %}
-                    $0.00
-                    {% endif %}
-                  </p>
-                </div>
-              </a>
-            </li>
-         
-          </div>
-      
-
-
+              </p>
+            </div>
+          </a>
+        </li>
         
-          <div class="col-sm-2 col-lg-2 my-auto py-1 py-lg-0">
-            <button class="sidebar-toggle">
-              <i class="fas fa-bars"></i>
-            </button>
-          </div>
-       
-      
+  
 
-  </section>
-
-  <header>
-
-    <div class="container main-container">
-      <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center ">
-        <h1 class="fecc ">Far East Car Care</h1>
 
       </div>
-      <p class="vid-text-p">The Best Gloss Finish from Japan!</p>
-      <div class="button ">
-        <a href="#" class="btn-neon">shop now</a>
+
+      <div class="col-sm-2 col-lg-2 my-auto py-1 py-lg-0">
+        <button class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-      <!-- Video Switch Here -->
-      <button class="switch-btn">
-        <span>play</span>
-        <span>pause</span>
-        <span class="switch"></span>
-      </button>
+    
+      <!-- Banner to show FREE DELIVERY CUT-OFF POINT -->
+
+      <!-- Rotating Text Credit to "Alphardex" at  
+        https://codepen.io/alphardex/pen/WNNVJeZ  -->
+        
+      <div class="row w-100">
+        <div class="col-12 text-rotator text-center">
+          <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
+          <h3 class="inline-text">
+            <span class=" value rotate1"> €{{ free_shipping_threshold }}</span>
+            <span class=" value rotate2"> €{{ free_shipping_threshold }}</span>
+            <span class=" value rotate3"> €{{ free_shipping_threshold }}</span>
+            <span class=" value rotate4"> €{{ free_shipping_threshold }}</span>
+            <span class=" value rotate5"> €{{ free_shipping_threshold }}</span>
+          </h3>
+        </div>
+      </div>
+    </section>
+  
+
+
+
+  <div class="container main-container">
+    <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center ">
+      <h1 class="fecc ">Far East Car Care</h1>
+          
+    <p class="vid-text-p">The Best Gloss Finish from Japan!</p>
+    
+    <div class="button ">
+      <a href="#" class="btn-neon">shop now</a>
     </div>
+  </div>
+    <!-- Video Switch Here -->
+    <button class="switch-btn">
+      <span>play</span>
+      <span>pause</span>
+      <span class="switch"></span>
+    </button>
+  </div>
 
-    <video class="video-container" muted autoplay loop>
-      <source src="./media/i82.mp4" type="video/mp4" />
-    </video>
+  <video class="video-container" muted autoplay loop>
+    <source src="./media/i82.mp4" type="video/mp4" />
+  </video>
 
 
-  </header>
+
 
   {% block page_header %}
   {% endblock %}

@@ -118,3 +118,14 @@ Chapter 6
 - Update dropdown-menu class with additional ID to Overwrite bootstrap Element. Style with !important for dropdown-menu transform. Otherwise all classes affected!
 - Commit Work thus far.
 
+Chapter 7
+- Add Row to hold "Free Delivery" text area
+- Add CSS to provide text colors, style and size.
+- Add JS to animate text in rotation
+- Commit Work thus far. 
+- Modify text size and layout for smaller screens
+- Modify bars icon size for small screen
+- Modify Free-Delivery Banner for size and position.
+- Modify Padding on Shopping Cart Icon
+- Commit Work thus far.
+

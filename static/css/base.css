@@ -28,6 +28,7 @@
   --fecc-grey-9: hsl(212, 33%, 89%);
   --fecc-grey-10: hsl(210, 36%, 96%);
   --fecc-white: #fff;
+  --fecc-yellow: #f1c40f;
   --fecc-red-dark: hsl(360, 67%, 44%);
   --fecc-red-light: hsl(360, 71%, 66%);
   --fecc-green-dark: hsl(125, 67%, 44%);
@@ -320,6 +321,8 @@ p {
 
   /* TOP bar including drop-down menus */
 
+  
+
   .logo-container {
     display: flex;
     align-items: center;
@@ -336,7 +339,7 @@ p {
   left: 0;
   right: 0;
   padding: 15px; 
-  margin-top: 15px;    
+  margin-top: 35px;    
 }
 
 #narrow-dropdown-menu {
@@ -374,18 +377,82 @@ Credit: https://stackoverflow.com/a/47986695/1821637 */
   margin-bottom: .2rem;
 }
 
+/*  Rotating Text in Free Delivery Notice */
+
+.text-rotator {
+  font-family: var(--ff-secondary);
+  font-weight: 600;  
+  padding-top: 7px;
+  width: 100%;
+}
+
+.inline-text {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+  font-size: 1.2rem;
+  color: var(--fecc-primary-9);
+}
+
+.text-rotator .inline-text .value {
+  position:absolute;
+  display: flex;
+  opacity: 0; 
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* colours for rotating text */
+.rotate1 {
+  color: var(--fecc-white)
+}
+.rotate2 {
+  color: var(--fecc-green-light)
+}
+.rotate3 {
+  color: var(--fecc-red-dark)
+}
+.rotate4 {
+  color: var(--fecc-yellow)
+}
+.rotate5 {
+  color: var(--fecc-primary-7)
+}
+
+
 /* ****************BUTTON FOR NEON SHOP SIGN **** */
 
 .btn-neon {
+  text-decoration: none;
   text-transform: uppercase;
   background: transparent;
   text-shadow: -2px 4px 4px #091243, 0 0 10px #00d0ff, inset 1px 1px 1px white;
-  color: var(--fecc-primary-6);
-  padding: 0.5rem 1.25rem;
+  color: var(--fecc-yellow);
+  padding: 0.4rem 1rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   transition: var(--transition);
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 2px solid var(--fecc-black);
   cursor: pointer;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 2px 1px 4px rgba(0, 0, 0, 0.3),
@@ -406,7 +473,7 @@ Credit: https://stackoverflow.com/a/47986695/1821637 */
   }
 
   2% {
-    border-color: var(--fecc-neon-1);
+    border-color: var(--fecc-yellow);
     opacity: 1;
   }
 
@@ -416,12 +483,12 @@ Credit: https://stackoverflow.com/a/47986695/1821637 */
   }
 
   8% {
-    border-color: var(--fecc-neon-1);
+    border-color: var(--fecc-yellow);
     opacity: 1;
   }
 
   28% {
-    border-color: var(--fecc-neon-1);
+    border-color: var(--fecc-yellow);
     opacity: 1;
   }
 
@@ -431,12 +498,12 @@ Credit: https://stackoverflow.com/a/47986695/1821637 */
   }
 
   36% {
-    border-color: var(--fecc-neon-1);
+    border-color: var(--fecc-yellow);
     opacity: 1;
   }
 
   100% {
-    border-color: var(--fecc-neon-1);
+    border-color: var(--fecc-yellow);
     opacity: 1;
   }
 }
@@ -556,22 +623,34 @@ header::after {
     font-weight: bold;
     letter-spacing: 1.2px;
   }
+
+  .inline-text {
+    font-size: .75rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
 
   .sidebar-toggle {
     top: .5rem;
+    font-size: 1.25rem;
   }
 
   .fecc {
     font-family: var(--ff-fecc-logo);
-    color: var(--fecc-primary-6);
-    font-size: 1.2rem;
-    padding: 60px 20px;
+    color: var(--fecc-primary-10);
+    font-size: 1.4rem;
+    padding: 30px 20px;
     margin: 20px auto; 
+    
     }
-
+    
+  #img-logo {
+    height: 35px;
+    width: auto;
+    align-self:flex-start;
+    border-radius: 5px;
+  }
     .btn-neon {
       text-transform: uppercase;
       background: var(--fecc-grey-1);
@@ -606,5 +685,8 @@ header::after {
 
 .dropdown-area {
   padding-left: 20px;
+}
+.inline-text {
+  font-size: .5rem;
 }
 }
