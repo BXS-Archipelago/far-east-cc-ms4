@@ -167,7 +167,7 @@ p {
   .main-container {
     min-height: 100vh;
     display: grid;
-    place-items: center;
+    place-items: center;    
   }
   
   
@@ -177,7 +177,7 @@ p {
     position: fixed;
     top: 1rem;
     right: 1.5rem;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     background: transparent;
     border-color: transparent;
     color: var(--fecc-primary-5);

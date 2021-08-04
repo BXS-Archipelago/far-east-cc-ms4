@@ -1,0 +1,8 @@
+[   {"pk": 1, "model": "products.category", "fields": {"name": "Seal & Wax",    "friendly_name": "Seal & Wax"}}, 
+    {"pk": 2, "model": "products.category", "fields": {"name": "Polishes", "friendly_name": "Polishes"}}, 
+    {"pk": 3, "model": "products.category", "fields": {"name": "Prep Chemicals", "friendly_name": "Prep Chemicals"}}, 
+    {"pk": 4, "model": "products.category", "fields": {"name": "Accessories", "friendly_name": "Accessories"}}, 
+    {"pk": 5, "model": "products.category", "fields": {"name": "Leather Care", "friendly_name": "Leather Care"}}, 
+    {"pk": 6, "model": "products.category", "fields": {"name": "Cleaners", "friendly_name": "Cleaners"}}, 
+    {"pk": 7, "model": "products.category", "fields": {"name": "Dress & Protect", "friendly_name": "Dress & Protect"}}, 
+    {"pk": 8, "model": "products.category", "fields": {"name": "Interior Accessories", "friendly_name": "Interior Accessories"}}]

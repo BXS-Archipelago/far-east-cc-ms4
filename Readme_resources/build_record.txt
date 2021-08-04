@@ -129,3 +129,12 @@ Chapter 7
 - Modify Padding on Shopping Cart Icon
 - Commit Work thus far.
 
+Chapter 8
+- Copy across product images to media folder
+- Create Products App : python3 manage.py startapp products.
+- Add 'products' to INSTALLED_APPS in the main settings.py file
+- Add Fixtures folder to products app : mkdir products/fixtures
+- Add categories.json and products.json to fixtures folder
+- Populate categories and products with json data
+- Commit Work thus far
+
