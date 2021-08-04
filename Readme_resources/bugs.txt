@@ -34,3 +34,6 @@ Found the answer on Slack. The urls.py file needed updating with :
 
 and adding to the end: 
 + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+3. CSS issue.  The Collection dropdown menu has a robust Bootstrap css style that won't change easily. In Element.style for dropdown-menu class attached to the Collection Button, the attribute -     transform: translate3d(-5px, 52px, 0px); -  places the box -5px into the screen.  I changed this by adding transform: translate3d(0px, 52px, 0px)!important;  to the custom class .dropdown-menu in the CSS file, knowing that "!important"  is a last resort for styling. 
+

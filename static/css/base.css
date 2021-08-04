@@ -94,6 +94,7 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-secondary);
+  
 }
 
 h1 {
@@ -110,6 +111,7 @@ h3 {
 
 h4 {
   font-size: 0.875rem;
+  color: var(--fecc-primary-4)
 }
 
 p {
@@ -332,6 +334,7 @@ p {
   right: 0;
   padding: 15px; 
   margin-top: 15px;  
+  transform: translate3d(0px, 52px, 0px)!important;
 }
 
 #narrow-dropdown-menu {
@@ -342,13 +345,10 @@ p {
   position: static;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: row;
 }
 
-.dropdown-item{
-    padding: 5px 0;
-}
 
 /* Add fade effect to drop-down : 
 Credit: https://stackoverflow.com/a/47986695/1821637 */
@@ -366,6 +366,10 @@ Credit: https://stackoverflow.com/a/47986695/1821637 */
 
 .list-style {
   padding: 20px 10px 20px 30px;
+}
+
+.list-style > ul {
+  margin-bottom: .2rem;
 }
 
 /* ****************BUTTON FOR NEON SHOP SIGN **** */
@@ -543,6 +547,14 @@ header::after {
 }
 
 
+@media screen and (max-width: 992px) {
+
+  .dropdown-item {
+    font-size: .8rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+  }
+}
 
 @media screen and (max-width: 600px) {
 
@@ -584,5 +596,13 @@ header::after {
   
   font-size: .8rem;
   z-index: -1;
+}
+
+.list-style {
+  padding: 5px ;
+}
+
+.dropdown-area {
+  padding-left: 20px;
 }
 }

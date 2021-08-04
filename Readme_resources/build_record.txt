@@ -108,4 +108,11 @@ Chapter 6
 - * Design Contention Point - Drop Down menu for categories doesn't suit.
 - Redesigning Drop-down menu for better UX, delete CSS and JS code.
 - Commit Work thus far. 
+- Add Button for dropdown menu to show product Collection options
+- Remove Font-Awesome icon for Account, change to button to match above.
+- Create dropdown-menu for product collection. 3 columns.
+- Collection dropdown will be full screen width.
+- Adjust Bootstrap column sizes for responsiveness in different screens.
+- Overwrite bootstrap Element.Style with !important for dropdown-menu transform.
+- Commit Work thus far. 
 
