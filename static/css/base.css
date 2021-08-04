@@ -326,6 +326,9 @@ p {
     justify-content: center;
   }
  
+#dropdown-menu {
+  transform: translate3d(0px, 52px, 0px)!important;
+}
 
 .dropdown-menu {
   position: absolute;
@@ -333,8 +336,7 @@ p {
   left: 0;
   right: 0;
   padding: 15px; 
-  margin-top: 15px;  
-  transform: translate3d(0px, 52px, 0px)!important;
+  margin-top: 15px;    
 }
 
 #narrow-dropdown-menu {
