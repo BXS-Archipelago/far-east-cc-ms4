@@ -58,7 +58,7 @@
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--fecc-grey-10);
+  background: var(--fecc-grey-2);
   color: var(--fecc-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;

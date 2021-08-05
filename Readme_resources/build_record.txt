@@ -170,3 +170,9 @@ Chapter 10
 - Copy html from home>templates index.html and do runserver
 - The /products page shows the products 
 - Commit Work thus far
+
+Chapter 11
+- Updated index.html, base.html and products.html.
+- Adjusted CSS and background colour. 
+- Created initial card system for displaying product info.
+- Commit Work thus far. 
