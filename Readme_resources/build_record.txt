@@ -135,6 +135,9 @@ Chapter 8
 - Add 'products' to INSTALLED_APPS in the main settings.py file
 - Add Fixtures folder to products app : mkdir products/fixtures
 - Add categories.json and products.json to fixtures folder
-- Populate categories and products with json data
+- Populate 8 categories and 14 products with json data
 - Commit Work thus far
+- Add more items to products.json. 20 items, but more needed progressively.
+- Add more images to media folder & shorten file names.
+- Commit Work thus far.
 
