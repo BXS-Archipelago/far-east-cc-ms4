@@ -162,3 +162,11 @@ Chapter 10
 - in admin.py, register the ProductAdmin and CategoryAdmin classes
 - Order the columns by SKU (note: tuple)
 - Commit Work thus far
+- Build products views in products>views.py
+- Create products>urls.py and import view for path to all_products
+- Add url paths to project level urls.py for 'products/' & products.urls
+- Create products template directory: mkdir -p products/templates/products
+- Create products.html in templates/products folder
+- Copy html from home>templates index.html and do runserver
+- The /products page shows the products 
+- Commit Work thus far
