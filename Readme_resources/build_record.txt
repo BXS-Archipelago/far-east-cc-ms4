@@ -156,3 +156,9 @@ Chapter 9
 - Run Server and log in to Admin panel  
 - Admin panel shows Products and Categories are populated.
 - Commit Work thus far. 
+
+Chapter 10
+- in models.py change to correct plural spelling of categories
+- in admin.py, register the ProductAdmin and CategoryAdmin classes
+- Order the columns by SKU (note: tuple)
+- Commit Work thus far
