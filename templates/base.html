@@ -146,26 +146,26 @@
                 <li><a class="dropdown-item" href="#">By Price</a></li>
                 <li><a class="dropdown-item" href="#">By Rating</a></li>
                 <li><a class="dropdown-item" href="#">By Category</a></li>
-                <li><a class="dropdown-item" href="#">All Products</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
               </ul>
             </div>
 
             <div class="col-sm-6 col-lg-4 col-md-4 list-style">
               <h4>Exterior</h4>
               <ul>
-                <li><a class="dropdown-item" href="#">Seal &amp; Wax</a></li>
-                <li><a class="dropdown-item" href="#">Polishes</a></li>
-                <li><a class="dropdown-item" href="#">Prep Chemicals</a></li>
-                <li><a class="dropdown-item" href="#">Accessories</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=seal_wax">Seal &amp; Wax</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=polishes">Polishes</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=prep_chemicals">Prep Chemicals</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=accessories#">Accessories</a></li>
               </ul>
             </div>
             <div class="col-sm-6 col-lg-4 col-md-4 list-style">
               <h4>Interior</h4>
               <ul>
-                <li><a class="dropdown-item" href="#">Leather Care</a></li>
-                <li><a class="dropdown-item" href="#">Cleaners</a></li>
-                <li><a class="dropdown-item" href="#">Dress &amp; Protect</a></li>
-                <li><a class="dropdown-item" href="#">Accessories</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=leather_care">Leather Care</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=cleaners">Cleaners</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=dress_protect">Dress &amp; Protect</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=accessories">Accessories</a></li>
               </ul>
             </div>
 

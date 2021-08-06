@@ -191,3 +191,6 @@ Chapter 12
 - Test Search function :  
 - Search function displays with keywords from either Name or Description
 - Commit Work thus far
+- Insert url links to dropdown categories for Interior & Exterior
+- Test filtering for all categories. Test ok. 
+- Commit Work thus far.
