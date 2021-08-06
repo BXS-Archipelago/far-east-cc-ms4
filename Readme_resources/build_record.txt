@@ -197,3 +197,6 @@ Chapter 12
 - Add url links to sort by Price, Rating & Category in dropdown
 - In products>views.py provide Sort and Direction functionality if request.GET
 - Test sorting by price, by rating & by category. Test successful.
+- Commit Work thus far.
+- Add jinja for Category sorting ability to products.html.
+- Commit Work thus far
