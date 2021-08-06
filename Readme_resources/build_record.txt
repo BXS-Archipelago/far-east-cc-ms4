@@ -147,7 +147,7 @@ Chapter 9
 - Dry Run fails due to Pillow not being installed (as per tutorial)
 - pip3 install pillow
 - Migration dry run ok
-- Check models before mgrations with python3 manage.py migrate --plan
+- Check models before migrations with python3 manage.py migrate --plan
 - All ok ... so perform python3 manage.py migrate
 - Register Product and Category models in admin.py
 - Implement fixtures for categories and products using the following

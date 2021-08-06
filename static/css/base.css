@@ -58,7 +58,7 @@
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--fecc-grey-2);
+  background: var(--fecc-grey-9);
   color: var(--fecc-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -72,6 +72,7 @@ ul {
 a {
   text-decoration: none;
 }
+
  
 img:not(.logo) {
   width: 100%;
@@ -95,10 +96,9 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-secondary);
-  
-}
+  }
 
-h1 {
+ h1 {
   font-size: 2.5rem;
 }
 
@@ -323,11 +323,11 @@ p {
 
   
 
-  .logo-container {
+.logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
  
 #dropdown-menu {
   transform: translate3d(0px, 52px, 0px)!important;
@@ -615,6 +615,8 @@ header::after {
   z-index: -2;
 }
 
+/* Products Page */
+
 
 @media screen and (max-width: 992px) {
 
@@ -636,14 +638,13 @@ header::after {
     font-size: 1.25rem;
   }
 
-  .fecc {
+.fecc {
     font-family: var(--ff-fecc-logo);
     color: var(--fecc-primary-10);
     font-size: 1.4rem;
     padding: 30px 20px;
-    margin: 20px auto; 
-    
-    }
+    margin: 20px auto;     
+}
     
   #img-logo {
     height: 35px;
