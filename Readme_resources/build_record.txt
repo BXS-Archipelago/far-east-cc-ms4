@@ -176,3 +176,10 @@ Chapter 11
 - Adjusted CSS and background colour. 
 - Created initial card system for displaying product info.
 - Commit Work thus far. 
+- Updated links to Store in main menu and button link.
+- Add product_detail view to products>views.py
+- Create URL in products>urls.py
+- Create product_detail.html template
+- Update image links in template
+- Adjust padding to body container 
+- Commit work thus far
