@@ -182,4 +182,12 @@ Chapter 11
 - Create product_detail.html template
 - Update image links in template
 - Adjust padding to body container 
-- Commit work thus far
+- Commit Work thus far
+
+Chapter 12
+- Insert search url to searchbar, action = GET.
+- Update products>views.py with search function
+- Use : from django.db.models import Q  for django Q keyword arguments.
+- Test Search function :  
+- Search function displays with keywords from either Name or Description
+- Commit Work thus far
