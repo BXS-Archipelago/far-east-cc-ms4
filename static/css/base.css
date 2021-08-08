@@ -58,7 +58,7 @@
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--fecc-grey-9);
+  background: var(--fecc-grey-3);
   color: var(--fecc-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -376,6 +376,11 @@ Credit: https://stackoverflow.com/a/47986695/1821637 */
 
 .list-style > ul {
   margin-bottom: .2rem;
+}
+
+a.category-badge > span.badge:hover {
+  background: #212529 !important;
+  color: #fff !important;
 }
 
 /*  Rotating Text in Free Delivery Notice */

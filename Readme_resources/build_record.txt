@@ -194,9 +194,16 @@ Chapter 12
 - Insert url links to dropdown categories for Interior & Exterior
 - Test filtering for all categories. Test successful. 
 - Commit Work thus far.
-- Add url links to sort by Price, Rating & Category in dropdown
+- Add url links to sort by Price, Rating & Category in main dropdown
 - In products>views.py provide Sort and Direction functionality if request.GET
 - Test sorting by price, by rating & by category. Test successful.
 - Commit Work thus far.
-- Add jinja for Category sorting ability to products.html.
+- Add jinja for Category display to products.html.
 - Commit Work thus far
+
+Chapter 13
+- Product sorting created with Sort-Selector at top of products page
+- Sorting objectives created with 10 main criteria for user to select
+- Display number of products available at top of products page
+- Return text confirming result of search with search-term mentioned
+- Commit work thus far
