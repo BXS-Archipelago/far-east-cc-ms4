@@ -207,3 +207,7 @@ Chapter 13
 - Display number of products available at top of products page
 - Return text confirming result of search with search-term mentioned
 - Commit work thus far
+- Update product>view.py to force sortkey to sort by name instead of ID
+- Test sorting using products displayed by asc, desc. Test successful
+- Test search for number of products in result and search term. Test successful.
+- 

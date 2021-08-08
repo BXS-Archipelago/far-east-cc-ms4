@@ -23,7 +23,10 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-
+                
+        # ***this allows sortkey to sort by name instead of ID ****
+            if sortkey == 'category':
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -46,6 +49,10 @@ def all_products(request):
             products = products.filter(queries)
             
     current_sorting = f'{sort}_{direction}'
+
+    # * Use current_categories in context if the user selects multiple or all 
+    # categories
+    
     context = {
         'products': products,
         'search_term': query,
