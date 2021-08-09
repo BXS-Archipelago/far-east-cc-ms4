@@ -222,3 +222,10 @@ Chapter 14
 - Create JS for Arrow Up.
 - Test Arrow Up.. Test successful.
 - Modify Arrow Up for small screens
+- Commit Work thus far
+- Create Cart App : python3 manage.py startapp cart
+- Add cart app to project settings.py
+- Create folders template>cart and inside these create cart.html
+- Create cart>urls.py.  Update view and name.
+- Update cart url link in main.html
+- Commit Work thus far
