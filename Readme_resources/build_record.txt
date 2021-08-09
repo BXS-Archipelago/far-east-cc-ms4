@@ -216,3 +216,9 @@ Chapter 13
 - To products>views.py add "from django.db.models.functions import Lower"
 - Test all sorting categories individually. Test Successful.
 - Commit Work thus far
+
+Chapter 14
+- Add Arrow-Up to top of screen for product page. HTML & CSS
+- Create JS for Arrow Up.
+- Test Arrow Up.. Test successful.
+- Modify Arrow Up for small screens

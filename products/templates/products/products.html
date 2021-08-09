@@ -153,12 +153,20 @@
     </div>
 </div>
 
+<a class="up-arrow top-link" href="#home"><i class="fas fa-arrow-up"></i>TOP</a>
 {% endblock %}
 
 
 {% block postloadjs %}
 <!-- block.super appends code, not replaces it -->
     {{ block.super }}
+
+    <!-- Arrow upwards to  -->
+    <script type="text/javascript">
+    $('.up-arrow').click(function(e){
+        window.scrollTo(0,0)
+    })
+    </script>
     <!-- JQuery to enable the functionality of the sort selector box -->
 <script type="text/javascript">
     $('#sort-selector').change(function() {

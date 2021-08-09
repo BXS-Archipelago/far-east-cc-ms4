@@ -623,6 +623,45 @@ header::after {
 
 /* Products Page */
 
+/* back to top button  */
+.up-arrow {
+  font-size: .8rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;  
+  width: 2rem;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
+  color: var(--fecc-primary-9);
+  animation: bounce 2s ease-in-out infinite;
+  background-color: var(--fecc-grey-1);
+  border-radius: var(--radius);
+  border: 1px solid var(--fecc-primary-9)
+}
+
+.up-arrow:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--fecc-primary-9);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+  
+
+
+
 
 @media screen and (max-width: 992px) {
 
@@ -634,6 +673,15 @@ header::after {
 
   .inline-text {
     font-size: .75rem;
+  }
+
+  .up-arrow {
+    font-size: .5rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1rem;  
+    width: 1.25rem;
+    height: 1.75rem;
   }
 }
 
