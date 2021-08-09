@@ -154,3 +154,41 @@
 </div>
 
 {% endblock %}
+
+
+{% block postloadjs %}
+<!-- block.super appends code, not replaces it -->
+    {{ block.super }}
+    <!-- JQuery to enable the functionality of the sort selector box -->
+<script type="text/javascript">
+    $('#sort-selector').change(function() {
+        var selector = $(this);
+        // using URL object gives ability to replace current GET parameters obligatory to update sorting methodology.
+
+        var currentUrl = new URL(window.location);
+
+        // selected value from selector box
+        var selectedVal = selector.val();
+
+        if(selectedVal != "reset"){
+            // split at the underscore in the option values
+            var sort = selectedVal.split("_")[0];
+            // split for ascending or descending
+            var direction = selectedVal.split("_")[1];
+
+            // use search parameters to replace GET parameters
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+            // replace location with current URL, allowing page reload
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+
+</script>
+
+{% endblock %}

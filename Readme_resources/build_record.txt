@@ -210,4 +210,9 @@ Chapter 13
 - Update product>view.py to force sortkey to sort by name instead of ID
 - Test sorting using products displayed by asc, desc. Test successful
 - Test search for number of products in result and search term. Test successful.
-- 
+- Commit Work thus far 
+- Add JQuery to products.html to enable the mechanics of the sort functionality.
+- Testing reveals that sorting by name exposes an error.
+- To products>views.py add "from django.db.models.functions import Lower"
+- Test all sorting categories individually. Test Successful.
+- Commit Work thus far

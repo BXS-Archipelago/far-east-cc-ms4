@@ -82,7 +82,7 @@ setInterval(changeValue, 4000);
 
 
 // //Landing Page Video and Switch Button
-
+  
 const btn = document.querySelector('.switch-btn');
 const video = document.querySelector('.video-container');
 
