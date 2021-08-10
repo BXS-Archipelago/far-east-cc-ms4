@@ -262,3 +262,16 @@ Chapter 17
 - Create tables and rows to hold Cart info, product info, price, grand total.
 - Update shopping cart template. 
 - Commit Work thus far
+- Add has_sizes to products>models.py in the Product models
+- Need to run migrations because of change to Model.
+- python3 manage.py shell :Use Shell to add sizes to products
+- from products.models import Product 
+- accessories = ['accessories']  : Variable to exclude from sizes
+- chems = Product.objects.exclude(category__name__in=accessories) -Excludes
+- chems.count()  - gives the amount of items ready for sizes
+- This for-loop iterates through query set and sets has_sizes to True 
+- for item in chems:     item.has_sizes = True    item.save()
+-  Product.objects.filter(has_sizes=True).count()
+- Add size Selector box to Product details with strings as Options
+- Add size info to product info in the shopping cart page
+- Commit Work thus far
