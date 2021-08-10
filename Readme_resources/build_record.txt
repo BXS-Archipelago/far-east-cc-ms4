@@ -240,3 +240,9 @@ Chapter 15
 - Test product quantity by both entering the number & add to cart repeats.
 - Test successful, relevant product id and quantity shows in terminal.
 - Commit Work thus far
+- Create contexts.py, allow users to add items into the cart.
+- Create threshold for free delivery if less than specified Total
+- Create free delivery delta figure to display how much more needs be spent
+- Create the context for all items which will be available across the project
+- Test pages, the home page displays the delivery threshold. Test successful.
+- Commit Work thus far.
