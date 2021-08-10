@@ -246,3 +246,14 @@ Chapter 15
 - Create the context for all items which will be available across the project
 - Test pages, the home page displays the delivery threshold. Test successful.
 - Commit Work thus far.
+
+Chapter 16
+- Render items to shopping cart in cart>contexts.py with context processor
+- Use get or initialize into empty dictionary.
+- iterate through items and tot up total cost and product count
+- Test context processor by adding products to the cart. 
+- Results show currently as product ID and quantities in the Cart template.
+- Test successful.
+- Test Grand Total displayed at shopping cart icon.  
+- Grand Total if statement in base.html works. Test result successful.
+- Commit Work thus far
