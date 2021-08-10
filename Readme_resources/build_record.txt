@@ -257,3 +257,8 @@ Chapter 16
 - Test Grand Total displayed at shopping cart icon.  
 - Grand Total if statement in base.html works. Test result successful.
 - Commit Work thus far
+
+Chapter 17
+- Create tables and rows to hold Cart info, product info, price, grand total.
+- Update shopping cart template. 
+- Commit Work thus far
