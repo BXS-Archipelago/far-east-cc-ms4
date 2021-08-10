@@ -235,3 +235,8 @@ Chapter 15
 - Apply csrf_token for cross-site request forgery protection
 - create new view add_to_cart in cart>views.py
 - Commit Work thus far.
+- Create cart>urls.py create URL using item_id & return add_to_cart view. 
+- Test by printing Cart with print(request.session['cart']) in cart>views.py
+- Test product quantity by both entering the number & add to cart repeats.
+- Test successful, relevant product id and quantity shows in terminal.
+- Commit Work thus far
