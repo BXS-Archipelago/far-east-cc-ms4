@@ -229,3 +229,9 @@ Chapter 14
 - Create cart>urls.py.  Update view and name.
 - Update cart url link in main.html
 - Commit Work thus far
+
+Chapter 15
+- Add Form to product_detail.html below product.description
+- Apply csrf_token for cross-site request forgery protection
+- create new view add_to_cart in cart>views.py
+- Commit Work thus far.
