@@ -275,3 +275,9 @@ Chapter 17
 - Add size Selector box to Product details with strings as Options
 - Add size info to product info in the shopping cart page
 - Commit Work thus far
+
+Chapter 18
+** Change decision ** Removing Size features. The product listing is single size only as retail-packaging.
+- remove size selector and options from product_detail page. 
+- Make Migration
+- Commit Work thus far
