@@ -678,7 +678,10 @@ header::after {
     color: white !important;
 }
 
-
+.update-link,
+.remove-item {
+  cursor: pointer;
+}
 
 
 @media screen and (max-width: 992px) {
