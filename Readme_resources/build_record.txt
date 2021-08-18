@@ -277,7 +277,7 @@ Chapter 17
 - Commit Work thus far
 
 Chapter 18
-** Change decision ** Removing Size features. The product listing is single size only as retail-packaging.
+** Change decision ** Removing Product Size features. The product listing is single size only as retail-packaging.
 - remove size selector and options from product_detail page. 
 - Make Migration
 - Commit Work thus far
@@ -285,6 +285,13 @@ Chapter 18
 - Create JS for increment and decrement controls
 - Create limiter for quantity to disallow anything below Zero or above 99
 - Create function to iterate through limiter for manual number entry
-- Test on page. Test failed due to using single-quotes instead of back-tick!
+- Test on page. (Test failed due to using single-quotes instead of back-tick!)
 - Fix bug & test again. Test Successful.
 - Commit Work thus far.
+
+Chapter 19
+- ** Change Decision. Original landing page had video background.
+- Delete video with HTML CSS and JS associated with it for better UXP
+- Redesign Nav Bar with Drop Down menus. 
+- Redesign Icons for User Account and Shopping Cart
+- Commit Work thus far

@@ -2,43 +2,50 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col">
 
-           
-        </div>
-
-    </div>
-
-</div>
 {% endblock%}
 
 {% block content %}
 
 
 
-<div class="container main-container">
-    <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center ">
+<div class="main-container">
+   
+    <div class="front-section">
+      <div class="car-image-holder">
+        <img class="car-img" src="/media/02.jpg" alt="glossy car">
+      </div>
+
+      <!-- Banner to show FREE DELIVERY CUT-OFF POINT -->
+
+      <!-- Rotating Text Credit to "Alphardex" at  
+        https://codepen.io/alphardex/pen/WNNVJeZ  -->
+        
+      <div class="row w-100">
+        <div class="col-12 text-rotator text-center">
+          <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
+          <h3 class="inline-text">
+            <span class=" value rotate1"> €{{ free_delivery_threshold }}.00</span>
+            <span class=" value rotate2"> €{{ free_delivery_threshold }}.00</span>
+            <span class=" value rotate3"> €{{ free_delivery_threshold }}.00</span>
+            <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
+            <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
+          </h3>
+        </div>
+      </div> 
+      <div class="car-image-holder">
+        <img src="/media/logopika.png" class="car-img" alt="">
+      </div>
       <h1 class="fecc ">Far East Car Care</h1>
           
-    <p class="vid-text-p">The Best Gloss Finish from Japan!</p>
+    <p class="sm-text-p">The Best Gloss Finish from Japan!</p>
     
     <div class="button ">
       <a href="{% url 'products' %}" class="btn-neon">shop now</a>
     </div>
   </div>
-    <!-- Video Switch Here -->
-    <button class="switch-btn">
-      <span>play</span>
-      <span>pause</span>
-      <span class="switch"></span>
-    </button>
-  </div>
-
-  <video class="video-container" muted autoplay loop>
-    <source src="./media/i82.mp4" type="video/mp4" />
-  </video>
+   
 
 
 {% endblock %}
+<script src="{% static 'js/base.js' %}"></script>

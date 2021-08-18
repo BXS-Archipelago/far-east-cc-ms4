@@ -19,7 +19,7 @@ closeBtn.addEventListener('click', function() {
 
 
 
-// JS for Free Deliver Banner 
+// JS for Free Delivery Banner 
 // Rotating Text Credit to "Alphardex" at  
 // https://codepen.io/alphardex/pen/WNNVJeZ // 
 
@@ -81,19 +81,4 @@ setInterval(changeValue, 4000);
 
 
 
-// //Landing Page Video and Switch Button
-  
-const btn = document.querySelector('.switch-btn');
-const video = document.querySelector('.video-container');
 
-btn.addEventListener('click', function(){
-    if(!btn.classList.contains('slide')){
-        btn.classList.add('slide');
-        video.pause();
-    }
-    else{
-        btn.classList.remove("slide");
-        video.play();
-    }
-    
-})

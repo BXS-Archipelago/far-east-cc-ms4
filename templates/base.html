@@ -5,11 +5,11 @@
 
 <head>
 
-  {% block meta%}
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% block meta %}
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
 
   {% endblock %}
 
@@ -48,11 +48,145 @@
 </head>
 
 <body>
+  <!-- BurgerBar Drop-down Icon -->
+  <div>
+    <button class="sidebar-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+<header class="header">
+ 
+    
+<div class=" logo-col">
+  
+  
+  <!-- Logo -->
+  <h4 class="logo"><strong>Far East </strong>Car Care</h4>
+</div>
+<div class=" nav-icons">
+  <ul class="menu-items">
+    <li><a href="" class="menu-item">Home</a></li>
+    <li><a href="" class="menu-item">Store <i class="fas fa-chevron-down"></i></a>
+      <div class="wide-menu">
+        <div class="content">
+          <div class="col">
+            <section class="img-section">
+              <h2>Special Offer</h2>
+              <a href="#" class="img-wrapper">
+                
+                <img src="/media/hikari1.jpg" class="menu-img" alt="">
+              </a>
+              <p id="menu-text">Buy One, Get One Free</p>
+            </section>
+          </div>
+          <div class="col">
+            <section>
+              <h2>Collection</h2>
+              <ul class="lg-links">
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}">Special Offer</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="col">
+            <section>
+              <h2>Exterior</h2>
+              <ul class="lg-links">
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=seal_wax">Seal &amp; Wax</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=polishes">Polishes</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=prep_chemicals">Prep Chemicals</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=accessories#">Accessories</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=,seal_wax,polishes,prep_chemicals,accessories#">All Exterior</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="col">
+            <section>
+              <h2>Interior</h2>
+              <ul class="lg-links">
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=leather_care">Leather Care</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=cleaners">Cleaners</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=dress_protect">Dress &amp; Protect</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=accessories">Accessories</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=leather_care,cleaners,dress_protect,accessories">All Interior</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="col-search w-100">
+            <form method="GET" action="{% url 'products' %}">
+              <div class="input-group w-100">
+                <input class="form-control border border-black rounded-0" type="text" name="q"
+                  placeholder="Search our site">
+                <div class="input-group-append">
+                  <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+      </li>
+    <li class="drop-down"><a href="" class="menu-item ">Help <i class="fas fa-chevron-down"></i></a>
+      <ul class=" drop-menu">
+        <li><a href="#" class="menu-item">FAQ</a></li>
+        <li><a href="#" class="menu-item">Contact</a></li>
+        <li><a href="#" class="menu-item">About</a></li>        
+    </ul>
+  </li>
 
+  </ul>
+</div>
+<div class="">
+  <ul class="user-icons ">
+    <li class="drop-down cart-icons ">
+      <a class="icons " href=""><i class="fas fa-lg fa-user-alt"></i></a>
+      <p class="account-text">User</p>
+      <!-- <button class="btn btn-sm btn-secondary dropdown-toggle m-1" type="button" id="dropdownMenuButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        My Account
+      </button> -->
+      <div class="dropdown-menu border-0 " id="narrow-dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a href="" class="dropdown-item">Product Management</a>
+        {% endif %}
+        <a href="" class="dropdown-item">My Profile</a>
+        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+        {% endif %}
+      </div>
+    </li>
+    <li class="cart-icons">
+      <a class="{% if grand_total %}text-info{% else %}text-black{% endif %} " href="{% url 'view_cart' %}">
+        <div class="text-center icons">
+          <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+          <p class="my-0 account-text">
+            {% if grand_total %}
+              €{{ grand_total|floatformat:2 }}
+            {% else %}
+              $0.00
+            {% endif %}
+          </p>
+        </div>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+</header>
 
   <section class="container-fluid fixed-top top-area">
-
-
     <aside class="sidebar">
       <div class="sidebar-header">
         <img src="./media/FECC.png" id="img-logo" alt="" />
@@ -122,107 +256,14 @@
     </aside>
 
 
+ 
 
-    <div class="row">
-
-      <div class="col-12 col-lg-3  my-auto py-1 py-lg-0 logo-container">
-        <img src="./media/FECC.png" id="img-logo" alt="" />
-      </div>
-
-      <!-- Button for Collection Drop Menu -->
-      <div class="dropdown col-12 col-lg-7 my-auto py-lg-0">
-
-        <button class="btn btn-sm btn-secondary dropdown-toggle m-1 " type="button" id="dropdownMenuButton"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Collection
-        </button>
-        <!-- Collapsible Responsive Full-Width Menu  -->
-        <div class="dropdown-menu fade no-gutters" id="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <div class="row dropdown-area">
-
-            <div class="col-sm-6 col-lg-4 col-md-4 list-style">
-              <h4>All Products</h4>
-              <ul>
-                <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 col-md-4 list-style">
-              <h4>Exterior</h4>
-              <ul>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=seal_wax">Seal &amp; Wax</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=polishes">Polishes</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=prep_chemicals">Prep Chemicals</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=accessories#">Accessories</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=,seal_wax,polishes,prep_chemicals,accessories#">All Exterior</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-md-4 list-style">
-              <h4>Interior</h4>
-              <ul>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=leather_care">Leather Care</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=cleaners">Cleaners</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=dress_protect">Dress &amp; Protect</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=accessories">Accessories</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?category=leather_care,cleaners,dress_protect,accessories">All Interior</a></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-        <li class="list-inline-item dropdown">
-          <button class="btn btn-sm btn-secondary dropdown-toggle m-1" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            My Account
-          </button>
-          <div class="dropdown-menu border-0 " id="narrow-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-            <a href="" class="dropdown-item">Product Management</a>
-            {% endif %}
-            <a href="" class="dropdown-item">My Profile</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-            {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-            {% endif %}
-          </div>
-        </li>
-        <li class="list-inline-item">
-          <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} " href="{% url 'view_cart' %}">
-            <div class="text-center">
-              <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-              <p class="my-0 account-text">
-                {% if grand_total %}
-                ${{ grand_total|floatformat:2 }}
-                {% else %}
-                $0.00
-                {% endif %}
-              </p>
-            </div>
-          </a>
-        </li>
-        
-  
-
-
-      </div>
-
-      <div class="col-sm-2 col-lg-2 my-auto py-1 py-lg-0">
-        <button class="sidebar-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
     
       <!-- Banner to show FREE DELIVERY CUT-OFF POINT -->
 
       <!-- Rotating Text Credit to "Alphardex" at  
         https://codepen.io/alphardex/pen/WNNVJeZ  -->
-        
+<!--         
       <div class="row w-100">
         <div class="col-12 text-rotator text-center">
           <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
@@ -234,7 +275,7 @@
             <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
           </h3>
         </div>
-      </div>
+      </div> -->
     </section>
   
 

@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@400;500&display=swap');
 
 :root {
   /* dark shades of primary color*/
@@ -33,15 +32,16 @@
   --fecc-red-light: hsl(360, 71%, 66%);
   --fecc-green-dark: hsl(125, 67%, 44%);
   --fecc-green-light: hsl(125, 71%, 66%);
+  --fecc-azure-light: hsl(180, 90%, 98%);
   --fecc-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
-  --ff-fecc-logo: "Playfair Display", sans-serif;
+  --ff-primary: "Poppins", sans-serif;
+  --ff-secondary: "Roboto", sans-serif;
+  --ff-fecc-logo: "Poppins", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 1, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
 }
@@ -58,11 +58,11 @@
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--fecc-grey-3);
+  background: var(--fecc-grey-10);
   color: var(--fecc-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-
+  
 }
 
 ul {
@@ -73,10 +73,10 @@ a {
   text-decoration: none;
 }
 
- 
+/*  
 img:not(.logo) {
   width: 100%;
-} 
+}  */
 
 img {
   display: block;
@@ -167,8 +167,10 @@ p {
   }
   .main-container {
     min-height: 100vh;
-    display: grid;
-    place-items: center;    
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    flex-direction: column;  
   }
   
   
@@ -177,11 +179,11 @@ p {
 .sidebar-toggle {
     position: fixed;
     top: 1rem;
-    right: 1.5rem;
+    left: 1.5rem;
     font-size: 2.5rem;
     background: transparent;
     border-color: transparent;
-    color: var(--fecc-primary-5);
+    color: var(--fecc-primary-4);
     transition: var(--transition);
     cursor: pointer;
     animation: bounce 2s ease-in-out infinite;
@@ -214,8 +216,7 @@ p {
   .close-btn {
     font-size: 1.75rem;
     background: transparent;
-    border-color: transparent;
-    color: var(--fecc-primary-5);
+    border-color: transparent;    
     transition: var(--transition);
     cursor: pointer;
     color: var(--fecc-red-dark);
@@ -226,11 +227,6 @@ p {
     transform: rotate(360deg);
   }
   
-  img .logo {
-    justify-self: center;
-    height: 40px;
-    
-  }
   
   .links a {
     display: block;
@@ -287,19 +283,26 @@ p {
   
 .fecc {
   font-family: var(--ff-fecc-logo);
-  color: var(--fecc-primary-10);
+  color: var(--fecc-primary-1);
+  text-shadow: 2px 2px 2px var(--fecc-grey-7); 
   font-size: 2.8rem;
+  font-weight: 700;
   padding: 40px 20px;
   margin: 20px auto; 
   }
 
   .fa-lg {
-    color: var(--fecc-grey-9);
+    color: var(--fecc-primary-4);
     padding-top: 15px;
   }
 
   .account-text {
-    color: var(--fecc-primary-10)
+    color: var(--fecc-primary-1);
+    margin: 0;
+    font-size: .8rem;
+    text-shadow: 2px 2px 2px var(--fecc-grey-7);
+    font-weight: 500;
+    letter-spacing: 1.3px;
   }
   
   @media screen and (min-width: 993px) {
@@ -317,79 +320,243 @@ p {
   padding: 1rem;
 }
  
+
+/* 
+  >>>>>>>>>>>>>>>>
+  Top Bar for Critical Store Navigation
+  >>>>>>>>>>>>>>>> */
   
-  /*  End Side Bar section */
+  .header {
+    background: var(--fecc-grey-8);
+    box-shadow: var(--light-shadow);
+    position: relative;
+    max-width: 100vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index: 1;
+  }
 
-  /* TOP bar including drop-down menus */
+  .inner-header {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header a {
+    text-decoration: none;
+    color: var(--fecc-primary-1);
+  }
 
-  
 
-.logo-container {
+  header ul {
+    list-style: none;
+  }
+
+  .logo-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 1px 2px 2px var(--fecc-grey-7)
+   
+  }
+  .nav-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+  }
+
+  .user-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+  }
+
+  .menu-items {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .menu-items li {
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease-in-out; 
+  }
+
+  .menu-items li:hover {
+    background-color: var(--fecc-red-light);
+  }
+
+  .menu-items li a:hover {
+    background-color: transparent;
+  }
+
+
+  .cart-icons {
+    padding: .5rem .75rem;
     display: flex;
     align-items: center;
     justify-content: center;
-}
- 
-#dropdown-menu {
-  transform: translate3d(0px, 52px, 0px)!important;
-}
+    flex-direction: column;
+  }
+  .icons {
+   font-size: .9rem;
+ }
 
-.dropdown-menu {
+  .icons i {
+    color: var(--fecc-primary-4);   
+    text-shadow: 2px 2px 2px var(--fecc-grey-4);
+  }
+/* >>>>>>>>>>>
+Dropdown Menu Setting
+>>>>>>>>>>>*/
+.drop-down {
+  position: relative;
+}
+ul .drop-menu {
   position: absolute;
+  background: var(--fecc-grey-8);
   width: 100%;
+  top: 50px;
   left: 0;
-  right: 0;
-  padding: 15px; 
-  margin-top: 35px;    
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
-#narrow-dropdown-menu {
-  width: auto;
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.dropdown {
-  position: static;
+.menu-item i {
+  padding: 3px;
+}
+.drop-down:hover .drop-menu {
+  top: 44px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.wide-menu {
+  box-shadow: 1px 2px 2px 3px var(--fecc-grey-5); 
+  position: absolute;
+  left: -23.5vw;
+  width: 70vw;
+  top: 80px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  }
+
+.wide-menu .content {
+  background: var(--fecc-grey-8);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 2rem;
+}
+
+.content .col .img-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 17.5vw;
+  overflow: hidden;
+}
+
+content .col .drop-down-image { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+} 
+
+.menu-img {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-wrapper:hover .menu-img {
+  transform: scale(1.1)
+}
+
+.content .col h2 {
+  color: var(--fecc-red-light);
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: bold;
+}
+
+.content .col #menu-text {
+  line-height: 1rem;
+  color: var(--fecc-red-light);
+}
+
+.lg-links {
+  border-left: 1px solid var(--fecc-grey-1);
+}
+
+.col .lg-links .li, .col .lg-links li a {
+  padding: 0 1rem;
+}
+
+.menu-items li:hover .wide-menu {
+  top: 60px;
+  opacity: 1;
+  visibility: visible;
+}
+  
+  /*  End Side Bar section */
+
+
+.home-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  width: 100%;
+  background: var(--fecc-grey-2);
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px var(--fecc-grey-8);
+  padding: 1rem;
 }
 
 
-/* Add fade effect to drop-down : 
-Credit: https://stackoverflow.com/a/47986695/1821637 */
+/*  
+>>>>>>>Rotating Text in Free Delivery Notice <<<<<<<<
+*/
 
-.dropdown-menu.fade {
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.show > .dropdown-menu.fade {
-  pointer-events: auto;
-  opacity: 1;
-}
-
-.list-style {
-  padding: 20px 10px 20px 30px;
-}
-
-.list-style > ul {
-  margin-bottom: .2rem;
-}
-
-a.category-badge > span.badge:hover {
-  background: #212529 !important;
-  color: #fff !important;
-}
-
-/*  Rotating Text in Free Delivery Notice */
+/*  Rotating Text Credit to "Alphardex" at  
+        https://codepen.io/alphardex/pen/WNNVJeZ */
 
 .text-rotator {
   font-family: var(--ff-secondary);
   font-weight: 600;  
   padding-top: 7px;
   width: 100%;
+  padding: 2rem 0;
 }
 
 .inline-text {
@@ -397,7 +564,7 @@ a.category-badge > span.badge:hover {
   margin: 0;
   vertical-align: top;
   font-size: 1.2rem;
-  color: var(--fecc-primary-9);
+  color: var(--fecc-primary-5);
 }
 
 .text-rotator .inline-text .value {
@@ -429,8 +596,9 @@ a.category-badge > span.badge:hover {
 }
 
 /* colours for rotating text */
+
 .rotate1 {
-  color: var(--fecc-white)
+  color: var(--fecc-red-light)
 }
 .rotate2 {
   color: var(--fecc-green-light)
@@ -443,8 +611,29 @@ a.category-badge > span.badge:hover {
 }
 .rotate5 {
   color: var(--fecc-primary-7)
+  
+} 
+
+.front-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.car-image-holder {
+  width: 45vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
 }
 
+.car-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
 
 /* ****************BUTTON FOR NEON SHOP SIGN **** */
 
@@ -461,6 +650,7 @@ a.category-badge > span.badge:hover {
   font-size: 1rem;
   border: 2px solid var(--fecc-black);
   cursor: pointer;
+  text-shadow: 1px 2px 2px var(--fecc-grey-4);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 2px 1px 4px rgba(0, 0, 0, 0.3),
     2px 4px 3px rgba(3, 0, 128, 0.3), 0 0 7px 2px rgba(0, 208, 255, 0.6),
     inset 0 1px 2px rgba(0, 0, 0, 0.6), inset 2px 1px 4px rgba(0, 0, 0, 0.3),
@@ -514,112 +704,16 @@ a.category-badge > span.badge:hover {
   }
 }
 
+.button a:hover {
+ text-decoration: none;
+ color: var(--fecc-red-light);
+ text-shadow: 1px 1px 2px var(--fecc-grey-1); 
+}
 /* End NEON Sign */
 
 
 
 /* 
-
-=============== Video
-
-*/ 
-
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--clr-white);
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  visibility: visible;
-  z-index: 999;
-  transition: var(--transition);
-}
-.hide-preloader {
-  z-index: -999;
-  visibility: hidden;
-}
-
-header {
-  min-height: 100vh;
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.vid-text {
-  color: var(--fecc-primary-10);
-  text-transform: uppercase;
-  z-index: -1;
-}
-
-.vid-text-p {
-  text-transform: uppercase;
-  color: var(--fecc-primary-6);
-  font-size: 1.2rem;
-  letter-spacing: 1.25px;
-  z-index: -1;
-}
-/* switch button for Video on/off */
-
-.switch-btn {
-  position: absolute;
-  bottom: 7%;
-  right: 7%;
-  width: 7rem;
-  height: 2rem;
-  display: flex;
-  border-radius: var(--radius);
-  align-items: center;
-  justify-content: space-around;
-  border: none;
-  transition: var(--transition);
-}
-.switch-btn span {
-  display: inline-block;
-  font-size: 0.85rem;
-  cursor: pointer;
-  text-transform: capitalize;
-  color: var(--fecc-primary-5);
-}
-.switch {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: var(--fecc-primary-5);
-  border-radius: var(--radius);
-  margin: 0;
-  display: block;
-  transition: var(--transition);
-}
-.slide .switch {
-  left: 50%;
-}
-/* ******* header after */
-header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: -2;
-}
 
 /* Products Page */
 
@@ -661,7 +755,7 @@ header::after {
   /* Add To Cart or Keep Shopping buttons  */
 
   .btn-black {
-    background: black;
+    background: var(--fecc-red-light);
     color: white;
 }
 
@@ -686,6 +780,10 @@ header::after {
 
 @media screen and (max-width: 992px) {
 
+  .nav-icons {
+    display: none;
+  }
+
   .dropdown-item {
     font-size: .8rem;
     font-weight: bold;
@@ -708,19 +806,45 @@ header::after {
 
 @media screen and (max-width: 600px) {
 
-  .sidebar-toggle {
+ .header {
+   width: 100vw;
+   padding: 5px;
+ } 
+.sidebar-toggle {
     top: .5rem;
     font-size: 1.25rem;
-  }
-
-.fecc {
-    font-family: var(--ff-fecc-logo);
-    color: var(--fecc-primary-10);
-    font-size: 1.4rem;
-    padding: 30px 20px;
-    margin: 20px auto;     
 }
-    
+.logo-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  font-size: .6rem;
+}
+
+
+.account-text { 
+  font-size: .4rem;
+  letter-spacing: 1px;
+}
+.fecc {
+    font-family: var(--ff-fecc-primary);
+    color: var(--fecc-primary-2);
+    font-size: .6rem;
+    padding: 30px 20px;
+    margin: 20px auto;        
+}
+
+.icons {
+  font-size: .4rem;
+}
+
+
+.cart-icons {
+  padding: .2rem ;
+}
   #img-logo {
     height: 35px;
     width: auto;
@@ -749,10 +873,8 @@ header::after {
       font-size: .6rem;
     }
     
-.vid-text-p {
-  
-  font-size: .8rem;
-  z-index: -1;
+.sm-text-p {  
+  font-size: .8rem; 
 }
 
 .list-style {

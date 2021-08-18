@@ -12,7 +12,7 @@ def cart_contents(request):
     product_count = 0
     cart = request.session.get('cart', {})
 
-# iterate through items and tot up total cost and product count
+# iterate through items to add up total cost and product count
     for item_id, quantity in cart.items(): 
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price
@@ -23,17 +23,22 @@ def cart_contents(request):
             'product': product,
         })
 
-    if total < settings.FREE_DELIVERY_THRESHOLD:
+    # if total < settings.FREE_DELIVERY_THRESHOLD:
+    #     delivery = 7
+    #     free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+    # else:
+    #     delivery = 0
+
+
+    if total < settings.FREE_DELIVERY_THRESHOLD :
         delivery = 7
-        # if percentage of total is required for delivery, use: 
-        # delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0
         free_delivery_delta = 0
 
     grand_total = delivery + total
-
+ 
     context = {
         'cart_items': cart_items,
         'total': total,
