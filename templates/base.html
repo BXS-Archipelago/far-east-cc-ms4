@@ -60,8 +60,8 @@
 <div class=" logo-col">
   
   
-  <!-- Logo -->
-  <h4 class="logo"><strong>Far East </strong>Car Care</h4>
+  <!-- Logo -->  
+  <img src="/media/FECC.png" class="logo" alt="" />
 </div>
 <div class=" nav-icons">
   <ul class="menu-items">
@@ -83,11 +83,12 @@
             <section>
               <h2>Collection</h2>
               <ul class="lg-links">
+                <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
                 <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
                 <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
-                <li><a class="dropdown-item" href="{% url 'products' %}">Special Offer</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>               
+                <li><a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">Specials</a></li>
+                
               </ul>
             </section>
           </div>
@@ -115,6 +116,7 @@
               </ul>
             </section>
           </div>
+      <!-- Search Bar in Wide Drop-Down -->
           <div class="col-search w-100">
             <form method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
@@ -189,7 +191,7 @@
   <section class="container-fluid fixed-top top-area">
     <aside class="sidebar">
       <div class="sidebar-header">
-        <img src="./media/FECC.png" id="img-logo" alt="" />
+        <img src="/media/FECC.png" class="logo" alt="" />
         <button class="close-btn"><i class="fas fa-times"></i></button>
       </div>
       <!-- links -->

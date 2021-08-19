@@ -35,5 +35,7 @@ Found the answer on Slack. The urls.py file needed updating with :
 and adding to the end: 
 + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+3. Shopping cart is still inserting the Shipping Cost when items quantity is less than or equal Zero?
 
+4. Shopping Cart product is inserting the product SKU into the Quantity box? 
 

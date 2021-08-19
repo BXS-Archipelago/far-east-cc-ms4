@@ -81,12 +81,7 @@ img:not(.logo) {
 img {
   display: block;
 }
-#img-logo {
-  height: 45px;
-  width: auto;
-  align-self: center;
-  border-radius: 5px;
-}
+
 h1,
 h2,
 h3,
@@ -206,6 +201,9 @@ p {
     }
   }
   
+  .sidebar-toggle i {
+    text-decoration: none;
+  }
   .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -283,16 +281,17 @@ p {
   
 .fecc {
   font-family: var(--ff-fecc-logo);
-  color: var(--fecc-primary-1);
-  text-shadow: 2px 2px 2px var(--fecc-grey-7); 
+  color: var(--fecc-grey-2);
+  text-shadow: 2px 2px 2px var(--fecc-grey-8); 
   font-size: 2.8rem;
   font-weight: 700;
   padding: 20px 20px;
   margin-bottom: 20px; 
-  border: 1px solid var(--fecc-grey-7);
+  
   border-radius: 10px; 
   box-shadow: var(--dark-shadow);
-  background: linear-gradient(50deg, rgba(245,53,32,0.9948354341736695) 0%, rgba(239,247,238,1) 51%, rgba(0,212,255,1) 100%);
+  background: var(--fecc-white);
+  /* background: linear-gradient(50deg, rgba(245,53,32,0.9948354341736695) 0%, rgba(239,247,238,1) 51%, rgba(0,212,255,1) 100%); */
   }
 
   
@@ -303,6 +302,7 @@ p {
   letter-spacing: 1.2px;
   color: var(--fecc-red-dark);
   text-shadow: var(--dark-shadow);
+  text-transform: capitalize;
 }
 
   .fa-lg {    
@@ -349,7 +349,7 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    z-index: 1;
+    
   }
 
   .inner-header {
@@ -369,23 +369,20 @@ p {
   }
 
   .logo-col {
-    width: 50%;
+    width: 30%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    
   }
 
   .logo {
-    font-size: 1.8rem;
-    margin: 0;
-    text-shadow: 1px 2px 2px var(--fecc-grey-7);
-    font-family: var(--ff-fecc-logo);
-    color: var(--fecc-primary-1);
-    text-shadow: 2px 2px 2px var(--fecc-grey-7);
-    font-weight: 700; 
-    padding-left: 1rem; 
-    text-transform: uppercase;    
+    height: auto;
+    width: 60%; 
+           
+    padding-left: 1rem;       
   }
+
   .nav-icons {
     display: flex;
     justify-content: center;
@@ -443,7 +440,7 @@ Dropdown Menu Setting
 }
 ul .drop-menu {
   position: absolute;
-  background: var(--fecc-grey-8);
+  background: var(--fecc-grey-10);
   box-shadow: 1px 2px 2px 2px var(--fecc-grey-5); 
   width: 100%;
   top: 50px;
@@ -452,6 +449,7 @@ ul .drop-menu {
   visibility: hidden;
   transition: all 0.3s ease;
   border-radius: 5px;
+  
 }
 
 .menu-item {
@@ -470,7 +468,7 @@ ul .drop-menu {
 }
 
 .wide-menu {
-  box-shadow: 1px 2px 2px 3px var(--fecc-grey-5); 
+  box-shadow: 1px 2px 2px 3px var(--fecc-grey-9); 
   position: absolute;
   left: 15vw;
   width: 70vw;
@@ -480,10 +478,11 @@ ul .drop-menu {
   transition: all 0.3s ease;
   margin-top: 1rem;
   border-radius: 5px;
+  z-index: 99;
   }
 
 .wide-menu .content {
-  background: var(--fecc-grey-8);
+  background: var(--fecc-grey-10);
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -645,6 +644,7 @@ content .col .drop-down-image {
 .car-img {
   width: 30%;
   height: auto;
+  margin: 5px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px var(--fecc-grey-8);
 }
@@ -731,6 +731,10 @@ content .col .drop-down-image {
 
 /* Products Page */
 
+.card-shadow {
+  box-shadow: var(--dark-shadow);
+}
+
 /* back to top button  */
 .up-arrow {
   font-size: .8rem;
@@ -798,6 +802,11 @@ content .col .drop-down-image {
     display: none;
   }
 
+  .logo-col {
+    width: 60%;
+    justify-content: center;
+  }
+
   .dropdown-item {
     font-size: .8rem;
     font-weight: bold;
@@ -806,6 +815,12 @@ content .col .drop-down-image {
 
   .inline-text {
     font-size: .75rem;
+  }
+
+  .car-image-holder {
+    width: 100vw;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .up-arrow {
@@ -841,7 +856,7 @@ content .col .drop-down-image {
   padding: 1rem 0;
 }
 .account-text { 
-  font-size: .4rem;
+  font-size: .5rem;
   letter-spacing: 1px;
 }
 .fecc {   
@@ -858,15 +873,27 @@ content .col .drop-down-image {
 .cart-icons {
   padding: .2rem ;
 }
-  #img-logo {
-    height: 35px;
-    width: auto;
-    align-self:flex-start;
-    border-radius: 5px;
-  }
+
+#img-logo {
+  height: 35px;
+  width: auto;
+  align-self:flex-start;
+  border-radius: 5px;
+}
   .car-image-holder {
-    width: 75vw;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: space-between;
   }
+
+  .car-img {
+    width: 60%;
+    margin: 5px;
+  }  
+
+.car-img-2 {
+  display: none;
+}
     .btn-neon {
       text-transform: uppercase;
       background: var(--fecc-grey-1);
@@ -881,6 +908,8 @@ content .col .drop-down-image {
     
 .sm-text-p {  
   font-size: .8rem; 
+  padding: 10px;
+  margin: 0;
   }
 
 .list-style {

@@ -277,7 +277,7 @@ Chapter 17
 - Commit Work thus far
 
 Chapter 18
-** Change decision ** Removing Product Size features. The product listing is single size only as retail-packaging.
+** Change decision ** Removing Product Size features. The product listing is single size jars/bottles only as retail-packaging.
 - remove size selector and options from product_detail page. 
 - Make Migration
 - Commit Work thus far
@@ -294,4 +294,8 @@ Chapter 19
 - Delete video with HTML CSS and JS associated with it for better UXP
 - Redesign Nav Bar with Drop Down menus. 
 - Redesign Icons for User Account and Shopping Cart
+- Commit Work thus far
+- Update Index page with photos
+- Add style to dropdown menus.
+- Update photo sizing in media and link at products.json
 - Commit Work thus far
