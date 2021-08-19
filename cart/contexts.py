@@ -14,6 +14,8 @@ def cart_contents(request):
 
 # iterate through items to add up total cost and product count
     for item_id, quantity in cart.items(): 
+
+        #  Bug chase - pk=item_id  and carries through to views.py?   
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price
         product_count += quantity

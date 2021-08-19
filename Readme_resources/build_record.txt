@@ -299,3 +299,6 @@ Chapter 19
 - Add style to dropdown menus.
 - Update photo sizing in media and link at products.json
 - Commit Work thus far
+
+Chapter 20
+- Chasing a bug. The item_id from cart>contexts.py and views.py is putting the product pk number into the quantity box in the Shopping Cart. 

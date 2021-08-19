@@ -146,15 +146,11 @@
 
   </ul>
 </div>
-<div class="">
+<div class="user-box">
   <ul class="user-icons ">
     <li class="drop-down cart-icons ">
-      <a class="icons " href=""><i class="fas fa-lg fa-user-alt"></i></a>
-      <p class="account-text">User</p>
-      <!-- <button class="btn btn-sm btn-secondary dropdown-toggle m-1" type="button" id="dropdownMenuButton"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        My Account
-      </button> -->
+      <a class="icons " href="" id="dropdownMenuButton"  data-toggle="dropdown"><i class="fas fa-lg fa-user-alt"></i><p class="account-text">User</p></a>
+      
       <div class="dropdown-menu border-0 " id="narrow-dropdown-menu" aria-labelledby="dropdownMenuButton">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
