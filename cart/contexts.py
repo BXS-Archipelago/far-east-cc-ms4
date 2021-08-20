@@ -24,13 +24,8 @@ def cart_contents(request):
             'quantity': quantity,
             'product': product,
         })
-
-    # if total < settings.FREE_DELIVERY_THRESHOLD:
-    #     delivery = 7
-    #     free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
-    # else:
-    #     delivery = 0
-
+       
+   
 
     if total < settings.FREE_DELIVERY_THRESHOLD :
         delivery = 7

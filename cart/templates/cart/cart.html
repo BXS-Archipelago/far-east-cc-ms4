@@ -70,7 +70,7 @@
                                             </span>
                                         </button>
                                     </div>
-                                    <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.item_id }}"
+                                    <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}"
                                         min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                     <div class="input-group-append">
                                         
@@ -101,8 +101,7 @@
                         <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
                         <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
                         {% if free_delivery_delta > 0 %}
-                            <p class="mb-1 text-danger">
-                                You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!
+                            <p class="mb-1 text-black"><i class="fas fa-truck"></i>We'll gladly cover delivery if you spend just <strong class="text-danger">€{{ free_delivery_delta }}</strong> More!
                             </p>
                         {% endif %}
                     </td>
@@ -111,14 +110,14 @@
                     <td colspan="5" class="text-right">
                         <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                             <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
+                                <i class="fas fa-angle-double-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
                         <a href="" class="btn btn-black rounded-0 btn-lg">
                             <span class="text-uppercase">Secure Checkout</span>
                             <span class="icon">
-                                <i class="fas fa-lock"></i>
+                                <i class="fas fa-angle-double-right"></i>
                             </span>
                         </a>
                     </td>

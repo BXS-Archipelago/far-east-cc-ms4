@@ -742,14 +742,28 @@ content .col .drop-down-image {
 
 
 
-/* 
-
 /* Products Page */
 
 .card-shadow {
   box-shadow: var(--dark-shadow);
 }
 
+/* ***Toasts *** */
+
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 999
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
+}
 /* back to top button  */
 .up-arrow {
   font-size: .8rem;

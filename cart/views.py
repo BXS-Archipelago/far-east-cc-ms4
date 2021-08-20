@@ -1,6 +1,7 @@
 
 from django.shortcuts import render, redirect, reverse, HttpResponse
-
+from products.models import Product
+from django.contrib import messages
 # Create your views here.
 
 
@@ -15,21 +16,26 @@ def view_cart(request):
 def add_to_cart(request, item_id):
     """ this adds the quantity of the specified product to the Cart"""
     
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
+    
 
-# **********************************Is the bug coming at this point? 
 # If item is already in Cart, this sets it equal or increments the number.
-# So Why is item_id showing the product SKU instead of quantity in Cart????
 #**********************************
+
     if item_id in list(cart.keys()):
-        cart[item_id] +=quantity
+        cart[item_id] += quantity
+    
     else:
         cart[item_id] = quantity
+        messages.success(request, f'You added {product.name} to the cart. Nice!')
+        
     # why doesn't cart[item_id] become quantity? 
     
     request.session['cart'] = cart
+  
     return redirect(redirect_url)
 
 # View to update product quantities or remove the item from Cart
