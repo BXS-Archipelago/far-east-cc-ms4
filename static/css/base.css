@@ -27,7 +27,7 @@
   --fecc-grey-9: hsl(212, 33%, 89%);
   --fecc-grey-10: hsl(210, 36%, 96%);
   --fecc-white: #fff;
-  --fecc-yellow: #f1c40f;
+  --fecc-yellow: hsl(60, 100%, 70%);
   --fecc-red-dark: hsl(360, 67%, 44%);
   --fecc-red-light: hsl(360, 71%, 66%);
   --fecc-green-dark: hsl(125, 67%, 44%);
@@ -750,10 +750,55 @@ content .col .drop-down-image {
 
 /* ***Toasts *** */
 
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent; 
+  border-bottom: 10px solid black;
+  position: absolute;
+  top: -10px;
+  right: 66px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+  border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+  border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+  border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+  border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+  border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+  border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+  border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+  border-bottom-color: #343a40 !important;
+}
+
 .message-container {
   position: fixed;
-  top: 72px;
+  top: 90px;
   right: 15px;
+  border-radius: 8px;
   z-index: 9999
 }
 
@@ -763,6 +808,21 @@ content .col .drop-down-image {
 
 .toast-capper {
   height: 2px;
+}
+
+.toast-bg {
+  background-color: var(--fecc-primary-10);
+  color: var(--fecc-black); 
+  text-transform: capitalize;
+}
+
+.delivery-bg {
+  background: var(--fecc-yellow)
+}
+.cart-notification-wrapper {
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 /* back to top button  */
 .up-arrow {
