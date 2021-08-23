@@ -309,3 +309,6 @@ Chapter 20
 - Create toast_error, toast_info, toast_success & toast_warning html pages.
 - Create CSS for toasts to appear at top right of screen
 -Commit Work thus far
+- Chasing a bug. Toasts not appearing; Message in console, Toasts is not a function. This was related to the versions of Jquery and Bootstrap listed in the base.html.  With the correct version combinations, ajax requests now work.
+- Test toasts: Test successful
+- Commit Work thus far.

@@ -31,7 +31,7 @@ def add_to_cart(request, item_id):
     else:
         cart[item_id] = quantity
         messages.success(request, f'You added {product.name} to the cart. Nice!')
-        
+       
     # why doesn't cart[item_id] become quantity? 
     
     request.session['cart'] = cart
