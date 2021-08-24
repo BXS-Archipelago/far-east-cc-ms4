@@ -332,6 +332,19 @@ Chapter 21 - Checkout
 - Add placeholders & classes, remove auto-generated labels and set autofocus on first field
 - Commit Work thus far
 
+Chapter 22 
+- In Checkout>views.py create the URL and the basic template to call the bag contents
+- Create urls.py and path for checkout views
+- Create template>checkout>checkout.html 
+- Use new css file in link within {% block extra_css %}
+- Create folders and file static>checkout>checkout.css 
+- installation : pip3 install django-crispy-forms
+- In project settings.py add crispy_forms to apps
+- add CRISPY_TEMPLATE_PACK = "bootstrap4"
+- add built-ins under the context processors
+- freeze the new installs in requirements.txt 
+
+
 
 
 
