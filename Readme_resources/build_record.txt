@@ -328,6 +328,11 @@ Chapter 21 - Checkout
 - Create defs for update_on_save and update_on_delete
 - In checkout>apps.py create def ready(self) so the custom update total model method will be called 
 - Commit Work thus far
+- Create forms.py for class(OrderForm)
+- Add placeholders & classes, remove auto-generated labels and set autofocus on first field
+- Commit Work thus far
+
+
 
 
 
