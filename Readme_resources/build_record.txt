@@ -319,5 +319,15 @@ Chapter 21 - Checkout
 - Create Models class called Order. Fields are for name, address info, etc. 
 - Create defs in Models 
 - Chasing a bug. Checkout link in header always shows deliverys cost. This required an extra elif statement, but after trial and error, I discovered I needed to include the free_delivery_delta statement in both as well. 
+- Make migrations and migrate
+- Commit Work Thus far
+- Add models to the checkout> admin.py 
+- Admin requires ability to update order total, delivery cost and grand total
+- Create checkout>signals.py to iterate through each time a line is added to an order
+- Import post_save and post_delete
+- Create defs for update_on_save and update_on_delete
+- In checkout>apps.py create def ready(self) so the custom update total model method will be called 
+- Commit Work thus far
+
 
 
