@@ -312,3 +312,12 @@ Chapter 20
 - Chasing a bug. Toasts not appearing; Message in console, Toasts is not a function. This was related to the versions of Jquery and Bootstrap listed in the base.html.  With the correct version combinations, ajax requests now work.
 - Test toasts: Test successful
 - Commit Work thus far.
+
+
+Chapter 21 - Checkout
+- Create Checkout App using python3 manage.py startapp checkout
+- Create Models class called Order. Fields are for name, address info, etc. 
+- Create defs in Models 
+- Chasing a bug. Checkout link in header always shows deliverys cost. This required an extra elif statement, but after trial and error, I discovered I needed to include the free_delivery_delta statement in both as well. 
+
+

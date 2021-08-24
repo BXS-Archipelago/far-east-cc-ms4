@@ -36,6 +36,12 @@ and adding to the end:
 + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 3. Shopping cart is still inserting the Shipping Cost when items quantity is less than or equal Zero?
+    - I wanted a flat delivery rate under €50 order value and removed the percentage rate from the tutorial instruction. I added a further elif statement for when the cart total is zero, delivery should be zero. 
+    - Following more trial and error, I discovered the free_delivery_delta statement was required also in both the if and the elif statement. 
+
 
 4. Shopping Cart product is inserting the product SKU into the Quantity box? 
+    - I initially thought the issue was in the back-end code and was chasing this through the views and contexts. In the end it turned out that I had been using value="{{ item.item_id }}" for id="id_qty_{{ item.item_id }}" 
+    but obviously (now!)  value="{{ item.quantity }}".  
+    - Solution discovered with the patient assistance of Sheryl in Tutor Support. 
 
