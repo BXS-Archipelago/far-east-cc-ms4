@@ -382,6 +382,13 @@ Chapter 24: Stripe functionality
 - In checkout>views.py, re-set stripe_public_key and client_secret in context
 - Set alert message in case public key has not been set
 - Commit Work thus far
+- Copy Handle Form Submit data from stripe website to stripe_elements.js
+- Disable submit button to avoid multiple card submissions
+- Test Checkout page using Stripe fake card number and submit
+- Stripe dashboard advises that in the events the payment was received.
+- Test result : successful
+- Commit Work thus far
+
 
 
 
