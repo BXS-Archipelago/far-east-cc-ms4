@@ -333,7 +333,7 @@ Chapter 21 - Checkout
 - Commit Work thus far
 
 Chapter 22 : Checkout Template
-- In Checkout>views.py create the URL and the basic template to call the bag contents
+- In Checkout>views.py create the URL and the basic template to call the cart contents
 - Create urls.py and path for checkout views
 - Create template>checkout>checkout.html 
 - Use new css file in link within {% block extra_css %}
@@ -366,6 +366,21 @@ Chapter 23 : Stripe
 - The key is not being recognised but seems to be in the correct places and format. Views context is correct. 
 - Solution : found a missing # key in the JS file for '#id_stripe_public_key'
 - Test Checkout.html : Test successful.  
+- Commit Work thus far
+
+Chapter 24: Stripe functionality
+- Checkout>views.py from cart.contexts import cart_contents which is a dictionary
+- create variables for stripe to access cart contents and grand total
+- installation of stripe :  pip3 install stripe
+- import stripe in checkout>views.py
+- in project settings.py, set the stripe currency and public & secret keys
+- in terminal, export STRIPE Public and Secret keys.
+- Save keys in workspace settings Environment Variables
+- Create payment intent in checkout>views.py
+- Test print(intent) in views.py
+- Test successful, keys are all displayed in terminal
+- In checkout>views.py, re-set stripe_public_key and client_secret in context
+- Set alert message in case public key has not been set
 - Commit Work thus far
 
 
