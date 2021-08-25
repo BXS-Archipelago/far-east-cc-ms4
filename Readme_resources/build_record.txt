@@ -389,6 +389,17 @@ Chapter 24: Stripe functionality
 - Test result : successful
 - Commit Work thus far
 
+Chapter 25: Stripe payments
+- Create POST handling for checkout in views.py
+- Create code to retrieve product ID from the cart, iterate through items.
+- Create error message in case of eventuality
+- Delete order upon completion, returning user to shopping page
+- Import Product and OrderLineItem at top.
+- Create checkout_success view in checkout>views.py
+- Also import get_object_or_404 and Order to accomodate
+- Create path for checkout_success in urls.py
+- Commit Work thus far
+
 
 
 
