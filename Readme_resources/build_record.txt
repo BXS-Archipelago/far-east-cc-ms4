@@ -332,7 +332,7 @@ Chapter 21 - Checkout
 - Add placeholders & classes, remove auto-generated labels and set autofocus on first field
 - Commit Work thus far
 
-Chapter 22 
+Chapter 22 : Checkout Template
 - In Checkout>views.py create the URL and the basic template to call the bag contents
 - Create urls.py and path for checkout views
 - Create template>checkout>checkout.html 
@@ -343,6 +343,33 @@ Chapter 22
 - add CRISPY_TEMPLATE_PACK = "bootstrap4"
 - add built-ins under the context processors
 - freeze the new installs in requirements.txt 
+- Populate the checkout.html with form
+- include {% csrf_token %}
+- access the form and pipe them with as-crispy_field
+- Add the submit button for credit card entry
+- As per tutorial, settings.py requires a media context processor for where there are no images.
+
+
+Chapter 23 : Stripe
+- Activate stripe account. 
+- Add stripe js link on base.html in corejs
+- In checkout.html, add postloadjs at bottom with block.super
+- add json_script as filter because Django temp variables can't render externally
+- In checkout>views add stripe_public_key to context
+- Test Checkout page for Stripe, inspecting checkout.html shows two new script tags stripe_public_key and client_secret
+- Add stripe CSS to checkout.css for themed styling
+- Create stripe_elements.js and obtain public & client keys as .text
+- Create js variables and elements to create card element and mount it in the div setting in checkout.html
+- Link the stripe_elements.js in checkout.html postloadjs at bottom of page.
+- Test checkout.html : Test Unsuccessful
+- Chasing a bug. "Uncaught IntegrationError: Please call Stripe() with your publishable key. You used an empty string." 
+- The key is not being recognised but seems to be in the correct places and format. Views context is correct. 
+- Solution : found a missing # key in the JS file for '#id_stripe_public_key'
+- Test Checkout.html : Test successful.  
+- Commit Work thus far
+
+
+
 
 
 

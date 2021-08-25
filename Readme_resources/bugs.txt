@@ -45,3 +45,8 @@ and adding to the end:
     but obviously (now!)  value="{{ item.quantity }}".  
     - Solution discovered with the patient assistance of Sheryl in Tutor Support. 
 
+5. At stripe implementation, the card-element would not open as an input box. 
+- Console returned : "Uncaught IntegrationError: Please call Stripe() with your publishable key. You used an empty string."  
+- Solution after a search was a missing # key in the stripe_elements.js ! 
+
+

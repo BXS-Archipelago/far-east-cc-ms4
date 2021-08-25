@@ -44,8 +44,8 @@
                 </div>
             </div>
             {% for item in cart_items %}
-                    <div class="row">
-                        <div class="col-2 mb-1">
+                    <div class="row checkout-list-effect">
+                        <div class="col-2 mb-1 ">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 {% if item.product.image %}
                                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
@@ -54,6 +54,7 @@
                                 {% endif %}
                             </a>
                         </div>
+                       
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
@@ -63,6 +64,7 @@
                             <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
+                    <hr class="m-2">
                 {% endfor %}
         </div>
       <div class="col-12 col-lg-6">
@@ -99,7 +101,7 @@
               </fieldset>
               <fieldset class="px-3 ">
                 <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+               
                 <!-- A Stripe card element will go here -->
                 <div class="mb-3" id="card-element"></div>
 
@@ -128,9 +130,14 @@
                 </p>
             </div>
           </form>
-      </div>
-        
-    
-
+      </div>         
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
