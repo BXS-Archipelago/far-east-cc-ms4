@@ -49,4 +49,4 @@ and adding to the end:
 - Console returned : "Uncaught IntegrationError: Please call Stripe() with your publishable key. You used an empty string."  
 - Solution after a search was a missing # key in the stripe_elements.js ! 
 
-
+6. Testing checkout with sample order, the delivery charge is incorrect in the Order Admin Checkout.  The Cart Contexts are correct, but I altered the project settings.py with a "standard_delivery_cost = 7" to carry across to checkout>models.py so a cleaner instruction of "self.delivery_cost = settings.STANDARD_DELIVERY_COST" . The previous version was using a percentage of order_total as the delivery cost.

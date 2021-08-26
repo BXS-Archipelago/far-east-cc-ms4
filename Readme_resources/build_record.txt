@@ -399,6 +399,15 @@ Chapter 25: Stripe payments
 - Also import get_object_or_404 and Order to accomodate
 - Create path for checkout_success in urls.py
 - Commit Work thus far
+- Create checkout>templates>checkout> checkout_success.html 
+- Update checkout>__init__.py by add default config class to check for app
+- Test sample order through checkout, stripe events, order admin
+- Test result : Unsuccessful - incorrect Delivery charge. 
+- Addressed the inconsistent variables in project>settings.py and checkout>models.py for fluid recognition of delivery charge.
+- Test sample order through checkout, stripe events, order admin
+- Test signals for update on save & delete.
+- Test results successful
+- Commit Work thus far
 
 
 

@@ -182,7 +182,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 FREE_DELIVERY_THRESHOLD = 50
-STANDARD_DELIVERY_percentage = 10
+STANDARD_DELIVERY_COST = 7
 
 # Stripe settings :
 STRIPE_CURRENCY = 'eur'
