@@ -409,6 +409,10 @@ Chapter 25: Stripe payments
 - Test results successful
 - Commit Work thus far
 
+Chapter 26 : Checkout Success
+- checkout_success.html requires order summary form.
+- Summary form requires Order info, details, delivery & billing info.
+- checkout.html requires overlay
 
 
 
