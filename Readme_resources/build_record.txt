@@ -409,10 +409,14 @@ Chapter 25: Stripe payments
 - Test results successful
 - Commit Work thus far
 
-Chapter 26 : Checkout Success
+Chapter 26 : Checkout Protocols
 - checkout_success.html requires order summary form.
 - Summary form requires Order info, details, delivery & billing info.
 - checkout.html requires overlay
+- Commit Work thus far
+- Create webhook_handler.py
+- Add functions to recognise that a stripe webhook has been received.
+- Commit Work thus far
 
 
 
