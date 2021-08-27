@@ -277,7 +277,7 @@ Chapter 17
 - Commit Work thus far
 
 Chapter 18
-** Change decision ** Removing Product Size features. The product listing is single size jars/bottles only as retail-packaging.
+** Change decision ** Removing Product Size features. The product listing is single size only as retail-packaging.
 - remove size selector and options from product_detail page. 
 - Make Migration
 - Commit Work thus far
@@ -288,7 +288,6 @@ Chapter 18
 - Test on page. (Test failed due to using single-quotes instead of back-tick!)
 - Fix bug & test again. Test Successful.
 - Commit Work thus far.
-
 Chapter 19
 - ** Change Decision. Original landing page had video background.
 - Delete video with HTML CSS and JS associated with it for better UXP
@@ -417,12 +416,18 @@ Chapter 26 : Checkout Protocols
 - Create webhook_handler.py
 - Add functions to recognise that a stripe webhook has been received.
 - Commit Work thus far
-
-
-
-
-
-
-
-
-
+- Create url webhook_handler in checkout>urls.py, assign path, function, name.
+- import webhook 
+- Create webhooks.py in checkout folder
+- Set webhook secret key and stripe API key paired with settings data
+- import settings and httpResponse, StripeWH_handler, required_POST, CSRF_exempt
+- In project settings, assign STRIPE_WH_KEY as environment variable
+- Test Webhooks are working: Print "Webhook Test" as httpResponse 200
+- In Stripe -> developers -> Webhooks -> add endpoint, the project url
+- Retrieve Signing Secret, and export stripe webhook secret from terminal
+- Test result : test success
+- Modify webhook view to use webhook handler, passing request and dictionary event_map
+- Test : Change payment failed response in webhook_handler.py.
+- Stripe Send Test Webhook, add ????? to payment failed message.
+- Test result: Webhook received: ?????payment_intent.payment_succeeded : test successful
+- Commit Work thus far
