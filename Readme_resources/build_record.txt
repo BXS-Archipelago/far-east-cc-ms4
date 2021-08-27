@@ -431,3 +431,16 @@ Chapter 26 : Checkout Protocols
 - Stripe Send Test Webhook, add ????? to payment failed message.
 - Test result: Webhook received: ?????payment_intent.payment_succeeded : test successful
 - Commit Work thus far
+
+Chapter 27 : database objects in webhook handler
+- In stripe_elements.js, with the card , add billing details object
+- Add shipping details object AND billing details object. Trim white space.
+- Create metadata as a view to apply whether the user has save-info box ticked
+- Create url to access cache_checkout_data view
+- Modify stripe_elements.js to accomodate save info, csrf token, etc
+- Response must be updated before the confirmed payment intent method can be called so the stripe function will be placed inside the callback function
+- Attach a failure function if view sends a 400 bad request response. (See  comments at top of stripe_elements.js)
+- Test progress with order using print(intent) within handle_payment_intent_succeeded function.  
+- Observed : Country was entered as Ireland, but message returned to say not recognised, it should be IE so that is positive. 
+- Test result : Order successfully processed & Terminal displays the Payment Intent information as required ; Test successful
+- Commit Work thus far. 
