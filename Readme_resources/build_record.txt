@@ -471,7 +471,7 @@ Chapter 28 - Also securing error orders
 - Test result: successful. Payment is still received, unhandled webhook received by stripe. 
 - Commit Work thus far
 
-Chapter 29 : User profile page
+Chapter 29 : User profile App
 - Update Country field in address to a dropdown
 - pip3 install django-countries
 - pip3 freeze > requirements.txt
@@ -481,4 +481,20 @@ Chapter 29 : User profile page
 - Remove country placeholder from forms.py 
 - update if field != country to avoid error
 - Commit Work thus far
+- python3 manage.py startapp profiles
+- Add profiles to installed apps in project settings
+- Create new model in profiles>models.py to create a source for order history, addresses, etc
+- Create Receiver for each time a user object is saved, it will create either profile or save to profile as an update.
+- In checkout>models.py import UserProfile, update class with user_profile
+- In profiles>views.py show users profile
+- Create urls.py and add the path, import views.
+- Include the profiles url in the project urls.py
+- create templates folder for profile.html in profiles. 
+- create static/profiles/css/profile.css
+- Test checkout.html ; logout of site, go to the url
+- Test successful, checkout.html is visible. 
+- Commit Work thus far
+
+
+
 
