@@ -471,4 +471,14 @@ Chapter 28 - Also securing error orders
 - Test result: successful. Payment is still received, unhandled webhook received by stripe. 
 - Commit Work thus far
 
+Chapter 29 : User profile page
+- Update Country field in address to a dropdown
+- pip3 install django-countries
+- pip3 freeze > requirements.txt
+- Models, need to import CountryField, and modify class field for Country
+- Migrate changes
+- Update CSS to make Country text grey
+- Remove country placeholder from forms.py 
+- update if field != country to avoid error
+- Commit Work thus far
 

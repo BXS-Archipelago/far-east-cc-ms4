@@ -37,11 +37,16 @@
 }
 
 .checkout-list-effect {
-  border-bottom: 1x solid black;
- 
+  border-bottom: 1x solid black; 
 }
 
+select, select option {
+  color: black;
+}
 
+select:invalid, select option[value=""] {
+  color: #aab7c4 !important;
+}
 #loading-overlay {
 	display: none;
 	position: fixed;
