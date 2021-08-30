@@ -444,4 +444,31 @@ Chapter 27 : database objects in webhook handler
 - Observed : Country was entered as Ireland, but message returned to say not recognised, it should be IE so that is positive. 
 - Test result : Order successfully processed & Terminal displays the Payment Intent information as required ; Test successful
 - Commit Work thus far. 
-- 
+
+Chapter 28 - Also securing error orders
+- in webhook_handler, add intent, pid, bag, save_info, billing, shipping & grand total to handle_payment_intent_succeeded function.
+- Replace any empty strings with none (instead of null)
+- Check if order exists -> set to false
+- use __iexact but case not sensitive to search for exact match
+- return 200 message to stripe if order exists
+- Iterate through cart items loading cart from json version in payment intent
+- use order.objects.create for the form to be saved with the webhook using payment intent data
+- Place within a Try block so if anything is wrong, any order will delete.
+- Create the attempt variable as 1 and use While to iterate 5 times, but sleep for 1 second so the WH handler will try find the order 5 times over 5s or break.
+- In the order model, create original_cart and stripe_pid so we can allow for recognition of repeat orders through use of unique character fields.
+- Migrate new model fields, then add the fields to admin.py
+- In Checkout.html, add hidden input to the form containing client_secret.
+- Get pid in views.py using split for recognition
+- original_cart added to model via dumping to JSON string
+- Add Cart and stripe PID to attributes so order can be found and completed using those criteria
+- Into webhook_handler.py import Order, OrderLineItem, Product models.
+- Into webhook_handler.py also import from python time and json modules. 
+- Test: create sample order to verify the Webhook event in Stripe.
+- Test failed : Stripe : 400 (bad request) & Terminal: “Bad Request: /checkout/wh/”
+- Solution : The STRIPE_WH_KEY saved into the workspace Environment Variables was incorrect.  Once changed to the right one, everything processes fine. 
+- Test result: Successful
+- Test : temporarily remove form.submit() from JS in stripe_elements to simulate a page close after payment but before form submissions. 
+- Test result: successful. Payment is still received, unhandled webhook received by stripe. 
+- Commit Work thus far
+
+
