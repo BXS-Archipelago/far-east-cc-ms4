@@ -504,6 +504,14 @@ Chapter 30 : Templates style
 - In profile>views.py import profile model & return user profile in the template
 - In profile.html template, render {{ profile }} to display user's name
 - Commit Work thus far
-
+- Update profile.html to show crispy form for delivery and order history 
+- Create static>templates>profiles>js>countryfield.js
+- Create JS and CSS to ensure that drop-down country is grey but country list is black
+- Test CSS and JS for country
+- Test result: success ; list appears as black but the first field, "country" is grey
+- Create POST handler for profile view for successful update of profile
+- Modify to show update message only when on profile page. Not cart contents.
+- Update toast_success to display correctly when on_profile_page 
+- Commit Work thus far.
 
 
