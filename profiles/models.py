@@ -17,14 +17,14 @@ class UserProfile(models.Model):
     default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
     default_county = models.CharField(max_length=80, null=True, blank=True)
 
-    # string method to return user name
+    # string method to return username
     def __str__(self):
         return self.user.username
 
 # Each time a user object is saved, it will create either profile or save to # the profile as an update.
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
-   # if its a newly created profile...
+   # if its a new user, create a new profile..
     if created:
         UserProfile.objects.create(user=instance)
     # alternatively, if existing just save the profile again in case of update.

@@ -495,6 +495,15 @@ Chapter 29 : User profile App
 - Test successful, checkout.html is visible. 
 - Commit Work thus far
 
+Chapter 30 : Templates style
+- Update page style for templates>allauth>account pages for uniformity
+- Update static base.css 
+- Test registration process
+- Test result: successful. New Testuser1 profile created.
+- Update Nav link in base.html for profile page
+- In profile>views.py import profile model & return user profile in the template
+- In profile.html template, render {{ profile }} to display user's name
+- Commit Work thus far
 
 
 
