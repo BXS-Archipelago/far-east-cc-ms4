@@ -495,7 +495,7 @@ Chapter 29 : User profile App
 - Test successful, checkout.html is visible. 
 - Commit Work thus far
 
-Chapter 30 : Templates style
+Chapter 30 : Profile & Templates style
 - Update page style for templates>allauth>account pages for uniformity
 - Update static base.css 
 - Test registration process
@@ -512,6 +512,14 @@ Chapter 30 : Templates style
 - Create POST handler for profile view for successful update of profile
 - Modify to show update message only when on profile page. Not cart contents.
 - Update toast_success to display correctly when on_profile_page 
+- Commit Work thus far.
+
+- Chapter 31 : Order History in Profile
+- In profile.html, create bootstrap table for order num, date, products, total.
+- Iterate through orders to show user's history, display items in unordered list
+- give order history a set dimension since list of orders might be login
+- In profiles>view.py create a view for order_history, import orders from checkout.models
+- Create url in profiles>urls.py 
 - Commit Work thus far.
 
 

@@ -42,7 +42,41 @@
         </div>
         <div class="col-12 col-lg-6"> 
             <p class="text-muted">Order History</p>
-            {{ orders }}
+            <div class="order-history table-responsive">
+                <!-- Bootstrap Table to show Order History -->
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <th>Order Number</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Order Total</th>
+                    </thead>
+                    <!-- table body -->
+                    <tbody>
+                        {% for order in orders %}
+                        <li class="small">
+                            {% item.product.name %} x {% item.quantity %}
+                        </li>
+                            <tr>
+                                <td>
+                    <a href="{% url 'order_history' %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}
+                    </a>
+                                </td>
+                                <td>
+                                        {{ order.date }} 
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% for item in order.lineitems.all %}
+                                    </ul>
+                                </td>
+                                <td>€{{ order.grand_total }} </td>
+                            </tr>
+
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>  
     </div>
 
