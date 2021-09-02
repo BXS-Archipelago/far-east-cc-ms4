@@ -1,0 +1,22 @@
+To : {{ order.full_name }}
+
+Thank you for your order. This is to confirm that we received it and your order information is as follows:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: €{{ order.order_total }}
+Delivery: €{{ order.delivery_cost }}
+Grand Total: €{{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+The contact number listed for you is {{ order.phone_number }}.
+
+We're here to help so if you have any questions, feel free to contact us at {{ contact_email }}.
+
+Enjoy your purchase! 
+
+Kind Regards, 
+
+Team Far East Car Care

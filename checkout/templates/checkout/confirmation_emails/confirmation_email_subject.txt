@@ -1,0 +1,1 @@
+Far East Car Care : Your confirmation for order number {{ order.order_number }}

@@ -536,5 +536,16 @@ Chapter 32 - Webhook handler and profiles
 - Test result : Successful ; Order reaches Order history in User Profile . Stripe Posts to the webhook url in the terminal and in the Admin section, the order is listed.
 - Commit Work thus far
 
+Chapter 33 - Confirmation emails
+- in Checkout>templates  create confirmation_emails>confirmation_email_subject.txt 
+- in Checkout>templates  create confirmation_emails>confirmation_email_body.txt 
+- in webhook_handler.py create private method _send_confirmation_email(self, order).
+- Imports required for render_to_string, settings, send_mail for functionality
+- Call the method to send emails twice: first before returning form response to stripe, and second after where the order was created by webhook_handler.
+- Add default Email in Settings.py
+- Test email with sample purchase order.
+- Test result: successful ;  The order is processed and the confirmation email is observed in the terminal output. 
+- Commit Work thus far. 
+
 
 
