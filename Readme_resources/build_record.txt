@@ -526,3 +526,15 @@ Chapter 30 : Profile & Templates style
 - Test result: Successful. The saved details are already in the checkout.
 - Commit Work thus far
 
+Chapter 32 - Webhook handler and profiles
+- In webhook_handler, within handle_payment_intent_succeeded : 
+- initiate profile, get username from intent.metadata.username
+- Update profile by adding shipping details, only if save_info is ticked
+- import UserProfile from profiles.models 
+- Test wh handler by temporarily suspending form.submit() in js
+- Create order, check that order remains on spinning overlay at checkout
+- Test result : Successful ; Order reaches Order history in User Profile . Stripe Posts to the webhook url in the terminal and in the Admin section, the order is listed.
+- Commit Work thus far
+
+
+
