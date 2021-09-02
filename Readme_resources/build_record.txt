@@ -517,9 +517,12 @@ Chapter 30 : Profile & Templates style
 - Chapter 31 : Order History in Profile
 - In profile.html, create bootstrap table for order num, date, products, total.
 - Iterate through orders to show user's history, display items in unordered list
-- give order history a set dimension since list of orders might be login
+- give order history a set dimension since list of orders might be lengthy. 
 - In profiles>view.py create a view for order_history, import orders from checkout.models
 - Create url in profiles>urls.py 
 - Commit Work thus far.
-
+- In Checkout>views.py, use checkout function to pre-fill the profile information into the order address.
+- Test: Create new order and go to checkout. Confirm if saved Profile address is pre-filling the fields. 
+- Test result: Successful. The saved details are already in the checkout.
+- Commit Work thus far
 

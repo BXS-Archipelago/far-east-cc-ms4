@@ -6,7 +6,7 @@ from django_countries.fields import CountryField
 
 
 class UserProfile(models.Model):
-    # each user has one profile, and one profile to one user only.
+    # each user has one profile, and one profile for one user only.
     user=models.OneToOneField(User, on_delete=models.CASCADE)
     # This is the client's source for address and delivery information as well as order history
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
