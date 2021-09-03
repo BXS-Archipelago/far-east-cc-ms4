@@ -554,4 +554,12 @@ Chapter 34 : Product Admin
 - Use list comprehension syntax to call friendly_names and associated category id to loop into a list. 
 - Set the new class on the fields so they match the rest of the store.
 - Commit Work thus far. 
+- Product>views.py create add_product view.
+- In products>urls.py create new path for add_product, also update product_id path for integer. (Django needs to know difference between product number and a string) 
+- In products>templates>products create add_products.html with header title and sub-header.
+- Create cripsy form in a form element and give method of POST with url for add_product.
+- Form requires a cancel button also a submit button for the form.
+- Test form in website
+- Test result: successful. 
+- Commit Work thus far
 
