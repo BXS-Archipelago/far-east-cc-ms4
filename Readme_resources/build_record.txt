@@ -579,7 +579,7 @@ Chapter 35 : product admin
 - Add link to the product page in the base.html user header
 - Commit Work thus far
 
-Chapter 36 : Editing/updating products
+Chapter 36 : Editing/Delete products
 - Create edit_product.html with heading and submit heading and buttons
 - In products>views.py create a view called edit_product 
 - In urls.py create url for edit_product
@@ -589,4 +589,12 @@ Chapter 36 : Editing/updating products
 - Test page functionality
 - Test result: Check Error Message when excess characters are used: Successful
 - Test result: Check Success with correct input : Successful
+- Commit Work thus far
+- In products>urls.py create a path for delete_product
+- In products>views.py create a delete view, returning to products list when it performs its function.
+- Test :  Add new product, then delete it
+- Test result: success - new product is added but observing that new product page layout requires attention. When directing the new product to delete url using its product ID, the new product deletes successfully
+- Add active links to products.html and product_detail.html for Update and Delete
+- Test : Add new test products to check for both update and delete functionality 
+- Test results : New products added and both update and delete options are functioning correctly
 - Commit Work thus far
