@@ -541,11 +541,17 @@ Chapter 33 - Confirmation emails
 - in Checkout>templates  create confirmation_emails>confirmation_email_body.txt 
 - in webhook_handler.py create private method _send_confirmation_email(self, order).
 - Imports required for render_to_string, settings, send_mail for functionality
-- Call the method to send emails twice: first before returning form response to stripe, and second after where the order was created by webhook_handler.
+- Call the method to send emails from two potential sources: first before returning form response to stripe, or second after the order was created by webhook_handler.
 - Add default Email in Settings.py
 - Test email with sample purchase order.
 - Test result: successful ;  The order is processed and the confirmation email is observed in the terminal output. 
 - Commit Work thus far. 
 
-
+Chapter 34 : Product Admin
+- Create products>forms.py and import django forms, also Product, Category from .models.
+- Create the class ProductForm which extends forms.model form. 
+- Use friendly_names for categories but super() will override the init method and allow changes to fields
+- Use list comprehension syntax to call friendly_names and associated category id to loop into a list. 
+- Set the new class on the fields so they match the rest of the store.
+- Commit Work thus far. 
 
