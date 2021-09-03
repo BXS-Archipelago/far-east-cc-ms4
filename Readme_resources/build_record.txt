@@ -578,3 +578,15 @@ Chapter 35 : product admin
 - Test result: successful
 - Add link to the product page in the base.html user header
 - Commit Work thus far
+
+Chapter 36 : Editing/updating products
+- Create edit_product.html with heading and submit heading and buttons
+- In products>views.py create a view called edit_product 
+- In urls.py create url for edit_product
+- Test : edit_product.html is working, but no updates until post handler exists.
+- Create POST handler for edit_product
+- Attach success and error messages within handler for user notification
+- Test page functionality
+- Test result: Check Error Message when excess characters are used: Successful
+- Test result: Check Success with correct input : Successful
+- Commit Work thus far
