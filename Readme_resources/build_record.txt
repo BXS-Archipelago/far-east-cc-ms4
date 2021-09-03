@@ -563,3 +563,18 @@ Chapter 34 : Product Admin
 - Test result: successful. 
 - Commit Work thus far
 
+Chapter 35 : product admin
+- Create POST handler for add product view
+- Ensure previous empty form instantiation is moved into Else block
+- Test Add Product page first using price with too many digits.
+- Test result: successful. Error message appeared with correct warning
+- Test Add product with sku 023, correct dategory, data and an image.
+- Test result: successful New product appears in correct format.
+- Test Add product without an image
+- Test result: Product adds to product list as per expectation, but product will not be added to the shopping cart because success notification requires image with url
+- In templates toast_success, create IF statement about whether to render image.
+- In cart.html, create IF statement about whether to render image.
+- Test add product without image and order this product. 
+- Test result: successful
+- Add link to the product page in the base.html user header
+- Commit Work thus far
