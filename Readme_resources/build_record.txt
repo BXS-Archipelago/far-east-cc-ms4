@@ -598,3 +598,10 @@ Chapter 36 : Editing/Delete products
 - Test : Add new test products to check for both update and delete functionality 
 - Test results : New products added and both update and delete options are functioning correctly
 - Commit Work thus far
+
+Chapter 37 : login_required for secure urls
+- In products>views.py use :  from django.contrib.auth.decorators import login_required
+- Add the @login_required decorator to add_, edit_ and delete_products functions for security
+- In profiles>views.py also import login_required and add decorator to user profile
+-In products>views.py only superusers can add, edit and delete. Create conditions that anyone not a superuser will not be able to access to add, edit or delete.
+- Commit Work thus far

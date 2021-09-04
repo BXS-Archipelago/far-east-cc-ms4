@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q 
 from .models import Product, Category
 from django.db.models.functions import Lower
@@ -78,7 +79,12 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+@login_required 
 def add_product(request):
+    # only superuser permission
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the boss can access that!')
+        return redirect(reverse('home'))
     # Allow new products to be added to the store
 
     if request.method == 'POST':
@@ -100,7 +106,12 @@ def add_product(request):
 
     return render(request, template, context)
 
+@login_required
 def edit_product(request, product_id): 
+    # only superuser permission
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the boss can access that!')
+        return redirect(reverse('home'))
     # Allows operator to edit the products
     product = get_object_or_404(Product, pk=product_id)
     if request.method == "POST":
@@ -124,7 +135,12 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 # View for deleting products by site admin
+@login_required
 def delete_product(request, product_id):
+    # only superuser permission
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the boss can access that!')
+        return redirect(reverse('home'))
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')

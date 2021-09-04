@@ -6,11 +6,11 @@ from .forms import UserProfileForm
 
 from checkout.models import Order
 
+@login_required
 def profile(request):
-#    Show the User's Profile
+    # Show the User's Profile
     profile = get_object_or_404(UserProfile, user=request.user)
-
-    #Post Handler
+    # Post Handler
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
