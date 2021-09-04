@@ -630,3 +630,23 @@ Chapter 38 : Image input fields
 - Test: Try to access add or edit urls while not logged in.
 - Test result: Successful - redirected to login page
 - Commit Work thus far
+
+Chapter 39
+- Access heroku.com, create new app : bxs-fecc-ms4
+- Add-On Heroku Postgres
+- Install at terminal : pip3 install dj_database_url
+- Secondly, install : pip3 install psycopg2-binary
+- Freeze Requirements.txt
+- In project settings.py import dj_database_url 
+- Comment out original DATABASES
+- Update databases in settings.py with call to dj_database_url.purchase
+- Retrieve database_url config var from heroku settings and attach to parse
+- Run python3 manage.py showmigrations  
+- Bug : the Operational Error: Fatal appeared but as tutorial suggested, running
+unset PGHOSTADDR command in the terminal fixed this. 
+- Show Migrations command reveals the list of migrations that are required. 
+- Run python3 manage.py migrate
+- Run  python3 manage.py loaddata categories
+- Run  python3 manage.py loaddata products
+- Create superuser and password
+- Remove heroku parsed database config in settings.py and restore original DATABASES.
