@@ -605,3 +605,15 @@ Chapter 37 : login_required for secure urls
 - In profiles>views.py also import login_required and add decorator to user profile
 -In products>views.py only superusers can add, edit and delete. Create conditions that anyone not a superuser will not be able to access to add, edit or delete.
 - Commit Work thus far
+
+Chapter 38 : Image input fields
+- In products create widgets.py and import ClearableFileInput and gettext_lazy as _   (note: to use _() as an alias for gettext_lazy())
+- Create class CustomClearableFileInput  with required values
+- In project, create in product>templates>custom_widget_templates>custom_clearable_file_input.html
+- Retrieve Django>forms>templates>widgets> clearable_file_input.html and past contents to project
+- Modify the widget to achieve desired layout with further styling and margins, including bootstrap classes.
+- In product>forms.py, from .widgets import CustomCelarableFileInput 
+- Set image to new forms.imagefield so it utilizes the widget
+- Test progress : Access a product in edit model
+- Test result : successful, but styling issues still apparent. 
+- Commit Work thus far
