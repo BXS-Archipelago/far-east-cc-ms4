@@ -742,13 +742,40 @@ content .col .drop-down-image {
 
 
 
-/* Products Page */
+/* -------------------------------Products Page */
 
 .card-shadow {
   box-shadow: var(--dark-shadow);
 }
 
-/* ***Toasts *** */
+/* -------------------------------Products Admin Form */
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 0;
+}
+
+/* ------------------------------***Toasts *** */
 
 .arrow-up {
   width: 0; 
@@ -761,7 +788,7 @@ content .col .drop-down-image {
   right: 66px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
+/*----------------------- Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
   border-bottom-color: #007bff !important;
 }
@@ -859,7 +886,7 @@ content .col .drop-down-image {
   }
 }
 
-  /* Add To Cart or Keep Shopping buttons  */
+/* -----------------  Add To Cart or Keep Shopping buttons  */
 
   .btn-black {
     background: var(--fecc-red-dark);

@@ -617,3 +617,16 @@ Chapter 38 : Image input fields
 - Test progress : Access a product in edit model
 - Test result : successful, but styling issues still apparent. 
 - Commit Work thus far
+- Create styling for image input in base.css
+- Remove label for Image rendered by Crispy Forms using If statement in Add and Edit page templates
+- Add Javascript to Add and Edit product templates to listen for change event on new image input
+- When it is changed, set the filename in the widget template to the new file name.
+- Test: Add new Product with proper details, price and an image. 
+- Test result Successful. Image filename is observed before saving. 
+- Test: Edit product by changing text and removing image
+- Test result: Successful. Update description and default image is observed. 
+- Test: Try to add product as a non-admin user
+- Test result: successful - Message appears that only admin can access that
+- Test: Try to access add or edit urls while not logged in.
+- Test result: Successful - redirected to login page
+- Commit Work thus far

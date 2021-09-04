@@ -31,11 +31,19 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-            {{ form | crispy}}
+            {% csrf_token %}
+    <!-- This snippet is to remove the word "image" in product admin -->
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+            
             <div class="text-right">
                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">Cancel</a>
-                <button class="btn btn-black rounded-0" type="submit">UpdateProduct</button>
+                <button class="btn btn-black rounded-0" type="submit">Update Product</button>
             </div>
             </form>
         </div>
@@ -43,4 +51,18 @@
 </div>
 
 
+{% endblock %}
+
+<!-- Notify the user of what the image will be changed to -->
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#new-image').change(function() {
+            //  listen for change event on new image input 
+            var file = $('#new-image')[0].files[0];
+            // set the file name paragraph in the widget template to file name
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
+    </script>
 {% endblock %}
