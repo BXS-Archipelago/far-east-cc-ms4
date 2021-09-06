@@ -663,3 +663,13 @@ Chapter 40 : Deploy to heroku
 heroku config:set DISABLE_COLLECTSTATIC=1 --app bxs-fecc-ms4 
 - In project settings.py add local host and heroku app hostname to ALLOWED_HOSTS
 - Commit Work thus far (to deploy)
+- After normal git push, initialise heroku git remote if app created in website: heroku git:remote -a bxs-fecc-ms4
+- Then : git push heroku main
+- Test Heroku App for deployment
+- Test result: successful but lack of static files for styling Observed
+- In Heroku, connect app to Github and set to automatically deploy whenever a git push occurs
+- Use www.https://miniwebtool.com/ to generate a django SECRET key
+- Add new key to heroku config variables
+- In settings.py, configure the secret key setting to retrieve from environment, using empty string as a default
+- Set DEBUG = 'DEVELOPMENT' in os.environ 
+- Commit Work thus far 
