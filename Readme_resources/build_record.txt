@@ -734,5 +734,15 @@ Chapter 42 : connect Django to AWS
 - In settings.py, now set the Static and Media Files for the storage classes just created.
 - Set the Static and Media file new location URLs to override the URLS in production
 - Now Commit Work thus far and issue a git push to deploy into heroku.
+- Monitor Activity in build-log in Heroku.  Initial build FAILED due to typo (
+    used django.config instead of django.conf to import settings! )
+- Test again with git add, commit & push. Build Finalised Successfully. 
+- In AWS S3, the static file is now present.
+- In the website, the CSS and JS are functioning. Images are yet to be transferred in. 
+- Testing Successful this far. 
+
+Chapter 43 : Handling Media Files
+- In Settings.py add AWS_S3_OBJECT_PARAMETERS in USE_AWS to allow browser to cache static files for extended periods as required
+- Commit Work thus far and push into Heroku
 
 
