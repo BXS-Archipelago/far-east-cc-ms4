@@ -135,7 +135,7 @@ Chapter 8
 - Add 'products' to INSTALLED_APPS in the main settings.py file
 - Add Fixtures folder to products app : mkdir products/fixtures
 - Add categories.json and products.json to fixtures folder
-- Populate 8 categories and 14 products with json data
+- Populate 8 categories and 14 products (so far) with json data 
 - Commit Work thus far
 - Add more items to products.json. 20 items, but more needed progressively.
 - Add more images to media folder & shorten file names.
@@ -631,14 +631,14 @@ Chapter 38 : Image input fields
 - Test result: Successful - redirected to login page
 - Commit Work thus far
 
-Chapter 39
+Chapter 39 - Heroku setup
 - Access heroku.com, create new app : bxs-fecc-ms4
 - Add-On Heroku Postgres
 - Install at terminal : pip3 install dj_database_url
 - Secondly, install : pip3 install psycopg2-binary
 - Freeze Requirements.txt
 - In project settings.py import dj_database_url 
-- Comment out original DATABASES
+- Comment out original DATABASES block
 - Update databases in settings.py with call to dj_database_url.purchase
 - Retrieve database_url config var from heroku settings and attach to parse
 - Run python3 manage.py showmigrations  
@@ -649,4 +649,17 @@ unset PGHOSTADDR command in the terminal fixed this.
 - Run  python3 manage.py loaddata categories
 - Run  python3 manage.py loaddata products
 - Create superuser and password
-- Remove heroku parsed database config in settings.py and restore original DATABASES.
+- Remove parsed database config in settings.py and restore original DATABASES.
+- Commit Work thus far
+
+Chapter 40 : Deploy to heroku
+- in project settings.py use : if 'DATABASE_URL' in os.environ to use as database setting, otherwise use default default.
+- As webserver, install :  pip3 install gunicorn
+- then : pip3 freeze > requirements.txt
+- create new file : Procfile
+- In Procfile : web: gunicorn far_east_cc.wsgi:application ; so Heroku can create a web dyno to run unicorn and serve the django app
+- At Terminal :  heroku login -i
+- At Terminal, disable collecstatic with :
+heroku config:set DISABLE_COLLECTSTATIC=1 --app bxs-fecc-ms4 
+- In project settings.py add local host and heroku app hostname to ALLOWED_HOSTS
+- Commit Work thus far (to deploy)

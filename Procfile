@@ -1,0 +1,1 @@
+web: gunicorn far_east_cc.wsgi:application 

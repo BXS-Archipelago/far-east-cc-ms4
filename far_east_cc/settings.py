@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--5zh6f$ccu7ox7w(9n*n7=owar71=8-)pz^(3f*_ymw5gh+c_+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bxs-fecc-ms4.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -125,6 +125,12 @@ WSGI_APPLICATION = 'far_east_cc.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 DATABASES = {
     'default': {
