@@ -673,3 +673,66 @@ heroku config:set DISABLE_COLLECTSTATIC=1 --app bxs-fecc-ms4
 - In settings.py, configure the secret key setting to retrieve from environment, using empty string as a default
 - Set DEBUG = 'DEVELOPMENT' in os.environ 
 - Commit Work thus far 
+
+Chapter 41 : Amazon Web Services S3
+- in AWS s3, create new bucket : bxs-fecc-ms4 
+- in bucket settings, enable static website hosting
+- Use the provided CORS configuration: 
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+- Edit Bucket Policy for S3 Bucket Policy, Pricipal *, Action : Get object
+- Retrieve ARN from bucket policy editor and paste into policy generator 
+- Click Add Statement, then Generate Policy
+- Copy Policy and pasted into bucket policy editor
+- Add /* onto the end of the resource key to allow access to all resources
+- Click Save 
+- In Access Control Lists ACL allow everyone access to List Objects
+
+Chapter 42 : Identity Access Management in AWS 
+- Access IAM from AWS services dashboard or the history
+- First Create Group for the user to reside: manage-fecc-ms4
+- then create Policy :  go to the JSON tab, use import managed policy 
+- Search for S3FullAccess Policy and import that.
+- Open in a separate tab, S3 from the services dropdown. 
+- Navigate to bucket policy editor and retrieve ARN 
+- Paste ARN into create policy json field replacing the Resource. Use [] here
+- Secondly, also include the ARN again but with the /* . The first is the bucket itself, the second is another rule for all files/folders within.
+- Click next, (no tags) and next again for Policy naming: bxs-fecc-ms4-policy.
+- Give description : "Access to S3 bucket for FECC static files"
+- Click Create Policy
+- Test Success : In Policies Page, AWS confirms "The policy bxs-fecc-ms4-policy has been created."
+- Go to User Groups for "manage-fecc-ms4"
+- Under Permissions, click Add Permissions > Attach Policy
+- Find the relevant policy (bxs-fecc-ms4-policy) and click Add Permissions
+- In Users section, click Add User and name it : fecc-staticfiles-user
+- Give Programmatic Access and click next
+- Add the Correct user to group and click next to the end
+- On the Sucess page, download the CSV file which contains access and secret access keys
+
+Chapter 42 : connect Django to AWS
+- installation : pip3 install boto3
+- installation : pip3 install django-storages
+- Freeze installations : pip3 freeze > requirements.txt
+- In project settings.py, add storages to installed apps
+- Also in settings, set an IF statement for USE_AWS in the environ to control the bucket, region, access key and secret key.
+- In Heroku config vars, add the csv access key and secret key, also remove disable collecstatic
+- In settings.py, set the aws custom domain variable to storage bucket name 
+- Create new file: custom_storages.py and import django config settings and S3Boto3Storage 
+- Create classes for StaticStorage and MediaStorage to inherit from django storages.
+- In settings.py, now set the Static and Media Files for the storage classes just created.
+- Set the Static and Media file new location URLs to override the URLS in production
+- Now Commit Work thus far and issue a git push to deploy into heroku.
+
+
