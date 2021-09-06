@@ -744,5 +744,7 @@ Chapter 42 : connect Django to AWS
 Chapter 43 : Handling Media Files
 - In Settings.py add AWS_S3_OBJECT_PARAMETERS in USE_AWS to allow browser to cache static files for extended periods as required
 - Commit Work thus far and push into Heroku
+- In S3, create a new folder : "media"
+- 
 
 
