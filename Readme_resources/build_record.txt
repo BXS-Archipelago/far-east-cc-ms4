@@ -766,6 +766,7 @@ Chapter 44 - Emails with Django
 - In project settings.py find and cut EMAIL_BACKEND variable
 - Use if 'DEVELOPMENT in os.environ statement and add settings for emails for Defaults and port, smtp, host options, etc
 - Commit Work thus far and deploy changes to heroku
+- Test: Heroku build failed due to typo in settings.py (missing quotation mark)
 
 
 
