@@ -767,6 +767,16 @@ Chapter 44 - Emails with Django
 - Use if 'DEVELOPMENT in os.environ statement and add settings for emails for Defaults and port, smtp, host options, etc
 - Commit Work thus far and deploy changes to heroku
 - Test: Heroku build failed due to typo in settings.py (missing quotation mark)
+- Test : Build and deploy successful. 
+- Test : Create new user using new email address and details in webstore. 
+- Test result: Inconclusive. No confirmation email received into inbox initially. Revision of code shows no errors. Gmail setup for Django seems correct at this time.  Test run with several email addresses but no automatic response received and no error messages either. 
+- Test register again
+- Test result : successful -  The solution to the email bug is not clear. It may have been a delay with the Gmail account settings as no meaningful changes occurred in the code. After 2 hours, the registration confirmation email was working fine with two successful registrations. 
+- More email testing to be done for orders, passwords, etc. 
+
+Chapter 45 - Refactoring HTML, CSS and JS
+- update url link for home in base.html
+
 
 
 
