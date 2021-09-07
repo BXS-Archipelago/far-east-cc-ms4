@@ -744,7 +744,30 @@ Chapter 42 : connect Django to AWS
 Chapter 43 : Handling Media Files
 - In Settings.py add AWS_S3_OBJECT_PARAMETERS in USE_AWS to allow browser to cache static files for extended periods as required
 - Commit Work thus far and push into Heroku
-- In S3, create a new folder : "media"
-- 
+- In S3, create a new folder : "media" and upload all images into it
+- Test : Login to project page as Admin and verify email address 
+- Test result : Initially, Admin refused login so the page login was used to force allauth to create the email
+- Test Login to admin: Success. Email address observed and verifiable.
+- Add Stripe Keys to the Heroku Config Vars : Public and Secret Keys
+- Create new Webhook Endpoint for Herokuapp url
+- Add the new Webhook signing secret key to Heroku config vars
+- Test: Send test Webhook from Stripe
+- Test result: Webhook failed. Reason :  no final trailing / at the endpoint.
+- Test result: Successful once the endpoint had the correct format.
+- Test: Process dummy order.
+- Test result: Successful - Product selected and added to cart, in checkout, the credit card is accepted and the order processed and confirmed. More testing required for new client. 
+
+Chapter 44 - Emails with Django
+- Using GMAIL account, in account settings > accounts & import, use 2-step verification. 
+- Create App Password for Django app, using Mail & Other (name it 'Django")
+- Retrieve 16-digit password 
+- In Heroku config vars EMAIL_HOST_PASS holds the password key
+- EMAIL_HOST_USER is set as the email account
+- In project settings.py find and cut EMAIL_BACKEND variable
+- Use if 'DEVELOPMENT in os.environ statement and add settings for emails for Defaults and port, smtp, host options, etc
+- Commit Work thus far and deploy changes to heroku
+
+
+
 
 
