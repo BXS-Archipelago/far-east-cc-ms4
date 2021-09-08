@@ -478,7 +478,7 @@ ul .drop-menu {
   visibility: visible;
 }
 
-#wide-menu {
+.wide-menu {
   box-shadow: 1px 2px 2px 3px var(--fecc-grey-9); 
   position: absolute;
   left: 15vw;
@@ -497,7 +497,7 @@ ul .drop-menu {
   display: block;
 }
 
-#wide-menu .content {
+.wide-menu .content {
   background: var(--fecc-grey-10);
   padding: 1rem;
   display: grid;
@@ -559,12 +559,12 @@ content .col .drop-down-image {
 .col .lg-links .li, .col .lg-links li a {
   padding: 0 1rem;
 }
-/* 
+
 .menu-items li:hover .wide-menu {
   top: 60px;
   opacity: 1;
   visibility: visible;
-} */
+}
 
 /* cart dropdown menu */
 
