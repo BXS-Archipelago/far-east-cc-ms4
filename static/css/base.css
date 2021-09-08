@@ -458,7 +458,7 @@ ul .drop-menu {
   left: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
   border-radius: 5px;
   
 }
@@ -478,7 +478,7 @@ ul .drop-menu {
   visibility: visible;
 }
 
-.wide-menu {
+#wide-menu {
   box-shadow: 1px 2px 2px 3px var(--fecc-grey-9); 
   position: absolute;
   left: 15vw;
@@ -490,7 +490,12 @@ ul .drop-menu {
   margin-top: 1rem;
   border-radius: 5px;
   z-index: 99;
+  display: none
   }
+
+#wide-menu.active {
+  display: block;
+}
 
 .wide-menu .content {
   background: var(--fecc-grey-10);
