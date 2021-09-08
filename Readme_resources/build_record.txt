@@ -778,6 +778,7 @@ Chapter 45 - Refactoring HTML, CSS and JS
 - update url link for home in base.html 
 - update links for {{ URL_MEDIA }} in base.html images and logo
 - update transition times for nav and drop-down menu animations
+- Update buttons in Allauth pages to match. 
 
 
 

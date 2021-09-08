@@ -87,10 +87,10 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
+  text-transform: uppercase;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-primary);
   }
 
  h1 {
@@ -309,14 +309,7 @@ p {
     padding-top: 15px;
   }
 
-  .account-text {
-    color: var(--fecc-primary-1);
-    margin: 0;
-    font-size: .8rem;
-    text-shadow: 2px 2px 2px var(--fecc-grey-7);
-    font-weight: 500;
-    letter-spacing: 1.3px;
-  }
+  
   
   @media screen and (min-width: 993px) {
     .sidebar {
@@ -361,7 +354,8 @@ p {
   }
   .header a {
     text-decoration: none;
-    color: var(--fecc-primary-1);
+    color: var(--fecc-primary-1);  
+    text-shadow: 0px 1px 1px var(--fecc-grey-7);
   }
 
 
@@ -439,8 +433,18 @@ p {
   flex-direction: column;
  }
 
+ .account-text {
+  color: var(--fecc-primary-1);
+  margin: 0;
+  font-size: .8rem;
+  text-shadow: 2px 2px 2px var(--fecc-grey-7);
+  font-weight: 500;
+  letter-spacing: 1.3px;
+}
+
   .icons i {
-    color: var(--fecc-red-dark);
+    font-size: 1.1rem;
+    color: var(--fecc-grey-6);
     text-shadow: 2px 2px 2px var(--fecc-grey-4);
   }
 /* >>>>>>>>>>>
@@ -467,6 +471,8 @@ ul .drop-menu {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  font-weight: 500;
+  letter-spacing: 1.3px;
 }
 
 .menu-item i {
@@ -479,23 +485,20 @@ ul .drop-menu {
 }
 
 .wide-menu {
-  box-shadow: 1px 2px 2px 3px var(--fecc-grey-9); 
+  box-shadow: 5px 8px 14px 5px var(--fecc-primary-1) ; 
+  
   position: absolute;
   left: 15vw;
   width: 70vw;
   top: 100px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
   margin-top: 1rem;
   border-radius: 5px;
-  z-index: 99;
-  display: none
+  z-index: 99;  
   }
 
-#wide-menu.active {
-  display: block;
-}
 
 .wide-menu .content {
   background: var(--fecc-grey-10);
@@ -564,6 +567,13 @@ content .col .drop-down-image {
   top: 60px;
   opacity: 1;
   visibility: visible;
+}
+
+.dropdown-item {
+  letter-spacing: 1.1px;
+  font-size: .9rem;
+  font-weight: 400;
+  
 }
 
 /* cart dropdown menu */
@@ -899,9 +909,10 @@ content .col .drop-down-image {
 }
 
 .btn-outline-black {
-    background: white;
+    background: var(--fecc-primary-9);
     color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    border: 1px solid var(--fecc-primary-2);
+    border-radius: 4px;
 }
 
 .btn-outline-black:hover,
@@ -921,6 +932,11 @@ input[name='q']::placeholder {
 }
 
 /* Allauth form formatting */
+
+.btn-custom {
+  padding: 6px 12px;
+  font-size: 1rem;
+}
 
 .allauth-form-inner-content p {
   margin-top: 1.5rem; /* mt-4 */
