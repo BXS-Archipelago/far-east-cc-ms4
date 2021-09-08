@@ -337,7 +337,7 @@ p {
 
 /* 
   >>>>>>>>>>>>>>>>
-  Top Bar for Critical Store Navigation
+  Top Bar for Store Navigation
   >>>>>>>>>>>>>>>> */
   
   .header {
@@ -407,7 +407,7 @@ p {
 
   .menu-items li {
     padding: 0.5rem 1rem;
-    transition: background 0.3s ease-in-out; 
+    transition: 0.7s ease-in-out; 
   }
 
   .menu-items li:hover {
@@ -458,7 +458,7 @@ ul .drop-menu {
   left: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   border-radius: 5px;
   
 }
