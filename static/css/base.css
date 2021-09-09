@@ -758,7 +758,7 @@ content .col .drop-down-image {
 
 
 
-/* -------------------------------Products Page */
+/* ------------------------------------Products Page */
 
 .card-shadow {
   box-shadow: var(--dark-shadow);
@@ -769,6 +769,24 @@ content .col .drop-down-image {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+/*  ------------------------------Star Rating Section */
+
+.checked-star {
+  color: var(--fecc-red-light)
+}
+
+.stars {
+  padding: 10px 0px;
+  border: 1px solid black;
+}
+
+.user-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* -------------------------------Products Admin Form */

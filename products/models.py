@@ -1,4 +1,6 @@
 from django.db import models
+# access to user profiles and product data
+from profiles.models import UserProfile
 
 # Create your models here.
 # This is so django knows which category each product goes in
