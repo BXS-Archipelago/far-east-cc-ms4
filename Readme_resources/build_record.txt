@@ -779,6 +779,10 @@ Chapter 45 - Refactoring HTML, CSS and JS
 - update links for {{ URL_MEDIA }} in base.html images and logo
 - update transition times for nav and drop-down menu animations
 - Update buttons in Allauth pages to match. 
+- Login page, removed home button, added text links.
+- Logout page, button updated and heading style added. 
+- Password change page, updated button.
+- 
 
 
 

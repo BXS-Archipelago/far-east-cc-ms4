@@ -67,7 +67,7 @@
 <div class=" nav-icons">
   <ul class="menu-items">
     <li><a href="{% url 'home' %}" class="menu-item">Home</a></li>
-    <li><a href="{% url 'products' %}" class="menu-item" id="wide-menu-trigger">Store <i class="fas    fa-chevron-down"></i></a>
+    <li><a href="{% url 'products' %}" class="menu-item" id="wide-menu-trigger">Store <i class="fas fa-chevron-down"></i></a>
       <div class="wide-menu" >
           <div class="content">
             <div class="col">
@@ -149,22 +149,23 @@
   </ul>
 </div>
 <div class="user-box">
-  <ul class="user-icons ">
+  <ul class="user-icons menu-items">
     <li class="drop-down cart-icons ">
-      <a class="icons " href="" id="dropdownMenuButton"  data-toggle="dropdown"><i class="fas fa-lg fa-user-alt"></i><p class="account-text">Account</p></a>
+      <a class="icons " href="" id="dropdownMenuButton"  data-toggle="dropdown"><p class="account-text">Account</p>
+      </a>
       
-      <div class="dropdown-menu border-0 " id="narrow-dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <ul class="drop-menu  border-0 "  aria-labelledby="dropdownMenuButton">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
-        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+        <li><a href="{% url 'add_product' %}" class=" menu-item">Product Manager</a></li>
         {% endif %}
-        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+        <li><a href="{% url 'profile' %}" class=" menu-item">My Profile</a></li>
+        <li><a href="{% url 'account_logout' %}" class=" menu-item">Logout</a></li>
         {% else %}
-        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+        <li><a href="{% url 'account_signup' %}" class=" menu-item">Register</a></li>
+        <li><a href="{% url 'account_login' %}" class=" menu-item">Login</a></li>
         {% endif %}
-      </div>
+      </ul>
     </li>
     <li class="cart-icons">
       <a class="{% if grand_total %}text-info{% else %}text-black{% endif %} " href="{% url 'view_cart' %}">

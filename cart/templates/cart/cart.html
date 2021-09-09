@@ -35,7 +35,7 @@
             <thead class="text-black">
                 <tr>
                     <th scope="col">Product Info</th>
-                    <th scope="col"></th>
+                    <th scope="col">Product</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Subtotal</th>
@@ -45,9 +45,9 @@
                     <tr>
                         <td class="p3 w-25">
                         {% if item.product.image %}
-                            <img class="img-fluid rounded"  src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            <img class=" img-thumbnail rounded"  src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                         {% else %}
-                            <img class="img-fluid rounded"  src="{{ MEDIA_URL }}noimage.png " alt="{{ item.product.name }}">
+                            <img class=" img-thumbnail rounded"  src="{{ MEDIA_URL }}no-image.jpg " alt="{{ item.product.name }}">
                         {% endif %}
                         
                         </td>
@@ -113,13 +113,13 @@
                 </tr>
                 <tr>
                     <td colspan="5" class="text-right">
-                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <a href="{% url 'products' %}" class="btn btn-outline-custom  ">
                             <span class="icon">
                                 <i class="fas fa-angle-double-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
-                        <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                        <a href="{% url 'checkout' %}" class="btn btn-black ">
                             <span class="text-uppercase">Secure Checkout</span>
                             <span class="icon">
                                 <i class="fas fa-angle-double-right"></i>

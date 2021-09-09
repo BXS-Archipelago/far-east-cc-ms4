@@ -50,3 +50,12 @@ and adding to the end:
 - Solution after a search was a missing # key in the stripe_elements.js ! 
 
 6. Testing checkout with sample order, the delivery charge is incorrect in the Order Admin Checkout.  The Cart Contexts are correct, but I altered the project settings.py with a "standard_delivery_cost = 7" to carry across to checkout>models.py so a cleaner instruction of "self.delivery_cost = settings.STANDARD_DELIVERY_COST" . The previous version was using a percentage of order_total as the delivery cost.
+
+7. Logging in locally (not heroku) gives the error message : 
+    django.core.exceptions.ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the NAME value.
+Solution : there has been a problem with Gitpod over past 24hrs. Somehow DATABASE_URL has been set by Gitpod. 
+- typed in terminal: echo $DATABASE_URL
+ The response was: postgresql://gitpod@localhost
+- typed in the terminal:  unset DATABASE_URL
+This seems to have worked. Advice was kindly gained from the CI slack channel from Igor Basuga. 
+

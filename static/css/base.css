@@ -388,9 +388,8 @@ p {
   .user-icons {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin:0 30px;
-    padding-top: 20px;
+    align-items: center;      
+    padding-right: 1rem;
   }
 
   .menu-items {
@@ -400,7 +399,7 @@ p {
   }
 
   .menu-items li {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem .8rem;
     transition: 0.7s ease-in-out; 
   }
 
@@ -414,7 +413,8 @@ p {
 .user-box {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start
+  ;
 }
 
 .cart-icons {
@@ -423,6 +423,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: .2rem .6rem;
 }
   .icons i, p{
   padding: 5px;
@@ -434,12 +435,13 @@ p {
  }
 
  .account-text {
-  color: var(--fecc-primary-1);
+  color: var(--fecc-grey-4);
   margin: 0;
   font-size: .8rem;
   text-shadow: 2px 2px 2px var(--fecc-grey-7);
   font-weight: 500;
   letter-spacing: 1.3px;
+  text-transform: uppercase;
 }
 
   .icons i {
@@ -457,7 +459,7 @@ ul .drop-menu {
   position: absolute;
   background: var(--fecc-grey-10);
   box-shadow: 1px 2px 2px 2px var(--fecc-grey-5); 
-  width: 100%;
+  width: 200%;
   top: 50px;
   left: 0;
   opacity: 0;
@@ -472,7 +474,7 @@ ul .drop-menu {
   justify-content: space-between;
   width: 100%;
   font-weight: 500;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.1px;
 }
 
 .menu-item i {
@@ -485,15 +487,14 @@ ul .drop-menu {
 }
 
 .wide-menu {
-  box-shadow: 5px 8px 14px 5px var(--fecc-primary-1) ; 
-  
+  box-shadow: 5px 8px 14px 5px var(--fecc-primary-1) ;   
   position: absolute;
   left: 15vw;
   width: 70vw;
   top: 100px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.7s ease;
+  transition: all 0.6s ease;
   margin-top: 1rem;
   border-radius: 5px;
   z-index: 99;  
@@ -572,9 +573,9 @@ content .col .drop-down-image {
 .dropdown-item {
   letter-spacing: 1.1px;
   font-size: .9rem;
-  font-weight: 400;
-  
+  font-weight: 400;  
 }
+
 
 /* cart dropdown menu */
 
@@ -763,6 +764,13 @@ content .col .drop-down-image {
   box-shadow: var(--dark-shadow);
 }
 
+.quantity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 /* -------------------------------Products Admin Form */
 .btn-file {
   position: relative;
@@ -849,7 +857,7 @@ content .col .drop-down-image {
 }
 
 .toast-capper {
-  height: 2px;
+  height: 5px;
 }
 
 .toast-bg {
@@ -901,25 +909,34 @@ content .col .drop-down-image {
   }
 }
 
+.btn-custom {
+  padding: 6px 12px;
+  font-size: 1rem;
+  
+}
+
 /* -----------------  Add To Cart or Keep Shopping buttons  */
 
   .btn-black {
     background: var(--fecc-red-dark);
     color: white;
+   
 }
 
 .btn-outline-black {
-    background: var(--fecc-primary-9);
-    color: black !important; /* use important to override link colors for <a> elements */
+    background: var(--fecc-primary-5);
+    box-shadow: var(--dark-light);
     border: 1px solid var(--fecc-primary-2);
     border-radius: 4px;
+color: black !important; /* use important to override link colors for <a> elements */
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
+    background: var(--fecc-green-dark);
     color: white !important;
+    box-shadow: var(--dark-shadow);
 }
 
 .update-link,
@@ -936,6 +953,25 @@ input[name='q']::placeholder {
 .btn-custom {
   padding: 6px 12px;
   font-size: 1rem;
+  
+}
+
+
+.btn-outline-custom {
+  background: var(--fecc-azure-light);
+  box-shadow: var(--light-shadow);
+  border: 1px solid var(--fecc-primary-2);
+  border-radius: 4px;
+  color: black !important; /* use important to override link colors for <a> elements */
+
+}
+
+.btn-outline-custom:hover,
+.btn-outline-custom:active,
+.btn-outline-custom:focus {
+    background: var(--fecc-primary-2);
+    color: white !important;
+    box-shadow: var(--dark-shadow);
 }
 
 .allauth-form-inner-content p {
