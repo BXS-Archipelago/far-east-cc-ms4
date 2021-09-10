@@ -115,13 +115,16 @@
                     </div>
                 </form>
 
-
+                
+                <a href="{% url 'rate_product' product.id %}" class="btn-outline-custom btn">Rate</a>
             </div>
         </div>
     </div>
 </div>
 <hr>
-{% include 'products/includes/leave_rating.html' %}
+
+
+<!-- {% include 'products/includes/leave_rating.html' %} -->
 
 {% endblock %}
 

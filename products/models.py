@@ -1,7 +1,7 @@
 from django.db import models
 # access to user profiles and product data
 from profiles.models import UserProfile
-
+from django.contrib.auth.models import User
 # Create your models here.
 # This is so django knows which category each product goes in
 
@@ -30,3 +30,28 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+STAR_RATING = [
+    (1, '1'),
+    (2, '2'),
+    (3, '3'),
+    (4, '4'),
+    (5, '5')
+]
+
+
+# Model for the Review
+class Review(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    title = models.TextField(max_length=300, blank=True)
+    description = models.TextField(max_length=1000, blank=True)
+    rated = models.PositiveSmallIntegerField(choices=STAR_RATING, null=False)
+    likes = models.PositiveIntegerField(default=0)
+    unlikes = models.PositiveIntegerField(default=0)
+
+
+    def __str__(self):
+        return self.user

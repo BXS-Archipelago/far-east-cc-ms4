@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q 
-from .models import Product, Category 
+from .models import Product, Category  
 from django.db.models.functions import Lower
- 
-from django.db.models import Avg
+
+from products.forms import RateForm
+
 from profiles.models import UserProfile
+
 
 # Create your views here.
 
@@ -147,3 +149,29 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def rate_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    user = UserProfile.objects.get(user=request.user)
+
+    if request.method == 'POST':
+        form = RateForm(request.POST)
+        if form.is_valid():            
+            rate = form.save(commit=False)
+            rate.user = user
+            rate.product = product
+            rate.save()
+            return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        form = RateForm()
+
+    template = 'products/rate.html'
+
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)

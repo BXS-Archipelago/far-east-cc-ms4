@@ -771,22 +771,23 @@ content .col .drop-down-image {
   flex-direction: column;
 }
 
-/*  ------------------------------Star Rating Section */
+/*  ------------------------------Review & Rating Section */
 
-.checked-star {
-  color: var(--fecc-red-light)
-}
 
-.stars {
-  padding: 10px 0px;
-  border: 1px solid black;
-}
 
 .user-rating {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.review-holder {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* -------------------------------Products Admin Form */

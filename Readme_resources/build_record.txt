@@ -782,9 +782,18 @@ Chapter 45 - Refactoring HTML, CSS and JS
 - Login page, removed home button, added text links.
 - Logout page, button updated and heading style added. 
 - Password change page, updated button.
+- Commit Work thus far
+- Update Cart page.
+- Update Checkout & Checkout Success 
+- Update add_product, edit product, product detail and products pages. 
+- Commit work thus far.
+
+- Chapter 46 - Create Ratings and Reviews section
+- Create reviews app : python3 manage.py startapp reviews
+- In reviews>admin.py create class reviewAdmin for name, category, comment, rating.
+- In reviews>models.py create class for model of user, product, comment, rate and date/time created
+- In product detail page, create a new review section for read-review and write-review
 - 
-
-
 
 
 

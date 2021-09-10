@@ -1,15 +1,42 @@
+{% if request.user.is_authenticated %}
 
+<a href="{% url 'rate_product' product.id %}" class="btn-outline-custom btn">Rate</a>
+<div class="row">    
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ product.image.url }}" >
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title"><b>{{ product.name}}</b></span>
+            <span>{{ product.category.friendly_name }}</span>
+            <br>
+            <p class="mt-3">{{ product.description }}</p>
+            <br>
+            <div class="divider"></div>
+            <br>
+            <form method="post" action="" role="form" class="col-12">
+              {% csrf_token %}
+             <div class="input-field col s12">
+                {{ form.rate }}
+            </div>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+              {{ form.text }}
 
-<div class="row user-rating">
-    <h4>Please Rate This Product</h4>
-    <div class="col text-center stars">        
-<span class="fa fa-star checked-star"></span>
-<span class="fa fa-star checked-star"></span>
-<span class="fa fa-star checked-star"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
+            </textarea>
+               
+              <label for="textarea1">Opinion</label>
+            </div>
+
+            <button type="submit" name="action" class="btn btn-outline-custom">Rate</button>
+          </form>
+          </div>
+        </div>
+      </div>
     </div>
-<hr>
-<div id="confirm-box"></div>
-<button class="btn btn-outline-custom">Rate It!</button>
-</div>
+
+    </div>
+
+
+{% endif %}
