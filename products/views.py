@@ -7,7 +7,7 @@ from django.db.models.functions import Lower
 
 from products.forms import RateForm
 
-from profiles.models import UserProfile
+from profiles.models import UserProfile 
 
 
 # Create your views here.
@@ -161,7 +161,7 @@ def rate_product(request, product_id):
         if form.is_valid():            
             rate = form.save(commit=False)
             rate.user = user
-            rate.product = product
+            rate.product = product            
             rate.save()
             return redirect(reverse('product_detail', args=[product.id]))
     else:

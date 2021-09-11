@@ -21,8 +21,9 @@ class ProductForm(forms.ModelForm):
 
 
 class RateForm(forms.ModelForm):
-    text = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}), required=False)
-    rate = forms.ChoiceField(choices=STAR_RATING, widget=forms.Select(), required=True)
+    title = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}), required=False)
+    
+    rated = forms.ChoiceField(choices=STAR_RATING, widget=forms.Select(), required=True)
 
     class Meta:
         model = Review
@@ -33,7 +34,7 @@ class RateForm(forms.ModelForm):
             'likes',
             'unlikes')
 
-        fields = ['text', 'rate']
+        fields = ['review', 'rated', ]
 
        
     
