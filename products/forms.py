@@ -2,6 +2,8 @@ from django import forms
 from .models import Product, Category, STAR_RATING, Review
 from .widgets import CustomClearableFileInput
 from .models import Review, STAR_RATING
+
+
 class ProductForm(forms.ModelForm):
 
     class Meta:

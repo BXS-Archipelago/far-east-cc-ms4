@@ -49,8 +49,15 @@ class Review(models.Model):
     review = models.TextField(max_length=1300, blank=True)    
     rated = models.PositiveSmallIntegerField(choices=STAR_RATING, null=False)
     likes = models.PositiveIntegerField(default=0)
-    unlikes = models.PositiveIntegerField(default=0)
+    
 
 
     def __str__(self):
         return self.review
+
+
+# Model for the Thumbs-Up Likes
+class Likes(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_like')
+    click_like = models.PositiveSmallIntegerField()
+    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='review_like')

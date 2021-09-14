@@ -44,9 +44,9 @@
                 </p>
                 {% endif %}
                 {% if product.rating %}
-                {% include 'products/includes/rating.html' %}
+                
 
-                <!-- <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small> -->
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
                 <small class="text-muted">No Rating</small>
                 {% endif %}
@@ -113,18 +113,40 @@
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
                     </div>
-                </form>
-
-                
-                <a href="{% url 'rate_product' product.id %}" class="btn-outline-custom btn">Rate</a>
+                </form> 
+             </div>
+           
+        </div>
+        
+    </div>
+    <a href="{% url 'rate_product' product.id %}" class="btn-outline-custom btn">Rate</a>
+</div>
+<hr>
+{% for review in reviews %}
+<div class="row review-holder">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body review-body">
+                <h5 class="card-title text-muted">{{ product.name}}</h5>
+                <h5 class="card-title">{{ review.rated }} Stars!</h5>
+                <h6 class="card-subtitle mb-2 text-danger"> Reviewed by: <strong> {{ review.user }}</by:strong>
+                </h6>
+               
+                <p class="card-text review-text">{{ review.review }}</p>
+                <small class="text-muted text-small">{{ review.date }}</small>
             </div>
         </div>
     </div>
 </div>
-<hr>
 
 
-<!-- {% include 'products/includes/leave_rating.html' %} -->
+{% endfor %}
+         
+
+  
+</div>
+
+ 
 
 {% endblock %}
 

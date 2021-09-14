@@ -465,7 +465,7 @@ ul .drop-menu {
   opacity: 0;
   visibility: hidden;
   transition: all 0.7s ease;
-  border-radius: 5px;
+  border-radius: var(--radius);
   
 }
 
@@ -496,7 +496,7 @@ ul .drop-menu {
   visibility: hidden;
   transition: all 0.6s ease;
   margin-top: 1rem;
-  border-radius: 5px;
+  border-radius: var(--radius);
   z-index: 99;  
   }
 
@@ -676,7 +676,7 @@ content .col .drop-down-image {
   width: 30%;
   height: auto;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   box-shadow: 2px 5px 5px var(--fecc-grey-8);
 }
 
@@ -773,7 +773,14 @@ content .col .drop-down-image {
 
 /*  ------------------------------Review & Rating Section */
 
-
+.review-body {
+  background-color: var(--fecc-grey-9);
+}
+.review-text {
+  background-color: var(--fecc-yellow);
+  border: 1px solid var(--fecc-black);
+  border-radius: var(--radius);
+}
 
 .user-rating {
   display: flex;
@@ -946,7 +953,7 @@ content .col .drop-down-image {
     background: var(--fecc-primary-5);
     box-shadow: var(--dark-light);
     border: 1px solid var(--fecc-primary-2);
-    border-radius: 4px;
+    border-radius: var(--radius);
 color: black !important; /* use important to override link colors for <a> elements */
 }
 
@@ -980,7 +987,7 @@ input[name='q']::placeholder {
   background: var(--fecc-azure-light);
   box-shadow: var(--light-shadow);
   border: 1px solid var(--fecc-primary-2);
-  border-radius: 4px;
+  border-radius: var(--radius);
   color: black !important; /* use important to override link colors for <a> elements */
 
 }
@@ -1128,7 +1135,7 @@ color: #17a2b8; /* text-info */
   height: 35px;
   width: auto;
   align-self:flex-start;
-  border-radius: 5px;
+  border-radius: var(--radius);
 }
   .car-image-holder {
     width: 100vw;

@@ -789,11 +789,14 @@ Chapter 45 - Refactoring HTML, CSS and JS
 - Commit work thus far.
 
 - Chapter 46 - Create Ratings and Reviews section
-- Create reviews app : python3 manage.py startapp reviews
-- In reviews>admin.py create class reviewAdmin for name, category, comment, rating.
-- In reviews>models.py create class for model of user, product, comment, rate and date/time created
-- In product detail page, create a new review section for read-review and write-review
-- 
+- In products>models.py create model for Review with user, product, date, review, rated, likes
+- In the interim, create STAR_RATING from 1 to 5. This will be checked later to possibly use the django star rating app
+- In products>forms.py create RateForm for the users input fields.
+- In products>views.py create the view  rate_product with product and user
+- Import model Review and form RateForm
+- Create new template rate.html for user to add the review.
+- run migrations due to model change
+- Commit Work thus far
 
 
 

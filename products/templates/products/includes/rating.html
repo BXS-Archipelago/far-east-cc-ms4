@@ -1,10 +1,20 @@
-<div class="row rating-container">
-    <div class="col text-center stars">
-        <span class="rated-text">Rated: </span>
-<span class="fa fa-star checked-star"></span>
-<span class="fa fa-star checked-star"></span>
-<span class="fa fa-star checked-star"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
-    </div>
-</div>
+
+<h4>test</h4>
+
+<div class="row">    
+  {% for review in reviews %}
+    <div class="col-4 offset-lg-2">        
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Test{{ product.name}}</h5>
+              <h5 class="card-title">{{ review.rated }} Stars!</h5>
+              <h6 class="card-subtitle mb-2 text-muted">reviewer:{{ review.user }} </h6>
+              <p class="card-text">{{ review.review }}</p>
+              <p class="text-muted">{{ review.date }}</p>
+              
+            </div>
+            {% endfor %}
+          </div>
+          
+
+

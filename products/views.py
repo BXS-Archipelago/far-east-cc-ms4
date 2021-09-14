@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q 
-from .models import Product, Category  
+from django.db.models import Q, Avg
+from .models import Product, Category, Review 
 from django.db.models.functions import Lower
 
-from products.forms import RateForm
+from products.forms import RateForm, ProductForm
 
 from profiles.models import UserProfile 
 
@@ -17,12 +17,12 @@ def all_products(request):
     """
     A view to show all products including sorting and search queries
     """
-    products = Product.objects.all()
+    products = Product.objects.all()    
     query = None
     categories = None
     sort = None
     direction = None
-
+    
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -72,13 +72,19 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """
-    A view to show all individual product details
-    """
-    product = get_object_or_404(Product, pk=product_id)
+    
+    if Product.objects.filter().exists:
+        product = get_object_or_404(Product, pk=product_id)
+        reviews = Review.objects.filter(product = product_id)
+        reviews_avg = reviews.aggregate(Avg('review'))
+        reviews_count = reviews.count()  
+    
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'reviews_avg': reviews_avg,
+        'reviews_count': reviews_count,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -175,3 +181,5 @@ def rate_product(request, product_id):
     }
 
     return render(request, template, context)
+
+    
