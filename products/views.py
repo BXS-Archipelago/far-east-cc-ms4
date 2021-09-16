@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q, Avg
-from .models import Product, Category, Review 
+from .models import Product, Category, Review
 from django.db.models.functions import Lower
 
 from products.forms import RateForm, ProductForm
 
-from profiles.models import UserProfile 
+from profiles.models import UserProfile
 
 
 # Create your views here.
@@ -75,9 +75,12 @@ def product_detail(request, product_id):
     
     if Product.objects.filter().exists:
         product = get_object_or_404(Product, pk=product_id)
-        reviews = Review.objects.filter(product = product_id)
-        reviews_avg = reviews.aggregate(Avg('review'))
-        reviews_count = reviews.count()  
+        reviews = Review.objects.filter(product=product)       
+        reviews_count = reviews.count()
+        running_score = 0
+        for review in reviews:
+            running_score += review.rated
+        reviews_avg = running_score / reviews_count
     
 
     context = {
@@ -182,4 +185,3 @@ def rate_product(request, product_id):
 
     return render(request, template, context)
 
-    

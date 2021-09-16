@@ -2,6 +2,9 @@ from django.db import models
 # access to user profiles and product data
 from profiles.models import UserProfile
 from django.contrib.auth.models import User
+# for star rating
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 # Create your models here.
 # This is so django knows which category each product goes in
 
@@ -26,7 +29,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)   
 
     def __str__(self):
         return self.name
@@ -48,16 +51,7 @@ class Review(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     review = models.TextField(max_length=1300, blank=True)    
     rated = models.PositiveSmallIntegerField(choices=STAR_RATING, null=False)
-    likes = models.PositiveIntegerField(default=0)
-    
-
-
+        
     def __str__(self):
         return self.review
 
-
-# Model for the Thumbs-Up Likes
-class Likes(models.Model):
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_like')
-    click_like = models.PositiveSmallIntegerField()
-    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='review_like')

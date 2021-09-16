@@ -34,7 +34,7 @@ class RateForm(forms.ModelForm):
             'date',
             'product',
             'likes',
-            'unlikes')
+            )
 
         fields = ['review', 'rated', ]
 

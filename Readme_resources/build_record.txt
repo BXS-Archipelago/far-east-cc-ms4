@@ -797,6 +797,53 @@ Chapter 45 - Refactoring HTML, CSS and JS
 - Create new template rate.html for user to add the review.
 - run migrations due to model change
 - Commit Work thus far
+- Add form to rate.html 
+- Show review output at the bottom of product_detail.html using cards
+- Add CSS and styling to product_detail.html and rate.html
+- Test user reviews functionality. # Review Input
+- Test result : initial testing failed due to incorrect Fields in Forms.py
+- Test 2 - failed due to not creating ReviewAdmin class in Admin.py!
+- In Admin.py create ReviewAdmin class. 
+- Test 3 - success. Review is being saved & observed in admin panel Review  
+- Test Review display in product_detail.html
+- Test result - failed. Need to add review variable and context to the actual product_detail view. 
+- Test 2 - failed. Incorrect {{}} template syntax in product_detail.html. 
+- Test result - success after properly fixing the output variables.
+- Commit Work thus far.
+
+
+
+Chapter 47 : Review Stars using Django
+*************
+Not using the steps in Chapter 47 as at this point, I am not sure of the process in the Django documentation for the Star ratings django app. 
+Please see Chapter 47b. Due to trial and error, the git commits were delayed with these steps. 
+*************
+Chapter 47 : Review Stars using Django
+- Using https://django-star-ratings.readthedocs.io/en/latest/
+- Installation : pip3 install django-star-ratings
+- Project settings installed apps : 'star_ratings'
+- sync the database by migrating
+- python3 manage.py makemigrations --dry-run
+- python3 manage.py migrate --plan
+- python3 manage.py migrate 
+- In products.urls.py add : url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
+- In settings.py at context_processors, add 'django.core.context_processors.request',
+
+**********
+In chapter 47b, I am adapting the review's numeric rating system to display both as the rating in the review, but also to give average rating from number of reviews in the original product detail card. 
+**********
+**********
+Chapter 47b : Ratings App
+- in Product_detail.html  Within a review in reviews condition, add a card to display the review.
+- Create reviews as test users
+- Test review in product_detail page.
+- Test result - some products not showing due to incorrect jinja calling model. 
+- Test result 2 - Success. Reviews are observed under the product details but the page does need CSS styling
+- Commit Work thus far
+- 
+
+
+
 
 
 
