@@ -816,7 +816,7 @@ Chapter 45 - Refactoring HTML, CSS and JS
 Chapter 47 : Review Stars using Django
 *************
 Not using the steps in Chapter 47 as at this point, I am not sure of the process in the Django documentation for the Star ratings django app. 
-Please see Chapter 47b. Due to trial and error, the git commits were delayed with these steps. 
+Please see Chapter 47b. Due to trial and error, the git commits were delayed with these steps with several deletions. 
 *************
 Chapter 47 : Review Stars using Django
 - Using https://django-star-ratings.readthedocs.io/en/latest/
@@ -840,7 +840,16 @@ Chapter 47b : Ratings App
 - Test result - some products not showing due to incorrect jinja calling model. 
 - Test result 2 - Success. Reviews are observed under the product details but the page does need CSS styling
 - Commit Work thus far
-- 
+- In products>views.py in product_detail view add variables to call reviews, reviews_count, reviews_avg
+- reviews_avg will be calculated by adding the rated review score and dividing by the number of reviews. 
+- add reviews, reviews_count and reviews_avg to the context
+- In product_detail.html call the reviews_avg and reviews_count to display in the product information. 
+- Test : Manually add the number of reviews and check against reviews_count display
+- Test result : Successful. 
+- Test : Manually sum up the ratings and divide by reviews_count. 
+- Test result : In comparison to reviews_avg, the average rating is correct. 
+- Modify layout of rate.html and product_detail page to display average review rating and number of reviews. 
+- Commit Work thus far. 
 
 
 

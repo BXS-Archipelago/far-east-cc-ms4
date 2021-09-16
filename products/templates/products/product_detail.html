@@ -34,8 +34,8 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4 ">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="mb-0">{{ product.name }}</p>
-                <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+                <h4 class="mb-0">{{ product.name }}</h4>
+                <p class="lead lead-price mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                 <!-- Show also the category in the product detail -->
                 {% if product.category %}
                 <p class="small mt-1 mb-0">
@@ -45,8 +45,7 @@
                 </p>
                 {% endif %}
                  
-                <p>Average rating: {{ reviews_avg }} of {{ reviews_count }} reviews</p>
-               
+                
                
                 
                 <!-- ALLOW ADMIN TO UPDATE OR DELETE PRODUCTS -->
@@ -58,6 +57,11 @@
                 {% endif %}
 
                 <p class="mt-3">{{ product.description }}</p>
+                <div class="avg_container">
+                    <small class="avg_rate">Score: <strong>{{ reviews_avg }}/5 </strong>in <strong>{{ reviews_count }}</strong> Reviews</small>
+                    
+                    <a href="{% url 'rate_product' product.id %}" class="btn-outline-custom btn btn-sm">Rate Now</a>
+                </div>
 
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     <!-- cross site request forgery protection -->
@@ -94,17 +98,17 @@
                             </div>
                         </div>
 
-                        <div class="col-12 mt-2">
+                        <div class="col-12 mt-2 button-box">
 
                             <!-- Keep Shopping returns user to products page. -->
-                            <a href="{% url 'products' %}" class="btn btn-outline-custom mt-3">
+                            <a href="{% url 'products' %}" class="btn btn-sm btn-outline-custom mt-3">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
                             <!-- Add item to Cart -->
-                            <input type="submit" class="btn btn-black  text-uppercase mt-3"
+                            <input type="submit" class="btn btn-sm btn-black  text-uppercase mt-3"
                                 value="Add to Cart">
                         </div>
                         <!-- Redirect back to the same page once item has been added to Cart -->
@@ -117,7 +121,7 @@
         </div>
         
     </div>
-    <a href="{% url 'rate_product' product.id %}" class="btn-outline-custom btn">Rate</a>
+   
 </div>
 <hr>
 

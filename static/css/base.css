@@ -760,6 +760,12 @@ content .col .drop-down-image {
 
 /* ------------------------------------Products Page */
 
+.product-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .card-shadow {
   box-shadow: var(--dark-shadow);
 }
@@ -771,8 +777,21 @@ content .col .drop-down-image {
   flex-direction: column;
 }
 
+.lead-price {
+  letter-spacing: 1.5px;
+}
+.button-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
 /*  ------------------------------Review & Rating Section */
 
+textarea {
+  padding: 10px;
+}
+ 
 .review-body {
   background-color: var(--fecc-grey-9);
 }
@@ -796,6 +815,26 @@ content .col .drop-down-image {
   align-items: center;
   flex-direction: column;
 }
+
+.avg_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--fecc-primary-8);
+  padding: 5px;
+  border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
+}
+
+.avg_rate {
+  margin: 0;
+  padding: .5rem;
+  color: var(--fecc-grey-2);
+  letter-spacing: 1.2px;
+}
+
+
 
 /* -------------------------------Products Admin Form */
 .btn-file {
