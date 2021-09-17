@@ -851,6 +851,28 @@ Chapter 47b : Ratings App
 - Modify layout of rate.html and product_detail page to display average review rating and number of reviews. 
 - Commit Work thus far. 
 
+Chapter 48 : Simple Django Blog from Home page
+- update home page html and css for images and text
+- create blog.html in home>templates folder *(later moved into Posts templates)
+- for blog posts, create app : python3 manage.py startapp posts
+- In project settings add posts to installed apps
+- In Posts>models.py create classes for Author, Category and Posts
+-  For the new model attributes, make migrations and migrate
+- Create Posts>templates>posts folder for blog.html and posts.html 
+- In index.html create blog features code. 
+- in Posts>admin.py register the Author, Category and Posts sections
+- Test create 3 example blog posts, check and select category, add text, add photo
+- Test result: successful for admin panel. 3 posts are observed
+- Need index to display featured posts so update model with featured check, so update index view where queryset will filter for featured=True, give context.
+- Update the index.html with the relevant statements and jinja templating. 
+- Test for the 3 example blog posts in index.html
+- Test result successful but images are observed to stack below themselves instead of alternating
+- Create conditional statement to determine if images are in first or last item to display on the right. 
+- Create conditional statement to determine if images are NOT in first AND NOT last item to display on the left.
+- Test for image/text alternation
+- Test result successful but noted that further styling and padding is required.
+- Commit Work thus far 
+
 
 
 

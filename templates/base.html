@@ -59,10 +59,9 @@
  
     
 <div class=" logo-col">
-  
-  
+    
   <!-- Logo -->  
-  <img src="{{ MEDIA_URL }}FECC.png" class="logo" alt="" />
+  <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}FECC.png" class="logo"  alt="" /></a>
 </div>
 <div class=" nav-icons">
   <ul class="menu-items">
@@ -196,17 +195,24 @@
       <!-- links -->
       <ul class="links">
         <li>
-          <a href="index.html">home</a>
-        </li>
-        <li>
-          <a href="about.html">about</a>
-        </li>
-        <li>
-          <a href="projects.html">contact</a>
+          <a href="{% url 'home' %}">home</a>
         </li>
         <li>
           <a href="{% url 'products' %}">store</a>
         </li>
+        <li>
+          <a href="#">blog</a>
+        </li>
+        <li>
+          <a href="about.html">about</a>
+        </li>        
+        <li>
+          <a href="blog.html">FAQ</a>
+        </li>
+        <li>
+          <a href="projects.html">contact</a>
+        </li>
+        
         <!-- SEARCH BAR IN SIDEBAR -->
         <li>
           <div class="col-8 col-lg-8 my-auto py-1 py-lg-0">
@@ -259,24 +265,6 @@
 
  
 
-    
-      <!-- Banner to show FREE DELIVERY CUT-OFF POINT -->
-
-      <!-- Rotating Text Credit to "Alphardex" at  
-        https://codepen.io/alphardex/pen/WNNVJeZ  -->
-<!--         
-      <div class="row w-100">
-        <div class="col-12 text-rotator text-center">
-          <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
-          <h3 class="inline-text">
-            <span class=" value rotate1"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate2"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate3"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
-          </h3>
-        </div>
-      </div> -->
     </section>
   
 {% if messages %}

@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     # other installs
     'crispy_forms',
     'storages',
-    
+    'posts'
     
 ]
 
