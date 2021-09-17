@@ -88,14 +88,15 @@
             <header>
               <h3 class="h6">Latest Posts</h3>
             </header>
-            <div class="blog-posts"><a href="#">
+            <div class="blog-posts">
                 {% for post in most_recent %}
+                <a href="{{ post.get_absolute_url }}">
                 <div class="item d-flex align-items-center">
                   <div class="image"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></div>
                   <div class="title"><strong>{{ post.title }}</strong>
                     <div class="d-flex align-items-center">
-                      <div class="views"><i class="icon-eye"></i> {{ post.view_count}}</div>
-                      <div class="comments"><i class="icon-comment"></i>{{ post.comment_count }}</div>
+                      <small class="views"><i class="fas fa-eye"></i> {{ post.view_count}}</small>
+                      <small class="comments"><i class="far fa-comment-alt"></i>{{ post.comment_count }}</small>
                     </div>
                   </div>
                 </div></a>
