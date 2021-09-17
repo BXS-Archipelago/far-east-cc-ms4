@@ -892,3 +892,13 @@ Chapter 50 : Marketing app for Email Subscribers
 - Test result 2 - accessing Signup but it is empty due to Form having no method set. 
 - Test result 3 - Successful. Added method POST to form and now the email address is saved and observed in the admin panel 
 - Commit Work thus far
+
+Chapter 51 - Blog main page
+- using blog.html within the posts app, create the bootstrap blog code blocks
+- In posts>views.py create the Blog view 
+- Test if view.html is working. 
+- Test result : failed due to not adding "posts" to project urls setting
+- Test result 2: Successful
+- In posts>views.py import paginator, emptyPage, pageNotAnInteger 
+- Under the blog view, add the paginator sequences, setting to 4 entries per page. 
+- Commit Work thus far

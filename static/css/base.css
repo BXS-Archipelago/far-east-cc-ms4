@@ -670,6 +670,13 @@ section.featured-posts .avatar {
   align-items: center;
   justify-content: center;
 }
+.blog-btn-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 /*  
 >>>>>>>Rotating Text in Free Delivery Notice <<<<<<<<
 */

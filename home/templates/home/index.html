@@ -33,8 +33,10 @@
     <div class="row">
       <div class="col-lg-8">
         <h4 class="h3">Far East Car Care Store and Blog </h4>
-        <p class="text-big">Your best resource for the best products AND the best information. With decades of experience, we are happy to provide everything you need to have or know to make your car look, smell and feel amazing! <button class="btn btn-outline-black">Visit Store</button></p>
-      
+        <p class="text-big">Your best resource for the best products AND the best information. With decades of experience, we are happy to provide everything you need to have or know to make your car look, smell and feel amazing! </p>
+        <div class="blog-btn-holder pb-2">
+        <a href="{% url 'products' %}" class="btn btn-outline-black ">Visit Store</a>
+      </div>
       </div>
     </div>
   </div>
@@ -81,11 +83,11 @@
 </section>
 
 <!-- Divider Section-->
-<section style="background: url(img/divider-bg.jpg); background-size: cover; background-position: center bottom" class="divider">
+<section style="background: url({{ MEDIA_URL }}002b.jpg) ; background-size: cover; background-position: center bottom" class="divider">
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h2><a href="#" class="hero-link">View More</a>
+        <h2>We partner with the very best manufacturers in the Far East And our Product line is very popular with owners of every car type!</h2><a href="{% url 'products' %}" class="hero-link">View More</a>
       </div>
     </div>
   </div>
@@ -124,7 +126,7 @@
     <div class="row">
       <div class="col-md-6">
         <h2>Subscribe to Newsletter</h2>
-        <p class="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="text-big">Stay ahead of the posse! Special Offers, new Products, Tips to save time and effort. Subscribe now for our email wisdom!</p>
       </div>
       <div class="col-md-8">
         <div class="form-holder">
