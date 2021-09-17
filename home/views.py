@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from posts.models import Post
 
-# Create your views here.
+from marketing.models import Signup
+
 
 def index(request):
     """
@@ -9,6 +10,13 @@ def index(request):
     """
     featured = Post.objects.filter(featured=True)
     latest = Post.objects.order_by('-timestamp')[0:3]
+
+    if request.method == 'POST':
+        email = request.POST['email']
+        new_signup = Signup()
+        new_signup.email = email
+        new_signup.save()
+
     context = {
         'object_list': featured,
         'latest': latest,

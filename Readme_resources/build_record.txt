@@ -874,9 +874,21 @@ Chapter 48 : Simple Django Blog from Home page
 - Commit Work thus far 
 
 
+Chapter 49 : Latest Blog posts featured on index.html 
+- In home>views.py add variable latest to hold timestamp in reverse display
+- In index.html create the section for latest posts and provide jinja templating and conditions for the correct fields.
+- Test latest blog postings by creating a new blog entry. 
+- Test result : Successful. The three newest of the four are displayed and timestamp is in ascending order
+- commit work thus far. 
 
-
-
-
-
-
+Chapter 50 : Marketing app for Email Subscribers
+- Create new App :  python3 manage.py startapp marketing
+- Add to project settings apps
+- In marketing>models.py create class Signup for email and timestamp
+- In admin.py create admin site register Signup
+- Test : Login in to the admin control panel to find Marketing > Signups
+- Test result : Can't open the Signup category due to not migrating! 
+- Perform makemigrations and then migrate new model set.
+- Test result 2 - accessing Signup but it is empty due to Form having no method set. 
+- Test result 3 - Successful. Added method POST to form and now the email address is saved and observed in the admin panel 
+- Commit Work thus far
