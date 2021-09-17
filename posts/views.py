@@ -25,10 +25,10 @@ def blog(request):
     }
     return render(request, 'posts/blog.html', context)
 
-def post(request):
+def post(request, id):
     """
     A view to return the blog postings pages
     """
-    return render(request, 'posts/post.html')
+    return render(request, 'posts/post.html', {})
 
 
