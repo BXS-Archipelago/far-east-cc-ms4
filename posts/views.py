@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Post
 # Pagination
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import Count
+from django.db.models import Count, Q
 
 # View to count each time the category name occurred in posts. 
 # annotate will return a dictionary where each key is the category to be counted
@@ -42,4 +42,23 @@ def post(request, id):
     """
     return render(request, 'posts/post.html', {})
 
+# To search through blog posts only
+def search(request):   
+    queryset = Post.objects.all()
+    query = request.GET.get('q')
+    if query:
+        queryset = queryset.filter(
+          # if title contains query OR
+          Q(title__icontains=query) |
+          # if overview contains query
+          Q(overview__icontains=query)
+        ).distinct()
+        # .distinct will show one result where the term might appear more than 
+        # once in title and overview together
+
+    context = {
+      'queryset': queryset,
+    }
+
+    return render(request, 'posts/search_results.html', context)
 

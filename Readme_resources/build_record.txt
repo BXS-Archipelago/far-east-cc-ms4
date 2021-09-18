@@ -909,13 +909,27 @@ Chapter 51 - Blog main page
 - Perform makemigrations and migrate for changes in models.py (using dry-run and plan first to check for any issues)
 - Commit Work thus far
 
-Chapter 51 - Category Count
+Chapter 51 - Category Count to show occurence of each category per blog
 - in posts>views.py create new view get_category_count 
 - Import Count from django.db.models
 - Pass category_count through the blog view, and call at the context.
 - Test : print the category_count and refresh the page
 - Test Result : successful - categories information is displayed in terminal, but instead of the categories id, change to catories__title to more accurately display the title and count. 
-- Test : Run the admin panel and count the occurence of the categories. 
+- Test : Run the admin panel and count the occurence of the categories for the  display in blog page. 
 - Test result - successful. The number of times each category is selected in posts matches the dictionary at terminal output. 
 - Remove print statement 
+- Commit Work thus far
+- In blog.html add the jinja templating for cat.categories__title and cat.categories__title__count
+- Test : Verify the live display shows the title and count of each category currently being used. 
+- Test : Successful. The categories and count are accurately
+
+Chapter 52 : Search the Blog
+- in posts>templates>posts Create a new search_results.html to display results
+- In posts>views.py create new View for search
+- Search view will use django Q imported from django.db.models
+- Use Q __icontains to search in both titles and in the overview
+- The search_results.html will iterate through the results displaying each result with <a> tags.
+- Test : obtain keywords from titles and overviews to search
+- Test result : Successful. Keywords return the query result as links
+- Test result : Successful. Where keyword appears repeatedly through the title and body, only one result is returned through the use of .distinct()
 - Commit Work thus far
