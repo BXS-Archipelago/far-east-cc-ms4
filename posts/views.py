@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Post
 # Pagination
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -40,7 +40,11 @@ def post(request, id):
     """
     A view to return the blog postings pages
     """
-    return render(request, 'posts/post.html', {})
+    post = get_object_or_404(Post, id=id)
+    context = {
+      'post': post
+    }
+    return render(request, 'posts/post.html', context)
 
 # To search through blog posts only
 def search(request):   

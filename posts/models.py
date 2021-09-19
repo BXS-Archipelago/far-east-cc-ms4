@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse 
-# This is the model for posts created for the blog
+
+from tinymce.models import HTMLField
 
 User = get_user_model()
 
@@ -28,6 +29,8 @@ class Post(models.Model):
     thumbnail = models.ImageField()
     categories = models.ManyToManyField(Category)
     featured = models.BooleanField()
+    content = HTMLField()
+    
 
     def __str__(self):
         return self.title
@@ -36,3 +39,4 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={
             'id': self.id,
         })
+

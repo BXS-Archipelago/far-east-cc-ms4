@@ -933,3 +933,19 @@ Chapter 52 : Search the Blog
 - Test result : Successful. Keywords return the query result as links
 - Test result : Successful. Where keyword appears repeatedly through the title and body, only one result is returned through the use of .distinct()
 - Commit Work thus far
+
+Chapter 53 : creating and displaying blog content with TinyMCE
+* Instructions for TinyMCE at https://pypi.org/project/django-tinymce/ 
+- Display blog entries on post.html with bootstrap code
+- Use free Tiny MCE editor to render form fields
+- Installation : pip install django-tinymce
+- In project settings installed apps add tinymce
+- In project URLS update with path('tinymce/', include('tinymce.urls')),
+- Update models.py with TinyMCE required imports 
+- In Models.py update Post model with content=htmlField()
+- Perform makemigrations and migrate
+- Test: Check Admin panel 
+- Test result : Result partially successful. In one of the posts, basic text editor is observed but missing some options such as file bar, insert image, etc
+- From docs, adding the TINYMCE_DEFAULT_CONFIG into project settings
+- Test result 2 - The more complete editor menu is now displayed. 
+- Commit Work thus far
