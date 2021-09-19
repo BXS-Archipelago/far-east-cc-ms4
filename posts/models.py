@@ -41,6 +41,11 @@ class Post(models.Model):
             'id': self.id,
         })
 
+    @property
+    def get_comments(self):
+        return self.comments.all()
+        
+
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)

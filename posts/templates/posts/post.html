@@ -110,6 +110,8 @@
                   Post Comments<span class="no-of-comments">(3)</span>
                 </h3>
               </header>
+              <!-- to iterate through the comments -->
+              {% for comment in post.get_comments %}
               <div class="comment">
                 <div class="comment-header d-flex justify-content-between">
                   <div class="user d-flex align-items-center">
@@ -117,19 +119,17 @@
                       <img src="img/user.svg" alt="..." class="img-fluid rounded-circle" />
                     </div>
                     <div class="title">
-                      <strong>Jabi Hernandiz</strong><span class="date">May 2016</span>
+                      <strong>{{ comment.user.username }}</strong><span class="date">{{ comment.timestamp|timesince }} ago</span>
                     </div>
                   </div>
                 </div>
                 <div class="comment-body">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam.
+                    {{ comment.content }}
                   </p>
                 </div>
               </div>
-              
+              {% endfor %}
             </div>
 
   <!-- Adding Comments to the blog -->
