@@ -14,7 +14,7 @@ def get_category_count():
 
 def blog(request):
     category_count = get_category_count()
-     # most_recent will display the latest three items in the right side of page
+    # most_recent will display the latest three items in the right side of page
     most_recent = Post.objects.order_by('-timestamp')[:3]
     post_list = Post.objects.all()
     # render the pagination 
@@ -40,8 +40,12 @@ def post(request, id):
     """
     A view to return the blog postings pages
     """
+    category_count = get_category_count()
+    most_recent = Post.objects.order_by('-timestamp')[:3]
     post = get_object_or_404(Post, id=id)
     context = {
+      'category_count': category_count,
+      'most_recent': most_recent,
       'post': post
     }
     return render(request, 'posts/post.html', context)

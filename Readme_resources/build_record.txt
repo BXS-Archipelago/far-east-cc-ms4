@@ -955,8 +955,24 @@ Chapter 54 : Posts on the blog
 - Test Result : Successful - text appears as h3 and bold and italic, etc. 
 - Test images uploaded from TinyMCE editor
 - Test Result : Successful - however the photos needed to be resized by setting the em img tags in CSS with width 100% height auto. 
-- On blog page, hook up the buttons for previous post and next post : 
+- On post.html page, hook up the buttons for previous post and next post : 
 - In models.py add previous_post and next_post to Post model
 - these need foreignkey 'self', on_delete with related names, etc 
 - Perform makemigrations and migrate
 - Commit Work thus far
+- On post.html add the jinja templates for the title, post, author, etc.
+- Test post.html for correct post information
+- Test result successful but sidebar is not correct. 
+- Create sidebar.html and copy in same sidebar html and code as is in blog.html
+- Remove sidebar from blog.html and replace with Include for sidebar
+- include sidebar.html with most_recent=most_recent category_cunt=cattegry_count
+- In post.html, also remove the sidebar and replace with Include for sidebar
+- In posts>view.py the Post view will need the same variables as the blog view for the Include sidebar
+- Add category_count and most_recent to post view and context. 
+- Test blog list for the sidebar
+- Test result: Successful, the sidebar is displaying latest posts in order and the categories used. - Test a post for the sidebar
+- Test post page for the sidebar
+- Test result: Successful, here also the sidebar is displaying latest posts in order and the categories used. The variables in the view are effective.
+- Commit Work thus far
+
+
