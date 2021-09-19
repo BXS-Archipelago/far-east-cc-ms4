@@ -30,7 +30,8 @@ class Post(models.Model):
     categories = models.ManyToManyField(Category)
     featured = models.BooleanField()
     content = HTMLField()
-    
+    previous_post = models.ForeignKey('self', related_name='previous', on_delete=models.SET_NULL, blank=True, null=True)
+    next_post = models.ForeignKey('self', related_name='next', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.title

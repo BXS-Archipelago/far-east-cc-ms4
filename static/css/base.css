@@ -782,10 +782,19 @@ section.featured-posts .avatar {
   color: #fff;
   border-color: #2b90d9;
 }
+/* >>>>>>>>>>>>>>>>>>>>>>Blog Posts Styling <<<<<<<<*/
+.post-img {
+  box-shadow: var(--dark-shadow);
+}
 
-/*  
->>>>>>>Rotating Text in Free Delivery Notice <<<<<<<<
-*/
+em img { 
+  width: 100%;
+  height: auto;
+  box-shadow: var(--dark-shadow);
+}
+
+
+/* >>>>Rotating Text in Free Delivery Notice <<<<<<<<*/
 
 /*  Rotating Text Credit to "Alphardex" at  
         https://codepen.io/alphardex/pen/WNNVJeZ */

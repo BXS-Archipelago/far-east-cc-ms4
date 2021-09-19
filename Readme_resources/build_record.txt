@@ -949,3 +949,14 @@ Chapter 53 : creating and displaying blog content with TinyMCE
 - From docs, adding the TINYMCE_DEFAULT_CONFIG into project settings
 - Test result 2 - The more complete editor menu is now displayed. 
 - Commit Work thus far
+
+Chapter 54 : Posts on the blog
+- Test TinyMCE text editor on one of the existing posts
+- Test Result : Successful - text appears as h3 and bold and italic, etc. 
+- Test images uploaded from TinyMCE editor
+- Test Result : Successful - however the photos needed to be resized by setting the em img tags in CSS with width 100% height auto. 
+- On blog page, hook up the buttons for previous post and next post : 
+- In models.py add previous_post and next_post to Post model
+- these need foreignkey 'self', on_delete with related names, etc 
+- Perform makemigrations and migrate
+- Commit Work thus far
