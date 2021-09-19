@@ -997,3 +997,14 @@ Chapter 56 : Viewing previous comments
 - Test : go to admin and create a comment. 
 - Test result : Succesful - the comment appears under the post, with user name and timestamp showing. 
 - Commit Work thus far
+- Check if author has a profile pic or generic image will be displayed
+- Test: Check if Admin photo is displayed at the comment.
+- Test Result: successful after adding the avatar-img class to the images for size. 
+- Test : Create a new Comment in the post.html input. 
+- Test Result: Successful. The new comment made by admin shows up. 
+- In models.py at function get_comments, add order_by('-timestamp) to show newest first. 
+- In post.html add  post.comments.count for the number of counts on screen.
+- Test:  Add more comments and check for corresponding count. 
+- Test Result: Successful - the comment count functions well but have wrapped in brackets and needs further styling. 
+- Add a Return Redirect Reverse statement to offer a clear page once the comment has been made and no duplications will occur. 
+- Commit Work thus far
