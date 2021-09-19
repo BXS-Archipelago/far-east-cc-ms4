@@ -3,7 +3,9 @@ from .models import Post
 # Pagination
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count, Q
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
+from django.contrib import messages
+
 
 # View to count each time the category name occurred in posts. 
 # annotate will return a dictionary where each key is the category to be counted
@@ -69,19 +71,46 @@ def post(request, id):
 def search(request):   
     queryset = Post.objects.all()
     query = request.GET.get('q')
-    if query:
-        queryset = queryset.filter(
-          # if title contains query OR
-          Q(title__icontains=query) |
-          # if overview contains query
-          Q(overview__icontains=query)
-        ).distinct()
-        # .distinct will show one result where the term might appear more than 
-        # once in title and overview together
-
+    if not query:
+                messages.error(request, "You didn't enter any search criteria") 
+    else:
+      if query:
+          queryset = queryset.filter(
+            # if title contains query OR
+            Q(title__icontains=query) |
+            # if overview contains query
+            Q(overview__icontains=query)
+          ).distinct()
+          # .distinct will show one result where the term might appear more than once in title and overview together    
+    
     context = {
       'queryset': queryset,
     }
 
     return render(request, 'posts/search_results.html', context)
+
+
+# Functions to update and delete the blog posts by the admin
+def post_create(request):
+  form = PostForm(request.POST or None)
+  if request.method == "POST":
+    if form.is_valid():
+      form.save()
+      return redirect(reverse('post-detail', kwargs={
+        'id': form.instance.id
+      }))
+  context = {
+    'form': form
+    }
+  return render(request, "posts/post_create.html", context)
+  
+
+def post_update(request, id):
+  pass 
+
+def post_delete(request, id):
+  pass 
+
+
+
 
