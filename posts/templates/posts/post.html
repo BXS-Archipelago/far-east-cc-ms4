@@ -70,7 +70,7 @@
               <!-- Move to the previous entry in blog posts -->
               {% if post.previous_post %}
 
-              
+
               <a href="{{ post.previous_post.get_absolute_url }}" class="prev-post text-left d-flex align-items-center">
                 <div class="icon prev">
                   <i class="fa fa-angle-left"></i>
@@ -129,75 +129,38 @@
                   </p>
                 </div>
               </div>
-              <div class="comment">
-                <div class="comment-header d-flex justify-content-between">
-                  <div class="user d-flex align-items-center">
-                    <div class="image">
-                      <img src="img/user.svg" alt="..." class="img-fluid rounded-circle" />
-                    </div>
-                    <div class="title">
-                      <strong>Nikolas</strong><span class="date">May 2016</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="comment-body">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam.
-                  </p>
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment-header d-flex justify-content-between">
-                  <div class="user d-flex align-items-center">
-                    <div class="image">
-                      <img src="img/user.svg" alt="..." class="img-fluid rounded-circle" />
-                    </div>
-                    <div class="title">
-                      <strong>John Doe</strong><span class="date">May 2016</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="comment-body">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam.
-                  </p>
-                </div>
-              </div>
+              
             </div>
+
+  <!-- Adding Comments to the blog -->
+            <!-- Authenticated users only -->
+            {% if request.user.is_authenticated %}
             <div class="add-comment">
               <header>
                 <h3 class="h6">Leave a reply</h3>
               </header>
-              <form action="#" class="commenting-form">
+              <form method="POST" action="." class="commenting-form">
+               {% csrf_token %}
+               
                 <div class="row">
-                  <div class="form-group col-md-6">
-                    <input type="text" name="username" id="username" placeholder="Name" class="form-control" />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <input type="email" name="username" id="useremail"
-                      placeholder="Email Address (will not be published)" class="form-control" />
+                  {{ form }}
+                  <div class="form-group col-md-12">
+                  
                   </div>
                   <div class="form-group col-md-12">
-                    <textarea name="usercomment" id="usercomment" placeholder="Type your comment"
-                      class="form-control"></textarea>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-secondary">
-                      Submit Comment
-                    </button>
+                    <button type="submit" class="btn btn-secondary">Submit Comment</button>
                   </div>
                 </div>
               </form>
             </div>
+            {% endif %}
+            
+           
           </div>
         </div>
       </div>
     </main>
-    {% include sidebar.html with most_recent=most_recent category_cunt=cattegry_count %}
+    {% include 'posts/sidebar.html' with most_recent=most_recent category_count=category_count %}
   </div>
 </div>
 

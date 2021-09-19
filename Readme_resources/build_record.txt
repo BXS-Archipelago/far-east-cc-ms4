@@ -975,4 +975,16 @@ Chapter 54 : Posts on the blog
 - Test result: Successful, here also the sidebar is displaying latest posts in order and the categories used. The variables in the view are effective.
 - Commit Work thus far
 
-
+Chapter 55 - Blog post comments
+- In Posts>models.py create a Comment class for user, timestamp, content, post. 
+- In forms create CommentForm class
+- This takes the model Comment and uses the content as field only. Import Comment. 
+- In posts>views.py import the CommentForm
+- Inside the Post view, assign the form to be saved with user and post from the model before saving form.
+- Add form to post view context 
+- In post.html in the comments form, make method POST and add CSRF token
+- The active text area uses class form-control. Update CommentForm to use this class for smooth reproduction. 
+- Test the comment input form 
+- Test result: Successful but wrong size, no placeholder, etc. 
+- Test result 2 :Successful. Added placeholder and id to form CommentForm to better style the input box. 
+- Commit Work thus far

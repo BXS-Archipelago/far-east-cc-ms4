@@ -3,6 +3,7 @@ from .models import Post
 # Pagination
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count, Q
+from .forms import CommentForm
 
 # View to count each time the category name occurred in posts. 
 # annotate will return a dictionary where each key is the category to be counted
@@ -36,17 +37,29 @@ def blog(request):
     }
     return render(request, 'posts/blog.html', context)
 
+
 def post(request, id):
     """
     A view to return the blog postings pages
     """
     category_count = get_category_count()
     most_recent = Post.objects.order_by('-timestamp')[:3]
+    # post is form.instance.post below
     post = get_object_or_404(Post, id=id)
+    # Form for a comment
+    form = CommentForm(request.POST or None)
+    # This part saves the comment but only passing user and post
+    if request.method == "POST":
+        if form.is_valid():
+          form.instance.user = request.user
+          form.instance.post = post
+          form.save()
+          
     context = {
-      'category_count': category_count,
-      'most_recent': most_recent,
-      'post': post
+        'post': post,
+        'most_recent': most_recent,
+        'category_count': category_count,
+        'form': form
     }
     return render(request, 'posts/post.html', context)
 
