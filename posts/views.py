@@ -17,7 +17,7 @@ def get_category_count():
 
 def blog(request):
     category_count = get_category_count()
-    # most_recent will display the latest three items in the right side of page
+    # most_recent will display the latest three items in the right-side column 
     most_recent = Post.objects.order_by('-timestamp')[:3]
     post_list = Post.objects.all()
     # render the pagination 
@@ -39,11 +39,10 @@ def blog(request):
     }
     return render(request, 'posts/blog.html', context)
 
-
-def post(request, id):
-    """
+"""
     A view to return the blog postings pages
     """
+def post(request, id):    
     category_count = get_category_count()
     most_recent = Post.objects.order_by('-timestamp')[:3]
     # post is form.instance.post below
@@ -67,60 +66,87 @@ def post(request, id):
     }
     return render(request, 'posts/post.html', context)
 
+
 # To search through blog posts only
 def search(request):   
     queryset = Post.objects.all()
-    query = request.GET.get('q')
-    if not query:
-                messages.error(request, "You didn't enter any search criteria") 
-    else:
-      if query:
-          queryset = queryset.filter(
-            # if title contains query OR
-            Q(title__icontains=query) |
-            # if overview contains query
-            Q(overview__icontains=query)
-          ).distinct()
-          # .distinct will show one result where the term might appear more than once in title and overview together    
-    
+    query = request.GET.get('q')    
+    if query:
+        queryset = queryset.filter(
+          # if title contains query OR
+          Q(title__icontains=query) |
+          # if overview contains query
+          Q(overview__icontains=query)
+        ).distinct()
+        # .distinct will show one result where the term might appear more than once in title and overview together    
+  
     context = {
       'queryset': queryset,
     }
 
     return render(request, 'posts/search_results.html', context)
 
-
-# Functions to update and delete the blog posts by the admin
+"""
+Functions to update and delete the blog posts by the admin
+"""
 def post_create(request):
-  # in attaching author, we need the other parameter request FILES
-  form = PostForm(request.POST or None, request.FILES or None)
-  # attach author to created posts (see below def get_author)
-  author = get_author(request.user)
-  if request.method == "POST":
-    if form.is_valid():
-      form.instance.author = author
-      form.save()
-      return redirect(reverse('post-detail', kwargs={
-        'id': form.instance.id
-      }))
-  context = {
-    'form': form
-    }
-  return render(request, "posts/post_create.html", context)
-  
+    title = 'Create'
+    # in attaching author, we need the other parameter request FILES
+    form = PostForm(request.POST or None, request.FILES or None)
+    # attach author to created posts (see below def get_author)
+    author = get_author(request.user)
+    if request.method == "POST":
+        if form.is_valid():
+            form.instance.author = author
+            form.save()
+            return redirect(reverse('post-detail', kwargs={
+              'id': form.instance.id
+            }))
+    context = {
+        'title': title,
+        'form': form,
+        }
+    return render(request, "posts/post_create.html", context)
+    
 # attach author to created posts  
-
 def get_author(user):
     qs = Author.objects.filter(user=user)
     if qs.exists():
         return qs[0]
     return None
 
+"""
+Superuser can edit and update Posts
+"""
 def post_update(request, id):
-  pass 
-
+    # Get the post to be updated
+    title = 'Update'
+    post = get_object_or_404(Post, id=id)
+    # the instance being the post itself
+    form = PostForm(request.POST or None, request.FILES or None, instance=post)  
+    author = get_author(request.user)
+    if request.method == "POST":
+        if form.is_valid():
+            form.instance.author = author
+            form.save()
+            return redirect(reverse('post-detail', kwargs={
+              'id': form.instance.id
+              }))
+    # Putting title in context for update
+    context = {
+      'title': title,
+      'form': form,
+    }
+    return render(request, "posts/post_create.html", context)
+  
+ 
+"""
+Superuser can Delete Posts
+"""
 def post_delete(request, id):
-  pass 
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+    return redirect(reverse("post-list"))
 
 
 

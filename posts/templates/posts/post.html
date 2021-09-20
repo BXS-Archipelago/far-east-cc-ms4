@@ -7,14 +7,14 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container py-5">
   <div class="row">
     <!-- Latest Posts -->
     <main class="post blog-post col-lg-8">
       <div class="container">
         <div class="post-single">
           <div class="post-thumbnail">
-            <img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid post-img" />
+            <img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid post-img p-3" />
           </div>
           <div class="post-details">
             <div class="post-meta d-flex justify-content-between">
@@ -32,7 +32,7 @@
               <small><a href="{% url 'post-delete' id=post.id %}"class="text-danger">Delete</a></small>
             </div>
             <h1>
-              {{ post.title }} <a href="#"><i class="fa fa-bookmark-o"></i></a>
+              {{ post.title }} 
             </h1>
             <div class="
                   post-footer
@@ -42,21 +42,21 @@
                 ">
               <a href="#" class="author d-flex align-items-center flex-wrap">
                 <div class="avatar">
-                  <img src="{{ post.author.profile_picture.url }}" alt="..." class="img-fluid avatar-img" />
+                  <img src="{{ post.author.profile_picture.url }}" alt="..." class="img-fluid avatar-img " />
                 </div>
                 <div class="title"><span>{{ post.author.user.username }}</span></div>
               </a>
               <div class="d-flex align-items-center flex-wrap">
-                <div class="date">
+                <small class="date px-1">
                   <i class="icon-clock"></i> {{ post.timestamp|timesince }} ago
-                </div>
-                <div class="views"><i class="icon-eye"></i>{{ post.view_count }}</div>
-                <div class="comments meta-last">
-                  <i class="icon-comment"></i>{{ post.comment_count }}
+                </small>
+                <div class="views px-1"><i class="far fa-eye px-1"></i>{{ post.view_count }}</div>
+                <div class="comments meta-last px-1">
+                  <i class="far fa-comment-alt px-1"></i>{{ post.comments.count }}
                 </div>
               </div>
             </div>
-            <div class="post-body">
+            <div class="post-body py-5">
               {{ post.content | safe }}
             </div>
 
@@ -67,19 +67,17 @@
                   align-items-stretch
                   flex-column flex-md-row
                 ">
-              <!-- Move to the previous entry in blog posts -->
+              <!-- Click and Move to the previous entry in blog posts -->
               {% if post.previous_post %}
 
-
               <a href="{{ post.previous_post.get_absolute_url }}" class="prev-post text-left d-flex align-items-center">
-                <div class="icon prev">
-                  <i class="fa fa-angle-left"></i>
+                <div class="icon prev px-3">
+                  <h4><i class="fa fa-angle-left"></i></h4>
                 </div>
 
-
                 <div class="text">
-                  <strong class="text-primary">Previous Post </strong>
-                  <h6>{{ post.previous_post.title }}</h6>
+                  <h4>Previous Post </h4>
+                  <h4 class="text-success">"{{ post.previous_post.title }}"</h4>
                 </div>
               </a>
               {% endif %}
@@ -95,8 +93,8 @@
                     justify-content-end
                   ">
                 <div class="text">
-                  <strong class="text-primary">Next Post </strong>
-                  <h6>{{ post.next_post.title }}</h6>
+                  <h4>Next Post </h4>
+                  <h4 class="text-success">"{{ post.next_post.title }}"</h4>
                 </div>
                 <div class="icon next">
                   <i class="fa fa-angle-right"> </i></div>
@@ -106,9 +104,9 @@
 
             <div class="post-comments">
               <header>
-                <h3 class="h6">
+                <h4 class="py-4">
                   Post Comments<span class="no-of-comments">({{ post.comments.count }})</span>
-                </h3>
+                </h4>
               </header>
               <!-- to iterate through the comments -->
               {% for comment in post.get_comments %}
@@ -118,14 +116,14 @@
                     <div class="image">
                       {% if comment.user.author %}
                       <img  src="{{ comment.user.author.profile_picture.url }}" alt="..."
-                        class="img-fluid rounded-circle avatar-img" />
+                        class="img-fluid rounded-circle avatar-img " />
                       {% else %}
-                      <img src="{% static 'img/user.svg' %}" alt="..." class="img-fluid rounded-circle">
+                      <img src="{% static 'img/user.svg' %}" alt="..." class="img-fluid rounded-circle avatar-img ">
                       {% endif %}
                     </div>
                     <div class="title">
-                      <strong>{{ comment.user.username }}</strong><span class="date">{{ comment.timestamp | timesince }}
-                        ago</span>
+                      <small class="px-2">{{ comment.user.username }}</small><small class="date px-3">{{ comment.timestamp | timesince }}
+                        ago</small>
                     </div>
                   </div>
                 </div>
@@ -141,9 +139,9 @@
   <!-- Adding Comments to the blog -->
             <!-- Authenticated users only -->
             {% if request.user.is_authenticated %}
-            <div class="add-comment">
+            <div class="add-comment mt-4">
               <header>
-                <h3 class="h6">Leave a reply</h3>
+                <h4 class="pt-3">Leave a reply</h4>
               </header>
               <form method="POST" action="." class="commenting-form">
                {% csrf_token %}
