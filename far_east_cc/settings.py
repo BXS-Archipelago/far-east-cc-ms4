@@ -243,8 +243,8 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 TINYMCE_DEFAULT_CONFIG = {
-    "height": "320px",
-    "width": "960px",
+    "height": "300px",
+    
     "menubar": "file edit view insert format tools table help",
     "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
     "fullscreen insertdatetime media table paste code help wordcount spellchecker",

@@ -1023,3 +1023,22 @@ Chapter 57 : CRUD Admin for blog posts
 - Due to every field showing in the form, access the PostForm Meta and apply only 'title', 'overview', 'content', 'thumbnail', 'categories', 'featured', 'previous_post', 'next_post'
 - Test result 2 : Successful - only the relevant fields are displayed. 
 - Commit Work thus far
+
+Chapter 58 : Creating Posts with TinyMCE text editor functionality
+- The create form needs to integrate the PostForm with the TinyMCE editor
+- In create_form.html, with TinyMCE Editor the form will be passing text, images and other files so form enctype is specified as "multipart/form-data" 
+- Above the form tag add form.media in jinja to allow us to see media in the form
+- Test post_create.html for Content editor
+- Test result : Successful however the content box is far too expansive for the page. 
+- The project settings.py has preset sizes for TinyMCE Default Config. Remove these and the content input will take the size of its parent container. 
+- Test TinyMCE content box for responsiveness
+- Test result: Successful in removing both height and width but the height default, even though mouse-adjustable, was returned at 300px to offer some balance and initial working space. 
+- Before creating a test post, the post needs to have an assigned author. 
+- In views.py, from models import author
+- In the views.py create new get_author function 
+- In the existing post_create view, add the author from the get_author view, and the form must also have PostForm request FILES or none
+- Test the post_create.html page with a new sample blog post. 
+- Test Successful.  Post was created using different heading, p and span paragraphs, image upload, overview and content. 
+- Test 2 Successful - Checked in the blog.html list of posts and new post does display with thumbnail and with overview text correct. 
+- Commit Work Thus far 
+

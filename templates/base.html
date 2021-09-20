@@ -160,6 +160,7 @@
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <li><a href="{% url 'add_product' %}" class=" menu-item">Product Manager</a></li>
+        <li><a href="{% url 'post-create' %}" class=" menu-item">Create Blog</a></li>
         {% endif %}
         <li><a href="{% url 'profile' %}" class=" menu-item">My Profile</a></li>
         <li><a href="{% url 'account_logout' %}" class=" menu-item">Logout</a></li>

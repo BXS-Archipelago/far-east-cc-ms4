@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Post
+from .models import Post, Author
 # Pagination
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count, Q
@@ -92,9 +92,13 @@ def search(request):
 
 # Functions to update and delete the blog posts by the admin
 def post_create(request):
-  form = PostForm(request.POST or None)
+  # in attaching author, we need the other parameter request FILES
+  form = PostForm(request.POST or None, request.FILES or None)
+  # attach author to created posts (see below def get_author)
+  author = get_author(request.user)
   if request.method == "POST":
     if form.is_valid():
+      form.instance.author = author
       form.save()
       return redirect(reverse('post-detail', kwargs={
         'id': form.instance.id
@@ -104,6 +108,13 @@ def post_create(request):
     }
   return render(request, "posts/post_create.html", context)
   
+# attach author to created posts  
+
+def get_author(user):
+    qs = Author.objects.filter(user=user)
+    if qs.exists():
+        return qs[0]
+    return None
 
 def post_update(request, id):
   pass 
