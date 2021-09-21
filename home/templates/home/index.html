@@ -10,100 +10,113 @@
   <img class="landing-hero" src="{{ MEDIA_URL }}007b.jpg" alt="prestige car">
   <!-- Banner to show FREE DELIVERY CUT-OFF POINT -->
 
-      <!-- Rotating Text Credit to "Alphardex" at  
+  <!-- Rotating Text Credit to "Alphardex" at  
         https://codepen.io/alphardex/pen/WNNVJeZ  -->
-        
-       <div class="row w-100">
-        <div class="col-12  text-rotator text-center">
-          <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
-          <h3 class="inline-text">
-            <span class=" value rotate1"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate2"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate3"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
-            <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
-          </h3>
-        </div>
-      </div> 
+
+  <div class="row w-100">
+    <div class="col-12  text-rotator text-center">
+      <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
+      <h3 class="inline-text">
+        <span class=" value rotate1"> €{{ free_delivery_threshold }}.00</span>
+        <span class=" value rotate2"> €{{ free_delivery_threshold }}.00</span>
+        <span class=" value rotate3"> €{{ free_delivery_threshold }}.00</span>
+        <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
+        <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
+      </h3>
+    </div>
+  </div>
 </container>
 <!-- Intro Section-->
 <section class="intro">
-  
+
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
         <h4 class="h3">Far East Car Care Store and Blog </h4>
-        <p class="text-big">Your best resource for the best products AND the best information. With decades of experience, we are happy to provide everything you need to have or know to make your car look, smell and feel amazing! </p>
+        <p class="text-big">Your best resource for the best products AND the best information. With decades of
+          experience, we are happy to provide everything you need to have or know to make your car look, smell and feel
+          amazing! </p>
         <div class="blog-btn-holder pb-2">
-        <a href="{% url 'products' %}" class="btn btn-outline-custom ">Visit Store</a>
-        <a href="{% url 'post-list' %}" class="btn btn-outline-black ">Visit Blog</a>
-      </div>
+          <a href="{% url 'products' %}" class="btn btn-outline-custom ">Visit Store</a>
+          <a href="{% url 'post-list' %}" class="btn btn-outline-black ">Visit Blog</a>
+        </div>
       </div>
     </div>
+    <hr>
   </div>
+  
 </section>
 <section class="featured-posts no-padding-top">
   <div class="container">
     <!-- Post-->
-   {% for obj in object_list %}
-    <div class="row d-flex align-items-stretch">
+    {% for obj in object_list %}
+    <div class="row d-flex align-items-stretch my-3">
       {% if not forloop.first and not forloop.last %}
-      <div class="image col-lg-5"><img  src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid"></div>
+          <div class="image col-lg-5 "><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow"></div>
       {% endif %}
       <div class="text col-lg-7">
         <div class="text-inner d-flex align-items-center">
           <div class="content">
-            <header class="post-header">              
+            <header class="post-header">
               <div class="category">
                 <!-- List categories as "all"; its a many to many field -->
                 {% for cat in obj.categories.all %}
-                
+
                 <a href="#">{{ category.title }}</a>
                 {% endfor %}
               </div>
-              <a href="post.html">
-                <h2 class="h4">{{ obj.title }}</h2></a>
+              <a href="{{ obj.get_absolute_url }}">
+                <h3 ><i class="fas fa-bookmark"></i> {{ obj.title }}</h3>
+              </a>
             </header>
             <p>{{ obj.overview }}</p>
-            <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                <div class="avatar"><img class = "avatar-img" src="{{ obj.author.profile_picture.url }}" alt=""></div>
-                <div class="title"><span>{{ obj.author }}</span></div></a>
+            <footer class="post-footer d-flex align-items-center"><a href="#"
+                class="author d-flex align-items-center flex-wrap">
+                <div class="avatar"><img class="avatar-img" src="{{ obj.author.profile_picture.url }}" alt=""></div>
+                <div class="title"><span>{{ obj.author }}</span></div>
+              </a>
               <small class="date px-2"><i class="icon-clock"></i> | {{ obj.timestamp | timesince }} ago</small>
-              <div class="comments"> |  <i class="far fa-comment-alt"></i> {{ obj.comment_count }}</div>
+              <div class="comments"> | <i class="far fa-comment-alt"></i> {{ obj.comment_count }}</div>
             </footer>
           </div>
         </div>
       </div>
       {% if forloop.first or forloop.last %}
-      <div class="image col-lg-5"><img  src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid"></div>
+      <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow"></div>
+      
       {% endif %}
     </div>
-   {% endfor %}
-     
+    <hr>
+    {% endfor %}
+
   </div>
 </section>
 
 <!-- Divider Section-->
-<section style="background: url({{ MEDIA_URL }}002b.jpg) ; background-size: cover; background-position: center bottom" class="divider">
+<section style="background: url({{ MEDIA_URL }}012b.jpg) ; background-size: cover; background-position: center bottom"
+  class="divider py-5">
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h2>We partner with the very best manufacturers in the Far East And our Product line is very popular with owners of every car type!</h2><a href="{% url 'products' %}" class="hero-link">View More</a>
+        <h2 class="mid-page-hero">We partner with the very best manufacturers in the Far East And our Product range is very popular with owners
+          of every car type</h2><a href="{% url 'products' %}" class="hero-link">View Collection</a>
       </div>
     </div>
   </div>
 </section>
 <!-- Latest Posts -->
-<section class="latest-posts"> 
+<section class="latest-posts">
   <div class="container">
-    <header> 
+    <header>
       <h2>Latest from our Car Care blog team</h2>
-      <p class="text-big">The team has been busy with the products! Let us know if you want any specific tips or topics to cover.</p>
+      <p class="text-big">The team has been busy with the products! Let us know if you want any specific tips or topics
+        to cover.</p>
     </header>
     <div class="row">
       {% for obj in latest %}
       <div class="post col-md-4">
-        <div class="post-thumbnail"><a href="#"><img src="{{ obj.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+        <div class="post-thumbnail"><a href="#"><img src="{{ obj.thumbnail.url }}" alt="..." class="img-fluid"></a>
+        </div>
         <div class="post-details">
           <div class="post-meta d-flex justify-content-between">
             <small class="date">{{ obj.timestamp }}</small>
@@ -111,9 +124,10 @@
               {% for cat in obj.categories.all %}
               <small><a href="#"> {{ cat }} |</a></small>
               {% endfor %}
-              </div>
+            </div>
           </div><a href="#">
-            <h3 class="h4">{{ obj.title }}</h3></a>
+            <h3 class="h4">{{ obj.title }}</h3>
+          </a>
           <p class="text-muted">{{ obj.overview|linebreaks|truncatechars:200 }}</p>
         </div>
       </div>
@@ -122,12 +136,13 @@
   </div>
 </section>
 <!-- Newsletter Section-->
-<section class="newsletter no-padding-top">    
+<section class="newsletter no-padding-top">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <h2>Subscribe to Newsletter</h2>
-        <p class="text-big">Stay ahead of the posse! Special Offers, new Products, Tips to save time and effort. Subscribe now for our email wisdom!</p>
+        <p class="text-big">Stay ahead of the posse! Special Offers, new Products, Tips to save time and effort.
+          Subscribe now for our email wisdom!</p>
       </div>
       <div class="col-md-8">
         <div class="form-holder">
@@ -144,28 +159,36 @@
   </div>
 </section>
 <!-- Gallery Section-->
-<section class="gallery no-padding">    
+<section class="gallery no-padding">
   <div class="row">
     <div class="mix col-lg-3 col-md-3 col-sm-6">
-      <div class="item"><a href="{{ MEDIA_URL }}001.jpg" data-fancybox="gallery" class="image"> <img  src="{{ MEDIA_URL }}001.jpg" alt="prestige car" class="img-fluid">
-          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
+      <div class="item"><a href="{{ MEDIA_URL }}001.jpg" data-fancybox="gallery" class="image"> <img
+            src="{{ MEDIA_URL }}001.jpg" alt="prestige car" class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
+        </a></div>
     </div>
     <div class="mix col-lg-3 col-md-3 col-sm-6">
-      <div class="item"><a href="{{ MEDIA_URL }}002.jpg" data-fancybox="gallery" class="image"> <img  src="{{ MEDIA_URL }}002.jpg" alt="prestige car" class="img-fluid">
-          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
+      <div class="item"><a href="{{ MEDIA_URL }}002.jpg" data-fancybox="gallery" class="image"> <img
+            src="{{ MEDIA_URL }}002.jpg" alt="prestige car" class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
+        </a></div>
     </div>
     <div class="mix col-lg-3 col-md-3 col-sm-6">
-      <div class="item"><a href="{{ MEDIA_URL }}003.jpg" data-fancybox="gallery" class="image"><img  src="{{ MEDIA_URL }}003.jpg" alt="prestige car" class="img-fluid">
-          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
+      <div class="item"><a href="{{ MEDIA_URL }}003.jpg" data-fancybox="gallery" class="image"><img
+            src="{{ MEDIA_URL }}003.jpg" alt="prestige car" class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
+        </a></div>
     </div>
     <div class="mix col-lg-3 col-md-3 col-sm-6">
-      <div class="item"><a href="{{ MEDIA_URL }}004.jpg" data-fancybox="gallery" class="image"><img  src="{{ MEDIA_URL }}004.jpg" alt="prestige car" class="img-fluid">
-          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
+      <div class="item"><a href="{{ MEDIA_URL }}004.jpg" data-fancybox="gallery" class="image"><img
+            src="{{ MEDIA_URL }}004.jpg" alt="prestige car" class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
+        </a></div>
     </div>
   </div>
 </section>
 
-              
+
 
 {% endblock %}
 <script src="{% static 'js/base.js' %}"></script>

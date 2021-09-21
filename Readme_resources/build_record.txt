@@ -1056,13 +1056,23 @@ Chapter 58 - Superuser blog Admin links
 - Test result : Success - Needed to amend the form action from a simple "." using {{ action }} while modifying the context for the post_update and post_create and post_update views. See bugs.txt
 - Commit Work thus far
 
-Chapter 59 - Counting views of each blog-post
+Chapter 59 - Counting views and Comments of each blog-post
 - In post models.py, create class PostView to keep track or the user and the post using foreignkey. 
 - in the Post model, change the view_count to instead exist in a @property function within the model. This will grab all the PostView objects and count them.
 - In the views.py, import the PostView model. 
 - add PostView to get objects user and post
 - Make migrations and migrate
 - Commit Work thus far
+- Test views count
+- Test result: Successful. Views count increases with different logged-in accounts. 
+- For Comment count, in models.py the class Comment already exists. Move it to above the Post model. 
+- In Post model, create a property def for comment_count(self) and this will count the occurence of Comment. 
+- Test comment count
+- Test result : Succesful. The number of comments displayed in the comment_count fields are accurate in the index page, the blog page and the post itself. 
+
+
+
+
 
 
 
