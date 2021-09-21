@@ -91,6 +91,7 @@ Functions to update and delete the blog posts by the admin
 """
 def post_create(request):
     title = 'Create'
+    
     # in attaching author, we need the other parameter request FILES
     form = PostForm(request.POST or None, request.FILES or None)
     # attach author to created posts (see below def get_author)
@@ -103,6 +104,7 @@ def post_create(request):
               'id': form.instance.id
             }))
     context = {
+        'action': '',
         'title': title,
         'form': form,
         }
@@ -121,6 +123,7 @@ Superuser can edit and update Posts
 def post_update(request, id):
     # Get the post to be updated
     title = 'Update'
+    print("method", request.method)
     post = get_object_or_404(Post, id=id)
     # the instance being the post itself
     form = PostForm(request.POST or None, request.FILES or None, instance=post)  
@@ -132,13 +135,14 @@ def post_update(request, id):
             return redirect(reverse('post-detail', kwargs={
               'id': form.instance.id
               }))
+            
     # Putting title in context for update
     context = {
+      'action': '/update',
       'title': title,
       'form': form,
     }
     return render(request, "posts/post_create.html", context)
-  
  
 """
 Superuser can Delete Posts

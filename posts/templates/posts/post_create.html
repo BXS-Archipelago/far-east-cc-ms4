@@ -6,7 +6,8 @@
     <!-- use {{ title }} to alternate between Create and Update -->
     <h4 class="py-3">{{ title }} the Article here</h4>
     {{ form.media }}
-    <form class= "mb-5" method = "POST" action="." enctype="multipart/form-data">
+    
+    <form class="mb-5" method="POST" action=".{{ action }}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | crispy  }}
         <button type="submit" class="btn btn-outline-custom mb-5" >Submit</button>

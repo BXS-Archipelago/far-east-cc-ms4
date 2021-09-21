@@ -78,9 +78,11 @@ def product_detail(request, product_id):
         reviews = Review.objects.filter(product=product)       
         reviews_count = reviews.count()
         running_score = 0
-        for review in reviews:
-            running_score += review.rated
-        reviews_avg = running_score / reviews_count
+        reviews_avg = 0
+        if reviews_count:
+            for review in reviews:
+                running_score += review.rated
+            reviews_avg = running_score / reviews_count
     
 
     context = {

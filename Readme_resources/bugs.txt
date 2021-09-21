@@ -60,4 +60,9 @@ Solution : there has been a problem with Gitpod over past 24hrs. Somehow DATABAS
 This seems to have worked. Advice was kindly gained from the CI slack channel from Igor Basuga. 
 The issue might have stemmed from an update done by CI in their template halfway through the project. 
 
-8. In Blog, when a post is updated, it is saving the update as a comment instead. It is also displaying the editor's tags such as <p> </p> around each paragraph. Searching for a misplaced variable or jinja.... 
+8. In Blog, when a post is updated, it is saving the update as a comment instead. It is also displaying the editor's tags such as <p> </p> around each paragraph. Searching for a misplaced variable or jinja.... I couldn't find the solution alone, and it also took a bit of exploration by the always-helpful guys in tutor-support but the problem and a possible solution was found
+
+- Solution... Thanks to Kevin in CI tutor support for spotting the issue and course mentor Maranatha Ilesanmi for offering the best solution. I had set the post_create.html to perform both creating and updating of posts. I had set the form action to a simple "." but Kevin spotted that there was too much stress on that dot for the action and recommended it be changed to "./update" but also to create a separate post_update.html. 
+
+This was further explored with Maranatha where it was suggested instead to use ".{{ action }}"  and to modify the context in each view. The create view context "action":"" the empty string, and the update view context "action":"/update". 
+

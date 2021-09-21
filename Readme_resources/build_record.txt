@@ -1042,3 +1042,29 @@ Chapter 58 : Creating Posts with TinyMCE text editor functionality
 - Test 2 Successful - Checked in the blog.html list of posts and new post does display with thumbnail and with overview text correct. 
 - Commit Work Thus far 
 
+Chapter 58 - Superuser blog Admin links
+- Create Nav Bar link in Account drop-down as Superuser under Product Manager : "Create Blog"
+- In posts.html add links for Edit and Delete. 
+- Finish the Edit and Delete views in views.py
+- Use 'title' in both create and update to alternate on the post_create page as {{ title }}
+- The edit function is very similar to the post_create view but requires the id and the instance as post. 
+- The delete function will have the simple but effect format of getting the object, deleting it and returning to the list page. 
+- Test the delete function 
+- Test result - Successful - example blog posts deleted and redirected to the right page
+- Test the update/edit function
+- Test result : Failed - The updated text is saving as a comment. More investigation required. 
+- Test result : Success - Needed to amend the form action from a simple "." using {{ action }} while modifying the context for the post_update and post_create and post_update views. See bugs.txt
+- Commit Work thus far
+
+Chapter 59 - Counting views of each blog-post
+- In post models.py, create class PostView to keep track or the user and the post using foreignkey. 
+- in the Post model, change the view_count to instead exist in a @property function within the model. This will grab all the PostView objects and count them.
+- In the views.py, import the PostView model. 
+- add PostView to get objects user and post
+- Make migrations and migrate
+- Commit Work thus far
+
+
+
+
+
