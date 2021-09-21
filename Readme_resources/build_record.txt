@@ -1069,6 +1069,7 @@ Chapter 59 - Counting views and Comments of each blog-post
 - In Post model, create a property def for comment_count(self) and this will count the occurence of Comment. 
 - Test comment count
 - Test result : Succesful. The number of comments displayed in the comment_count fields are accurate in the index page, the blog page and the post itself. 
+- Commit Work thus far
 
 
 

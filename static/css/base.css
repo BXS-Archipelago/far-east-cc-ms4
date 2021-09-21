@@ -476,7 +476,7 @@ ul .drop-menu {
   visibility: hidden;
   transition: all 0.7s ease;
   border-radius: var(--radius);
-  
+  z-index: 5;
 }
 
 .menu-item {
@@ -666,10 +666,10 @@ a.hero-link:hover::after {
 }
 
 .text-big {
-  font-size: 1.4em;
+  font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.8em;
-  color: #111;
+  color: var(--fecc-primary-1);
 }
 
 section.gallery .mix {
@@ -683,7 +683,8 @@ section.gallery .mix {
 }
 
 .blog-shadow {
-  box-shadow: var(--dark-shadow);
+  box-shadow: var(--dark-shadow); 
+  
 }
 
 .avatar-img {
@@ -747,9 +748,13 @@ section.featured-posts .avatar {
   border-bottom: 1px solid var(--fecc-grey-6);
 }
 
+.subscriber {
+  padding: 4.5px;
+}
+
 .blog-post .post-thumbnail img {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 10px;  
 }
 
 .widget.latest-posts a {
@@ -850,6 +855,8 @@ section.featured-posts .avatar {
   border-color: #2b90d9;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>Blog Posts Styling <<<<<<<<*/
+
+
 .post-img {
   box-shadow: var(--dark-shadow);
 }

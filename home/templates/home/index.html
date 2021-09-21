@@ -14,7 +14,7 @@
         https://codepen.io/alphardex/pen/WNNVJeZ  -->
 
   <div class="row w-100">
-    <div class="col-12  text-rotator text-center">
+    <div class="col-10 offset-1  text-rotator text-center">
       <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
       <h3 class="inline-text">
         <span class=" value rotate1"> €{{ free_delivery_threshold }}.00</span>
@@ -23,8 +23,11 @@
         <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
         <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
       </h3>
+      <hr>
     </div>
+   
   </div>
+  
 </container>
 <!-- Intro Section-->
 <section class="intro">
@@ -52,7 +55,7 @@
     {% for obj in object_list %}
     <div class="row d-flex align-items-stretch my-3">
       {% if not forloop.first and not forloop.last %}
-          <div class="image col-lg-5 "><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow"></div>
+          <div class="image col-lg-5 "><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow "></div>
       {% endif %}
       <div class="text col-lg-7">
         <div class="text-inner d-flex align-items-center">
@@ -82,7 +85,7 @@
         </div>
       </div>
       {% if forloop.first or forloop.last %}
-      <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow"></div>
+      <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow "></div>
       
       {% endif %}
     </div>
@@ -108,16 +111,15 @@
 <section class="latest-posts">
   <div class="container">
     <header>
-      <h2>Latest from our Car Care blog team</h2>
-      <p class="text-big">The team has been busy with the products! Let us know if you want any specific tips or topics
-        to cover.</p>
+      <h3 class="p-2 my-2">Latest from our Car Care blog team</h3>
+      <p class="text-big">The team has been busy with the blog! Let us know if you want any specific tips or topics covered.</p>
     </header>
     <div class="row">
       {% for obj in latest %}
       <div class="post col-md-4">
-        <div class="post-thumbnail"><a href="#"><img src="{{ obj.thumbnail.url }}" alt="..." class="img-fluid"></a>
+        <div class="post-thumbnail blog-shadow"><a href="#"><img src="{{ obj.thumbnail.url }}" alt="..." class="img-fluid "></a>
         </div>
-        <div class="post-details">
+        <div class="post-details pt-2">
           <div class="post-meta d-flex justify-content-between">
             <small class="date">{{ obj.timestamp }}</small>
             <div class="category">
@@ -126,7 +128,7 @@
               {% endfor %}
             </div>
           </div><a href="#">
-            <h3 class="h4">{{ obj.title }}</h3>
+            <h3 class="h4"><i class="fas fa-bookmark"></i> {{ obj.title }}</h3>
           </a>
           <p class="text-muted">{{ obj.overview|linebreaks|truncatechars:200 }}</p>
         </div>
@@ -140,7 +142,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2>Subscribe to Newsletter</h2>
+        <h3>Subscribe to Our Newsletter</h3>
         <p class="text-big">Stay ahead of the posse! Special Offers, new Products, Tips to save time and effort.
           Subscribe now for our email wisdom!</p>
       </div>
@@ -149,8 +151,8 @@
           <form action="." method="POST">
             {% csrf_token %}
             <div class="form-group">
-              <input type="email" name="email" id="email" placeholder="Type your email address">
-              <button type="submit" class="submit btn-outline-black ">Subscribe</button>
+              <input type="email" name="email" id="email" placeholder="Type your email address" class="subscriber">
+              <button type="submit" class="submit btn btn-outline-custom ">Subscribe</button>
             </div>
           </form>
         </div>
