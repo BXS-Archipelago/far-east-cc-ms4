@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="container header-container pt-5">
+    <div class="row py-4">
+        <div class="col">
+            <h3 class="mb-0">Contact us </h3>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <aside class="col-4">
+            <div class="contact-us">
+                <h4>Address:</h4> 
+                <p>999, LaFerrari Boulevard,</p>
+                <p>Lambotown,</p>
+                <p>Porsche County,</p>
+                <p>Ireland</p>
+                
+                <h4>Phone</h4>
+                <p>00555 43224 45545</p>
+                <h4>Email</h4>
+                <p>info@fecc-fecc.com</p>
+            </div>
+        
+        </aside>
+
+        <!-- Form for Contacting us -->
+      <div class=" col-8"> 
+        
+        
+ <form method="post" role="form" action="{% url 'contact' %}">
+     {% csrf_token %}
+    <div class="controls">
+        <div class="form-group">
+             <p>Full Name</p>
+             <input type="text" name="message-name" class="form-input-text form-control"  required="required">                              
+        </div>
+        
+         <div class="form-group">
+            <p >Email</p>
+            <input type="email" name="message-email" class="form-input-text form-control"  required="required">                           
+        </div>       
+     
+         <div class="form-group">
+            <p>Message</p>
+            <textarea name="message" class="form-input-text form-control" rows="4" required="required"></textarea>
+         </div>
+         <div class="send-button bottom-margin">
+             <button type="submit" class="btn btn-send send-msg">SEND MESSAGE</button>
+         </div>
+     </div>
+    </form>
+</div>
+    
+
+
+</div>
+</div>
+{% endblock %}

@@ -67,6 +67,21 @@
   <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}FECC.png" class="logo"  alt="" /></a>
 </div>
 <div class=" nav-icons">
+  <div class="col-search w-100">
+    <form method="GET" action="{% url 'products' %}">
+      <div class="input-group w-100">
+        <input class="form-control border border-black rounded-0" type="text" name="q"
+          placeholder="Search our store">
+        <div class="input-group-append">
+          <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
   <ul class="menu-items">
     <li><a href="{% url 'home' %}" class="menu-item">Home</a></li>
     <li><a href="{% url 'post-list' %}" class="menu-item">Blog</a></li>
@@ -80,7 +95,7 @@
                   
                   <img src="{{ MEDIA_URL }}hikari1.jpg" class="menu-img" alt="Special Offer">
                 </a>
-                <p id="menu-text">Buy One, Get One Free</p>
+                <p id="menu-text">Buy One, Get One Free!</p>
               </section>
             </div>
             <div class="col">
@@ -120,22 +135,7 @@
                 </ul>
               </section>
             </div>
-      <!-- Search Bar in Wide Drop-Down -->
-              <div class="col-search w-100">
-                <form method="GET" action="{% url 'products' %}">
-                  <div class="input-group w-100">
-                    <input class="form-control border border-black rounded-0" type="text" name="q"
-                      placeholder="Search our store">
-                    <div class="input-group-append">
-                      <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                        <span class="icon">
-                          <i class="fas fa-search"></i>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+      
           </div>        
       </div>
     </li>
@@ -144,8 +144,8 @@
     <li class="drop-down"><a href="" class="menu-item ">Help <i class="fas fa-chevron-down"></i></a>
       <ul class=" drop-menu">
         <li><a href="#" class="menu-item">FAQ</a></li>
-        <li><a href="#" class="menu-item">Contact</a></li>
-        <li><a href="#" class="menu-item">About</a></li>        
+        <li><a href="#" class="menu-item">About</a></li>
+        <li><a href="{% url 'contact' %}" class="menu-item">Contact</a></li>        
     </ul>
   </li>
 

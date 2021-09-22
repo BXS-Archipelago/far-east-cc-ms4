@@ -5,4 +5,5 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('contact.html', views.contact, name='contact'),
 ]

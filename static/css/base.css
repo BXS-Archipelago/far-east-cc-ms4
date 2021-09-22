@@ -116,6 +116,11 @@ p {
   color: var(--fecc-grey-4);
 }
 
+label {
+  font-family: var(--ff-secondary);
+  color: var(--fecc-primary-4);
+  font-weight: 500;
+}
 
 @media screen and (min-width: 800px) {
   h1 {
@@ -564,6 +569,9 @@ content .col .drop-down-image {
 .content .col #menu-text {
   line-height: 1rem;
   color: var(--fecc-red-light);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1.1px;
 }
 
 .lg-links {
@@ -989,7 +997,27 @@ em img {
   align-items: center;
   flex-direction: row;
 }
+
+.img-shadow {
+  box-shadow: var(--dark-shadow);
+}
+
+/* ------------------------------ Product Search Results */
+
+.product-search {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
 /*  ------------------------------Review & Rating Section */
+
+.reviewer {
+  font-size: .8rem;
+  color: var(--fecc-green-dark);
+  text-transform: uppercase;
+}
 
 textarea {
   padding: 10px;
@@ -997,13 +1025,17 @@ textarea {
 }
  
 .review-body {
-  background-color: var(--fecc-grey-9);
+  background-color: var(--fecc-primary-10);
 }
 .review-text {
   background-color: var(--fecc-grey-10);
   border: 1px solid var(--fecc-black);
   border-radius: var(--radius);
   padding: 10px;
+  align-items: flex-start;
+  font-family: var(--ff-primary);
+  font-weight: 500;
+  box-shadow: var(--dark-shadow);
 }
 
 .user-rating {
@@ -1188,13 +1220,13 @@ textarea {
 /* -----------------  Add To Cart or Keep Shopping buttons  */
 
   .btn-black {
-    background: var(--fecc-red-dark);
+    background: var(--fecc-grey-5);
     color: white;
    
 }
 
 .btn-outline-black {
-    background: var(--fecc-primary-5);
+    background: var(--fecc-grey-8);
     box-shadow: var(--dark-light);
     border: 1px solid var(--fecc-primary-2);
     border-radius: var(--radius);

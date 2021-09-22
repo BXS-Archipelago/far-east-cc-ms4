@@ -1071,7 +1071,22 @@ Chapter 59 - Counting views and Comments of each blog-post
 - Test result : Succesful. The number of comments displayed in the comment_count fields are accurate in the index page, the blog page and the post itself. 
 - Commit Work thus far
 
+Chapter 60 - Refactoring the pages.
+- Index page CSS update. Modify margins and padding for headings. 
+- product_detail.html update background colors for reviews. Box-shadow for image. Rate Now Button padding. Move product title to top of page as header.
+- rate.html modify label styles and box-shadow for image. 
+- Take Search function out of large drop down, put in Navbar. 
 
+Chapter 61 - Contact us
+- Create contact.html in the home>templates>home folder
+- Divide the page into col-8 for the form and col-4 for the address
+- In home>urls.py add the path for contact
+- In home>views.py add a new view for contact
+- View takes Name, Email and Message
+- Confirmation of receipt Message returned to user upon submissions
+- Test Contact Form functionality 
+- Test Result : Successful. Using {{ message_name }} on the page also the display of Success-Message in the top, the form is working well
+- Commit Work thus far. 
 
 
 

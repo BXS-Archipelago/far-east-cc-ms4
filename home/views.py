@@ -2,7 +2,7 @@ from django.shortcuts import render
 from posts.models import Post
 
 from marketing.models import Signup
-
+from django.contrib import messages
 
 def index(request):
     """
@@ -24,4 +24,15 @@ def index(request):
 
     return render(request, 'home/index.html', context)
 
-
+def contact(request):
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message = request.POST['message']
+        context = {
+            'message_name':message_name 
+            }
+        messages.success(request, 'Thank you for your message. We will get back to you as soon as possible')
+        return render(request, 'home/contact.html', context )
+    else:    
+        return render(request, 'home/contact.html', {})
