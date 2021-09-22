@@ -4,6 +4,8 @@ from posts.models import Post
 from marketing.models import Signup
 from django.contrib import messages
 
+from django.core.mail import send_mail
+
 def index(request):
     """
     A view to return the index page and blog features
@@ -29,10 +31,19 @@ def contact(request):
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
+
+        # sending email!
+        send_mail(
+            'New message from ' + message_name, 
+            message,
+            message_email,
+            ['bxs@tutanota.com'],
+            # Please add your email in quotes after comma to receive a test message. 
+        )
         context = {
             'message_name':message_name 
             }
-        messages.success(request, 'Thank you for your message. We will get back to you as soon as possible')
+        messages.success(request, 'Message sent')
         return render(request, 'home/contact.html', context )
     else:    
         return render(request, 'home/contact.html', {})

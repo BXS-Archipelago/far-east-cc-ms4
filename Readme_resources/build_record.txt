@@ -1087,7 +1087,11 @@ Chapter 61 - Contact us
 - Test Contact Form functionality 
 - Test Result : Successful. Using {{ message_name }} on the page also the display of Success-Message in the top, the form is working well
 - Commit Work thus far. 
-
+- In home>views.py from django.core.mail import send_mail
+- Use send_mail() within the contact view for the subject, message, sender and my receiving email. 
+- Test email functionality
+- Test fail : SMTPSenderRefused error message. 
+- Commit Work thus far
 
 
 
