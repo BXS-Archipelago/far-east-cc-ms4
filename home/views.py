@@ -33,13 +33,13 @@ def contact(request):
         message = request.POST['message']
 
         # sending email!
-        send_mail(
-            message_email,
-            message_name,             
+        send_mail(            
+            message_name,   
+            message_email,          
             message,            
                         
             # receiving email address
-            ['bxs@tutanota.com'],            
+            ['brianxsmyth@yahoo.co.uk'],            
         )
         context = {
             'message_name':message_name 
