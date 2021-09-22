@@ -35,15 +35,13 @@ def contact(request):
         # sending email!
         send_mail(
             'New message from ' + message_name, 
-            message,
             message_email,
+            message,            
             ['bxs@tutanota.com'],
             # Please add your email in quotes after comma to receive a test message. 
         )
-        context = {
-            'message_name':message_name 
-            }
+        
         messages.success(request, 'Message sent')
-        return render(request, 'home/contact.html', context )
+        return render(request, 'home/contact.html', {message_name})
     else:    
         return render(request, 'home/contact.html', {})

@@ -1094,7 +1094,8 @@ Chapter 61 - Contact us
 - Commit Work thus far
 - Perform heroku migrations and pushes, etc. Changed DEBUG for Development. 
 - Test2 email functionality 
-- Test Result : Success! 
+- Test Result : Success. But change required as email address of sender not in message. 
+
 
 
 
