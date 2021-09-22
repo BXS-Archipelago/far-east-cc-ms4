@@ -35,11 +35,10 @@ def contact(request):
         # sending email!
         send_mail(
             message_name, 
-            message_email,
             message,            
+            message_email,            
             # receiving email address
-            ['bxs@tutanota.com'],
-            
+            ['bxs@tutanota.com'],            
         )
         context = {
             'message_name':message_name 
