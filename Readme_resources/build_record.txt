@@ -1092,6 +1092,11 @@ Chapter 61 - Contact us
 - Test email functionality
 - Test fail : SMTPSenderRefused error message. 
 - Commit Work thus far
+- Perform heroku migrations and pushes, etc. Changed DEBUG for Development. 
+- Test2 email functionality 
+- Test Result : Success! 
+
+
 
 
 
