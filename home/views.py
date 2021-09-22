@@ -34,9 +34,9 @@ def contact(request):
 
         # sending email!
         send_mail(
-            'New message from ' + message_name, 
-            'Email address' + message_email,
-            'Their message' + message,            
+            message_name, 
+            message_email,
+            message,            
             # receiving email address
             ['bxs@tutanota.com'],
             
