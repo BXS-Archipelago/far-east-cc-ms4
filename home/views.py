@@ -28,20 +28,19 @@ def index(request):
 
 def contact(request):
     if request.method == "POST":
-        message_subject = request.POST['message-subject']
+        
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
 
         # sending email!
         send_mail(     
-            message_subject,       
+                   
             message_name,   
             message_email,          
-            message,            
-                        
-            # receiving email address
-            ['bxs@tutanota.com'],            
+            message,        
+            ['bxs@tutanota.com',]
+                       
         )
         context = {
             'message_name':message_name 
