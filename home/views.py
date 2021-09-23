@@ -39,7 +39,7 @@ def contact(request):
             message,            
                         
             # receiving email address
-            ['brian.car.detailing@gmail.com'],            
+            ['bxs@tutanota.com'],            
         )
         context = {
             'message_name':message_name 
