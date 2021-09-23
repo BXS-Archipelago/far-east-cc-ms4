@@ -53,6 +53,6 @@ def contact(request):
         )
         
         messages.success(request, 'Message sent')
-        return render(request, 'home/contact.html', context)
+        return render(request, 'home/contact.html', {})
     else:    
         return render(request, 'home/contact.html', {})
