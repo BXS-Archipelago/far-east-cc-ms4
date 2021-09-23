@@ -66,3 +66,6 @@ The issue might have stemmed from an update done by CI in their template halfway
 
 This was further explored with Maranatha where it was suggested instead to use ".{{ action }}"  and to modify the context in each view. The create view context "action":"" the empty string, and the update view context "action":"/update". 
 
+9. I wanted to use Django send_mail to power the contact form, but many documents such as https://docs.djangoproject.com/en/3.2/topics/email/#send-mail
+and stackoverflow were not getting the email right for me. The message wasn't being received, the email address was the message instead, or else the name was the message!  Everything was half-working but the Youtube tutorial from "Scottish Coder" gave me better ideas on how empty dictionaries and empty strings can be used to achieve what was required in the actual incoming mail.  
+Credit : https://youtu.be/1DcySa35fXw
