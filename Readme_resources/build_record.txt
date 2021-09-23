@@ -1097,12 +1097,18 @@ Chapter 61 - Contact us
 - Test Result : Success. But change required as email address of sender not in message. 
 - Reworking of Contact view required to add extra dictionaries and empty strings. Credit for the correct view : "Scottish Coder" at https://youtu.be/1DcySa35fXw
 
-Chapter 62 : About us
+Chapter 62 : About us & FAQ pages
 - in Home>templates>home create about.html
 - Add to urls.py
 - in Views.py create def about(request) to lead the page.
-- Copy the contact page html and modify for the About Us text
+- Copy the contact page html as a template and modify for the About Us text
 - Add url to nav bar links
+- in Home>templates>home create faq.html
+- Add to urls.py
+- in Views.py create def faq(request) to lead the page.
+- Copy the about page html as a template and modify for the FAQ text
+- Add url to nav bar links
+- Commit Work thus far
 
 
 
