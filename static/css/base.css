@@ -1328,6 +1328,21 @@ color: #fff;
 color: #17a2b8; /* text-info */
 }
 
+/* >>>>>>>>>>>>>>>>Contact Form <<<<<<<<<<< */
+
+.contact-container p {
+  align-items: flex-start;
+  color: var(--fecc-primary-1);
+  margin-bottom: .5rem;
+}
+.contact-block {
+  background-color: var(--fecc-grey-6);
+  padding: 1rem;
+}
+.contact-us {
+  background-color: var(--fecc-white);
+  padding: 1rem;
+}
 
 @media screen and (max-width: 992px) {
 

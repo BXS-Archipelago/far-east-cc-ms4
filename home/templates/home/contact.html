@@ -11,19 +11,19 @@
             <h3 class="mb-0">Contact us </h3>
             <hr>
             {% if message_name %}
-            <h5 class="text-success">Thanks for the message, {{ message_name }}</h5>
+            <h5 class="text-success bg-primary">Thanks for the message, {{ message_name }}</h5>
             <h4>We will get to back to you as soon as we can</h4>
             {% endif %}
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container contact-container">
 
     <div class="row">
 
-        <aside class="col-4">
-            <div class="contact-us">
+        <aside class="col-4 contact-us">
+            <div >
                 <h4>Address:</h4> 
                 <p>999, LaFerrari Boulevard,</p>
                 <p>Lambotown,</p>
@@ -39,7 +39,7 @@
         </aside>
 
         <!-- Form for Contacting us -->
-      <div class=" col-8"> 
+      <div class=" col-8 contact-block"> 
         
         
  <form method="post" role="form" action="{% url 'contact' %}">
@@ -47,21 +47,25 @@
     <div class="controls">
         <div class="form-group">
              <p>Full Name</p>
-             <input type="text" name="message-name" class="form-input-text form-control"  required="required">                              
+             <input type="text" name="message-name" class="form-input-text form-control contact-form"  required="required">                              
         </div>
         
-
          <div class="form-group">
             <p >Email</p>
-            <input type="email" name="message-email" class="form-input-text form-control"  required="required">                           
+            <input type="email" name="message-email" class="form-input-text form-control contact-form"  required="required">                           
         </div>       
-     
+        <div class="controls">
+            <div class="form-group">
+                 <p>Subject</p>
+                 <input type="text" name="message-subject" class="form-input-text form-control contact-form"  required="required">                              
+            </div>
+
          <div class="form-group">
             <p>Message</p>
-            <textarea name="message" class="form-input-text form-control" rows="4" required="required"></textarea>
+            <textarea name="message" class="form-input-text form-control contact-form" rows="6" required="required"></textarea>
          </div>
          <div class="send-button bottom-margin">
-             <button type="submit" class="btn btn-send send-msg btn-outline-custom">SEND MESSAGE</button>
+             <button type="submit" class="btn btn-sm send-msg btn-outline-custom">SEND MESSAGE</button>
          </div>
      </div>
     </form>

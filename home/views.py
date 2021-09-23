@@ -27,24 +27,31 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 def contact(request):
-    if request.method == "POST":
-        
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
+    if request.method == "POST":        
+        name = request.POST['message-name']
+        email = request.POST['message-email']
+        subject = request.POST['message-subject']
         message = request.POST['message']
 
+        data = {
+            'name': name,
+            'email': email,
+            'subject': subject,
+            'message': message,
+        }
+        message = '''
+        New message : {}
+        From: {}
+        '''.format(data['message'], data['email'])
+
         # sending email!
-        send_mail(     
-                   
-            message_name,   
-            message_email,          
-            message,        
-            ['bxs@tutanota.com',]
-                       
+        send_mail(
+            data['subject'],
+            message,
+            '',
+            ['bxs@tutanota.com']
         )
-        context = {
-            'message_name':message_name 
-            }
+        
         messages.success(request, 'Message sent')
         return render(request, 'home/contact.html', context)
     else:    
