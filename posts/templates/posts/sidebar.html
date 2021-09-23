@@ -5,9 +5,11 @@
         <h3 class="h6">Search the blog</h3>
       </header>
       <form action="{% url 'search' %}" class="search-form">
-        <div class="form-group">
-          <input type="text" name="q" placeholder="What are you looking for?">
-          <button type="submit" class="submit btn-black"><i class="fas fa-search"></i></button>
+        <div class="form-group input-group ">
+          <input type="text" name="q" placeholder="What are your searching for?" class="form-control border border-black rounded-0">
+          <div class="input-group-append">
+          <button type="submit" class="form-control btn btn-black border border-black rounded-0"><span><i class="fas fa-search"></i></span></button>
+          </div>
         </div>
       </form>
     </div>
