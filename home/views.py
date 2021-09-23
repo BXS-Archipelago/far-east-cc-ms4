@@ -33,7 +33,8 @@ def contact(request):
         message = request.POST['message']
 
         # sending email!
-        send_mail(            
+        send_mail(     
+            message_subject,       
             message_name,   
             message_email,          
             message,            
