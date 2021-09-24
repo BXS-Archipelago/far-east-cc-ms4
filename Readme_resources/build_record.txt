@@ -1109,6 +1109,8 @@ Chapter 62 : About us & FAQ pages
 - Copy the about page html as a template and modify for the FAQ text
 - Add url to nav bar links
 - Commit Work thus far
+- Create JS to toggle the question-text in the FAQ page. 
+- 
 
 
 

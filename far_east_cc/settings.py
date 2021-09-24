@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 DEBUG = 'DEVELOPMENT' in os.environ
 
-#DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['bxs-fecc-ms4.herokuapp.com', 'localhost']
 
@@ -188,7 +188,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  
-STATIC_URL ='/static/'
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  
 
 MEDIA_URL = '/media/'

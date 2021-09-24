@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-{% endblock %}
 
 {% block content %}
 <div class="container header-container pt-5">
@@ -34,17 +32,76 @@
             </div>
         
         </aside>
+        <section class="questions col-8">
+        <!-- FAQ dropdowns with JS  -->
+            
+        <div class=" faq-center">
+            <div class="faq-title">
+                <h4>general-questions</h4>
+            </div>
+            <!-- single question -->
+            <article class="question">
+                <div class="question-title">
+                    <!-- Question title -->
+                    <p>Do you accept all major credit cards?</p>
+                <button type="button" class="question-btn">
+                    <span class="plus-icon"><i class="far fa-plus-square"></i>
+                    </span>
+                    <span class="minus-icon">
+                        <i class="far fa-minus-square"></i>
+                    </span>
+                </button>
+                </div>
+                <!-- Question Text -->
+                <div class="question-text">
+                    <p>We use the ever-reliable Stripe for credit card transactions. Most credit cards are accepted. </p>
+                </div>
+            </article>
+            <!-- end single question -->
 
-        <!-- Form for Contacting us -->
-      <div class=" col-8 contact-block">        
+            <!-- single question -->
+            <article class="question">
+                <div class="question-title">
+                    <!-- Question title -->
+                    <p>Are there discounts for bulk or trade customers</p>
+                <button type="button" class="question-btn">
+                    <span class="plus-icon"><i class="far fa-plus-square"></i>
+                    </span>
+                    <span class="minus-icon">
+                        <i class="far fa-minus-square"></i>
+                    </span>
+                </button>
+                </div>
+                <!-- Question Text -->
+                <div class="question-text">
+                    <p>Yes indeed. We welcome trade clients and are happy to offer trade, resale and bulk enquiries. If you would like to find out more, please get in touch!</p>
+                </div>
+            </article>
+            <!-- end single question -->
+
+            <!-- single question -->
+            <article class="question">
+                <div class="question-title">
+                    <!-- Question title -->
+                    <p>Are the products really from Japan?</p>
+                <button type="button" class="question-btn">
+                    <span class="plus-icon"><i class="far fa-plus-square"></i>
+                    </span>
+                    <span class="minus-icon">
+                        <i class="far fa-minus-square"></i>
+                    </span>
+                </button>
+                </div>
+                <!-- Question Text -->
+                <div class="question-text">
+                    <p>We started using Japanese products many years ago. There is a noticeable difference in finish, durability and ease of use. Try them out, we are sure you will love them!</p>
+                </div>
+            </article>
+            <!-- end single question -->
+        </section>
         
-        <h2>Welcome to Far East Car Care</h2>
-        <p>We are a new online store for some of the very best car care products in the world. We specifically chose a line of products from Japanese manufacturers due to the difference in technology and approach to car care in the Far East</p>
-        <br>
-        <p>The site is run by experts who will be happy to answer any questions you have about car care, whether it be a product recommendation or tips and tricks for specific problems. </p>
-        <br>
-        <p>Please don't hesitate to get in touch.</p>
-
         <a href="{% url 'contact' %}" class="btn-sml btn btn-outline-custom">Contact Us</a>
 </div>
+
 {% endblock %}
+<script src="{% static 'js/base.js' %}"></script>
