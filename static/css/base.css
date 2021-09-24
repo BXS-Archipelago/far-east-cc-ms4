@@ -617,7 +617,49 @@ content .col .drop-down-image {
   width: 100%;
   height: auto;
 }
+/* >>>>>pop-up modal<<<<<<< */
 
+.front-popup {
+  position: fixed;
+  top: 35%;
+  left:50%;
+  transform: translate(-50%, -50%);  
+  display: none;
+  z-index: 999;
+}
+
+.content-box {
+  position: relative;
+  width: 500px;
+  height: 280px;
+  background-color: var(--fecc-red-dark); 
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--dark-shadow);
+ 
+}
+
+.content-box h4 {
+  color: var(--fecc-white);
+}
+
+.content-box p {
+  color: var(--fecc-white);
+  size: .8rem;
+}
+
+.close-popup {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--fecc-white);
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
 .hero-container.landing-hero {
   padding: 0;
   color: #fff;
@@ -659,8 +701,7 @@ a.hero-link {
 }
 
 a.hero-link::after {
-  content: '';
-  
+  content: '';  
   height: 1px;
   display: block;
   background: #fff;
@@ -1444,6 +1485,8 @@ Questions
   padding: 1rem;
 }
 
+/* >>>>>>>>>>>>>>> Responsiveness to Smaller Screen Sizes<<<<<<<<<<< */
+
 @media screen and (max-width: 992px) {
 
   .nav-icons {
@@ -1479,7 +1522,20 @@ Questions
     width: 1.25rem;
     height: 1.75rem;
   }
+
+  .content-box {
+    width: 300px;
+    height: auto;
+    flex-direction: column;
+  }
  
+.content-box .content {
+  height: auto;
+  text-align: center;
+  padding: 20px;
+  padding-top: 0;
+}
+
 }
 
 @media screen and (max-width: 600px) {

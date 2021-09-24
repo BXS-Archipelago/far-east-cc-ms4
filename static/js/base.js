@@ -80,26 +80,22 @@ changeValue();
 setInterval(changeValue, 4000);
 
 
+// Landing page Pop-Up to Subscribe after 2 seconds of page load.
+// Activate Close X 
 
-// FAQ Page Drop Down Sequences
+const popup = document.querySelector('.front-popup')
+const close = document.querySelector('.close-popup')
 
-//using selectors inside the element
-// enable single box to open at one time only
-const questions = document.querySelectorAll(".question");
-questions.forEach(function(question){
-    const btn = question.querySelector('.question-btn')
-    console.log(btn)
-    console.log(question)
+window.onload = function(){
+  setTimeout(function(){
+    popup.style.display ="block"
+    console.log("print me")
+    // Delay popup 2secs ..
+  }, 2000)
+}
 
-    btn.addEventListener('click', function(){
-
-        questions.forEach(function(item){
-            if(item !== question) {
-                item.classList.remove("show-text");
-            }
-        })
-
-        question.classList.toggle('show-text');
-    })
-    
+close.addEventListener('click', ()=> {
+  popup.style.display = 'none';
+  
 })
+

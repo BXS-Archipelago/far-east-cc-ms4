@@ -6,36 +6,66 @@
 {% endblock %}
 
 {% block content %}
-<container class="hero-container">
-  <img class="landing-hero" src="{{ MEDIA_URL }}007b.jpg" alt="prestige car">
-  <!-- Banner to show FREE DELIVERY CUT-OFF POINT -->
 
+  
+  <!-- Banner to show FREE DELIVERY CUT-OFF POINT -->
   <!-- Rotating Text Credit to "Alphardex" at  
         https://codepen.io/alphardex/pen/WNNVJeZ  -->
 
-  <div class="row w-100">
-    <div class="col-10 offset-1  text-rotator text-center">
-      <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
-      <h3 class="inline-text">
-        <span class=" value rotate1"> €{{ free_delivery_threshold }}.00</span>
-        <span class=" value rotate2"> €{{ free_delivery_threshold }}.00</span>
-        <span class=" value rotate3"> €{{ free_delivery_threshold }}.00</span>
-        <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
-        <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
-      </h3>
-      <hr>
+        <div class="row w-100">
+          <div class="col-10 offset-1  text-rotator text-center">
+            <h3 class="inline-text">FREE DELIVERY ON ORDERS OVER</h3>
+            <h3 class="inline-text">
+              <span class=" value rotate1"> €{{ free_delivery_threshold }}.00</span>
+              <span class=" value rotate2"> €{{ free_delivery_threshold }}.00</span>
+              <span class=" value rotate3"> €{{ free_delivery_threshold }}.00</span>
+              <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
+              <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
+            </h3>
+            <hr>
+          </div>
+         
+        </div>
+
+  <!-- Pop-up Modal for Subscription sign-up -->
+  <div class="front-popup p-5">
+    <div class="content-box py-4 my-3">
+      
+      <h4 class="text-center">Subscribe and get a 10% discount code!</h4>
+      <form action="." method="POST">
+        {% csrf_token %}
+    <div class="form-group py-2">
+        <input type="email" name="email" id="email" placeholder="Type your email address" class="subscriber">
+          <button type="submit" class="submit btn btn-outline-custom ">Subscribe</button>
     </div>
-   
-  </div>
+      </form>
+      <p class="text-center">Keep up to date with new products, special offers, news and more!</p>
+      <h1 class="text-white"><i class="fas fa-truck-monster"></i></h1>
+      <div class="w-100 p-1"><span class="close-popup">close <i class="fas fa-times pt-1 px-1"></i></span></div>
+    </div>
+    
+      </div>
+
+
+<container class="container hero-container">
+  <img class="landing-hero" src="{{ MEDIA_URL }}007b.jpg" alt="prestige car">
+
+
+  
+              
+       
+
   
 </container>
+
+
 <!-- Intro Section-->
 <section class="intro">
 
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <h4 class="h3">Far East Car Care Store and Blog </h4>
+        <h3 >Far East Car Care Store and Blog </h3>
         <p class="text-big">Your best resource for the best products AND the best information. With decades of
           experience, we are happy to provide everything you need to have or know to make your car look, smell and feel
           amazing! </p>
