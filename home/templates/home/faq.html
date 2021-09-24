@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+
+{% endblock %}
+
 
 {% block content %}
 <div class="container header-container pt-5">
@@ -37,7 +41,7 @@
             
         <div class=" faq-center">
             <div class="faq-title">
-                <h4>general-questions</h4>
+                <h4>general questions</h4>
             </div>
             <!-- single question -->
             <article class="question">
@@ -98,10 +102,33 @@
                 </div>
             </article>
             <!-- end single question -->
+            <a href="{% url 'contact' %}" class="btn-sml btn btn-outline-custom float-right">Contact Us</a>
         </section>
         
-        <a href="{% url 'contact' %}" class="btn-sml btn btn-outline-custom">Contact Us</a>
+        
 </div>
 
 {% endblock %}
-<script src="{% static 'js/base.js' %}"></script>
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+// FAQ Page Drop Down Sequences
+
+//using selectors inside the element
+// enable single box to open at one time only
+const questions = document.querySelectorAll(".question");
+questions.forEach(function(question){
+    const btn = question.querySelector('.question-btn')
+    // console.log(btn)
+    // console.log(question)
+    btn.addEventListener('click', function(){
+        questions.forEach(function(item){
+            if(item !== question) {
+                item.classList.remove("show-text");
+            }
+        })
+        question.classList.toggle('show-text');
+    })    
+})
+    </script>
+{% endblock %}

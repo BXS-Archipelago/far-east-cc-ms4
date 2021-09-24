@@ -122,6 +122,10 @@ label {
   font-weight: 500;
 }
 
+button {
+  border: transparent;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 3rem;
@@ -262,7 +266,7 @@ label {
   }
   
   .social-icons a:hover {
-    color: var(--clr-primary-1);
+    color: var(--fecc-primary-1);
   }
   
   .sidebar {
@@ -1329,20 +1333,47 @@ color: #17a2b8; /* text-info */
 }
 
 /* >>>>>>>>>>>>>>>>FAQ Centre <<<<<<<<<<< */
+/* 
+
+/* section */
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+/*
+=============== 
+Questions
+===============
+*/
 .title {
   margin-top: 15vh;
   margin-bottom: 4rem;
 }
 .title h2 {
-  color: var(--clr-gold);
-  font-family: "Great Vibes", cursive;
+  color: var(--fecc-red-dark);
+  font-family: var(--ff-primary);
   text-align: center;
 }
 .section-center {
   max-width: var(--fixed-width);
 }
 .question {
-  background: var(--clr-white);
+  background: var(--fecc-primary-9);
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
   padding: 1.5rem 1.5rem 0 1.5rem;
@@ -1358,15 +1389,17 @@ color: #17a2b8; /* text-info */
 .question-title p {
   margin-bottom: 0;
   letter-spacing: var(--spacing);
-  color: var(--clr-grey-1);
+  color: var(--fecc-grey-1);
 }
 .question-btn {
   font-size: 1.5rem;
   background: transparent;
   border-color: transparent;
+  border: none;
   cursor: pointer;
-  color: var(--clr-gold);
-  transition: var(--transition);
+  color: var(--fecc-red-light);
+  transition: var(--transition); 
+
 }
 .question-btn:hover {
   transform: rotate(90deg);
@@ -1378,6 +1411,7 @@ color: #17a2b8; /* text-info */
 .question-text p {
   margin-bottom: 0;
 }
+
 /* hide text */
  .question-text {
   display: none;
@@ -1394,7 +1428,6 @@ color: #17a2b8; /* text-info */
 .show-text .plus-icon {
   display: none;
 } 
-
 /* >>>>>>>>>>>>>>>>Contact Form <<<<<<<<<<< */
 
 .contact-container p {
