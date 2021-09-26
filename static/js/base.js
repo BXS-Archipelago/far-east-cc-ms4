@@ -80,22 +80,3 @@ changeValue();
 setInterval(changeValue, 4000);
 
 
-// Landing page Pop-Up to Subscribe after 2 seconds of page load.
-// Activate Close X 
-
-const popup = document.querySelector('.front-popup')
-const close = document.querySelector('.close-popup')
-
-window.onload = function(){
-  setTimeout(function(){
-    popup.style.display ="block"
-    console.log("print me")
-    // Delay popup 2secs ..
-  }, 2000)
-}
-
-close.addEventListener('click', ()=> {
-  popup.style.display = 'none';
-  
-})
-

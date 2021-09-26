@@ -27,81 +27,57 @@
                 {% endfor %}
               </div>
             </div>
-            <div>
-              <small><a href="{% url 'post-update' id=post.id %}" class="text-info">Edit</a></small>
+            <div class="py-2">
+              <small><a href="{% url 'post-update' id=post.id %}" class="text-info">Edit |</a></small>
               <small><a href="{% url 'post-delete' id=post.id %}"class="text-danger">Delete</a></small>
             </div>
-            <h1>
+            <h3 class="post-title">
               {{ post.title }} 
-            </h1>
-            <div class="
-                  post-footer
-                  d-flex
-                  align-items-center
-                  flex-column flex-sm-row
-                ">
-              <a href="#" class="author d-flex align-items-center flex-wrap">
-                <div class="avatar">
-                  <img src="{{ post.author.profile_picture.url }}" alt="..." class="img-fluid avatar-img " />
+            </h3>
+            <div >
+              <div class="author-box">
+                <div class="avatar ">
+                  <img src="{{ post.author.profile_picture.url }}" alt="..." class="avatar-img " />
                 </div>
-                <div class="title"><span>{{ post.author.user.username }}</span></div>
-              </a>
-              <div class="d-flex align-items-center flex-wrap">
-                <small class="date px-1">
-                  <i class="icon-clock"></i> {{ post.timestamp|timesince }} ago
-                </small>
-                <div class="views px-1"><i class="far fa-eye px-1"></i>{{ post.view_count }}</div>
-                <div class="comments meta-last px-1">
-                  <i class="far fa-comment-alt px-1"></i>{{ post.comments.count }}
+                  <small class="ml-1 p-1"><span class="author" >Written by: {{ post.author.user.username }}</span></small>
                 </div>
-              </div>
+              
+                  <small class="date px-1">
+                    <i class="icon-clock"></i> {{ post.timestamp|timesince }} ago |
+                  </small>
+                  <small class="views px-1"><i class="far fa-eye px-1"></i>{{ post.view_count }} </small>
+                  <small class="comments meta-last px-1">
+                  <i class="far fa-comment-alt "></i> {{ post.comments.count }}
+                  </small>
+              
             </div>
             <div class="post-body py-5">
               {{ post.content | safe }}
             </div>
 
-            <div class="
-                  posts-nav
-                  d-flex
-                  justify-content-between
-                  align-items-stretch
-                  flex-column flex-md-row
-                ">
-              <!-- Click and Move to the previous entry in blog posts -->
-              {% if post.previous_post %}
 
-              <a href="{{ post.previous_post.get_absolute_url }}" class="prev-post text-left d-flex align-items-center w-50">
-                <div class="icon prev px-3">
-                  <h4><i class="fa fa-angle-left"></i></h4>
-                </div>
-
-                <div class="text">
-                  <h4>Previous Post </h4>
-                  <h4 class="text-success">"{{ post.previous_post.title }}"</h4>
-                </div>
+            <div class="row ">
+              <div class="col-6  prev-left">
+                {% if post.previous_post %}
+                <h6><i class="fa fa-angle-left"></i> Previous</h6>
+              <a href="{{ post.previous_post.get_absolute_url }}" >
+                <span> "{{ post.previous_post.title }}"
+                </span>
               </a>
-              {% endif %}
+               {% endif %}
+              </div>
+              <div class="col-6  nxt-right">
+                {% if post.next_post %}
+                <h6>Next <i class="fa fa-angle-right"> </i></h6>
+                <a href="{{ post.next_post.get_absolute_url }}" class="">
+                  "{{ post.next_post.title }}"
+                </a>
 
-              <!-- Move to the next entry in blog posts -->
-              {% if post.next_post %}
+                {% endif %}
+              </div>
 
-              <a href="{{ post.next_post.get_absolute_url }}" class="
-                    next-post
-                    text-right
-                    d-flex
-                    align-items-center
-                    justify-content-end
-                    w-50
-                  ">
-                <div class="text">
-                  <h4>Next Post </h4>
-                  <h4 class="text-success">"{{ post.next_post.title }}"</h4>
-                </div>
-                <div class="icon next">
-                  <i class="fa fa-angle-right"> </i></div>
-              </a>
-              {% endif %}
             </div>
+  
 
             <div class="post-comments">
               <header>

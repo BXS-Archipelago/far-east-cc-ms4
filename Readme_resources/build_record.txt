@@ -1113,9 +1113,16 @@ Chapter 62 : About us & FAQ pages
 - Create JS to toggle the question-text from the button in the FAQ page. 
 - Commit Work thus far
 
-Chapter 63 - Landing page Subscribe Pop-Up Modal
-- 
+Chapter 63 - Refactoring & Restyling
+- products.html  - In small screen there is no way to navigate the products.
+- Added 3 columns to show Interior, Exterior Products and Currently Viewing to make the page easier to follow in small screen. 
 
+- Index.html - move free-delivery notification above hero-image
+- Change font sizes for headings and paragraph text in mid-hero 
+- Padding and margins around blog imagery and category headings. 
+
+- Blog Post page, change previous post and next post into row and 2 cols, add border-radius and shadowing.
+- Re-align avatar and author above view & comment count in small screen
 
 
 

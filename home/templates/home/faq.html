@@ -7,10 +7,10 @@
 
 
 {% block content %}
-<div class="container header-container pt-5">
+<div class="container header-container help-headers">
     <div class="row py-4">
         <div class="col">
-            <h3 class="mb-0">About us </h3>
+            <h3 class="mb-0">Frequently Asked Questions</h3>
             <hr>
             
         </div>
@@ -20,23 +20,8 @@
 <div class="container contact-container">
 
     <div class="row">
-
-        <aside class="col-4 contact-us">
-            <div >
-                <h4>Address:</h4> 
-                <p>999, LaFerrari Boulevard,</p>
-                <p>Lambotown,</p>
-                <p>Porsche County,</p>
-                <p>Ireland</p>
-                
-                <h4>Phone</h4>
-                <p>00555 43224 45545</p>
-                <h4>Email</h4>
-                <p>info@fecc-fecc.com</p>
-            </div>
         
-        </aside>
-        <section class="questions col-8">
+        <section class="questions col-10 offset-1 mb-2">
         <!-- FAQ dropdowns with JS  -->
             
         <div class=" faq-center">
@@ -104,7 +89,21 @@
             <!-- end single question -->
             <a href="{% url 'contact' %}" class="btn-sml btn btn-outline-custom float-right">Contact Us</a>
         </section>
+        <aside class="col-10 offset-1 my-2 address">
+            <div >
+                <h4><i class="fas fa-house-user"></i> Address:</h4> 
+                <p class="pl-4">999, LaFerrari Boulevard,</p>
+                <p class="pl-4">Lambotown,</p>
+                <p class="pl-4">PorscheVille,</p>
+                <p class="pl-4">Ireland</p>
+                
+                <h4><i class="fas fa-phone-alt"></i> Phone</h4>
+                <p class="pl-4">00555 43224 45545</p>
+                <h4><i class="far fa-envelope"></i> Email</h4>
+                <p class="pl-4">info@fecc-fecc.com</p>
+            </div>
         
+        </aside>
         
 </div>
 

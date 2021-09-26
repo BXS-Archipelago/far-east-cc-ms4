@@ -25,36 +25,14 @@
             <hr>
           </div>
          
-        </div>
-
-  <!-- Pop-up Modal for Subscription sign-up -->
-  <div class="front-popup p-5">
-    <div class="content-box py-4 my-3">
-      
-      <h4 class="text-center">Subscribe and get a 10% discount code!</h4>
-      <form action="." method="POST">
-        {% csrf_token %}
-    <div class="form-group py-2">
-        <input type="email" name="email" id="email" placeholder="Type your email address" class="subscriber">
-          <button type="submit" class="submit btn btn-outline-custom ">Subscribe</button>
-    </div>
-      </form>
-      <p class="text-center">Keep up to date with new products, special offers, news and more!</p>
-      <h1 class="text-white"><i class="fas fa-truck-monster"></i></h1>
-      <div class="w-100 p-1"><span class="close-popup">close <i class="fas fa-times pt-1 px-1"></i></span></div>
-    </div>
-    
-      </div>
+        </div>  
 
 
 <container class="container hero-container">
   <img class="landing-hero" src="{{ MEDIA_URL }}007b.jpg" alt="prestige car">
 
-
-  
               
        
-
   
 </container>
 
@@ -85,7 +63,7 @@
     {% for obj in object_list %}
     <div class="row d-flex align-items-stretch my-3">
       {% if not forloop.first and not forloop.last %}
-          <div class="image col-lg-5 "><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow "></div>
+          <div class="image col-lg-5 mb-1"><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow "></div>
       {% endif %}
       <div class="text col-lg-7">
         <div class="text-inner d-flex align-items-center">
@@ -99,23 +77,25 @@
                 {% endfor %}
               </div>
               <a href="{{ obj.get_absolute_url }}">
-                <h3 ><i class="fas fa-bookmark"></i> {{ obj.title }}</h3>
+                <h3 class="pt-1"><i class="fas fa-bookmark"></i> {{ obj.title }}</h3>
               </a>
             </header>
-            <p>{{ obj.overview }}</p>
-            <footer class="post-footer d-flex align-items-center"><a href="#"
-                class="author d-flex align-items-center flex-wrap">
+            <p>{{ obj.overview }}</p>            
+
+
+            <footer class="post-footer d-flex align-items-center">
                 <div class="avatar"><img class="avatar-img" src="{{ obj.author.profile_picture.url }}" alt=""></div>
-                <div class="title"><span>{{ obj.author }}</span></div>
-              </a>
-              <small class="date px-2"><i class="icon-clock"></i> | {{ obj.timestamp | timesince }} ago</small>
-              <div class="comments"> | <i class="far fa-comment-alt"></i> {{ obj.comment_count }}</div>
+                <small class="px-1 author"><span>{{ obj.author }}</span></small>
+             
+              <small class="date px-2"> <i class="far fa-clock"></i> | {{ obj.timestamp | timesince }} ago</small>
+
+              <small class="comments px-1"> |  <i class="far fa-comment-alt"></i>  {{ obj.comment_count }}</small>
             </footer>
           </div>
         </div>
       </div>
       {% if forloop.first or forloop.last %}
-      <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow "></div>
+      <div class="image col-lg-5 mb-1"><img src="{{ obj.thumbnail.url }}" alt="prestige car" class="img-fluid blog-shadow "></div>
       
       {% endif %}
     </div>
@@ -132,7 +112,7 @@
     <div class="row">
       <div class="col-md-7">
         <h2 class="mid-page-hero">We partner with the very best manufacturers in the Far East And our Product range is very popular with owners
-          of every car type</h2><a href="{% url 'products' %}" class="hero-link">View Collection</a>
+          of every car type</h2><a href="{% url 'products' %}" class="hero-link">View Collection <i class="fas fa-chevron-right"></i></a>
       </div>
     </div>
   </div>
@@ -191,8 +171,8 @@
   </div>
 </section>
 <!-- Gallery Section-->
-<section class="gallery no-padding">
-  <div class="row">
+<section class="gallery no-padding ">
+  <div class="row ">
     <div class="mix col-lg-3 col-md-3 col-sm-6">
       <div class="item"><a href="{{ MEDIA_URL }}001.jpg" data-fancybox="gallery" class="image"> <img
             src="{{ MEDIA_URL }}001.jpg" alt="prestige car" class="img-fluid">
@@ -212,7 +192,7 @@
         </a></div>
     </div>
     <div class="mix col-lg-3 col-md-3 col-sm-6">
-      <div class="item"><a href="{{ MEDIA_URL }}004.jpg" data-fancybox="gallery" class="image"><img
+      <div class="item"><a href="{{ MEDIA_URL }}004.jpg" data-fancybox="gallery" class="image"></a><img
             src="{{ MEDIA_URL }}004.jpg" alt="prestige car" class="img-fluid">
           <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
         </a></div>

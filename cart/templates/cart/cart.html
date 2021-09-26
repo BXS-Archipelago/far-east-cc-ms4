@@ -28,13 +28,13 @@
 <div class="container mb-2">
     <div class="row">
         {% if cart_items %}
-
+        
        
         <div class="table-responsive rounded">
            <table class="table table-sm table-borderless">
             <thead class="text-black">
                 <tr>
-                    <th scope="col">Product Info</th>
+                   
                     <th scope="col">Product</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
@@ -43,22 +43,15 @@
             </thead>
                 {% for item in cart_items %}
                     <tr>
-                        <td class="p3 w-25">
-                        {% if item.product.image %}
-                            <img class=" img-thumbnail rounded"  src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                        {% else %}
-                            <img class=" img-thumbnail rounded"  src="{{ MEDIA_URL }}no-image.jpg " alt="{{ item.product.name }}">
-                        {% endif %}
                         
-                        </td>
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 item-text "><strong class="item-text" >{{ item.product.name }}</strong></p>
                             
                             
                             <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0"> €{{ item.product.price }} </p>                          
+                            <p class="my-0 item-text"> €{{ item.product.price }} </p>                          
                         </td>
 
                         <td class="py-3">
@@ -90,36 +83,36 @@
                             </div>
                            </form>
 
-                           <a class ="update-link text-info" ><small>Update</small></a>
-                           <a id="remove_{{ item.item_id }}" class="remove-item text-danger float-right"><small>Remove</small></a>
+                           <a class ="update-link text-info" ><small>Cart Update</small></a>
+                           <a id="remove_{{ item.item_id }}" class="remove-item text-danger float-right"><small>Remove Item</small></a>
                         </td>
                        
                         <td class="py-3">
-                            <p class="my-0"> €{{ item.product.price | calc_subtotal:item.quantity }} </p>                          
+                            <p class="my-0 item-text"> €{{ item.product.price | calc_subtotal:item.quantity }} </p>                          
                         </td>                       
                     </tr>
                 
                 {% endfor%}
                 <tr>
-                    <td colspan="5" class="pt-5 text-right">
-                        <h6><strong>Cart Total: €{{ total|floatformat:2 }}</strong></h6>
-                        <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
-                        <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+                    <td colspan="5" class="pt-5 text-right totals">
+                        <h6 class="cart-total"><strong>Cart Total: €{{ total|floatformat:2 }}</strong></h6>
+                        <h6 class="cart-total">Delivery: €{{ delivery|floatformat:2 }}</h6>
+                        <h4 class="mt-4 grand-total"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
                         {% if free_delivery_delta > 0 %}
-                            <p class="mb-1 text-black"><i class="fas fa-truck"></i>We'll gladly cover delivery if you spend just <strong class="text-danger">€{{ free_delivery_delta }}</strong> More!
+                            <p class="mb-1 text-black text-center delivery-text"><i class="fas fa-truck text-danger "></i> We gladly cover delivery when you spend just <strong class="text-danger">€{{ free_delivery_delta }}</strong> More!
                             </p>
                         {% endif %}
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="text-right">
-                        <a href="{% url 'products' %}" class="btn btn-outline-custom  ">
+                        <a href="{% url 'products' %}" class="btn btn-respond btn-outline-custom keep-btn">
                             <span class="icon">
                                 <i class="fas fa-angle-double-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
-                        <a href="{% url 'checkout' %}" class="btn btn-black ">
+                        <a href="{% url 'checkout' %}" class="btn btn-respond btn-black keep-btn">
                             <span class="text-uppercase">Secure Checkout</span>
                             <span class="icon">
                                 <i class="fas fa-angle-double-right"></i>
@@ -133,7 +126,7 @@
         </div>
     {% else %}
         <p class="lead mb-5">Your cart is empty.</p>
-        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+        <a href="{% url 'products' %}" class="btn btn-sm btn-outline-black rounded-0 btn-lg">
             <span class="icon">
                 <i class="fas fa-chevron-left"></i>
             </span>
