@@ -1123,7 +1123,7 @@ Chapter 63 - Refactoring & Restyling
 
 - Blog Post page, change previous post and next post into row and 2 cols, add border-radius and shadowing.
 - Re-align avatar and author above view & comment count in small screen
-
+- Fix sidebar positioning for categories in posts. 
 
 
 

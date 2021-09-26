@@ -799,6 +799,11 @@ section.featured-posts .avatar {
   border-bottom: 1px solid var(--fecc-grey-6);
 }
 
+.comment-body p {
+  color: var(--fecc-grey-2);
+  font-weight: 500;
+}
+
 .subscriber {
   padding: 4.5px;
 }
@@ -1070,7 +1075,7 @@ em img {
 
 .reviewer {
   font-size: .8rem;
-  color: var(--fecc-red-dark);
+  color: var(--fecc-grey-3);
   text-transform: uppercase;
   letter-spacing: 1.1px;
 }
@@ -1085,8 +1090,7 @@ textarea {
 }
 .review-text {
   background-color: var(--fecc-grey-10);
-  border: 1px solid var(--fecc-black);
-  border-radius: var(--radius);
+  
   padding: 10px;
   align-items: flex-start;
   font-family: var(--ff-primary);
