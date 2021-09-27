@@ -14,17 +14,17 @@ Too make it easier for the average enthusiast, this website will provide easy ac
 
 Ancillary objectives for the site owners will be to offer an email subscription service with tips and tricks for product use, special offers and a feature for new/coming-soon product developments. 
 
-## Strategic approach for the site's User Experience: 
+## UX : Strategic approach for the site's User Experience: 
 
-The site will entice the users by showing video and images of cars which have had the products used on them. First and foremost, there must be visual appeal set apart from the actual product images in the store, which are attractive but are not particularly appealing due to the language differences in the labelling.
+The site will entice the users through educational and instructional blog posts along with images of cars that have the site's products used on them. First and foremost, there must be both visual and educational appeal set apart from the actual products in the store. 
 
-Upon landing on the index page, a small background video will play of a glossy prestige car. The Call-To-Action will be an eye-catching button to go straight to the store if desired. 
+Upon landing on the index page, the user will be introduced with an attractive car image at the top, along with some featured blog posts in the main body of the page. There will be links to the store both in the body and at both the top navigation bar and the always-present sliding side navigation. 
 
-Adjuvant site pages will be the About page, the Frequently Asked Questions, and the Subscription/Contact page.
+Adjuvant site pages will be the Blog and posts pages, the About page, the Frequently Asked Questions, and the Contact page.
 
-Site Navigation will be through a side-sliding menu on the left. The Icon actuator will be clearly at the top right of the page for the user to click on.
+Site Navigation will be through a side-sliding menu on the left. The Icon actuator will be clearly visible at the top right of the page for the user to click on.
 
-On mobile view, the icon will be at the top right for thumb-actuation since most people are right handed in holding their devices. The menu will again slide from the left for link-selection with left hand. 
+On mobile devices, the sliding navigation bar will the main tool for traversing the site, however the account button (to login or register) and the cart will always be available in the top right of every device.
 
 ## Who are the target Users?
 
@@ -36,7 +36,7 @@ On mobile view, the icon will be at the top right for thumb-actuation since most
  - Car Detailing & Valeting Professionals who use quality products on their clients' cars. 
  - Motorcycle Enthusiasts, as they also like to keep their bikes pristine.
  - Truck Enthusiasts.
- - Spouses and Relatives of Car Enthusiasts. 
+ - Spouses and Relatives of Car Enthusiasts who may wish to purchase gifts. 
  
 ## Research 
 
@@ -53,6 +53,9 @@ On mobile view, the icon will be at the top right for thumb-actuation since most
 
 ## Important Site Features for the users
 
+- The Blog will contain posts created in categories such as News, Tips & Tricks, Products, Professional Advice, Special Offers. 
+- Blog Posts will allow registerd users to leave comments. 
+- Each post will display Number of Views, Number of Comments, When it was written. 
 - User Accounts : Create Unique login and password for returning clients
 - Securely stored customer data : Address and billing information
 - Ability to edit data such as name, address, telephone, email in the account.
@@ -65,14 +68,13 @@ On mobile view, the icon will be at the top right for thumb-actuation since most
 - A Subscription for regular updates and offers
 - The ability to update 
 - A Product rating system
+- A list of reviews from other customers on each product. 
 - Real-time confirmation of actions such as "Added to Cart", "Item Deleted", etc
 - On non-store pages, a Call-To-Action link as an eye-catching animated button.
 - The ability access products by pre-selected category (Exterior, Interior, Accessory products, etc)
 - The ability to select or filter products by price. 
 - A convenient Search utility.
-- The ability to select product by bottle or package size/volume
 - Social Media links
-- Play/Pause buttons for Videos.
 - Shopping Cart button link
 - The ability to subscribe to the newsletter without having an account
 - Buttons to keep shopping after adding to cart or viewing the cart
@@ -82,47 +84,99 @@ On mobile view, the icon will be at the top right for thumb-actuation since most
 
 - The site owner purchases in bulk and sells individual items at a profit
 - The site and products will be marketed on Social Media
-- The service will be more attractive than local competitors through ease of access, after-sales support, pre-sales advice. 
+- The service will be more attractive than local competitors through ease of access, after-sales support, pre-sales advice and frequent blog posts.  
 - Products will be dispatched efficiently, attractively and safely wrapped and securely boxed with invoice and address paperwork attached to the exterior.
 - The business will strive for positive feedback, both for products and service.
 
 
 ## User Story Aspirations
+![story](media/project_media/user_story1.jpg)
 
-- As a first time visitor, I want an attractive landing page that shows how good the products are so that I can be enticed to create an account and make a purchase.
-- I would like to subscribe to the e-mail special offers so that later I can create an account and make a later discounted purchase. 
-- The website should be viewable on my phone since that is what I have when I am working on my car.
-- I want to intuitively and easily navigate the site.
-- I want to contact the company with questions so that I can receive personal support.
-- I want to access the store front easily
-- The products should be easily understood in their application
-- I want to quickly create an account and make a secure purchase on my phone, tablet or computer. 
-
-- As a returning account-holder, I want to be able to quickly log in to my account. 
-- I want to see previous purchases so that I know what to buy again.
-- Access my personal details and update them when required. 
-- To filter products more suited to my needs
-- To know if the products are rated well.
-- I want to search the store for products or features within products so I can make more educated choices.
-- Add items to my cart without having to open the item's page.
-- I want to view all items in my cart and view the subtotals and grand total.
-- I want to increase or decrease the quantity of each item easily.
-
-
-- As a Site Administrator, I want to have full edit rights over creating, removing or updating the product range.
-- I want to see how many products are available in total
-- Create or modify shipping rates
-- See how many accounts are registered with the site.
-
-
+![story](media/project_media/user_story2.jpg)
 
 ## Scope of Attributes of the website
-
+ 
 - Fully controlled user accounts with Username and Password access only.
 - Credit Card payment system facilitated by Stripe.
 - Presentation of products in a structured fashion with facility to grow the range easily.
-- Client feedback and rating system
-- Client-specific profile pages with history or transactions.
+- The site will offer a Client feedback and rating system for products and in the Blog.
+- Client-specific profile pages with history or transactions are available to registered users. They can update personal data or passwords. 
+- The site templates and structure will be underpinned by the Django framework.
+- The Databases required will be hosted on Heroku using Heroku Postgres for accessibility. 
+
+## Structure and Layout of the site
+
+- The site is formed with two predetermined factors for the user. 
+    - The Content
+    - The Navigation of the Content
+
+![Layout](media/project_media/layout.jpg)
+
+### Navigating the pages
+The Navigation in large screen can be accomplished using either the top menu or the sliding side menu. The side menu is available even when scrolling farther down a page. The site can be navigated by unregistered viewers who can read the blogs or browse the product range. Some services are unavailable to unregistered users though, such as commenting on blog posts or actually purchasing products. Any attempt to do so will redirect them to the login page, where if necessary they can choose to register. 
+
+#### Navigating the Blog 
+- Users can search the blog from the Blog list page very easily.  Where a keyword may be present in both the title and the content of the blog, the search result will only return unique pages in the list. 
+- The landing page, below the top hero-image, will hold the three featured blogs for the site in mid-page, depending on current marketing campaigns. Toward the end of the page, the latest three blog posts will be listed for people who may have already read the featured posts. 
+- The blog list will contain paginated lists of the blog posts. There will be four per page, but a side-column will always show the latest posts as well as the blog search-bar.
+- Each blog post will contain a Previous and Next post button with the title of the Post.  
+- If not logged in, the visitor will be invited to log in and comment. They can follow through to register from this process easily.  
+
+
+#### Navigating the Store
+- From the landing page, users can initially use the top navigation bar for the store. There is a store search-bar for products only. There is also a navigation link for either  either a hover-on drop-down menu containing three rows of categories to select from, along with a "special offer" product.  Clicking on the Store link will take the user to the all products page with a menu of categories at the top. The first two columns contain the lists of possible product categories, the third column will display which current category the user is browsing in. The drop-down menu is available for medium and large screens, the on-screen categories will be used when viewing in smaller screen sizes. 
+
+#### Store Layout
+- In the Products page, each product is listed on a card with 
+    - Image, 
+    - Product name, 
+    - Price,
+    - Category 
+
+- Clicking on the desired product shows the product detail; 
+    - Image, 
+    - Product name, 
+    - Price,
+    - Category 
+    - Average Rating
+    - Rate Now Button
+
+ The Product detail will show that the product has achieved an average score of X out of Y reviews. Beneath the product details is the Reviews area where previous clients have left a comment and their own rating on the product.
+- To leave a comment and score, the user must have registered and logged in.
+- To Add To Cart, the user must also have registered and logged in. They will be directed to do so as the comment or purchase buttons will not be available at this point. 
+
+#### Cart Page
+- The cart will list all products selected for purchase. 
+- Information displayed will be:
+    - Image, 
+    - Product name, 
+    - Price,
+    - Quantity with increment and decrement adjustment
+    - Update (save changes) button
+    - Delete item button
+    - Line Total
+
+The Cart Summary will also display:
+    - Subtotal
+    - Delivery Charge
+    - Grand Total
+    - Customer note - If they have not spent more than €50, it will display how much more to spend to reach free delivery threshold
+    - Return to Store button
+    - Proceed to Checkout Button
+
+#### Checkout Page
+The Checkout page will display
+    - Delivery Address
+    - Any new delivery information can be saved permanently with tickbox
+    - Credit Card details request
+    - Total to be charged to card
+
+### STRIPE Payments Facility and Developers tools
+The checkout uses Stripe payments for credit card payments. To test the system, the company has provided 
+
+
+#### Allauth
+The authentication package used to run the client registration package is Django-Allauth. This addresses authentication, registration, account management with the potential to add 3rd Party Social Media account authentication. At this point the Social Media aspect has not been integrated. Allauth will allow users to change and/or recover passwords, update email addresses and update personal profile information.
 
 
 

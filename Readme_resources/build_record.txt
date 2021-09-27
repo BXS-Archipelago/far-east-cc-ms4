@@ -54,7 +54,8 @@ Chapter 3
     - Create HOME app using python3 manage.py startapp home 
     - Create templates directory inside home with new index.html file
     - add extends 'base.html' and load static
-    - Create tester h1 to check bootstrap, etc is working. 
+    - Test: Create tester h1 to check bootstrap, etc is working. 
+    - Test Result: Succesful, H1 is displayed.
     - In views.py define index view to render index template.
     - create a new urls.py in the home app and copy in all from the project urls.py 
     - in home urls.py use *urlpatterns = [path('', views.index, name='home') ]*
@@ -68,6 +69,7 @@ Chapter 3
 Chapter 4
     - create static/css/base.css 
     - Move css color palette and fonts to main css file. 
+    - Delete colors.css and style.html as no longer required
     - create templates/home/index.html 
     - Begin Sliding nav-bar 
     - attach Font Awesome CDN in style links
@@ -88,11 +90,13 @@ Chapter 4
 
 Chapter 5
 - added CSS for index page.
-- fixed slider Nav bar with JS
+- fixed sliding side Nav bar with JS
 - Corrected urls.py to show content of MEDIA folder
 - Update base.html
 *See bugs.txt #2 for the fix details.
 - Uploaded video for Landing page.
+- Test Sideslide Navbar
+- Test result: Succesful
 - Creating JS to display video with On/Off Switch
 - Commit Work thus far
 - Invoke responsiveness for headers and fonts and buttons on index page.
@@ -104,6 +108,8 @@ Chapter 5
 Chapter 6
 - Adjust Burger-Icon for sidebar-toggle on mobile small screen.
 - Replace video file with compressed version.
+- Test for responsiveness
+- Test Result Successful
 - Commit Work thus far.
 - * Design Contention Point - Drop Down menu for categories doesn't suit.
 - Redesigning Drop-down menu for better UX, delete CSS and JS code.
@@ -116,17 +122,23 @@ Chapter 6
 - Overwrite bootstrap Element.Style with !important for dropdown-menu transform.
 - Commit Work thus far. 
 - Update dropdown-menu class with additional ID to Overwrite bootstrap Element. Style with !important for dropdown-menu transform. Otherwise all classes affected!
+- Test Navbar and dropdown so far. 
+- Test result: successful
 - Commit Work thus far.
 
 Chapter 7
 - Add Row to hold "Free Delivery" text area
 - Add CSS to provide text colors, style and size.
 - Add JS to animate text in rotation
+- Test Rotating Text in index.html
+- Test result successful but requires modifying for size and responsiveness
 - Commit Work thus far. 
 - Modify text size and layout for smaller screens
 - Modify bars icon size for small screen
 - Modify Free-Delivery Banner for size and position.
 - Modify Padding on Shopping Cart Icon
+- Test page for functionality. 
+- Test result: Succesful
 - Commit Work thus far.
 
 Chapter 8
@@ -153,8 +165,8 @@ Chapter 9
 - Implement fixtures for categories and products using the following
 - python3 manage.py loaddata categories
 - python3 manage.py loaddata products 
-- Run Server and log in to Admin panel  
-- Admin panel shows Products and Categories are populated.
+- Test : Run Server and log in to Admin panel  
+- Test result: Successful Admin panel shows Products and Categories are populated.
 - Commit Work thus far. 
 
 Chapter 10
@@ -168,13 +180,16 @@ Chapter 10
 - Create products template directory: mkdir -p products/templates/products
 - Create products.html in templates/products folder
 - Copy html from home>templates index.html and do runserver
-- The /products page shows the products 
+- Test products page
+- Test result: Succesful The /products page shows the products 
 - Commit Work thus far
 
 Chapter 11
 - Updated index.html, base.html and products.html.
 - Adjusted CSS and background colour. 
 - Created initial card system for displaying product info.
+- Test display for layout
+- Test result: Succesful, page looks more structured. 
 - Commit Work thus far. 
 - Updated links to Store in main menu and button link.
 - Add product_detail view to products>views.py
@@ -189,14 +204,16 @@ Chapter 12
 - Update products>views.py with search function
 - Use : from django.db.models import Q  for django Q keyword arguments.
 - Test Search function :  
-- Search function displays with keywords from either Name or Description
+- Test Result: Succesful - Search function displays with keywords from either Name or Description
 - Commit Work thus far
 - Insert url links to dropdown categories for Interior & Exterior
-- Test filtering for all categories. Test successful. 
+- Test filtering for all categories. 
+- Test successful - products are displayed accordingly
 - Commit Work thus far.
 - Add url links to sort by Price, Rating & Category in main dropdown
 - In products>views.py provide Sort and Direction functionality if request.GET
-- Test sorting by price, by rating & by category. Test successful.
+- Test sorting by price, by rating & by category. 
+- Test successful.
 - Commit Work thus far.
 - Add jinja for Category display to products.html.
 - Commit Work thus far
@@ -212,15 +229,18 @@ Chapter 13
 - Test search for number of products in result and search term. Test successful.
 - Commit Work thus far 
 - Add JQuery to products.html to enable the mechanics of the sort functionality.
-- Testing reveals that sorting by name exposes an error.
+- Test Sort function
+- Test result: Failed - reveals that sorting by name exposes an error.
 - To products>views.py add "from django.db.models.functions import Lower"
-- Test all sorting categories individually. Test Successful.
+- Test all sorting categories individually. 
+- Test Result - Successful.
 - Commit Work thus far
 
 Chapter 14
 - Add Arrow-Up to top of screen for product page. HTML & CSS
 - Create JS for Arrow Up.
-- Test Arrow Up.. Test successful.
+- Test Arrow Up.. 
+- Test successful. Click returns user to the top of screen
 - Modify Arrow Up for small screens
 - Commit Work thus far
 - Create Cart App : python3 manage.py startapp cart
@@ -228,6 +248,8 @@ Chapter 14
 - Create folders template>cart and inside these create cart.html
 - Create cart>urls.py.  Update view and name.
 - Update cart url link in main.html
+- Test Cart.html
+- Test result: Succesful
 - Commit Work thus far
 
 Chapter 15
@@ -238,7 +260,7 @@ Chapter 15
 - Create cart>urls.py create URL using item_id & return add_to_cart view. 
 - Test by printing Cart with print(request.session['cart']) in cart>views.py
 - Test product quantity by both entering the number & add to cart repeats.
-- Test successful, relevant product id and quantity shows in terminal.
+- Testing successful, relevant product id and quantity shows in terminal.
 - Commit Work thus far
 - Create contexts.py, allow users to add items into the cart.
 - Create threshold for free delivery if less than specified Total
@@ -277,7 +299,7 @@ Chapter 17
 - Commit Work thus far
 
 Chapter 18
-** Change decision ** Removing Product Size features. The product listing is single size only as retail-packaging.
+** Change decision ** Removing Product Size features. The product listing is single size only as smaller retail-packaging for the product range.
 - remove size selector and options from product_detail page. 
 - Make Migration
 - Commit Work thus far
@@ -285,30 +307,35 @@ Chapter 18
 - Create JS for increment and decrement controls
 - Create limiter for quantity to disallow anything below Zero or above 99
 - Create function to iterate through limiter for manual number entry
-- Test on page. (Test failed due to using single-quotes instead of back-tick!)
+- Test on page. 
+- (Test failed due to using single-quotes instead of back-tick!)
 - Fix bug & test again. Test Successful.
 - Commit Work thus far.
+
 Chapter 19
 - ** Change Decision. Original landing page had video background.
-- Delete video with HTML CSS and JS associated with it for better UXP
+- Delete video with HTML CSS and JS associated with it for better UXP and less demand on load time. 
 - Redesign Nav Bar with Drop Down menus. 
 - Redesign Icons for User Account and Shopping Cart
 - Commit Work thus far
 - Update Index page with photos
 - Add style to dropdown menus.
 - Update photo sizing in media and link at products.json
+- Test index.html
+- Test result: Successful but more styling and design required.
 - Commit Work thus far
 
 Chapter 20
+- Item 4 in bugs.txt 
 - Chasing a bug. The item_id from cart>contexts.py and views.py is putting the product pk number into the quantity box in the Shopping Cart. 
-- Bug fixed thanks to Sheryl in Code Institute support
+- Bug fixed thanks to Sheryl in Code Institute support,
 - Testing bug solution : Test successful after fixing incorrectly placed variable in cart.html at the quantity box.
 - Commit Work thus far
 - Create Bootstrap Toasts in folder templates>includes>toasts for pages.
 - Create toast_error, toast_info, toast_success & toast_warning html pages.
 - Create CSS for toasts to appear at top right of screen
 -Commit Work thus far
-- Chasing a bug. Toasts not appearing; Message in console, Toasts is not a function. This was related to the versions of Jquery and Bootstrap listed in the base.html.  With the correct version combinations, ajax requests now work.
+- Chasing a bug. Toasts not appearing; Message in console: Toasts is not a function. This was related to the versions of Jquery and Bootstrap listed in the base.html.  With the correct versions in place, ajax requests now work.
 - Test toasts: Test successful
 - Commit Work thus far.
 
@@ -317,7 +344,8 @@ Chapter 21 - Checkout
 - Create Checkout App using python3 manage.py startapp checkout
 - Create Models class called Order. Fields are for name, address info, etc. 
 - Create defs in Models 
-- Chasing a bug. Checkout link in header always shows deliverys cost. This required an extra elif statement, but after trial and error, I discovered I needed to include the free_delivery_delta statement in both as well. 
+- Chasing a bug. Item 3 in bugs.txt
+- Checkout link in header always shows deliverys cost. This required an extra elif statement, but after trial and error, I discovered I needed to include the free_delivery_delta statement in both as well. 
 - Make migrations and migrate
 - Commit Work Thus far
 - Add models to the checkout> admin.py 
@@ -347,6 +375,9 @@ Chapter 22 : Checkout Template
 - access the form and pipe them with as-crispy_field
 - Add the submit button for credit card entry
 - As per tutorial, settings.py requires a media context processor for where there are no images.
+- Test Checkout.html 
+- Test result: Succesful to current progress. 
+- Commit Work thus far
 
 
 Chapter 23 : Stripe
@@ -360,8 +391,10 @@ Chapter 23 : Stripe
 - Create stripe_elements.js and obtain public & client keys as .text
 - Create js variables and elements to create card element and mount it in the div setting in checkout.html
 - Link the stripe_elements.js in checkout.html postloadjs at bottom of page.
-- Test checkout.html : Test Unsuccessful
-- Chasing a bug. "Uncaught IntegrationError: Please call Stripe() with your publishable key. You used an empty string." 
+- Test checkout.html  
+- Test Unsuccessful
+- Chasing a bug. Item 5 in bugs.txt
+- "Uncaught IntegrationError: Please call Stripe() with your publishable key. You used an empty string." 
 - The key is not being recognised but seems to be in the correct places and format. Views context is correct. 
 - Solution : found a missing # key in the JS file for '#id_stripe_public_key'
 - Test Checkout.html : Test successful.  
