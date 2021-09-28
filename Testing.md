@@ -57,19 +57,38 @@ During the build, there were some changes made for better site performance or si
 #### Search function test : Successful
 
 - Test Landing page Buttons - Visit Store and Visit Blog 
-- Test Successful
+    - Test Successful
 
 - Blog Features links 
-- Test Successful : all three links work
+    - Test Successful : all three links work
 
 - Test Feature blog data :
-- Timestamp, Number of comments : Test successful
+    - Timestamp, Number of comments : Test successful
 
 - Mid-page Hero link to All Products in Store
-- Test Successful
+    - Test Successful
 
 - Landing page latest Blogs links 
     - Links repaired and now work successfully
 
 - Gallery photos open in new page
 
+#### Testing Admin pages from addresses while not logged in. 
+- Test Add Products in Product Manager
+    - Test result successful
+
+- Test Create Blog 
+    - Test Failed - Needed to add @login_required decorators to view. 
+    - Test 2 Successful
+- Test Create Email 
+    - Test Failed - Needed to add @login_required decorators to view. 
+    - Test 2 Successful 
+
+- Test Access Profile 
+    - Test Successful, redirected to login instead
+
+- Test Access Control Panel
+    - Test Successful, redirect to django login
+
+- 
+-
