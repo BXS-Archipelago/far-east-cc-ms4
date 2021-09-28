@@ -5,8 +5,9 @@ from .forms import SignMeUp, MailMessageForm
 from .models import Signup, MailMessage
 from django.core.mail import send_mail
 from django_pandas.io import read_frame
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def mail_letter(request):
     emails = Signup.objects.all()
     df = read_frame(emails, fieldnames=['email'])

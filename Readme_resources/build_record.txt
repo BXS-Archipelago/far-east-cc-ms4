@@ -1187,3 +1187,4 @@ Chapter 65 : Email Marketing
 - In the event of incorrect emails being submitted, use fail_silently=false to prevent the list from crashing
 - Commit Work thus far. 
 - Test on deployed site for functionality. 
+- Test Result : Successful - Added my 3 email addresses and sent a test email shot to the list. The message was received immediately.  

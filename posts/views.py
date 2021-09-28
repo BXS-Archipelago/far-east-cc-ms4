@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count, Q
 from .forms import CommentForm, PostForm
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 
 # View to count each time the category name occurred in posts. 
 # annotate will return a dictionary where each key is the category to be counted
@@ -93,6 +93,7 @@ def search(request):
 """
 Functions to update and delete the blog posts by the admin
 """
+@login_required
 def post_create(request):
     title = 'Create'
     
@@ -124,6 +125,7 @@ def get_author(user):
 """
 Superuser can edit and update Posts
 """
+@login_required
 def post_update(request, id):
     # Get the post to be updated
     title = 'Update'
@@ -151,6 +153,7 @@ def post_update(request, id):
 """
 Superuser can Delete Posts
 """
+@login_required
 def post_delete(request, id):
     post = get_object_or_404(Post, id=id)
     post.delete()
