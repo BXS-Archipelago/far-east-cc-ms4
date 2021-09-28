@@ -14,7 +14,7 @@ Too make it easier for the average enthusiast, this website will provide easy ac
 
 Ancillary objectives for the site owners will be to offer an email subscription service with tips and tricks for product use, special offers and a feature for new/coming-soon product developments. 
 
-## UX : Strategic approach for the site's User Experience: 
+## UX : The Strategic approach for the site's User Experience: 
 
 The site will entice the users through educational and instructional blog posts along with images of cars that have the site's products used on them. First and foremost, there must be both visual and educational appeal set apart from the actual products in the store. 
 
@@ -90,11 +90,18 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 
 
 ## User Story Aspirations
+<details>
+<summary>User Story Sheet 1</summary>
 
 ![story](media/project_media/user_story1.jpg)
+</details>
+
+<details>
+<summary>User Story Sheet 2</summary>
+
 
 ![story](media/project_media/user_story2.jpg)
-
+</details>
 
 ## Skeleton Outlay
 

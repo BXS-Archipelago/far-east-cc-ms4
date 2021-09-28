@@ -176,6 +176,8 @@ The Store dropdown menu offers full category selection to choose from. Picking a
     - ALL CRUD functions working. 
 
 ### Test Create Blog 
+
+#### Test
 - The account link provides drop down for Admin user to select Create Blog
     - The Input page contains Title, Overview, Content, Thumbnail (image upoad), Categories, 
     Featured Tickbox, Previous Post and Next Post selections. 
@@ -185,6 +187,15 @@ The Store dropdown menu offers full category selection to choose from. Picking a
     - As Admin, the Post can be deleted in one click. 
     - All CRUD functions working. 
 
+        - Test Commenting on Blog posts 
+            Comment is unavailable to users not logged in
+            When logged in, users write into an input text box and submit. 
+            Their username is displayed
+            The comment count is incremented. 
+            The time is noted and time since created is displayed
+            By design, the users are not allowed to edit or delete their comments. 
+
+    
 
     
 

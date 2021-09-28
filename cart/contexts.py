@@ -1,4 +1,3 @@
-from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
@@ -13,7 +12,7 @@ def cart_contents(request):
     cart = request.session.get('cart', {})
 
 # iterate through items to add up total cost and product count
-    for item_id, quantity in cart.items(): 
+    for item_id, quantity in cart.items():
 
         #  Bug chase - pk=item_id  and carries through to views.py?   
         product = get_object_or_404(Product, pk=item_id)
