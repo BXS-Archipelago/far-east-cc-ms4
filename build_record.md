@@ -1158,5 +1158,34 @@ In chapter 47b, I am adapting the review's numeric rating system to display both
 - Fix sidebar positioning for categories in posts. 
 
 
+## Chapter 64 : Email Subscribers 
+- Subscription input is on Index.html
+- In home>views.py the index view already allows for the subscribers emails to be saved to the admin of Marketing app 
+- In marketing> models.py create Signup model for email and date.
+- In marketing> models.py create MailMessage model for title and message
+- marketing>admin.py requires register for Signup 
+- Migrate changes to models.py
+- In marketing>forms.py create Signup form for Signup Model and emails
+- Test Sign-up form in index.html
+- Test Successful : Subscription form works, message is displayed. In the admin panel, the email addresses have been received in several tests. 
+- Commit Work thus far. 
+
+## Chapter 65 : Email Marketing
+- In marketing>templates>marketing create mail_letter.html 
+- Update project URLs for marketing url requirements
+- Insert crispy form for passing email messages with submit button
+- In marketing>views.py create mail_letter view
+- marketing>admin.py requires register for  MailMessage
+- In marketing>forms.py create Mailmessage form for emails
+- In marketing>models.py create MailMessage model for emails outward.
+- In views.py import django send_mail
+- Insert block formatted for send_mail function subject, message, from, to mail_list
+- for better handling of email addresses as a library, install django-pandas.
+- run pip3 freeze > requirements.txt 
+- In the mail_letter view, the dataframe df will handle the email fields and convert the mail_list emails into a functioning list. 
+- In the event of incorrect emails being submitted, use fail_silently=false to prevent the list from crashing
+- Commit Work thus far. 
+- Test on deployed site for functionality. 
+- Test Result : Successful - Added my 3 email addresses and sent a test email shot to the list. The message was received immediately.  
 
 
