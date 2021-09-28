@@ -1,91 +1,98 @@
+## FECC Record of Build
+### By Brian Smyth
+
 The Build record is to keep a track of the steps followed in the creation of this project. This happens for two reasons :
 -1. To support version control and track the progress and/or current status of the project.
 -2. For future record to keep a log of the events involved in creating the site. 
 
-
+I hope it may help others who wish to create a similar website, but it should be noted that it is bullet point summary of events, not a concise notation of every minutae. 
+Thank you, 
+Brian Smyth
+________________
+________________
 ## Chapter 1
-    - create git repository using code institute template
-    - create initial mock-up wireframes on Balsamiq as guidelines
-    - Select color scheme and font choices for project
-    - Create style.html and colors.css to display color chart and fonts. 
-    - Begin Readme file
-    - Initial Commit
-    - pip3 install Django
-    - django-admin startproject far_east_cc .
-    - touch .gitignore to safely hold *.sqlite and *.pyc and __pycache__  
-    - python3 manage.py runserver to view the server opening on port 8000
-    - python3 manage.py migrate to run the initial migrations
-    - python3 manage.py createsuperuser to create an Admin log-in and password.
-    - Commit work thus far. 
+- create git repository using code institute template
+- create initial mock-up wireframes on Balsamiq as guidelines
+- Select color scheme and font choices for project
+- Create style.html and colors.css to display color chart and fonts. 
+- Begin Readme file
+- Initial Commit
+- pip3 install Django
+- django-admin startproject far_east_cc .
+- touch .gitignore to safely hold *.sqlite and *.pyc and __pycache__  
+- python3 manage.py runserver to view the server opening on port 8000
+- python3 manage.py migrate to run the initial migrations
+- python3 manage.py createsuperuser to create an Admin log-in and password.
+- Commit work thus far. 
 
 ## Chapter 2
-    - Django Allauth for creating user authentication, registration and account management.
-    - pip3 install django-allauth
-    - update settings.py with allauth requirements in INSTALLED_APPS
-    - under authentication backends, add : SITE_ID = 1 
-    - add : "import path, include" & path('accounts', include ('allauth'.urls)) to urlpatterns in urls.py 
-    - runserver
-    - Navigate to admin (ignoring the first error message)
-    - Under Sites change name to fecc.example.Com
-    - Change Display name to FarEast CarCare for social media referencing
-    - settings.py ... set EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'   (to temporarily log emails to console)
-    - add email authentication for usernames & emails, mandatory email registration, minimum username length etc.
-    - login redirect to "/success"
-    - runserver, navigate to /accounts/login and try log in. Email Verification Message should be present. 
-    - Return to admin login to enter and select email verified. 
-    - navigate to /accounts/login and repeat. You will  get 404 but path sill be success in url
-    - LOGIN_REDIRECT_URL = '/'  (remove success from url)
-    - pip3 freeze > requirements.txt 
-    - create templates/ allauth directories
-    - Commit work thus far. 
+- Django Allauth for creating user authentication, registration and account management.
+- pip3 install django-allauth
+- update settings.py with allauth requirements in INSTALLED_APPS
+- under authentication backends, add : SITE_ID = 1 
+- add : "import path, include" & path('accounts', include ('allauth'.urls)) to urlpatterns in urls.py 
+- runserver
+- Navigate to admin (ignoring the first error message)
+- Under Sites change name to fecc.example.Com
+- Change Display name to FarEast CarCare for social media referencing
+- settings.py ... set EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'   (to temporarily log emails to console)
+- add email authentication for usernames & emails, mandatory email registration, minimum username length etc.
+- login redirect to "/success"
+- runserver, navigate to /accounts/login and try log in. Email Verification Message should be present. 
+- Return to admin login to enter and select email verified. 
+- navigate to /accounts/login and repeat. You will  get 404 but path sill be success in url
+- LOGIN_REDIRECT_URL = '/'  (remove success from url)
+- pip3 freeze > requirements.txt 
+- create templates/ allauth directories
+- Commit work thus far. 
 
 ## Chapter 3
-    - cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth 
-    - with the Allauth templates installed, remove tests and openid folders.
-    -in the Templates folder, create base.html
-    - include bootstrap starter template and the following meta in the head :
-    -  <meta http-equivalent="X_UA-Compatible" content="ie=edge">
-    - put {% load static %} at the top to load static files.
-    - Commit work thus far
-    - Create block/endblock jinja for core css and js in base.html
-    - Also create blocks for page_header, content, postloadjs
-    - Create if messages/endif in base.html
-    - Commit work thus far
-    - Create HOME app using python3 manage.py startapp home 
-    - Create templates directory inside home with new index.html file
-    - add extends 'base.html' and load static
-    - Test: Create tester h1 to check bootstrap, etc is working. 
-    - Test Result: Succesful, H1 is displayed.
-    - In views.py define index view to render index template.
-    - create a new urls.py in the home app and copy in all from the project urls.py 
-    - in home urls.py use *urlpatterns = [path('', views.index, name='home') ]*
-    - in project urls.py include the *path('', include('home.urls'))*
-    - add home to installed apps in Settings. 
-    - In Template Dirs setting, add home app and templates directory. 
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth')
-    - Commit work thus far. 
+- cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth 
+- with the Allauth templates installed, remove tests and openid folders.
+-in the Templates folder, create base.html
+- include bootstrap starter template and the following meta in the head :
+-  <meta http-equivalent="X_UA-Compatible" content="ie=edge">
+- put {% load static %} at the top to load static files.
+- Commit work thus far
+- Create block/endblock jinja for core css and js in base.html
+- Also create blocks for page_header, content, postloadjs
+- Create if messages/endif in base.html
+- Commit work thus far
+- Create HOME app using python3 manage.py startapp home 
+- Create templates directory inside home with new index.html file
+- add extends 'base.html' and load static
+- Test: Create tester h1 to check bootstrap, etc is working. 
+- Test Result: Succesful, H1 is displayed.
+- In views.py define index view to render index template.
+- create a new urls.py in the home app and copy in all from the project urls.py 
+- in home urls.py use *urlpatterns = [path('', views.index, name='home') ]*
+- in project urls.py include the *path('', include('home.urls'))*
+- add home to installed apps in Settings. 
+- In Template Dirs setting, add home app and templates directory. 
+        os.path.join(BASE_DIR, 'templates'),
+        os.path.join(BASE_DIR, 'templates', 'allauth')
+- Commit work thus far. 
 
 ## Chapter 4
-    - create static/css/base.css 
-    - Move css color palette and fonts to main css file. 
-    - Delete colors.css and style.html as no longer required
-    - create templates/home/index.html 
-    - Begin Sliding nav-bar 
-    - attach Font Awesome CDN in style links
-    - Add global site styles to Headings, Paragraphs, Body etc for responsiveness. 
-    - Commit work thus far. 
-    - Base.html : Create Header bar to contain site tools such as search, shopping cart, login
-    - Base.Html : Create Side-Sliding navbar separately for links.  
-    - Retaining some Bootstrap for now, create Search form on header bar. 
-    - Font Awesome User icon, create My Account link as bootstrap dropdown
-    - Use logout, signup, login jinja on base.html to adopt Allauth URLs in the url.py file at project level.
-    - Create shopping Cart icon with IF Grand Total jinja sequences to check for shopping activity. 
-    -runserver shows all text and links, but no css yet.
+- create static/css/base.css 
+- Move css color palette and fonts to main css file. 
+- Delete colors.css and style.html as no longer required
+- create templates/home/index.html 
+- Begin Sliding nav-bar 
+- attach Font Awesome CDN in style links
+- Add global site styles to Headings, Paragraphs, Body etc for responsiveness. 
+- Commit work thus far. 
+- Base.html : Create Header bar to contain site tools such as search, shopping cart, login
+- Base.Html : Create Side-Sliding navbar separately for links.  
+- Retaining some Bootstrap for now, create Search form on header bar. 
+- Font Awesome User icon, create My Account link as bootstrap dropdown
+- Use logout, signup, login jinja on base.html to adopt Allauth URLs in the url.py file at project level.
+- Create shopping Cart icon with IF Grand Total jinja sequences to check for shopping activity. 
+-runserver shows all text and links, but no css yet.
 *See bugs.txt #1 for fix.
-    - fixed CSS and JS bug. 
-    - updated base.html with less Bootstrap dependencies.
-    - Commit work thus far
+- fixed CSS and JS bug. 
+- updated base.html with less Bootstrap dependencies.
+- Commit work thus far
 
 
 ## Chapter 5

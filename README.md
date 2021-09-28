@@ -277,7 +277,7 @@ The checkout uses Stripe payments for credit card payments. To test the system, 
 
 ### Creating Blog Posts
 
-For attractive blog posts, a third party Rich Text Editor plug in for the Content body of the blog. I installed this to allow for nicer options for formats of text and inserting images into blog posts. Once installed, the project URL and settings files are updated to integrate the editor. Please see the project's build-record.txt file, chapter 53 for details. 
+For attractive blog posts, TinyMCE, a third party Rich Text Editor plug in for the Content body of the blog. I installed this to allow for nicer options for formats of text and inserting images into blog posts. Once installed, the project URL and settings files are updated to integrate the editor. Please see the project's build-record.txt file, chapter 53 for details. 
 
 
 ## Database Resources
@@ -296,6 +296,8 @@ The main color scheme is a variation of blues as primary and greys as secondary 
 
 ![Layout](media/project_media/css_root.jpg)
 </details>
+
+---
 
 ## Core Technologies 
 
@@ -322,6 +324,247 @@ The following technologies were vital in the completion of the project:
 - Gunicorn - Multiprocessing of Python WSGI-compliant applications for deployment
 - Boto3 - integrates libraries for AWS S3
 - Pillow - Python image processing
+- Pandas - Dataframe manager to render email lists in a usable format.
 - pip3 - used to install all packages in python
+
+--- 
+
+## Deployment
+
+--- 
+
+This Project can be run locally using an IDE such as Visual Studio Code. 
+
+#### Requirements : 
+Python 3 - the project is mechanically based on the python language
+PIP - install packages using PIP3
+Git - version control for your ongoing progress
+Stripe - You will need to register an account
+
+Recommended
+A virtual environment  : pip3 virtualenv env to install and then create your virtualenv env
+python3 -m venv .venv
+where .venv is the name/path you are giving to the virtual environment
+
+Process
+At the Project Github Repository, Click into the Code and select 'Download Zip'. Proceedd to unzip the files into your preferred directory. 
+
+Alternatively, clone the repository directly using the command
+
+- gh repo clone BXS-Archipelago/far-east-cc-ms4
+
+
+ cd path/to/your/folder
+Activate your virtual environment. If using Python's venv:
+
+ source .venv/bin/activate
+on MacOS and Unix where .venv is the name you gave previously
+
+ .venv\Scripts\activate.bat
+on Windows where .venv is the name you gave previously
+
+Install all content from the requirements.txt file
+
+- pip3 install -r requirements.txt
+
+Create a file env.py to store environment variables
+
+Add environment variable in the format as shown below and also demonstrated in the sample_env.py file
+You will need to create your own variables in the your env.py file. The format is as follows:
+
+ os.environ.setdefault('SECRET_KEY', '<INSERT_KEY_HERE>')
+ os.environ.setdefault('DEVELOPMENT', '1')
+ os.environ.setdefault('ALLOWED_HOSTS', '<INSERT_VARIABLE_HERE>')
+ os.environ.setdefault('STRIPE_PUBLIC_KEY', '<INSERT_VARIABLE_HERE>')
+ os.environ.setdefault('STRIPE_SECRET_KEY', '<INSERT_VARIABLE_HERE>')
+ os.environ.setdefault('STRIPE_WH_SECRET_CH', '<INSERT_VARIABLE_HERE>')
+ os.environ.setdefault('STRIPE_WH_SECRET_SUB', '<INSERT_VARIABLE_HERE>')
+
+* It is advised to follow the extensive documents provided by stripe for developers 
+
+SECRET_KEY value is discretionary. For a secure key please try https://miniwebtool.com/django-secret-key-generator/ 
+DEVELOPMENT is set to 1 in settings.py for stable running of the file locally and remotely. 
+STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY values are offered by Stripe when you have your account. 
+
+STRIPE_WH_SECRET value is also obtained from the Stripe website.
+Please follow the Stripe guidelines on Webhook API Values
+
+Run the application using : python3 manage.py runserver
+Your IDE can operate a Live Server to view the site. 
+
+## Heroku Deployment :
+
+* It is advised to follow the Heroku documentation on deployment.*
+
+* It is advised to follow the AWS S3 documentation for secure storage and access.*
+
+The following is an exerpt from my build-record document to offer guidance on setting up the project with Heroku and AWS S3
+
+- Access heroku.com and create your account.
+- Create new app and title it appropriately
+- Add-On Heroku Postgres
+- Install at terminal : pip3 install dj_database_url
+- Secondly, install : pip3 install psycopg2-binary
+- Freeze Requirements.txt
+- In project settings.py import dj_database_url 
+- Comment out original DATABASES block
+- Update databases in settings.py with call to dj_database_url.purchase
+- Retrieve database_url config var from heroku settings and attach to parse
+- Run python3 manage.py showmigrations  
+- Show Migrations command reveals the list of migrations that are required. 
+- Run python3 manage.py migrate
+- Run  python3 manage.py loaddata categories
+- Run  python3 manage.py loaddata products
+- Create superuser and password
+- Remove parsed database config in settings.py and restore original DATABASES.
+
+* Deploying to Heroku *
+- in project settings.py use : if 'DATABASE_URL' in os.environ to use as database setting, otherwise use default default.
+- As webserver, install :  pip3 install gunicorn
+- then : pip3 freeze > requirements.txt
+- create new file : Procfile
+- In Procfile : web: gunicorn far_east_cc.wsgi:application ; so Heroku can create a web dyno to run unicorn and serve the django app
+- At Terminal :  heroku login -i
+- At Terminal, disable collecstatic with :
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app bxs-fecc-ms4 
+- In project settings.py add local host and heroku app hostname to ALLOWED_HOSTS
+
+- After normal git push, initialise heroku git remote if app created in website: heroku git:remote -a project_name_here
+- Then : git push heroku main
+- Test Heroku App for deployment
+- Test result: successful but lack of static files for styling Observed
+- In Heroku, connect app to Github and set to automatically deploy whenever a git push occurs
+- Use www.https://miniwebtool.com/ to generate a django SECRET key
+- Add new key to heroku config variables
+- In settings.py, configure the secret key setting to retrieve from environment, using empty string as a default
+- Set DEBUG = 'DEVELOPMENT' in os.environ 
+
+* Connect Django to AWS *
+- in AWS s3, create new bucket and name appropriately
+- in bucket settings, enable static website hosting
+- Use the provided CORS configuration: 
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+- Edit Bucket Policy for S3 Bucket Policy, Pricipal *, Action : Get object
+- Retrieve ARN from bucket policy editor and paste into policy generator 
+- Click Add Statement, then Generate Policy
+- Copy Policy and pasted into bucket policy editor
+- Add /* onto the end of the resource key to allow access to all resources
+- Click Save 
+- In Access Control Lists ACL allow everyone access to List Objects
+
+ * Identity Access Management in AWS 
+- Access IAM from AWS services dashboard or the history
+- First Create Group for the user to reside: manage-fecc-ms4
+- then create Policy :  go to the JSON tab, use import managed policy 
+- Search for S3FullAccess Policy and import that.
+- Open in a separate tab, S3 from the services dropdown. 
+- Navigate to bucket policy editor and retrieve ARN 
+- Paste ARN into create policy json field replacing the Resource. Use [] here
+- Secondly, also include the ARN again but with the /* . The first is the bucket itself, the second is another rule for all files/folders within.
+- Click next, (no tags) and next again for Policy naming: bxs-fecc-ms4-policy.
+- Give description : "Access to S3 bucket for FECC static files"
+- Click Create Policy
+- Test for Policies Page, AWS confirms "The policy bxs-fecc-ms4-policy has been created."
+- Go to User Groups for "manage-fecc-ms4"
+- Under Permissions, click Add Permissions > Attach Policy
+- Find the relevant policy (bxs-fecc-ms4-policy) and click Add Permissions
+- In Users section, click Add User and name it : fecc-staticfiles-user
+- Give Programmatic Access and click next
+- Add the Correct user to group and click next to the end
+- On the Sucess page, download the CSV file which contains access and secret access keys
+
+* connect Django to AWS *
+- installation : pip3 install boto3
+- installation : pip3 install django-storages
+- Freeze installations : pip3 freeze > requirements.txt
+- In project settings.py, add storages to installed apps
+- Also in settings, set an IF statement for USE_AWS in the environ to control the bucket, region, access key and secret key.
+- In Heroku config vars, add the csv access key and secret key, also remove disable collecstatic
+- In settings.py, set the aws custom domain variable to storage bucket name 
+- Create new file: custom_storages.py and import django config settings and S3Boto3Storage 
+- Create classes for StaticStorage and MediaStorage to inherit from django storages.
+- In settings.py, now set the Static and Media Files for the storage classes just created.
+- Set the Static and Media file new location URLs to override the URLS in production
+- Now Commit Work thus far and issue a git push to deploy into heroku.
+- Monitor Activity in build-log in Heroku.  Initial build FAILED due to typo (
+    used django.config instead of django.conf to import settings! )
+- Test again with git add, commit & push. Build Finalised Successfully. 
+- In AWS S3, the static file is now present.
+- In the website, the CSS and JS should be functioning. Images to be transferred in. 
+- Testing should be carried out at this point
+
+* Handling Media Files *
+- In Settings.py add AWS_S3_OBJECT_PARAMETERS in USE_AWS to allow browser to cache static files for extended periods as required
+- Commit Work thus far and push into Heroku
+- In S3, create a new folder : "media" and upload all images into it
+- Test : Login to project page as Admin and verify email address 
+- Is the page login used to force allauth to create the email?
+- Test Login to admin: Is the Email address observed and verifiable.
+- Add Stripe Keys to the Heroku Config Vars : Public and Secret Keys
+- Create new Webhook Endpoint for Herokuapp url
+- Add the new Webhook signing secret key to Heroku config vars
+- Test: Send test Webhook from Stripe
+    - Check Webhooks
+
+- Test: Process by processing a dummy order.
+
+
+Inside your Project Settings.py, the following python block is required: 
+
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = < Your Bucket Name >
+    AWS_S3_REGION_NAME = < Your server location >
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_DEFAULT_ACL = None
+
+# Static and media files
+
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
+
+ALLOWED_HOSTS = ['127.0.0.1', 'project_name.herokuapp.com']
+
+---
+---
+## Credits 
+
+First and Foremost, This Milestone 4 Project was created thanks to the great learning platform and content provided by the Code Institute. While I didn't use much tutor support, when I did need it the tutors were always knowledgable and patient. So a huge credit to the team in Code Institute. Most of this project was built with what I learned from them.
+
+For more insight on how to approach a django blog, a YouTube channel "Just Django", Matthew Freire from Pretoria in South Africa provided some elemental processes to for me to observe in the project: https://justdjango.com/
+
+### Images 
+Some of the photos in the blog website are my own, taken at my workshop. 
+Product photos were obtained from the manufacturers of the products Soft99 Corporation Japan and Pika Rain Japan
+    - https://www.soft99.co.jp/en/
+    - https://pikarain.asia/
+
+There are also some photographs from the free resource Unsplash
+    - https://unsplash.com/
+
+
+
+
+
 
 
