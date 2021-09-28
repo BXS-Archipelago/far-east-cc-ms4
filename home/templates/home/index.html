@@ -22,7 +22,7 @@
               <span class=" value rotate4"> €{{ free_delivery_threshold }}.00</span>
               <span class=" value rotate5"> €{{ free_delivery_threshold }}.00</span>
             </h3>
-            <hr>
+            <hr>            
           </div>
          
         </div>  
@@ -50,6 +50,7 @@
         <div class="blog-btn-holder pb-2">
           <a href="{% url 'products' %}" class="btn btn-outline-custom ">Visit Store</a>
           <a href="{% url 'post-list' %}" class="btn btn-outline-black ">Visit Blog</a>
+          
         </div>
       </div>
     </div>
@@ -138,7 +139,7 @@
               {% endfor %}
             </div>
           </div><a href="{{ obj.get_absolute_url }}">
-            <h3 class="h4"><i class="fas fa-bookmark"></i> {{ obj.title }}</h3>
+            <h3 class="pt-2"><i class="fas fa-bookmark"></i> {{ obj.title }}</h3>
           </a>
           <p class="text-muted">{{ obj.overview|linebreaks|truncatechars:200 }}</p>
         </div>
@@ -156,6 +157,7 @@
         <p class="text-big">Stay ahead of the posse! Special Offers, new Products, Tips to save time and effort.
           Subscribe now for our email wisdom!</p>
       </div>
+      
       <div class="col-md-8">
         <div class="form-holder">
           {% for message in messages %}
@@ -168,10 +170,10 @@
           <form method="POST">
             {% csrf_token %}
             {{ form }}
-            <div class="form-group">
+            
               <input type="email" name="email" id="email" placeholder="Type your email address" class="subscriber">
               <button type="submit" class="submit btn btn-outline-custom ">Subscribe</button>
-            </div>
+            
           </form>
         </div>
       </div>

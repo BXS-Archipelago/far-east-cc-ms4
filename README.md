@@ -90,6 +90,7 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 
 
 ## User Story Aspirations
+- Please Click to expand 
 <details>
 <summary>User Story Sheet 1</summary>
 
@@ -106,27 +107,65 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 ## Skeleton Outlay
 
 The following mock-ups were drawn up using Balsamiq Wireframe Editor Early in the project but save here as images: 
+<details>
+<summary>Landing Page</summary>
 
 ![Home](media/project_media/landingpage.jpg)
+</details>
+
+<details>
+<summary>Blog Page</summary>
 
 ![Blog](media/project_media/blog_page.jpg)
+</details>
+
+<details>
+<summary>Blog Post</summary>
 
 ![Blog-post](media/project_media/blog_post.jpg)
+</details>
+
+<details>
+<summary>Products Page</summary>
 
 ![Products](media/project_media/products_page.jpg)
+</details>
+
+<details>
+<summary>Product Detail</summary>
 
 ![Product-detail](media/project_media/product_detail.jpg)
+</details>
+
+<details>
+<summary>Cart</summary>
 
 ![Shopping-Cart](media/project_media/cart_page.jpg)
+</details>
+
+<details>
+<summary>Checkout Page</summary>
 
 ![Checkout](media/project_media/checkout_page.jpg)
+</details>
+
+<details>
+<summary>Order Confirmation</summary>
 
 ![Confirmation](media/project_media/confirmation_page.jpg)
+</details>
+
+<details>
+<summary>Tablet View</summary>
 
 ![Tablet-View](media/project_media/tablets_page.jpg)
+</details>
+
+<details>
+<summary>Mobile Phone View</summary>
 
 ![Phone-View](media/project_media/phone_view.jpg)
-
+</details>
 
 
 ## Scope of Attributes of the website
@@ -145,7 +184,12 @@ The following mock-ups were drawn up using Balsamiq Wireframe Editor Early in th
     - The Content
     - The Navigation of the Content
 
+<details>
+<summary>Landing Page</summary>
+
 ![Layout](media/project_media/layout.jpg)
+</details>
+
 
 ### Navigating the pages
 The Navigation in large screen can be accomplished using either the top menu or the sliding side menu. The side menu is available even when scrolling farther down a page. The site can be navigated by unregistered viewers who can read the blogs or browse the product range. Some services are unavailable to unregistered users though, such as commenting on blog posts or actually purchasing products. Any attempt to do so will redirect them to the login page, where if necessary they can choose to register. 
@@ -247,8 +291,11 @@ The colour scheme for the site was determined in advance, along with other styli
 
 The main color scheme is a variation of blues as primary and greys as secondary colors. For contrast, two shades of red and two shades of green, a yellow and an azure blue are also included. The Font Families were imported from Google Fonts : Roboto and Poppins. Please see the following image for the list of style attributes:  
 
-![Layout](media/project_media/css_root.jpg)
+<details>
+<summary>Landing Page</summary>
 
+![Layout](media/project_media/css_root.jpg)
+</details>
 
 ## Core Technologies 
 

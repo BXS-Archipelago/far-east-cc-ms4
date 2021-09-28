@@ -6,9 +6,20 @@
 
 #### Secondly, testing was documented according to the user stories using the format "As a User" or "As an Admin" , "I want to.." , "So that I can..." with test results and observations. Please see the two images below for these: 
 
+
+<details>
+<summary>User Story 1</summary>
+
 ![story](media/project_media/user_story1.jpg)
+</detail>
+
+
+<details>
+<summary>Order Confirmation</summary>
 
 ![story](media/project_media/user_story2.jpg)
+</detail>
+
 
 ---
 
@@ -196,6 +207,25 @@ The Store dropdown menu offers full category selection to choose from. Picking a
             By design, the users are not allowed to edit or delete their comments. 
 
     
+### Test Email Marketing & Subscription Service
+
+#### Test
+- The landing page contains the Subscription Form. 
+    - Entering and submitting an email address gives a success message. 
+    - The email is saved to the database as displayed in the control panel
+
+- The account link provides drop down for Admin user to select Create Email
+    - The page link directs to the email creating page. 
+    - There are three components 
+        - Title
+        - Message
+        - Send Message
+
+    - The function created in the marketing views.py uses pandas to create a usable library of email addresses derived from the database. 
+    - Once the Title and Message are formulated, clicking Send Message distributes the email to all addresses kept. 
+    - To test, I input three separate email addresses as a subscriber. 
+    - Test result : Successful, all three Inboxes received the mail shot instantaneously. 
+
 
     
 

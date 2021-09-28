@@ -773,7 +773,7 @@ section.featured-posts .avatar {
 
 .prev-left {
   background-color: var(--fecc-primary-10);
-  padding-top: 5px;
+  padding-top: 10px;
   box-shadow: var(--dark-shadow);
   border-radius: 7px;
 }
@@ -784,9 +784,16 @@ section.featured-posts .avatar {
  justify-content: center;
  align-items: flex-end;
  flex-direction: column;
- padding-top: 5px; 
+ padding-top: 10px;
+  
  box-shadow: var(--dark-shadow);
  border-radius: 7px;
+}
+.nxt-right a,
+.prev-left a {
+  text-decoration: none;
+  color: var(--fecc-grey-2);
+  
 }
 
 
@@ -804,8 +811,14 @@ section.featured-posts .avatar {
   font-weight: 500;
 }
 
+
+.form-holder {
+  padding-bottom: 1rem;
+}
+
 .subscriber {
   padding: 4.5px;
+  border-radius: var(--radius);
 }
 
 .blog-post .post-thumbnail img {
@@ -910,6 +923,9 @@ section.featured-posts .avatar {
   color: #fff;
   border-color: #2b90d9;
 }
+
+
+
 /* >>>>>>>>>>>>>>>>>>>>>>Blog Posts Styling <<<<<<<<*/
 
 

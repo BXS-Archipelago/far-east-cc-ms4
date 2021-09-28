@@ -59,19 +59,18 @@
             <div class="row ">
               <div class="col-6  prev-left">
                 {% if post.previous_post %}
-                <h6><i class="fa fa-angle-left"></i> Previous</h6>
-              <a href="{{ post.previous_post.get_absolute_url }}" >
-                <span> "{{ post.previous_post.title }}"
-                </span>
-              </a>
+                <h6><i class="fa fa-angle-left"></i> Previous Post</h6>
+              <h4><a href="{{ post.previous_post.get_absolute_url }}" >
+                 "{{ post.previous_post.title }}"                
+              </a></h4>
                {% endif %}
               </div>
               <div class="col-6  nxt-right">
                 {% if post.next_post %}
-                <h6>Next <i class="fa fa-angle-right"> </i></h6>
-                <a href="{{ post.next_post.get_absolute_url }}" class="">
+                <h6>Next Post <i class="fa fa-angle-right"> </i></h6>
+                <h4 class="text-right"><a href="{{ post.next_post.get_absolute_url }}" >
                   "{{ post.next_post.title }}"
-                </a>
+                </a></h4>
 
                 {% endif %}
               </div>

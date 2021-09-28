@@ -29,9 +29,7 @@ def index(request):
 
     return render(request, 'home/index.html', context)
 
-# Contact Email form : Many different docs were failing me with this view for the format the email was received in. Credit to YT Tutorial from "Scottish Coder" for sharpening up the desired result. 
-# https://www.youtube.com/watch?v=1DcySa35fXw
-
+# Contact email using django send_mail. 
 
 def contact(request):
     if request.method == "POST":        

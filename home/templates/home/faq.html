@@ -12,122 +12,123 @@
         <div class="col">
             <h3 class="mb-0">Frequently Asked Questions</h3>
             <hr>
-            
+
         </div>
     </div>
 </div>
 
 <div class="container contact-container">
-
     <div class="row">
-        
         <section class="questions col-10 offset-1 mb-2">
-        <!-- FAQ dropdowns with JS  -->
-            
-        <div class=" faq-center">
-            <div class="faq-title">
-                <h4>general questions</h4>
-            </div>
-            <!-- single question -->
-            <article class="question">
-                <div class="question-title">
-                    <!-- Question title -->
-                    <p>Do you accept all major credit cards?</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon"><i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-                </div>
-                <!-- Question Text -->
-                <div class="question-text">
-                    <p>We use the ever-reliable Stripe for credit card transactions. Most credit cards are accepted. </p>
-                </div>
-            </article>
-            <!-- end single question -->
+            <!-- FAQ dropdowns with JS to toggle -->
 
-            <!-- single question -->
-            <article class="question">
-                <div class="question-title">
-                    <!-- Question title -->
-                    <p>Are there discounts for bulk or trade customers</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon"><i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
+            <div class=" faq-center">
+                <div class="faq-title">
+                    <h4>general questions</h4>
                 </div>
-                <!-- Question Text -->
-                <div class="question-text">
-                    <p>Yes indeed. We welcome trade clients and are happy to offer trade, resale and bulk enquiries. If you would like to find out more, please get in touch!</p>
-                </div>
-            </article>
-            <!-- end single question -->
+                <!-- single question -->
+                <article class="question">
+                    <div class="question-title">
+                        <!-- Question title -->
+                        <p>Do you accept all major credit cards?</p>
+                        <button type="button" class="question-btn">
+                            <span class="plus-icon"><i class="far fa-plus-square"></i>
+                            </span>
+                            <span class="minus-icon">
+                                <i class="far fa-minus-square"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <!-- Question Text -->
+                    <div class="question-text">
+                        <p>We use the ever-reliable Stripe for credit card transactions. Most credit cards are accepted.
+                        </p>
+                    </div>
+                </article>
+                <!-- end single question -->
 
-            <!-- single question -->
-            <article class="question">
-                <div class="question-title">
-                    <!-- Question title -->
-                    <p>Are the products really from Japan?</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon"><i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-                </div>
-                <!-- Question Text -->
-                <div class="question-text">
-                    <p>We started using Japanese products many years ago. There is a noticeable difference in finish, durability and ease of use. Try them out, we are sure you will love them!</p>
-                </div>
-            </article>
-            <!-- end single question -->
-            <a href="{% url 'contact' %}" class="btn-sml btn btn-outline-custom float-right">Contact Us</a>
+                <!-- single question -->
+                <article class="question">
+                    <div class="question-title">
+                        <!-- Question title -->
+                        <p>Are there discounts for bulk or trade customers</p>
+                        <button type="button" class="question-btn">
+                            <span class="plus-icon"><i class="far fa-plus-square"></i>
+                            </span>
+                            <span class="minus-icon">
+                                <i class="far fa-minus-square"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <!-- Question Text -->
+                    <div class="question-text">
+                        <p>Yes indeed. We welcome trade clients and are happy to offer trade, resale and bulk enquiries.
+                            If you would like to find out more, please get in touch!</p>
+                    </div>
+                </article>
+                <!-- end single question -->
+
+                <!-- single question -->
+                <article class="question">
+                    <div class="question-title">
+                        <!-- Question title -->
+                        <p>Are the products really from Japan?</p>
+                        <button type="button" class="question-btn">
+                            <span class="plus-icon"><i class="far fa-plus-square"></i>
+                            </span>
+                            <span class="minus-icon">
+                                <i class="far fa-minus-square"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <!-- Question Text -->
+                    <div class="question-text">
+                        <p>We started using Japanese products many years ago. There is a noticeable difference in
+                            finish, durability and ease of use. Try them out, we are sure you will love them!</p>
+                    </div>
+                </article>
+                <!-- end single question -->
+                <a href="{% url 'contact' %}" class="btn-sml btn btn-outline-custom float-right">Contact Us</a>
         </section>
         <aside class="col-10 offset-1 my-2 address">
-            <div >
-                <h4><i class="fas fa-house-user"></i> Address:</h4> 
+            <div>
+                <h4><i class="fas fa-house-user"></i> Address:</h4>
                 <p class="pl-4">999, LaFerrari Boulevard,</p>
                 <p class="pl-4">Lambotown,</p>
                 <p class="pl-4">PorscheVille,</p>
                 <p class="pl-4">Ireland</p>
-                
+
                 <h4><i class="fas fa-phone-alt"></i> Phone</h4>
                 <p class="pl-4">00555 43224 45545</p>
                 <h4><i class="far fa-envelope"></i> Email</h4>
                 <p class="pl-4">info@fecc-fecc.com</p>
             </div>
-        
-        </aside>
-        
-</div>
 
-{% endblock %}
-{% block postloadjs %}
+        </aside>
+
+    </div>
+
+    {% endblock %}
+    {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-// FAQ Page Drop Down Sequences
+        // FAQ Page Drop Down Sequences
 
-//using selectors inside the element
-// enable single box to open at one time only
-const questions = document.querySelectorAll(".question");
-questions.forEach(function(question){
-    const btn = question.querySelector('.question-btn')
-    // console.log(btn)
-    // console.log(question)
-    btn.addEventListener('click', function(){
-        questions.forEach(function(item){
-            if(item !== question) {
-                item.classList.remove("show-text");
-            }
+        //using selectors inside the element
+        // enable single box to open at one time only
+        const questions = document.querySelectorAll(".question");
+        questions.forEach(function (question) {
+            const btn = question.querySelector('.question-btn')
+            // console.log(btn)
+            // console.log(question)
+            btn.addEventListener('click', function () {
+                questions.forEach(function (item) {
+                    if (item !== question) {
+                        item.classList.remove("show-text");
+                    }
+                })
+                question.classList.toggle('show-text');
+            })
         })
-        question.classList.toggle('show-text');
-    })    
-})
     </script>
-{% endblock %}
+    {% endblock %}
