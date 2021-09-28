@@ -1182,6 +1182,7 @@ Chapter 65 : Email Marketing
 - In views.py import django send_mail
 - Insert block formatted for send_mail function subject, message, from, to mail_list
 - for better handling of email addresses as a library, install django-pandas.
+- run pip3 freeze > requirements.txt 
 - In the mail_letter view, the dataframe df will handle the email fields and convert the mail_list emails into a functioning list. 
 - In the event of incorrect emails being submitted, use fail_silently=false to prevent the list from crashing
 - Commit Work thus far. 
