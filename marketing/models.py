@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 class Signup(models.Model):
     email = models.EmailField()
