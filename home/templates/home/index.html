@@ -4,7 +4,7 @@
 {% block page_header %}
 
 {% endblock %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
   
@@ -134,10 +134,10 @@
             <small class="date">{{ obj.timestamp }}</small>
             <div class="category">
               {% for cat in obj.categories.all %}
-              <small><a href="#"> {{ cat }} |</a></small>
+              <small><a href="{{ obj.get_absolute_url }}"> {{ cat }} |</a></small>
               {% endfor %}
             </div>
-          </div><a href="#">
+          </div><a href="{{ obj.get_absolute_url }}">
             <h3 class="h4"><i class="fas fa-bookmark"></i> {{ obj.title }}</h3>
           </a>
           <p class="text-muted">{{ obj.overview|linebreaks|truncatechars:200 }}</p>
@@ -158,8 +158,16 @@
       </div>
       <div class="col-md-8">
         <div class="form-holder">
-          <form action="." method="POST">
+          {% for message in messages %}
+          <div class="alert alert-info w-50 border-dark">
+            {{ message }}
+            <hr>
+          </div>
+          {% endfor %}
+          
+          <form method="POST">
             {% csrf_token %}
+            {{ form }}
             <div class="form-group">
               <input type="email" name="email" id="email" placeholder="Type your email address" class="subscriber">
               <button type="submit" class="submit btn btn-outline-custom ">Subscribe</button>

@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from posts.models import Post
 
-from marketing.models import Signup
+from marketing.models import Signup, MailMessage
+from marketing.forms import SignMeUp
+
 from django.contrib import messages
 
 from django.core.mail import send_mail
@@ -18,7 +20,8 @@ def index(request):
         new_signup = Signup()
         new_signup.email = email
         new_signup.save()
-
+        messages.success(
+                    request, 'Your address is now on our list. Nice!')
     context = {
         'object_list': featured,
         'latest': latest,

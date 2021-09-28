@@ -28,15 +28,15 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 
 ## Who are the target Users?
 
- - The natural funneling within the true hands-on car-enthusiast groupage is probably more than 90% male (from experience, with no official data recorded that can be found). 
- - The target age-group for customers of the website is 18 to 70 years old as car lovers always enjoy working on their cars, regardless.
- - Car Wax Enthusiasts, who are actually a subset of car enthusiasts with large collections of car care products in their garages.
- - Detailing & Car Care Hobbyists - those who spend their weekends cleaning and polishing their family's and friend's cars for extra income. 
- - Average Car Owners, the owners who prefer to wash and wax their own cars without necessarily being enthusiastic about the engine or performance. 
- - Car Detailing & Valeting Professionals who use quality products on their clients' cars. 
- - Motorcycle Enthusiasts, as they also like to keep their bikes pristine.
- - Truck Enthusiasts.
- - Spouses and Relatives of Car Enthusiasts who may wish to purchase gifts. 
+- The natural funneling within the true hands-on car-enthusiast groupage is probably more than 90% male (from experience, with no official data recorded that can be found). 
+- The target age-group for customers of the website is 18 to 70 years old as car lovers always enjoy working on their cars, regardless.
+- Car Wax Enthusiasts, who are actually a subset of car enthusiasts with large collections of car care products in their garages.
+- Detailing & Car Care Hobbyists - those who spend their weekends cleaning and polishing their family's and friend's cars for extra income. 
+- Average Car Owners, the owners who prefer to wash and wax their own cars without necessarily being enthusiastic about the engine or performance. 
+- Car Detailing & Valeting Professionals who use quality products on their clients' cars. 
+- Motorcycle Enthusiasts, as they also like to keep their bikes pristine.
+- Truck Enthusiasts.
+- Spouses and Relatives of Car Enthusiasts who may wish to purchase gifts. 
  
 ## Research 
 
@@ -90,9 +90,37 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 
 
 ## User Story Aspirations
+
 ![story](media/project_media/user_story1.jpg)
 
 ![story](media/project_media/user_story2.jpg)
+
+
+## Skeleton Outlay
+
+The following mock-ups were drawn up using Balsamiq Wireframe Editor Early in the project but save here as images: 
+
+![Home](media/project_media/landingpage.jpg)
+
+![Blog](media/project_media/blog_page.jpg)
+
+![Blog-post](media/project_media/blog_post.jpg)
+
+![Products](media/project_media/products_page.jpg)
+
+![Product-detail](media/project_media/product_detail.jpg)
+
+![Shopping-Cart](media/project_media/cart_page.jpg)
+
+![Checkout](media/project_media/checkout_page.jpg)
+
+![Confirmation](media/project_media/confirmation_page.jpg)
+
+![Tablet-View](media/project_media/tablets_page.jpg)
+
+![Phone-View](media/project_media/phone_view.jpg)
+
+
 
 ## Scope of Attributes of the website
  
@@ -164,6 +192,10 @@ The Cart Summary will also display:
     - Return to Store button
     - Proceed to Checkout Button
 
+#### Allauth
+The authentication package used to run the client registration package is Django-Allauth. This addresses authentication, registration, account management with the potential to add 3rd Party Social Media account authentication. At this point the Social Media aspect has not been integrated. Allauth will allow users to change and/or recover passwords, update email addresses and update personal profile information.
+
+
 #### Checkout Page
 The Checkout page will display
     - Delivery Address
@@ -171,14 +203,71 @@ The Checkout page will display
     - Credit Card details request
     - Total to be charged to card
 
-### STRIPE Payments Facility and Developers tools
-The checkout uses Stripe payments for credit card payments. To test the system, the company has provided 
+#### STRIPE Payments Facility and Developers tools
+The checkout uses Stripe payments for credit card payments. To test the system, the company has provided the following for testing environment
+    - Card number 4242 4242 4242 4242
+    - Expiry date any future time
+    - CVC any 3 digit number
+
+#### Order Success
+- Once the user has placed the order, details are received by Stripe for processing and a confirmation will be received by return. 
+- Confirmation is sent to the users Email address and is also saved into their Order History section in their Account Profile
+
+## Navigating the Blog
+- The main ambit of the Blog section is to provide clients with instructional and semi-technical information regarding the products. Car enthusiasts always appreciate user guides written by knowledgeable, trusted and experienced technicians. The blog entries will reveal industry-insider tips and tricks about how to care for the car and this will appeal to both enthusiasts and professionals with a view or even a strong bias towards the products that can be purchased in the store area. 
+
+- The blog is the main tool for marketing, supported by publishing to social media and email campaigns in the regular Subscription service. Featured blogs are available on the landing page with further links to the most recently published posts also available. 
+
+- Each blog has data attached for metrics. 
+    - Author (with avatar)
+    - Number of Views
+    - Number of Comments
+    - Time since the article was published
+
+### Creating Blog Posts
+
+For attractive blog posts, a third party Rich Text Editor plug in for the Content body of the blog. I installed this to allow for nicer options for formats of text and inserting images into blog posts. Once installed, the project URL and settings files are updated to integrate the editor. Please see the project's build-record.txt file, chapter 53 for details. 
 
 
-#### Allauth
-The authentication package used to run the client registration package is Django-Allauth. This addresses authentication, registration, account management with the potential to add 3rd Party Social Media account authentication. At this point the Social Media aspect has not been integrated. Allauth will allow users to change and/or recover passwords, update email addresses and update personal profile information.
+## Database Resources
+
+For hosting Media and Static CSS and Javascript sheets, Amazon Web Services AWS S3 bucket repositories were used. 
+Heroku PostgreSQL serves as the secure hosting platform from which the FECC project is deployed. 
+
+## The Surface of the Site
+
+The colour scheme for the site was determined in advance, along with other styling factors such as box-shadowing, font family, style and weight. These were declared as global CSS variables for easy recall. Each variable was prefixed with the project name "--fecc" 
+
+The main color scheme is a variation of blues as primary and greys as secondary colors. For contrast, two shades of red and two shades of green, a yellow and an azure blue are also included. The Font Families were imported from Google Fonts : Roboto and Poppins. Please see the following image for the list of style attributes:  
+
+![Layout](media/project_media/css_root.jpg)
 
 
+## Core Technologies 
 
+#### Integral Languages, Frameworks and Editors
+
+The following technologies were vital in the completion of the project:
+- HTML5 - The bones of the website, it is the Markup language that holds everything together in the web browser
+- CSS 3 - Style sheet language that calibrates the characteristics of every component, from colour to size to positioning. 
+- Javascript - Interpreted high-level programming language. 
+- Python 3.8 - the interpreted high level, general-purpose programming language
+- Django 3 - A Python program-based open source framework
+- Bootstrap 4 - A CSS framework for aiding responsiveness
+- Amazon Web Services S3 - Simple Storage Solution for easy store and call of data
+- Heroku - a cloud based a Platform as a Service that sits over AWS, enabling deployment for CRUD functionality
+- Heroku Postgres - with PostgreSQL, using SQL database-as-a-service for the project
+- Gitpod - Collaborative code editor in my browser! 
+- Github - Hosting for development and version control
+- TinyMCE - A WYSIWIG Rich Text Editor for integration into Django applications
+- Travis - Software building and testing support for Github
+- FontAwesome - Icon resources.
+- Stripe - Credit Card processing service
+- Psycopg2 - postgresSQL and python integration
+- Django Crispy Forms - Form display tool
+- Gunicorn - Multiprocessing of Python WSGI-compliant applications for deployment
+- Boto3 - integrates libraries for AWS S3
+- Pillow - Python image processing
+- pip3 - used to install all packages in python
 
 

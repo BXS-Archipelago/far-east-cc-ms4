@@ -35,9 +35,9 @@ Found the answer on Slack. The urls.py file needed updating with :
 and adding to the end: 
 + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-3. Shopping cart is still inserting the Shipping Cost when items quantity is less than or equal Zero?
+3. Shopping cart is still inserting the Shipping Cost when the items quantity is less than or equal Zero?
     - I wanted a flat delivery rate under €50 order value and removed the percentage rate from the tutorial instruction. I added a further elif statement for when the cart total is zero, delivery should be zero. 
-    - Following more trial and error, I discovered the free_delivery_delta statement was required also in both the if and the elif statement. 
+    - Following more trials in the logic, I discovered the free_delivery_delta statement was also required in both the if and the elif statement. 
 
 
 4. Shopping Cart product is inserting the product SKU into the Quantity box? 
