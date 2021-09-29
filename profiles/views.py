@@ -7,6 +7,7 @@ from products.models import Product, Review
 
 from checkout.models import Order
 
+
 @login_required
 def profile(request):
     # Show the User's Profile
@@ -28,11 +29,12 @@ def profile(request):
     template = 'profiles/profile.html'
     context = {
         'form': form,
-        'orders': orders, 
-        'on_profile_page' : True,
+        'orders': orders,
+        'on_profile_page': True,
     }
 
     return render(request, template, context)
+
 
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
@@ -49,4 +51,3 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
-

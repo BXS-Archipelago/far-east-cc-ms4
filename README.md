@@ -203,6 +203,15 @@ The following mock-ups were drawn up using Balsamiq Wireframe Editor Early in th
 </details>
 
 
+ <div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>
+
+______
+______
+
 # Scope
 
 ## Scope of Attributes of the website
@@ -324,6 +333,17 @@ For attractive blog posts, TinyMCE, a third party Rich Text Editor plug in for t
 For hosting Media and Static CSS and Javascript sheets, Amazon Web Services AWS S3 bucket repositories were used. 
 Heroku PostgreSQL serves as the secure hosting platform from which the FECC project is deployed. 
 
+
+
+ <div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>
+---
+---
+
+
 # Surface 
 
 ## The Surface values of the Site
@@ -370,8 +390,15 @@ The following technologies were vital in the completion of the project:
 - Pandas - Dataframe manager to render email lists in a usable format.
 - pip3 - used to install all packages in python
 
---- 
 
+
+ <div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>
+--- 
+---
 # Testing
 
 - Throughout the creation of this website, the work was continuously recorded and tested. The Build-Record document contains 65 chapters as each part of the site developed and grew. Most chapters contain one or more tests of the event. 
@@ -604,6 +631,13 @@ if 'USE_AWS' in os.environ:
 
 ALLOWED_HOSTS = ['127.0.0.1', 'project_name.herokuapp.com']
 
+
+
+ <div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>
 ---
 ---
 
@@ -618,7 +652,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'project_name.herokuapp.com']
 ![Bugs & fixes](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/bugs.md)
 
 
-
+---
+---
 
 # Credits 
 
@@ -638,7 +673,7 @@ There are also some photographs from the free resource Unsplash
     - https://unsplash.com/
 
 
-
+# End Of Document
 
 
 

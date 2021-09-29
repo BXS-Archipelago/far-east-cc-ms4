@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 #DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['bxs-fecc-ms4.herokuapp.com', 'localhost']
 
