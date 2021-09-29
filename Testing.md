@@ -7,20 +7,23 @@
 #### Secondly, testing was documented according to the user stories using the format "As a User" or "As an Admin" , "I want to.." , "So that I can..." with test results and observations. Please see the two images below for these: 
 
 
+
 <details>
 <summary>User Story 1</summary>
 
 ![story](media/project_media/user_story1.jpg)
-</detail>
+</details>
 
 
 <details>
-<summary>Order Confirmation</summary>
+<summary>User Story 2</summary>
 
 ![story](media/project_media/user_story2.jpg)
-</detail>
+</details>
 
 
+
+---
 ---
 
 During the build, there were some changes made for better site performance or simply because some directions were not working out. For example, I initially wanted the landing page to have a video background with JS play and pause button. However, even though it was very appealing it was a little too demanding for the site. Also, in spite of following directions for the django-star-rating app, it would not work out for me. And this seemed to be a common point among peers in Stack Overflow. With the very limited documentation and support for the module, I deferred to using a simple numeric rating system for the products instead. 
@@ -33,26 +36,29 @@ During the build, there were some changes made for better site performance or si
 
 #### Navigation Links : 
 
-- Top Navigation Bar 
-    - Home 
-    - Blog
-    - Store
-    - Help
-        - FAQ
-        - About
-        - Contact
-    - Account
-        - Login
-        - Register
-        - Product Manager
-        - Create Blog
-        - My Profile
-        - Logout
-    - Shopping Cart 
+Test of all the following links : 
 
----
+
+- Home 
+- Blog
+- Store
+- Help
+- FAQ
+- About
+- Contact
+- Account
+- Login
+- Register
+- Product Manager
+- Create Blog
+- My Profile
+- Logout
+- Shopping Cart 
+
+
 #### Links test result : Successful - All links redirect to the correct page. 
-
+---
+---
 - Sliding Side-Navigation Bar
     - Burger-Bars Actuator 
     - Home
@@ -64,7 +70,8 @@ During the build, there were some changes made for better site performance or si
     - X to close 
 
 #### Links test result : Successful - Sidebar links redirect to the correct page and buttons perform as desired.
-
+---
+---
 - Top Search bar in navigation 
 
 #### Search function test : Successful
@@ -73,6 +80,8 @@ During the build, there were some changes made for better site performance or si
 
 #### Search function test : Successful
 
+---
+---
 - Test Landing page Buttons - Visit Store and Visit Blog 
     - Test Successful
 
@@ -88,8 +97,9 @@ During the build, there were some changes made for better site performance or si
 - Landing page latest Blogs links 
     - Links repaired and now work successfully
 
-- Gallery photos open in new page
+- Gallery photos open in new page - successfull
 
+---
 ---
 
 #### Testing Admin pages from addresses while not logged in. 
@@ -97,10 +107,10 @@ During the build, there were some changes made for better site performance or si
     - Test result successful
 
 - Test Create Blog 
-    - Test Failed - Needed to add @login_required decorators to view. 
+    ** Test Failed - Needed to add @login_required decorators to view. 
     - Test 2 Successful
 - Test Create Email 
-    - Test Failed - Needed to add @login_required decorators to view. 
+    ** Test Failed - Needed to add @login_required decorators to view. 
     - Test 2 Successful 
 
 - Test Access Profile 
@@ -110,6 +120,7 @@ During the build, there were some changes made for better site performance or si
     - Test Successful, redirect to django login
 
 
+---
 ---
 
 ### Test Registration 
@@ -131,6 +142,9 @@ During the build, there were some changes made for better site performance or si
     - The Sign In page opens requesting username and password. 
     - Using above Username and Password, the process was very easy. Flash message for Successfully signed in as Testing123
 
+---
+---
+
 ### Test Profile
 
 #### Test
@@ -138,6 +152,9 @@ During the build, there were some changes made for better site performance or si
     - The Profile page opens with a blank sheet for delivery information and also blank order history. 
     - Entering an address and clicking Update information displays the Success Message. 
     - This address will be changed later as Iceland is selected instead of Ireland
+
+---
+---
 
 ### Test Products and Rate/Review
 The Store dropdown menu offers full category selection to choose from. Picking all-products will also give an on-page selection of product categories. 
@@ -147,6 +164,9 @@ The Store dropdown menu offers full category selection to choose from. Picking a
     - A brief review with a Rating of 4 is performed. 
     - I am brought back to the product detail page where the review sections says Score: 4.0/5 in 1 Reviews
     - Below contains the review text, with reviewer's name and the rating they gave. 
+
+---
+---
 
 ### Test Products Purchase
     - Increased quantity to 2. Clicked Add To Cart
@@ -175,6 +195,8 @@ The Store dropdown menu offers full category selection to choose from. Picking a
     
     - Checkout Testing now completed successfully. 
 
+---
+---
 
 ### Testing Product Management
 
@@ -188,6 +210,9 @@ The Store dropdown menu offers full category selection to choose from. Picking a
     - Test as Admin, Delete successfully in one click. 
     - Create product again successfully.
     - ALL CRUD functions working. 
+
+---
+---
 
 ### Test Create Blog 
 
@@ -209,7 +234,9 @@ The Store dropdown menu offers full category selection to choose from. Picking a
             The time is noted and time since created is displayed
             By design, the users are not allowed to edit or delete their comments. 
 
-    
+---
+---
+
 ### Test Email Marketing & Subscription Service
 
 #### Test
@@ -230,7 +257,7 @@ The Store dropdown menu offers full category selection to choose from. Picking a
     - Test result : Successful, all three Inboxes received the mail shot instantaneously. 
 
 
-    
+# End Document
 
 
 
