@@ -366,10 +366,11 @@ The following technologies were vital in the completion of the project:
 
 - Throughout the creation of this website, the work was continuously recorded and tested. The Build-Record document contains 65 chapters as each part of the site developed and grew. Most chapters contain one or more tests of the event. 
 
+![Build Record](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/build_record.md)
+
 - The User Story document contained the requirements of the site which were also tested for completion of task. 
 
 - The final Testing document contains a list of checks and where needed, fixes for outstanding bugs. 
-
 
 
 

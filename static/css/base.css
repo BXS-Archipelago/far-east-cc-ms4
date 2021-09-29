@@ -1040,9 +1040,19 @@ em img {
 
 .quick-list li a {
   text-decoration: none;
-  color: var(--fecc-primary-1);
+  color: var(--fecc-primary-3);
   font-weight: 500;
   padding: 4px;
+  
+  transition: .5s ease-in-out;
+}
+
+.quick-list li a:hover {
+  text-decoration: none;
+  color: var(--fecc-primary-1);
+  
+  background-color: var(--fecc-red-light);
+  
 }
 
 .product-details-container {
@@ -1059,9 +1069,15 @@ em img {
 .badge {
   box-shadow: var(--light-shadow);
   letter-spacing: 1.1px;
-  line-height: 1.3;
-  background-color: var(--fecc-primary-9);
+  line-height: 1.3;  
   padding: 3px 6px;
+  font-size: .8rem;
+  color: var(--fecc-primary-1);
+  font-weight: 500;
+}
+
+.badge:hover {
+  background-color: var(--fecc-red-light);
 }
 
 .card-shadow {

@@ -32,8 +32,8 @@ Found the answer on Slack. The urls.py file needed updating with :
 - from django.conf import settings
 - from django.conf.urls.static import static
 
-and adding to the end: 
-+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    and adding to the end: 
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 3. Shopping cart is still inserting the Shipping Cost when the items quantity is less than or equal Zero?
     - I wanted a flat delivery rate under €50 order value and removed the percentage rate from the tutorial instruction. I added a further elif statement for when the cart total is zero, delivery should be zero. 
