@@ -4,7 +4,26 @@
 
 ### By: Brian Smyth
 
-## Why should this website exist?
+![Live FECC Website](https://bxs-fecc-ms4.herokuapp.com/)
+
+### Index
+
+[**UX**](#ux)
+
+[**Skeleton**](#skeleton)
+
+[**Scope**](#scope)
+
+[**Surface**](#surface)
+
+[**Testing**](#testing)
+
+[**Deployment**](#deployment)
+
+[**Credits**](#credits)
+
+
+## Introduction : Why should this website exist?
 
 Car care is a strongly growing business at present with a large pool of car enthusiasts as the primary customers, along with a smaller pool of car-care professionals who use products daily. This aspect of the business is strongly both visual and kinesthetic. To elaborate on this, car enthusiasts love beautiful looking cars, it appeals to their visual senses and emotions. Most also enjoy working on their own cars, putting great efforts into mechanical maintenance and care/appearance maintenance. The result is appreciated far more than the personal effort. 
 
@@ -13,6 +32,8 @@ While there are a lot of brands and products available, the most advanced ranges
 Too make it easier for the average enthusiast, this website will provide easy access to a range of Japanese car products which are of high quality and easily understood in their purpose. The website will be mainly a business-to-consumer website with an easy to follow categorisation of products. Users will be easily able to browse and select products by adding them to a shopping cart where they can then make a credit-card purchase through a secure online-purchase resource. The products will then be dispatched within 24 hours. 
 
 Ancillary objectives for the site owners will be to offer an email subscription service with tips and tricks for product use, special offers and a feature for new/coming-soon product developments. 
+
+# UX
 
 ## UX : The Strategic approach for the site's User Experience: 
 
@@ -28,7 +49,7 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 
 ## Who are the target Users?
 
-- The natural funneling within the true hands-on car-enthusiast groupage is probably more than 90% male (from experience, with no official data recorded that can be found). 
+- Car Enthusiasts. 
 - The target age-group for customers of the website is 18 to 70 years old as car lovers always enjoy working on their cars, regardless.
 - Car Wax Enthusiasts, who are actually a subset of car enthusiasts with large collections of car care products in their garages.
 - Detailing & Car Care Hobbyists - those who spend their weekends cleaning and polishing their family's and friend's cars for extra income. 
@@ -40,15 +61,15 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
  
 ## Research 
 
-- There are a handful of small business who sell a broad range of car care products online.
+- There are a handful of small business who sell a very broad range of car care products online.
 - There are also larger Bulk chemical companies who specialise in car trade product sales, for dealers and car-wash centres, etc.
-- There is a very small supply of Japanese products and some of these are low quality. 
-- Most car owners are ignorant of car care products, the quality of them and what they are actually designed to do. 
+- There is a very small supply of Japanese or other Asian products and some of these are low quality. 
+- Most car owners are unaware of car care products variability, the quality of them and what they are actually designed to do. 
 - Most products are bought in general because of the marketing and merchandising on chain-store shelves. 
 - Most products are bought because they are cheap.
 - Car enthusiasts are more likely to discuss and compare products at social gatherings, car club meets, car shows. 
-- Enthusiasts will share photos of their cars and product purchases on Social Media.
-- Ease-of-use and the finish delivered by the product are more important than competitive pricing. 
+- Enthusiasts will share photos of their cars and product purchases on Social Media, forums, etc.
+- Ease-of-use, durability and the finish delivered by the product are more important than competitive pricing. 
 
 
 ## Important Site Features for the users
@@ -66,11 +87,10 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 - Frequently Asked Questions
 - A resource to submit queries
 - A Subscription for regular updates and offers
-- The ability to update 
+- The ability to update their purchase choices
 - A Product rating system
 - A list of reviews from other customers on each product. 
 - Real-time confirmation of actions such as "Added to Cart", "Item Deleted", etc
-- On non-store pages, a Call-To-Action link as an eye-catching animated button.
 - The ability access products by pre-selected category (Exterior, Interior, Accessory products, etc)
 - The ability to select or filter products by price. 
 - A convenient Search utility.
@@ -103,6 +123,11 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 
 ![story](media/project_media/user_story2.jpg)
 </details>
+
+__________
+__________
+
+# Skeleton
 
 ## Skeleton Outlay
 
@@ -167,6 +192,8 @@ The following mock-ups were drawn up using Balsamiq Wireframe Editor Early in th
 ![Phone-View](media/project_media/phone_view.jpg)
 </details>
 
+
+# Scope
 
 ## Scope of Attributes of the website
  
@@ -264,6 +291,8 @@ The checkout uses Stripe payments for credit card payments. To test the system, 
 - Once the user has placed the order, details are received by Stripe for processing and a confirmation will be received by return. 
 - Confirmation is sent to the users Email address and is also saved into their Order History section in their Account Profile
 
+
+
 ## Navigating the Blog
 - The main ambit of the Blog section is to provide clients with instructional and semi-technical information regarding the products. Car enthusiasts always appreciate user guides written by knowledgeable, trusted and experienced technicians. The blog entries will reveal industry-insider tips and tricks about how to care for the car and this will appeal to both enthusiasts and professionals with a view or even a strong bias towards the products that can be purchased in the store area. 
 
@@ -285,7 +314,9 @@ For attractive blog posts, TinyMCE, a third party Rich Text Editor plug in for t
 For hosting Media and Static CSS and Javascript sheets, Amazon Web Services AWS S3 bucket repositories were used. 
 Heroku PostgreSQL serves as the secure hosting platform from which the FECC project is deployed. 
 
-## The Surface of the Site
+# Surface 
+
+## The Surface values of the Site
 
 The colour scheme for the site was determined in advance, along with other styling factors such as box-shadowing, font family, style and weight. These were declared as global CSS variables for easy recall. Each variable was prefixed with the project name "--fecc" 
 
@@ -298,6 +329,8 @@ The main color scheme is a variation of blues as primary and greys as secondary 
 </details>
 
 ---
+
+# Technologies
 
 ## Core Technologies 
 
@@ -329,9 +362,24 @@ The following technologies were vital in the completion of the project:
 
 --- 
 
-## Deployment
+# Testing
+
+- Throughout the creation of this website, the work was continuously recorded and tested. The Build-Record document contains 65 chapters as each part of the site developed and grew. Most chapters contain one or more tests of the event. 
+
+- The User Story document contained the requirements of the site which were also tested for completion of task. 
+
+- The final Testing document contains a list of checks and where needed, fixes for outstanding bugs. 
+
+
+
+
+---
+
+# Deployment
 
 --- 
+
+### Deployment, Cloning or Downloading this project
 
 This Project can be run locally using an IDE such as Visual Studio Code. 
 
@@ -551,7 +599,9 @@ ALLOWED_HOSTS = ['127.0.0.1', 'project_name.herokuapp.com']
 
 First and Foremost, This Milestone 4 Project was created thanks to the great learning platform and content provided by the Code Institute. While I didn't use much tutor support, when I did need it the tutors were always knowledgable and patient. So a huge credit to the team in Code Institute. Most of this project was built with what I learned from them.
 
-For more insight on how to approach a django blog, a YouTube channel "Just Django", Matthew Freire from Pretoria in South Africa provided some elemental processes to for me to observe in the project: https://justdjango.com/
+Mr Maranathan Ilesanmi was my Mentor assigned by Code Institute from day 1 and his advice was invaluable. I am very grateful to him for his wisdom and perspective, not to mention his technical knowledge. I wish him all the best for the future. 
+
+For insight on how to approach a django blog build, a YouTube channel "Just Django", run by Mr Matthew Freire from Pretoria in South Africa, provided some very useful elemental processes for me to observe in the project: https://justdjango.com/
 
 ### Images 
 Some of the photos in the blog website are my own, taken at my workshop. 

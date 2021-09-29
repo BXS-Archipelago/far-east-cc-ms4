@@ -171,6 +171,9 @@ The Store dropdown menu offers full category selection to choose from. Picking a
         - The new address from the order has been saved to My Profile.
         - Updating the street address and country in My Profile, the new information saves. 
         - Testing with new order again - new order does not contain Profile default address. 
+        - Investigation found that my Checkout view in checkout>views.py was missing some code. It is now updated to check if the user is authenticated, and if so to grab the profile address, and if not to render an empty form. 
+    
+    - Checkout Testing now completed successfully. 
 
 
 ### Testing Product Management

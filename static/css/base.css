@@ -253,9 +253,10 @@ button {
   }
   
   .links a:hover {
-    background: var(--fecc-primary-8);
-    color: var(--fecc-primary-5);
+    background: var(--fecc-red-light);
+    color: var(--fecc-primary-1);
     padding-left: 1.75rem;
+    text-decoration: none;
   }
   
   .social-icons {
@@ -814,6 +815,7 @@ section.featured-posts .avatar {
 
 .form-holder {
   padding-bottom: 1rem;
+  height: 60px
 }
 
 .subscriber {
@@ -1034,6 +1036,7 @@ em img {
 }
 
 /* ------------------------------------Products Page */
+  
 
 .quick-list li a {
   text-decoration: none;
@@ -1047,6 +1050,18 @@ em img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.category-badge {
+  margin-top: 5px;
+}
+
+.badge {
+  box-shadow: var(--light-shadow);
+  letter-spacing: 1.1px;
+  line-height: 1.3;
+  background-color: var(--fecc-primary-9);
+  padding: 3px 6px;
 }
 
 .card-shadow {
@@ -1535,6 +1550,12 @@ Questions
 
 @media screen and (max-width: 992px) {
 
+  
+  .links a {   
+    font-size: 1.25rem;    
+    padding: .5rem 1.2rem;  
+  }
+
   .nav-icons {
     display: none;
   }
@@ -1594,6 +1615,11 @@ Questions
     top: 1.1rem;
     left: .8rem;
     font-size: 1.15rem;
+}
+
+.sidebar-header li a:hover {
+  text-decoration: none;
+  color: var(--fecc-primary-1);
 }
 .logo-col {
   width: 100%;
@@ -1730,7 +1756,7 @@ th {
 .product-list h4 {
   font-size: .8rem;
 }
-.product-list {
+.product-list {  
   padding: 0 8px;
 }
 .contact-container p {

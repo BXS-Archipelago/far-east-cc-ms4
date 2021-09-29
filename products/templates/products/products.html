@@ -6,14 +6,15 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container pt-1 pb-5">
-    <div class="row pb-2 pt-1">
+    <div class="row pb-2 pt-1 d-flex justify-content-around">
         <div class="col-12 text-center mt-2 py-1">
             <h3>Products</h3>
             <hr>
         </div>   
         
-            <div class="product-list col-4">
+            <div class="product-list  col-3">
                 <h4>Exterior</h4>
+              
                 <ul class="quick-list">
                   <li><a class="quick-link" href="{% url 'products' %}?category=seal_wax">Seal &amp; Wax</a></li>
                   <li><a class="quick-link" href="{% url 'products' %}?category=polishes">Polishes</a></li>
@@ -24,8 +25,9 @@
             </div>
             
             
-              <div class="product-list col-4">
+              <div class="product-list col-3">
                 <h4>Interior</h4>
+                
                 <ul class="quick-list">
                   <li><a class="quick-link" href="{% url 'products' %}?category=leather_care">Leather Care</a></li>
                   <li><a class="quick-link" href="{% url 'products' %}?category=cleaners">Cleaners</a></li>
@@ -36,12 +38,13 @@
             </div>
             
             <!-- Show Buttons below the Products header as per Category included in selection criteria -->
-            <div class="product-list current col-4">
+            <div class="product-list current col-3">
                 <h4>Current:</h4>
+              
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none text-black" href="{% url 'products' %}?category={{ c.name }}">
                 <span
-                    class="p-1 mt-1 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    class="badge badge-white text-black text-decoration-none rounded border border-dark">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
         </div>

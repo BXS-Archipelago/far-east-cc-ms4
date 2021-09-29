@@ -1,4 +1,5 @@
-## FECC Record of Build
+## Far East Car Care Website Record of Build
+- Using HTML, CSS, Javascript, Python, Django Framework, deployed on Heroku utilising AWS S3 
 ### By Brian Smyth
 
 The Build record is to keep a track of the steps followed in the creation of this project. This happens for two reasons :
@@ -1196,3 +1197,4 @@ In chapter 47b, I am adapting the review's numeric rating system to display both
 - Test Result : Successful - Added my 3 email addresses and sent a test email shot to the list. The message was received immediately.  
 
 
+## End of Record
