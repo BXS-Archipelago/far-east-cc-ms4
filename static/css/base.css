@@ -590,7 +590,7 @@ content .col .drop-down-image {
 }
 
 .col .lg-links .li, .col .lg-links li a {
-  padding: 0 1rem;
+  padding: 0 .6rem;
 }
 
 .menu-items li:hover .wide-menu {

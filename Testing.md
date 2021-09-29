@@ -257,6 +257,30 @@ The Store dropdown menu offers full category selection to choose from. Picking a
     - Test result : Successful, all three Inboxes received the mail shot instantaneously. 
 
 
+# Repsonsiveness Testing
+
+The deployed site was tested through the following screen sizes:
+
+- iPhone eXpensive portrait · width: 375px 
+- iPhone eXpensive landscape · width: 734px
+- Android (Pixel 2) portrait · width: 412px
+- Android (Pixel 2) landscape · width: 684px
+- iPhone 6-8 portrait · width: 375px
+- iPhone 6-8 landscape · width: 667px
+- iPhone 6-8 Plump portrait · width: 414px
+- iPhone 6-8 Plump landscape · width: 736px
+- iPad portrait · width: 768px
+- iPad landscape · width: 1024px
+
+One issue was discovered. The large drop-down menu had text overflow but has been adjusted for this screen size now. Too much padding! 
+
+<details>
+<summary>Screen-Size Responsiveness</summary>
+
+
+![story](media/project_media/responsiveness.png)
+</details>
+
 # End Document
 
 

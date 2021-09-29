@@ -3,27 +3,33 @@
 # Milestone Project 4 : Far East Car Care Ltd, an online shopping site proposal for car-care products.
 
 ### By: Brian Smyth
+![Site Display](media/project_media/ScreenShot.jpg)
 
-![Live FECC Website](https://bxs-fecc-ms4.herokuapp.com/)
+
+[Live FECC Website](https://bxs-fecc-ms4.herokuapp.com/)
 
 # Index
 
-[**UX**](#ux)
+- [**UX**](#ux)
 
-[**Skeleton**](#skeleton)
+- [**Skeleton**](#skeleton)
 
-[**Scope**](#scope)
+- [**Scope**](#scope)
 
-[**Surface**](#surface)
+- [**Surface**](#surface)
 
-[**Testing**](#testing)
+- [**Testing**](#testing)
 
-[**Deployment**](#deployment)
+- [**Deployment**](#deployment)
 
-[**Resources**](#resources)
+- [**Resources**](#resources)
 
-[**Credits**](#credits)
+- [**Credits**](#credits)
 
+
+
+---
+---
 
 ## Introduction : Why should this website exist?
 
