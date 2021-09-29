@@ -6,7 +6,7 @@
 
 ![Live FECC Website](https://bxs-fecc-ms4.herokuapp.com/)
 
-### Index
+# Index
 
 [**UX**](#ux)
 
@@ -19,6 +19,8 @@
 [**Testing**](#testing)
 
 [**Deployment**](#deployment)
+
+[**Resources**](#resources)
 
 [**Credits**](#credits)
 
@@ -108,6 +110,14 @@ On mobile devices, the sliding navigation bar will the main tool for traversing 
 - Products will be dispatched efficiently, attractively and safely wrapped and securely boxed with invoice and address paperwork attached to the exterior.
 - The business will strive for positive feedback, both for products and service.
 
+__________
+__________
+
+ <div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>
 
 ## User Story Aspirations
 - Please Click to expand 
@@ -596,7 +606,21 @@ ALLOWED_HOSTS = ['127.0.0.1', 'project_name.herokuapp.com']
 
 ---
 ---
-## Credits 
+
+# Resources 
+
+
+![Workflow Chart](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/Readme_resources/FECC_Work_Flow.pdf)
+![User Stories Table](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/Readme_resources/MS4UserStories.pdf)
+![Full Wireframe](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/Readme_resources/MS4_outline_2.pdf)
+![Store Wireframe](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/Readme_resources/FECC-wireframe-Mockups.pdf)
+![Build Record](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/build_record.md)
+![Bugs & fixes](https://github.com/BXS-Archipelago/far-east-cc-ms4/blob/main/bugs.md)
+
+
+
+
+# Credits 
 
 First and Foremost, This Milestone 4 Project was created thanks to the great learning platform and content provided by the Code Institute. While I didn't use much tutor support, when I did need it the tutors were always knowledgable and patient. So a huge credit to the team in Code Institute. Most of this project was built with what I learned from them.
 
