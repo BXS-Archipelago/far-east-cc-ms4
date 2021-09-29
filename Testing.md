@@ -169,31 +169,31 @@ The Store dropdown menu offers full category selection to choose from. Picking a
 ---
 
 ### Test Products Purchase
-    - Increased quantity to 2. Clicked Add To Cart
-    - Success Message appears with summary of cart 
-        Test Fail : Product name is not appearing in the Success message. 
-        Toast Success Template contained {{ item.product_name }} but should be {{ item.product.name }}
-        
-        - Test 2 Result - Success
-    - Clicking into Shopping Cart, the item is listed for quantity of 2. Changing this to 1 using decrement and update buttons. 
-    - Success Message appears with bright notice that I should spend another €20.01 to get free delivery
-    - Free delivery notice also appears within the Shopping Cart page as would normally appear when purchasing a low-value item.
-    - Clicking into Secure Checkout from Toast message does nothing. The link was set to cart instead of checkout. 
-        - Test 2 - link fixed and immediate access to checkout page. 
-
-    - In Checkout, it is observed that my earlier provided default information is not displayed as hoped. 
-    - Continuing with purchase to check if address now provided is saved as default for future 
-    - In providing the Stripe test credit card number the order is processed successfully and I am taken to the checkout-success page
-    - Checkout-success initially displays the Success toast message that the order is processed, the order number and that an email has been send to my email address. 
-    - In Checking my email, the actual order confirmation has been received with full correct information
-    - The Checkout Success page gives the same information on screen. 
-
-        - The new address from the order has been saved to My Profile.
-        - Updating the street address and country in My Profile, the new information saves. 
-        - Testing with new order again - new order does not contain Profile default address. 
-        - Investigation found that my Checkout view in checkout>views.py was missing some code. It is now updated to check if the user is authenticated, and if so to grab the profile address, and if not to render an empty form. 
+- Increased quantity to 2. Clicked Add To Cart
+- Success Message appears with summary of cart 
+    Test Fail : Product name is not appearing in the Success message. 
+    Toast Success Template contained {{ item.product_name }} but should be {{ item.product.name }}
     
-    - Checkout Testing now completed successfully. 
+    - Test 2 Result - Success
+- Clicking into Shopping Cart, the item is listed for quantity of 2. Changing this to 1 using decrement and update buttons. 
+- Success Message appears with bright notice that I should spend another €20.01 to get free delivery
+- Free delivery notice also appears within the Shopping Cart page as would normally appear when purchasing a low-value item.
+- Clicking into Secure Checkout from Toast message does nothing. The link was set to cart instead of checkout. 
+    - Test 2 - link fixed and immediate access to checkout page. 
+
+- In Checkout, it is observed that my earlier provided default information is not displayed as hoped. 
+- Continuing with purchase to check if address now provided is saved as default for future 
+- In providing the Stripe test credit card number the order is processed successfully and I am taken to the checkout-success page
+- Checkout-success initially displays the Success toast message that the order is processed, the order number and that an email has been send to my email address. 
+- In Checking my email, the actual order confirmation has been received with full correct information
+- The Checkout Success page gives the same information on screen. 
+
+    - The new address from the order has been saved to My Profile.
+    - Updating the street address and country in My Profile, the new information saves. 
+    - Testing with new order again - new order does not contain Profile default address. 
+    - Investigation found that my Checkout view in checkout>views.py was missing some code. It is now updated to check if the user is authenticated, and if so to grab the profile address, and if not to render an empty form. 
+
+- Checkout Testing now completed successfully. 
 
 ---
 ---
